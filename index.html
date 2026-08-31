@@ -1,87 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>American Government Pretest</title>
-    <link rel="stylesheet" href="styles.css?v=20260824-3">
-  </head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Declaration of Independence Research</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1>Declaration of Independence Research</h1>
+    <p>Research the document, use the provided sources, answer in your own words, and save your progress with your school email.</p>
+  </header>
 
-  <body>
-    <main class="shell">
-      <header>
-        <div class="eyebrow">Beginning-of-Year Diagnostic</div>
-        <h1>American Government Pretest</h1>
-        <p id="subtitle">
-          Answer each question once. Questions and choices are randomized for each student.
-        </p>
-      </header>
+  <section class="panel">
+    <div class="identity">
+      <div><label for="studentName">Student Name</label><input id="studentName" autocomplete="name"></div>
+      <div><label for="period">Period</label><input id="period"></div>
+      <div><label for="email">School Email</label><input id="email" type="email" autocomplete="email"></div>
+    </div>
+    <div class="actions">
+      <button id="saveBtn" type="button">Save Progress</button>
+      <button id="retrieveBtn" class="secondary" type="button">Retrieve Previous Work</button>
+    </div>
+    <div id="saveStatus" class="status"></div>
+    <div class="notice"><b>Spelling does not have to be perfect.</b> Answer in your own words. The checker is intentionally liberal and looks for the main idea rather than exact wording. Your GitHub version also keeps a local browser copy as a backup.</div>
+  </section>
 
-      <section id="start" class="card">
-        <h2>Student information</h2>
-        <label>
-          Full name
-          <input id="studentName" autocomplete="name" maxlength="80">
-        </label>
-        <label>
-          School email
-          <input id="studentEmail" type="email" autocomplete="email" maxlength="120" placeholder="student@nortonpanthers.org">
-        </label>
-        <label>
-          Class period
-          <select id="classPeriod">
-            <option value="">Select your period</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-          </select>
-        </label>
-        <button id="begin">Begin pretest</button>
-        <p class="error" id="startError"></p>
-      </section>
+  <div class="progress">
+    <span id="progressText">Loading assignment…</span>
+    <span id="cloudText">Cloud save not configured yet</span>
+  </div>
 
-      <section id="game" class="card hidden">
-        <div class="progress-row">
-          <span id="counter"></span>
-          <span id="answered"></span>
-        </div>
-        <div class="progress"><div id="bar"></div></div>
-        <div class="topic" id="topic"></div>
-        <h2 id="question"></h2>
-        <div id="answers" class="answers"></div>
-        <div class="nav">
-          <button id="prev" class="secondary">Previous</button>
-          <button id="next">Next</button>
-        </div>
-        <p class="error" id="questionError"></p>
-      </section>
+  <main id="assignment"></main>
 
-      <section id="review" class="card hidden">
-        <h2>Review your answers</h2>
-        <p>
-          All questions must be answered before submission. Select a number to
-          return to that question.
-        </p>
-        <div id="reviewGrid" class="review-grid"></div>
-        <button id="submit">Submit pretest</button>
-        <p class="error" id="submitError"></p>
-      </section>
-
-      <section id="done" class="card hidden">
-        <div class="seal">✓</div>
-        <h2>Pretest submitted</h2>
-        <p id="scoreLine"></p>
-        <p>Your responses have been recorded. You may show this screen to your teacher.</p>
-        <div id="receipt" class="receipt"></div>
-      </section>
-    </main>
-
-    <script src="questions.js?v=20260824-3"></script>
-    <script src="app.js?v=20260824-3"></script>
-  </body>
+  <section class="panel footer">
+    <button id="finishBtn" class="finish" type="button">Finish / Submit Assignment</button>
+    <div id="finalResult"></div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
 </html>
