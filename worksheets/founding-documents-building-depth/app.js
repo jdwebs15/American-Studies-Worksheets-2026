@@ -1,4 +1,4 @@
-const SCRIPT_URL = "PASTE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyAkahbkT3Tn7wVxAap3EqF1uhnB2iJF9hm6pnuUueHkBibHUgZg2R8ZVEHE-Gky6y7/exec";
 const META={title:"Founding Documents Building Depth",subtitle:"Exploring America’s Founding Documents",assignmentKey:"founding-documents-depth-2026-v1"};
 const SECTIONS=[
 {title:"Part I — Northwest Ordinance (1787)",questions:[
