@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Founding Documents - Assignment I</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">American Studies · Founding Documents</p>
+      <h1>Assignment I: Building Foundational Knowledge</h1>
+      <p>Use the linked sources to answer all 28 questions in your own words. Spelling does not have to be perfect; your answer must communicate the main idea.</p>
+    </div>
+  </header>
+  <main>
+    <section class="student-card" aria-labelledby="student-heading">
+      <h2 id="student-heading">Student information</h2>
+      <div class="student-grid">
+        <label>Student Name<input id="studentName" autocomplete="name" required></label>
+        <label>Period<select id="period" required><option value="">Choose</option><option>3</option><option>4</option><option>6</option><option>Other</option></select></label>
+        <label>School Email<input id="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="action-row">
+        <button id="saveBtn" type="button">Save Progress</button>
+        <button id="retrieveBtn" type="button" class="secondary">Retrieve Previous Work</button>
+        <span id="saveStatus" role="status"></span>
+      </div>
+    </section>
+    <section class="progress-card" aria-label="Assignment progress">
+      <div><strong id="progressText">0 of 28 answered</strong><span>Finish each answer before submitting.</span></div>
+      <progress id="progressBar" value="0" max="28"></progress>
+    </section>
+    <form id="assignmentForm">
+      <div id="questions"></div>
+      <div class="submit-card">
+        <label class="honor"><input id="honorCheck" type="checkbox" required> I completed these answers in my own words and used the sources responsibly.</label>
+        <button id="submitBtn" type="submit" class="submit">Finish / Submit Assignment</button>
+        <p id="submitStatus" role="status"></p>
+      </div>
+    </form>
+  </main>
+  <footer>Founding Documents · American Studies</footer>
+  <script src="app.js"></script>
+</body>
+</html>
