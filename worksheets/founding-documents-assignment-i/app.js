@@ -56,12 +56,48 @@ const SECTIONS=[
 ];
 
 const questions=SECTIONS.flatMap(s=>s.questions);
+// Liberal concept checks. These are intentionally broader than an exact-answer
+// key so reasonable student wording can pass.
+const CHECK_RULES=[
+  [5,1,/unalien|inalien|natural right|born with|cannot be taken|life.{0,20}liberty/],
+  [5,1,/permission|approval|agreement|consent|people.{0,25}(power|authority)|governed.{0,25}(choose|agree)/],
+  [5,1,/protect.{0,25}right|secure.{0,25}right|preserve.{0,25}right|life.{0,20}liberty/],
+  [2,1,/state|states|individual state/],
+  [8,2,/tax|revenue|money|regulat.{0,15}(trade|commerce)|enforc|army|military|weak|debt|fund/],
+  [8,2,/weak|tax|revenue|trade|commerce|enforc|shays|effective|strong.{0,20}(central|national)|national.{0,20}power/],
+  [7,2,/freedom|liberty|right|religion|worship|jury|due process|property|habeas|speech/],
+  [6,2,/religion|morality|knowledge|school|education|encourag/],
+  [4,1,/religion|jury|due process|property|habeas|cruel|bail|worship/],
+  [7,2,/prohibit|ban|forbid|no slavery|neither slavery|involuntary servitude|crime|punishment|fugitive|escape/],
+  [5,1,/representative|elected|people choose|citizen.{0,20}(vote|elect)|not.{0,15}(king|monarch)/],
+  [7,2,/territor|population|five thousand|5000|sixty thousand|60000|representative|statehood|equal footing/],
+  [6,1,/same|equal|not inferior|full state|same power|same right|second.class/],
+  [5,2,/divid|share|national|federal|central|state|level/],
+  [10,4,/legislative|congress|make.{0,12}law|executive|president|enforc.{0,12}law|judicial|court|interpret.{0,12}law/],
+  [6,2,/limit|constitution|law|restrict|prevent|abuse|protect.{0,15}(right|liberty)|not unlimited/],
+  [8,2,/separat|different branch|legislative|executive|judicial|congress|president|court/],
+  [8,2,/check|balance|limit|veto|override|confirm|impeach|judicial review|unconstitutional|appoint/],
+  [7,2,/supreme law|highest law|constitution|federal law|national law|state law|conflict|prevail|control/],
+  [7,2,/congress|necessary|proper|implied power|carry.{0,20}(out|execute)|enumerated|listed power/],
+  [6,2,/we the people|people|popular sovereignty|vote|elect|consent|representative/],
+  [6,2,/federalist|support.{0,15}(constitution|ratif)|ratif|strong.{0,20}(national|central)|effective government/],
+  [7,2,/anti.federalist|oppose|fear|central|national power|tyranny|liberty|rights|bill of rights/],
+  [7,2,/protect.{0,20}(right|liberty)|individual right|government power|abuse|tyranny|not included|lacked|missing/],
+  [6,2,/fair|legal procedure|proper procedure|government.{0,20}(follow|obey).{0,15}law|fifth|5th|amendment v/],
+  [6,2,/gather|meet|protest|demonstrat|peaceabl|first|1st|amendment i/],
+  [6,2,/court|judge|detention|imprison|jail|arrest|lawful|charge|bring.{0,15}court/],
+  [8,2,/limit|restrict|prohibit|government|cannot|may not|first|speech|religion|search|warrant|due process|cruel|amendment/]
+];
 const $=id=>document.getElementById(id);
 const storageKey=()=>`${CONFIG.assignmentId}:${($('email').value||'anonymous').trim().toLowerCase()}`;
+let latestCheck={};
+let checkCount=0;
+let cloudDirty=false;
+let cloudSaveBusy=false;
 
 function render(){let n=0;const host=$('questions');SECTIONS.forEach(section=>{const heading=document.createElement('div');heading.className='section-heading';heading.innerHTML=`<h2>${section.title}</h2><p>${section.description}</p>`;host.appendChild(heading);section.questions.forEach(q=>{n++;const src=SOURCES[q[1]];const card=document.createElement('article');card.className='question-card';card.innerHTML=`<div class="question-top"><p class="question-text"><span class="number">${n}</span>${q[0]}</p><a class="source-link" href="${src.url}" target="_blank" rel="noopener">Find it: ${src.label} ↗</a></div><label for="q${n}">Your answer<textarea id="q${n}" data-question="${n}" aria-label="Answer to question ${n}"></textarea></label><p class="hint"><strong>Where to look:</strong> ${q[2]}</p>`;host.appendChild(card);});});}
-function collect(){return{assignmentId:CONFIG.assignmentId,assignmentTitle:CONFIG.assignmentTitle,studentName:$('studentName').value.trim(),period:$('period').value,email:$('email').value.trim().toLowerCase(),answers:questions.map((_,i)=>$(`q${i+1}`).value.trim()),savedAt:new Date().toISOString()};}
-function fill(data){if(!data)return;$('studentName').value=data.studentName||'';$('period').value=data.period||'';$('email').value=data.email||'';(data.answers||[]).forEach((a,i)=>{if($(`q${i+1}`))$(`q${i+1}`).value=a;});updateProgress();}
+function collect(){const answers=questions.map((_,i)=>$(`q${i+1}`).value.trim());const score=Object.values(latestCheck).filter(Boolean).length;return{assignmentId:CONFIG.assignmentId,assignmentTitle:CONFIG.assignmentTitle,studentName:$('studentName').value.trim(),period:$('period').value,email:$('email').value.trim().toLowerCase(),answers,accepted:latestCheck,score,total:questions.length,percent:Math.round(score/questions.length*1000)/10,answerCount:answers.filter(Boolean).length,checkCount,lastCheckedAt:checkCount?new Date().toISOString():'',savedAt:new Date().toISOString()};}
+function fill(data){if(!data)return;$('studentName').value=data.studentName||'';$('period').value=data.period||'';$('email').value=data.email||'';(data.answers||[]).forEach((a,i)=>{if($(`q${i+1}`))$(`q${i+1}`).value=a;});latestCheck=data.accepted||{};checkCount=Number(data.checkCount)||0;updateProgress();}
 function localSave(show=true){const data=collect();localStorage.setItem(storageKey(),JSON.stringify(data));if(show)status('Saved on this device.');return data;}
 function status(msg,error=false){$('saveStatus').textContent=msg;$('saveStatus').style.color=error?'#a32026':'';}
 function configured(){return /^https:\/\/script\.google\.com\/.+\/exec/.test(CONFIG.appsScriptUrl);}
@@ -69,9 +105,18 @@ async function post(action,data){if(!configured())return false;const body=new UR
 function cloudRetrieve(){return new Promise((resolve,reject)=>{if(!configured())return reject(new Error('Cloud saving is not configured.'));const cb=`worksheetCb${Date.now()}`;const script=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error('Cloud retrieval timed out.'));},10000);function cleanup(){clearTimeout(timer);delete window[cb];script.remove();}window[cb]=data=>{cleanup();data&&data.found?resolve(data.payload):reject(new Error('No cloud draft found.'));};script.onerror=()=>{cleanup();reject(new Error('Could not reach cloud storage.'));};script.src=`${CONFIG.appsScriptUrl}?action=retrieve&assignmentId=${encodeURIComponent(CONFIG.assignmentId)}&email=${encodeURIComponent($('email').value.trim().toLowerCase())}&callback=${cb}`;document.body.appendChild(script);});}
 function updateProgress(){const count=questions.filter((_,i)=>$(`q${i+1}`).value.trim()).length;$('progressText').textContent=`${count} of ${questions.length} answered`;$('progressBar').value=count;}
 function validate(){document.querySelectorAll('.field-error').forEach(e=>e.classList.remove('field-error'));const missing=[];['studentName','period','email'].forEach(id=>{if(!$(`${id}`).value.trim()){missing.push($(`${id}`));}});questions.forEach((_,i)=>{if(!$(`q${i+1}`).value.trim())missing.push($(`q${i+1}`));});if(missing.length){missing.forEach(e=>e.classList.add('field-error'));missing[0].scrollIntoView({behavior:'smooth',block:'center'});return false;}return true;}
+function identityComplete(){return['studentName','period','email'].every(id=>$(`${id}`)&&$(`${id}`).value.trim());}
+async function cloudAutoSave(){if(!cloudDirty||cloudSaveBusy||!identityComplete()||!configured())return;cloudSaveBusy=true;cloudDirty=false;try{await post('save',localSave(false));status('Work autosaved to your teacher.');}catch(e){cloudDirty=true;status('Work saved on this device; cloud autosave will retry.',true);}finally{cloudSaveBusy=false;}}
+
+function answerPasses(answer,rule){const text=String(answer||'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();const words=text.match(/[a-z0-9]+/g)||[];if(words.length<rule[0])return false;let hits=0;for(let i=2;i<rule.length;i++)if(rule[i].test(text))hits++;return hits>=rule[1];}
+function showCheckResult(index,passed,blank){const area=$(`q${index+1}`);const card=area.closest('.question-card');let note=card.querySelector('.answer-feedback');if(!note){note=document.createElement('p');note.className='answer-feedback';area.parentElement.insertAdjacentElement('afterend',note);}card.style.borderColor=blank?'#c69214':passed?'#238636':'#b42318';note.style.cssText=`margin:.55rem 0 0;font-weight:700;color:${blank?'#8a6100':passed?'#176b2c':'#a32026'}`;note.textContent=blank?'Answer this question before checking.':passed?'✓ Looks good.':'↻ Needs another look. Use the source and hint, then try again.';}
+function installCheckButton(){const save=$('saveBtn');if(!save||$('checkBtn'))return;const button=document.createElement('button');button.type='button';button.id='checkBtn';button.className=save.className;button.textContent='Check Answers';button.style.marginLeft='.5rem';save.insertAdjacentElement('afterend',button);button.addEventListener('click',checkAnswers);}
+async function checkAnswers(){const missing=['studentName','period','email'].filter(id=>!$(`${id}`).value.trim());if(missing.length){missing.forEach(id=>$(`${id}`).classList.add('field-error'));status('Enter name, period, and school email before checking answers.',true);$(`${missing[0]}`).focus();return;}latestCheck={};questions.forEach((_,i)=>{const answer=$(`q${i+1}`).value.trim();const passed=answerPasses(answer,CHECK_RULES[i]);latestCheck[`q${i+1}`]=passed;showCheckResult(i,passed,!answer);});checkCount++;const data=localSave(false);const score=Object.values(latestCheck).filter(Boolean).length;status(`Check ${checkCount}: ${score} of ${questions.length} look good. Your current work is being saved.`);try{await post('save',data);status(`Check ${checkCount}: ${score} of ${questions.length} look good. Updated work saved.`);}catch(e){status(`Check ${checkCount}: ${score} of ${questions.length} look good. Saved on this device; cloud save was unavailable.`,true);}}
 
 render();
-document.addEventListener('input',()=>{updateProgress();clearTimeout(window.autoSaveTimer);window.autoSaveTimer=setTimeout(()=>localSave(false),600);});
+installCheckButton();
+document.addEventListener('input',()=>{updateProgress();cloudDirty=true;clearTimeout(window.autoSaveTimer);window.autoSaveTimer=setTimeout(()=>localSave(false),600);clearTimeout(window.cloudAutoSaveTimer);window.cloudAutoSaveTimer=setTimeout(cloudAutoSave,12000);});
+setInterval(cloudAutoSave,60000);
 $('saveBtn').addEventListener('click',async()=>{const data=localSave();try{if(await post('save',data))status('Saved on this device and to your cloud draft.');}catch(e){status('Saved on this device; cloud save was unavailable.',true);}});
 $('retrieveBtn').addEventListener('click',async()=>{if(!$('email').value.trim()){status('Enter your school email first.',true);return;}const local=localStorage.getItem(storageKey());if(local){fill(JSON.parse(local));status('Previous work restored from this device.');return;}try{fill(await cloudRetrieve());status('Previous cloud draft restored.');}catch(e){status(e.message,true);}});
 $('assignmentForm').addEventListener('submit',async e=>{e.preventDefault();if(!validate()){$('submitStatus').textContent='Please complete every highlighted field.';return;}if(!$('honorCheck').checked)return;const data=localSave(false);$('submitBtn').disabled=true;$('submitStatus').textContent='Submitting…';try{if(configured()){await post('submit',data);localStorage.setItem(`${storageKey()}:submitted`,data.savedAt);$('submitStatus').textContent='Submitted successfully. Your teacher now has your responses.';}else{$('submitStatus').textContent='Your work is complete and saved on this device. Your teacher must configure the submission URL before it can be sent.';}}catch(err){$('submitStatus').textContent='Submission could not be sent. Your work remains saved on this device; try again.';$('submitBtn').disabled=false;}});
