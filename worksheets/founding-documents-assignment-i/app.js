@@ -1,7 +1,7 @@
 const CONFIG={
   assignmentId:'founding-documents-assignment-i',
   assignmentTitle:'Founding Documents - Assignment I',
-  appsScriptUrl:'https://script.google.com/macros/s/AKfycbx7A9pyMXnW9Zk9Ek-A05-mYdQrJB973hQTPpcfV2TLUlbJv1ZH5WEIoh9qCv8CnYTm/exec'
+  appsScriptUrl:'https://script.google.com/macros/s/AKfycbwYENmDpAXfWjD2O9-e7CCPpVZc1f6tVeFFn3wQN60BvJFS0GKdKVGHtQAVTst17Jev/exec'
 };
 
 const SOURCES={
@@ -63,7 +63,7 @@ const CHECK_RULES=[
   [5,1,/permission|approval|agreement|consent|people.{0,25}(power|authority)|governed.{0,25}(choose|agree)/],
   [5,1,/protect.{0,25}right|secure.{0,25}right|preserve.{0,25}right|life.{0,20}liberty/],
   [2,1,/state|states|individual state/],
-  [8,2,/tax|revenue|money|regulat.{0,15}(trade|commerce)|enforc|army|military|weak|debt|fund/],
+  [6,2,/tax|taxing|levy|collect.{0,12}(money|revenue)|revenue|raise.{0,12}money|money|pay.{0,12}debt|debt|fund.{0,15}(government|army|military)|army|military|defen[sc]e|enforc/],
   [8,2,/weak|tax|revenue|trade|commerce|enforc|shays|effective|strong.{0,20}(central|national)|national.{0,20}power/],
   [7,2,/freedom|liberty|right|religion|worship|jury|due process|property|habeas|speech/],
   [6,2,/religion|morality|knowledge|school|education|encourag/],
@@ -111,7 +111,7 @@ function validate(){document.querySelectorAll('.field-error').forEach(e=>e.class
 function identityComplete(){return['studentName','period','email'].every(id=>$(`${id}`)&&$(`${id}`).value.trim());}
 async function cloudAutoSave(){const data=collect();if(!cloudDirty||cloudSaveBusy||!identityComplete()||!configured()||answerCountIn(data)===0)return;cloudSaveBusy=true;cloudDirty=false;try{await post('save',localSave(false));status('Work autosaved to your teacher.');}catch(e){cloudDirty=true;status('Work saved on this device; cloud autosave will retry.',true);}finally{cloudSaveBusy=false;}}
 
-function answerPasses(answer,rule){const text=String(answer||'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();const words=text.match(/[a-z0-9]+/g)||[];if(words.length<rule[0])return false;let hits=0;for(let i=2;i<rule.length;i++)if(rule[i].test(text))hits++;return hits>=rule[1];}
+function answerPasses(answer,rule){const text=String(answer||'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();const words=text.match(/[a-z0-9]+/g)||[];if(words.length<rule[0])return false;const concepts=new Set();for(let i=2;i<rule.length;i++){const flags=rule[i].flags.includes('g')?rule[i].flags:`${rule[i].flags}g`;const matches=text.match(new RegExp(rule[i].source,flags))||[];matches.forEach(match=>concepts.add(match.toLowerCase().trim()));}return concepts.size>=rule[1];}
 function showCheckResult(index,passed,blank){const area=$(`q${index+1}`);const card=area.closest('.question-card');let note=card.querySelector('.answer-feedback');if(!note){note=document.createElement('p');note.className='answer-feedback';area.parentElement.insertAdjacentElement('afterend',note);}card.style.borderColor=blank?'#c69214':passed?'#238636':'#b42318';note.style.cssText=`margin:.55rem 0 0;font-weight:700;color:${blank?'#8a6100':passed?'#176b2c':'#a32026'}`;note.textContent=blank?'Answer this question before checking.':passed?'✓ Looks good.':'↻ Needs another look. Use the source and hint, then try again.';}
 function installCheckButton(){const save=$('saveBtn');if(!save||$('checkBtn'))return;const button=document.createElement('button');button.type='button';button.id='checkBtn';button.className=save.className;button.textContent='Check Answers';button.style.marginLeft='.5rem';save.insertAdjacentElement('afterend',button);button.addEventListener('click',checkAnswers);}
 async function checkAnswers(){const missing=['studentName','period','email'].filter(id=>!$(`${id}`).value.trim());if(missing.length){missing.forEach(id=>$(`${id}`).classList.add('field-error'));status('Enter name, period, and school email before checking answers.',true);$(`${missing[0]}`).focus();return;}latestCheck={};questions.forEach((_,i)=>{const answer=$(`q${i+1}`).value.trim();const passed=answerPasses(answer,CHECK_RULES[i]);latestCheck[`q${i+1}`]=passed;showCheckResult(i,passed,!answer);});checkCount++;const data=localSave(false);const score=Object.values(latestCheck).filter(Boolean).length;status(`Check ${checkCount}: ${score} of ${questions.length} look good. Your current work is being saved.`);try{await post('save',data);status(`Check ${checkCount}: ${score} of ${questions.length} look good. Updated work saved.`);}catch(e){status(`Check ${checkCount}: ${score} of ${questions.length} look good. Saved on this device; cloud save was unavailable.`,true);}}
