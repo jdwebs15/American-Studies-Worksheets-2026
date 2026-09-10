@@ -1,7 +1,7 @@
 const CONFIG={
   assignmentId:'founding-documents-assignment-i',
   assignmentTitle:'Founding Documents - Assignment I',
-  appsScriptUrl:'https://script.google.com/macros/s/AKfycbwxMWiKQ1bLRyF7ThdDvM5aVkBYrplMrXBdlNjFPmy6XInH5FPhj_IRd52NflNGH7rm/exec'
+  appsScriptUrl:'https://script.google.com/macros/s/AKfycbx_5OGAlYAWDEHZyRGGT71dBwd-C8PPfIMOOOPghs2W0pBtfFy8eG5kSU63f4fecLuk/exec'
 };
 
 const SOURCES={
