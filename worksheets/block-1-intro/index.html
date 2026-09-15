@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Block 1 Intro — Declaration and Northwest Ordinance</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <span class="badge">American Studies • Block 1 • CS 4–5</span>
+    <h1>Declaration and Northwest Ordinance Intro</h1>
+    <p>Use each source and its “Where to look” direction. Reach 100% mastery. Wrong attempts count, and a useful hint appears after each incorrect answer.</p>
+  </header>
+
+  <section class="panel identity" aria-labelledby="student-heading">
+    <h2 id="student-heading">Student information</h2>
+    <div class="fields">
+      <label>Full name<input id="studentName" autocomplete="name"></label>
+      <label>Class period<select id="period"><option value="">Choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+      <label>School email<input id="email" type="email" autocomplete="email"></label>
+    </div>
+    <div class="actions"><button id="loadBtn" class="secondary">Load previous work</button><button id="saveBtn" class="secondary">Save progress</button></div>
+    <p id="saveStatus" class="status" role="status"></p>
+  </section>
+
+  <section class="panel progress-panel">
+    <div><strong id="masteredCount">0</strong> of <strong id="totalCount">28</strong> mastered</div>
+    <div>Attempts: <strong id="attemptCount">0</strong></div>
+    <div class="bar"><span id="barFill"></span></div>
+  </section>
+
+  <section id="questions" aria-label="Assignment questions"></section>
+
+  <section class="panel finish">
+    <h2>Finish the assignment</h2>
+    <p>You may submit only after every question is mastered.</p>
+    <button id="submitBtn" disabled>Submit 100% mastery</button>
+    <p id="submitStatus" class="status" role="status"></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
+
