@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL="PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE",ASSIGNMENT_KEY="AS-B2-CS6-7-REVIEW-2026";
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbyMW_yopi36jQkM9rx09Qa6yPZJDGRVCLCLfQmvJZzLk0eo2ZMT2frGzYp9_LZzq40wHg/exec",ASSIGNMENT_KEY="AS-B2-CS6-7-REVIEW-2026";
 const questions=window.BLOCK_QUESTIONS;
 questions.sort(()=>Math.random()-.5);
 const state={answers:{},mastered:{},attempts:{},wrongTotal:0,firstStart:new Date().toISOString(),sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},currentQuestion:null,lastTick:Date.now(),status:"in progress"};const $=id=>document.getElementById(id),storageKey=()=>`${ASSIGNMENT_KEY}|${$('email').value.trim().toLowerCase()}`;
