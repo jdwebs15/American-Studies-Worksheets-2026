@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzoGDhUKFthVq_toN0fyVgngVGD_U90JEoW8_QKX9Ecz9eCRW15BJ6iht2B_6xVsk51/exec";
 const ASSIGNMENT_KEY = "AS-B2-CS6-7-VOCAB-2026";
 const questions = window.BLOCK_QUESTIONS;
 function q(id,cs,prompt,choices,answer,source,where,explanation){return{id,cs,prompt,choices,answer,source,where,explanation,hint:where}}
