@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOHGJjzKdU-p8EZQeylAZg18k9V-jF7uTV_eZI-YeAdP_W-U53umVb73_aNVoJv83ImA/exec";
 const ASSIGNMENT_KEY = "AS-B2-CS6-7-INTRO-2026";
 const questions = window.BLOCK_QUESTIONS;
 function q(id,cs,prompt,choices,answer,source,where,explanation){return{id,cs,prompt,choices,answer,source,where,explanation,hint:where}}
