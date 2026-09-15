@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL="PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE",ASSIGNMENT_KEY="AS-B1-CS4-5-REVIEW-2026";
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbw_9bffOl5e_enUY7UoWRsxb0OhJqy-bsN5cfAxwHTkg1Y3rT4MEJJxgGBhXejN9SQXWg/exec";
 const raw=[
 ["r01","CS 4","A reform group quotes “all men are created equal” while seeking legal protection for a group excluded in 1776. What use of the Declaration does this demonstrate?",["Applying its ideals more broadly over time","Rejecting natural rights","Defending hereditary rule","Ending consent of the governed"],0,"The Declaration's ideals later became standards reformers used to challenge unequal treatment."],
 ["r02","CS 4","A government blocks peaceful criticism and refuses citizens any role in choosing leaders. Which two Declaration principles are most directly violated?",["Individual rights and consent of the governed","Federalism and judicial review","Statehood and public education","Commerce and military alliances"],0,"The scenario violates both protected rights and the people's role as the source of legitimate authority."],
