@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_9bffOl5e_enUY7UoWRsxb0OhJqy-bsN5cfAxwHTkg1Y3rT4MEJJxgGBhXejN9SQXWg/exec";
 const ASSIGNMENT_KEY = "AS-B1-CS4-5-INTRO-2026";
 const SOURCE_DECLARATION = "https://www.archives.gov/founding-docs/declaration-transcript";
 const SOURCE_NW = "https://www.archives.gov/milestone-documents/northwest-ordinance";
