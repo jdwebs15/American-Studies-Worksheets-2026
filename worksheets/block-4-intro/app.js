@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbz_N40FGUxCgJBfpIUtR3CgC0nRfKFI1KdqalcKRtj_zK2rZcIIGReS9MEwDSODnsAn_Q/exec";
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxsemmwRlVONU7h3pU2Ou70T8GKkVPFY5syHSrZp7MpiQCTj7WtZvaurgdFZmtcGP6a/exec";
 const questions=window.BLOCK_QUESTIONS;
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
