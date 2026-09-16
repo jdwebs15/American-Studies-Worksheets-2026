@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL="PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbyzpuCY264Jvp23O2ocAXl6vwHIA2u1m_Ju7UZcF_6Xa3LT3DSjfok4GSZEA_MaTW6h/exec";
 const questions=window.BLOCK_QUESTIONS;
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
