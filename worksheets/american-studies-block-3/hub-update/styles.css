@@ -1,0 +1,95 @@
+:root{
+  color-scheme:dark;
+  --bg:#07101f;
+  --bg-top:#142443;
+  --panel:#121c2f;
+  --panel-soft:#182238;
+  --card:#202a40;
+  --line:#344158;
+  --line-strong:#465774;
+  --text:#edf1fb;
+  --muted:#adb9d0;
+  --blue:#89b4ff;
+  --green:#75dca9;
+  --green-bg:#17493d;
+  --gold:#d8b85d;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 18% -5%,#1c3563 0,transparent 34%),
+    linear-gradient(180deg,var(--bg-top),var(--bg) 62%);
+  color:var(--text);
+  font-family:Inter,Arial,"Segoe UI",sans-serif;
+  line-height:1.45;
+}
+
+.wrap{width:min(1220px,calc(100% - 30px));margin:0 auto;padding:28px 0 54px}
+.hero,.intro,.featured,.cs-area{
+  background:linear-gradient(145deg,#17233b,#111b2e);
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 18px 50px #0004;
+}
+
+.hero{display:flex;align-items:center;gap:20px;padding:28px}
+.seal{
+  width:72px;height:72px;flex:0 0 72px;display:grid;place-items:center;
+  border:1px solid #58729e;border-radius:18px;background:#1b3155;
+  color:#dce8ff;font-size:1.45rem;font-weight:950;letter-spacing:.06em;
+}
+.eyebrow{color:var(--muted);font-size:.76rem;font-weight:900;letter-spacing:.14em}
+.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.35rem 0}
+.hero p{color:var(--muted);font-size:1.02rem;margin:.3rem 0}
+
+.intro{margin-top:16px;padding:18px 24px}
+.intro h2{font-size:1.25rem;margin:0 0 .2rem}
+.intro p{color:var(--muted);margin:0}
+
+.featured,.cs-area{margin-top:18px;padding:0 22px 22px}
+.section-head{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:19px 2px 15px;border-bottom:1px solid var(--line);
+  color:var(--text);font-size:1.25rem;font-weight:900;
+}
+.count{
+  border:1px solid #52617b;border-radius:999px;background:#172136;
+  color:#c2cce0;font-size:.75rem;font-weight:900;padding:6px 10px;white-space:nowrap;
+}
+
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:17px}
+.card{
+  position:relative;display:flex;flex-direction:column;min-height:205px;
+  border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#222d44,#1a2438);
+  color:var(--text);padding:20px;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.card:hover,.card:focus-visible{transform:translateY(-2px);border-color:#6179a1;box-shadow:0 14px 30px #0005;outline:none}
+.card .status{
+  position:absolute;top:15px;right:15px;border:1px solid #2d8b70;border-radius:999px;
+  background:var(--green-bg);color:#d7ffef;font-size:.68rem;font-weight:950;letter-spacing:.05em;padding:5px 9px;
+}
+.card .cs{display:block;max-width:calc(100% - 68px);color:#b4c1d8;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.card h3{font-size:1.22rem;line-height:1.2;margin:.5rem 0 .42rem;padding-right:54px}
+.card p{color:var(--muted);margin:0 0 1rem}
+.card .launch{margin-top:auto;color:var(--blue);font-weight:900}
+.card.live{border-top:2px solid #5577ad}
+
+.cs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;padding-top:16px}
+.cs-box{
+  min-height:74px;display:flex;align-items:center;gap:12px;border:1px solid var(--line);
+  border-radius:15px;background:#1b2539;padding:12px;color:var(--text);
+}
+.cs-box.active{border-color:#455978}
+.cs-num{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:11px;background:#243c66;color:#fff;font-weight:950}
+.cs-box b{display:block;line-height:1.15}
+.cs-box small{display:block;color:var(--muted);margin-top:4px;line-height:1.2}
+
+footer{color:#8f9bb1;text-align:center;font-size:.84rem;padding:24px 10px 0}
+
+@media(max-width:820px){.cs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.wrap{width:min(100% - 18px,1220px);padding-top:12px}.hero{align-items:flex-start;padding:21px}.seal{width:56px;height:56px;flex-basis:56px}.cards,.cs-grid{grid-template-columns:1fr}.featured,.cs-area{padding:0 14px 14px}.card{min-height:0}.section-head{font-size:1.05rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
