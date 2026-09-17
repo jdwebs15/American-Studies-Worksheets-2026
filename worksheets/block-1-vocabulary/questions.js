@@ -36,11 +36,31 @@ const TERMS=[
   ["CS 5","Public education","Community-supported schooling intended to spread knowledge and responsible citizenship","The Ordinance encouraged schools because knowledge was considered necessary to good government."],
   ["CS 5","Prohibition of slavery","Rule declaring slavery and involuntary servitude illegal in the Northwest Territory, except as punishment for crime","The restriction shaped the development of future states north of the Ohio River."]
 ];
+function shuffle(items){
+  const a=items.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+  return a;
+}
+function hasObviousPattern(slots){
+  if(slots.every((v,i)=>v===i%4))return true;
+  if(slots.every((v,i)=>v===3-(i%4)))return true;
+  let run=1;
+  for(let i=1;i<slots.length;i++){run=slots[i]===slots[i-1]?run+1:1;if(run>2)return true}
+  return false;
+}
+function answerSlots(){
+  const balanced=[0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3];
+  let slots;
+  do{slots=shuffle(balanced)}while(hasObviousPattern(slots));
+  return slots;
+}
 function distractors(n){return[5,11,17].map(k=>TERMS[(n+k)%TERMS.length][1])}
-window.BLOCK_QUESTIONS=TERMS.map((t,n)=>{
-  const answer=n%4,choices=distractors(n);choices.splice(answer,0,t[1]);
+const orderedTerms=shuffle(TERMS.map((term,originalIndex)=>({term,originalIndex})));
+const positions=answerSlots();
+window.BLOCK_QUESTIONS=orderedTerms.map(({term:t,originalIndex},n)=>{
+  const answer=positions[n],choices=distractors(originalIndex);choices.splice(answer,0,t[1]);
   return{
-    id:`v${String(n+1).padStart(2,"0")}`,cs:t[0],topic:`${t[0]} Vocabulary`,
+    id:`v${String(originalIndex+1).padStart(2,"0")}`,cs:t[0],topic:`${t[0]} Vocabulary`,
     prompt:`Which term matches this definition? ${t[2]}.`,choices,answer,
     source:"",where:"",
     explanation:`${t[1]} is ${t[2].charAt(0).toLowerCase()+t[2].slice(1)}. ${t[3]}`,
