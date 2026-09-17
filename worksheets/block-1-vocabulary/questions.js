@@ -40,7 +40,7 @@ function distractors(n){return[5,11,17].map(k=>TERMS[(n+k)%TERMS.length][1])}
 window.BLOCK_QUESTIONS=TERMS.map((t,n)=>{
   const answer=n%4,choices=distractors(n);choices.splice(answer,0,t[1]);
   return{
-    id:`v${String(n+1).padStart(2,"0")}`,cs:t[0],topic:t[1],
+    id:`v${String(n+1).padStart(2,"0")}`,cs:t[0],topic:`${t[0]} Vocabulary`,
     prompt:`Which term matches this definition? ${t[2]}.`,choices,answer,
     source:"",where:"",
     explanation:`${t[1]} is ${t[2].charAt(0).toLowerCase()+t[2].slice(1)}. ${t[3]}`,
