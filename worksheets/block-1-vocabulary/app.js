@@ -1,61 +1,70 @@
-const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxOkyzvD3SgH2O2VH1I5NAGU8aWANuIiqZPlJGzj5QX90DZluNZ0T9dVSNag-P_w5t9Yw/exec";
-const questions=window.BLOCK_QUESTIONS;
-const C=window.BLOCK_CONFIG;
-const $=id=>document.getElementById(id);
-const state={answers:{},mastered:{},attempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:new Date().toISOString(),sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
-let saveTimer=null,advanceTimer=null,started=false;
-
-function init(){
-  $("pageTitle").textContent=C.title;$("pageDescription").textContent=C.description;$("practiceText").textContent=C.practice;
-  $("startBtn").onclick=start;$("loadBtn").onclick=loadCloud;$("saveBtn").onclick=()=>cloudSave(true);$("resetBtn").onclick=resetAssignment;$("submitBtn").onclick=submit;$("completionResetBtn").onclick=resetAssignment;
-  ["studentName","email"].forEach(id=>$(id).addEventListener("change",restoreLocal));$("period").addEventListener("change",saveLocal);
-  document.addEventListener("visibilitychange",()=>{tick();if(document.hidden)state.tabLeaves++;state.events.push({type:document.hidden?"leave":"return",at:new Date().toISOString()})});
-  document.addEventListener("copy",()=>state.events.push({type:"copy",question:currentQuestion()?.id||"",at:new Date().toISOString()}));
-  document.addEventListener("paste",()=>state.events.push({type:"paste",question:currentQuestion()?.id||"",at:new Date().toISOString()}));
-  setInterval(()=>{tick();updateStats();if(started)saveLocal()},1000);
+(function(){
+const C={
+  assignmentKey:"AS-B1-CS4-5-VOCAB-2026",
+  title:"Block 1 Vocabulary — Declaration and Northwest Ordinance",
+  description:"CS 4–5 • Twenty-eight essential terms covering founding principles, individual rights, territorial government, and statehood.",
+  practice:"Recognize and apply the essential vocabulary of the Declaration of Independence and Northwest Ordinance."
+};
+window.BLOCK_CONFIG=C;
+const TERMS=[
+  ["CS 4","Unalienable rights","Rights every person possesses that cannot legitimately be taken away","The Declaration identifies life, liberty, and the pursuit of happiness as examples."],
+  ["CS 4","Natural rights","Rights people possess by nature rather than receiving from government","John Locke argued that people are born with fundamental rights."],
+  ["CS 4","Consent of the governed","Principle that legitimate government receives its authority from the people","Citizens authorize government and may change one that violates their rights."],
+  ["CS 4","Popular sovereignty","Principle that ultimate political authority rests with the people","The people are the original source of governmental power."],
+  ["CS 4","Equality","Principle that people possess equal rights and should receive equal treatment under law","The Declaration states that all men are created equal, even though the ideal was not fully applied in 1776."],
+  ["CS 4","Social contract","Understanding that people establish government to protect rights and agree to follow legitimate laws","Government owes protection while citizens grant it authority."],
+  ["CS 4","Limited government","Principle that governmental power is restricted by law and by the rights of the people","Officials cannot legitimately exercise unlimited authority."],
+  ["CS 4","Rule of law","Principle that laws govern citizens and public officials alike","A leader remains subject to established legal limits."],
+  ["CS 4","Grievance","Formal complaint identifying an abuse or injustice","The Declaration lists actions committed by the British king against the colonies."],
+  ["CS 4","Tyranny","Cruel or oppressive exercise of governmental power","Repeated abuses intended to establish absolute control demonstrate this condition."],
+  ["CS 4","Right of revolution","People’s authority to alter or abolish a government that persistently destroys their rights","The Declaration justifies replacing an abusive political system."],
+  ["CS 4","Civic responsibility","Obligation of citizens to participate in and protect their political community","The Declaration says people must act when government repeatedly violates rights."],
+  ["CS 4","Marginalized groups","People excluded from equal power, opportunity, or protection","Women, enslaved people, and Indigenous peoples did not initially receive the Declaration’s ideals equally."],
+  ["CS 4","Civil liberty","Freedom protected from improper governmental interference","Religious expression and personal freedom are protected against government abuse."],
+  ["CS 4","Declaration of Independence","1776 document announcing separation from Britain and explaining the principles and grievances supporting that decision","It connects natural rights, consent, equality, and the responsibility of government."],
+  ["CS 5","Northwest Ordinance","1787 law establishing government and a statehood process for the Northwest Territory","It provided civil liberties, encouraged education, restricted slavery, and promised equal statehood."],
+  ["CS 5","Northwest Territory","Region north of the Ohio River, east of the Mississippi River, and south of the Great Lakes","The Ordinance organized this western land for settlement and eventual states."],
+  ["CS 5","Territorial government","Temporary government used before a territory qualifies for statehood","An appointed governor precedes increasing representative government."],
+  ["CS 5","Statehood","Legal admission of a territory as a state in the Union","Population growth and an approved constitution move a territory toward admission."],
+  ["CS 5","Equal footing","Principle that new states enter the Union with the same legal status as existing states","Western states would not remain permanently subordinate to the original states."],
+  ["CS 5","Civil liberties","Fundamental freedoms and legal protections held by individuals","The Ordinance protected religion, jury trial, due process, and property."],
+  ["CS 5","Freedom of religion","Right to practice religious beliefs without improper government interference","The Ordinance stated that religion should not be used to deny civil rights."],
+  ["CS 5","Habeas corpus","Protection requiring government to justify a person’s detention before a court","A prisoner may challenge whether confinement is lawful."],
+  ["CS 5","Trial by jury","Right to have evidence decided by an impartial group of citizens","The Ordinance guaranteed this protection in criminal proceedings."],
+  ["CS 5","Due process","Requirement that government follow fair legal procedures before depriving a person of life, liberty, or property","Officials must use established law rather than arbitrary punishment."],
+  ["CS 5","Property rights","Legal protections for owning and using possessions and land","The Ordinance protected contracts and prohibited taking property without lawful authority."],
+  ["CS 5","Public education","Community-supported schooling intended to spread knowledge and responsible citizenship","The Ordinance encouraged schools because knowledge was considered necessary to good government."],
+  ["CS 5","Prohibition of slavery","Rule declaring slavery and involuntary servitude illegal in the Northwest Territory, except as punishment for crime","The restriction shaped the development of future states north of the Ohio River."]
+];
+function shuffle(items){
+  const a=items.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+  return a;
 }
-function student(){return{name:$("studentName").value.trim(),period:$("period").value,email:$("email").value.trim().toLowerCase()}}
-function valid(show=true){const s=student(),ok=s.name&&s.period&&/^\S+@\S+\.\S+$/.test(s.email);if(!ok&&show)$("saveStatus").textContent="Enter full name, period, and a valid school email first.";return ok}
-function storageKey(){return `${C.assignmentKey}|${student().email}`}
-function resetAssignment(){
-  if(!student().email){$("saveStatus").textContent="Enter the same school email used for this assignment, then select Reset Assignment.";return}
-  if(!confirm("Restart this assignment at Question 1 on this device? Earlier teacher records will remain in the spreadsheet."))return;
-  localStorage.removeItem(storageKey());
-  location.reload();
+function hasObviousPattern(slots){
+  if(slots.every((v,i)=>v===i%4))return true;
+  if(slots.every((v,i)=>v===3-(i%4)))return true;
+  let run=1;
+  for(let i=1;i<slots.length;i++){run=slots[i]===slots[i-1]?run+1:1;if(run>2)return true}
+  return false;
 }
-function start(){if(!valid(true))return;restoreLocal();started=true;state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
-function currentQuestion(){return questions[state.currentIndex]}
-function goToFirstUnmastered(){const i=questions.findIndex(q=>!state.mastered[q.id]);state.currentIndex=i<0?questions.length:i}
-function renderQuestion(){
-  if(state.currentIndex>=questions.length){showCompletion();return}
-  const q=currentQuestion(),n=state.currentIndex+1,letters=["A","B","C","D"];
-  $("questionCard").innerHTML=`<h2>${escapeHtml(q.topic||q.cs)}</h2><p class="prompt">${escapeHtml(q.prompt)}</p><div class="choices">${q.choices.map((choice,i)=>`<button class="choice" data-choice="${i}"><span class="choice-letter">${letters[i]}.</span><span>${escapeHtml(choice)}</span></button>`).join("")}</div><div id="feedback" class="feedback" role="status"></div>${q.source?`<div class="source-box"><a href="${q.source}" target="_blank" rel="noopener">Open supporting source â</a><p><strong>Where to look:</strong> ${escapeHtml(q.where)}</p></div>`:""}`;
-  document.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>answer(Number(b.dataset.choice),b));
-  updateStats();window.scrollTo({top:Math.max(0,$("workspace").offsetTop-12),behavior:"smooth"});
+function answerSlots(){
+  const balanced=[0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3];
+  let slots;
+  do{slots=shuffle(balanced)}while(hasObviousPattern(slots));
+  return slots;
 }
-function answer(choice,button){
-  if(advanceTimer)return;const q=currentQuestion(),f=$("feedback");state.answers[q.id]=choice;state.attempts[q.id]=(state.attempts[q.id]||0)+1;
-  if(choice===q.answer){
-    state.correctChecks++;state.mastered[q.id]=true;button.classList.add("correct");document.querySelectorAll("[data-choice]").forEach(b=>b.disabled=true);
-    f.className="feedback good";f.innerHTML=`<strong>Correct.</strong> ${escapeHtml(q.explanation)}<span class="advance-note">Advancing to the next questionâ¦</span>`;
-    state.events.push({type:"correct",question:q.id,attempt:state.attempts[q.id],at:new Date().toISOString()});saveLocal();updateStats();queueCloudSave();
-    advanceTimer=setTimeout(()=>{advanceTimer=null;state.currentIndex++;while(state.currentIndex<questions.length&&state.mastered[questions[state.currentIndex].id])state.currentIndex++;renderQuestion()},1800);
-  }else{
-    state.wrongTotal++;button.classList.add("wrong");setTimeout(()=>button.classList.remove("wrong"),550);f.className="feedback bad";f.innerHTML=`<strong>Not yet.</strong> ${escapeHtml(q.hint)}`;
-    state.events.push({type:"wrong",question:q.id,choice,at:new Date().toISOString()});saveLocal();updateStats();queueCloudSave();
-  }
-}
-function updateStats(){const mastered=questions.filter(q=>state.mastered[q.id]).length,attempts=Object.values(state.attempts).reduce((a,b)=>a+(Number(b)||0),0),accuracy=attempts?Math.round(mastered/attempts*100):100;$("progressStat").textContent=`${Math.min(mastered+1,questions.length)} / ${questions.length}`;$("accuracyStat").textContent=`${accuracy}%`;$("runtimeStat").textContent=formatTime(state.activeSeconds)}
-function formatTime(s){s=Math.max(0,Math.floor(s||0));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;return h?`${h}:${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`:`${m}:${String(sec).padStart(2,"0")}`}
-function tick(){const now=Date.now(),sec=Math.min(15,Math.max(0,(now-state.lastTick)/1000));if(started){if(document.hidden)state.awaySeconds+=sec;else state.activeSeconds+=sec;const q=currentQuestion();if(q)state.questionSeconds[q.id]=(state.questionSeconds[q.id]||0)+sec}state.lastTick=now}
-function showCompletion(){started=false;state.status="completed";state.completedAt=state.completedAt||new Date().toISOString();$("workspace").classList.add("hidden");$("completion").classList.remove("hidden");const attempts=Object.values(state.attempts).reduce((a,b)=>a+(Number(b)||0),0),accuracy=attempts?Math.round(questions.length/attempts*100):100;$("completionSummary").textContent=`${questions.length} of ${questions.length} mastered â¢ ${attempts} attempts â¢ ${accuracy}% accuracy â¢ ${formatTime(state.activeSeconds)} active time.`;saveLocal();queueCloudSave()}
-function payload(){tick();const mastered=questions.filter(q=>state.mastered[q.id]).length;return{assignmentKey:C.assignmentKey,course:"American Studies",student:student(),state:{...state},answers:{...state.answers},mastered:{...state.mastered},score:mastered,total:questions.length,percent:Math.round(mastered/questions.length*100),answerCount:Object.keys(state.answers).length,wrongAttempts:state.wrongTotal,updatedAt:new Date().toISOString()}}
-function saveLocal(){if(!student().email)return;localStorage.setItem(storageKey(),JSON.stringify(payload()))}
-function restoreLocal(){if(!student().email)return;const raw=localStorage.getItem(storageKey());if(!raw)return;try{mergeDraft(JSON.parse(raw));$("saveStatus").textContent="Saved work restored on this device."}catch{}}
-function mergeDraft(d){if(!d)return;const s=d.state||d;Object.assign(state.answers,d.answers||s.answers||{});Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);state.firstStart=s.firstStart||state.firstStart;state.events=[...(state.events||[]),...(s.events||[])].slice(-500);state.questionSeconds=Object.assign({},s.questionSeconds||{},state.questionSeconds||{});goToFirstUnmastered()}
-function queueCloudSave(){clearTimeout(saveTimer);saveTimer=setTimeout(()=>cloudSave(false),750)}
-async function cloudSave(manual){if(!valid(false)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(manual)$("saveStatus").textContent=APPS_SCRIPT_URL.startsWith("PASTE_")?"Saved on this device. Add the Apps Script web-app URL for teacher saving.":"Enter complete student information first.";return}saveLocal();try{await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams({action:"save",payload:JSON.stringify(payload())})});$("saveStatus").textContent="Saved on this device and sent to your teacher draft."}catch{$("saveStatus").textContent="Saved on this device. Teacher save could not be confirmed."}}
-function loadCloud(){if(!valid(true)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(APPS_SCRIPT_URL.startsWith("PASTE_"))$("saveStatus").textContent="Add the Apps Script web-app URL before loading teacher drafts.";return}const cb=`load_${Date.now()}`,script=document.createElement("script");window[cb]=r=>{try{if(r&&r.found)mergeDraft(r.payload);saveLocal();$("saveStatus").textContent=r&&r.found?"Previous work merged safely.":"No teacher draft was found."}finally{delete window[cb];script.remove()}};script.src=`${APPS_SCRIPT_URL}?action=load&assignmentKey=${encodeURIComponent(C.assignmentKey)}&email=${encodeURIComponent(student().email)}&callback=${cb}`;script.onerror=()=>{$("saveStatus").textContent="Could not load the teacher draft.";delete window[cb];script.remove()};document.body.appendChild(script)}
-async function submit(){if(!valid(true))return;state.status="submitted";state.submittedAt=new Date().toISOString();await cloudSave(true);$("submitStatus").textContent="Submitted successfully at 100% mastery.";$("submitBtn").disabled=true}
-function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-init();
+function distractors(n){return[5,11,17].map(k=>TERMS[(n+k)%TERMS.length][1])}
+const orderedTerms=shuffle(TERMS.map((term,originalIndex)=>({term,originalIndex})));
+const positions=answerSlots();
+window.BLOCK_QUESTIONS=orderedTerms.map(({term:t,originalIndex},n)=>{
+  const answer=positions[n],choices=distractors(originalIndex);choices.splice(answer,0,t[1]);
+  return{
+    id:`v${String(originalIndex+1).padStart(2,"0")}`,cs:t[0],topic:`${t[0]} Vocabulary`,
+    prompt:`Which term matches this definition? ${t[2]}.`,choices,answer,
+    source:"",where:"",
+    explanation:`${t[1]} is ${t[2].charAt(0).toLowerCase()+t[2].slice(1)}. ${t[3]}`,
+    hint:`Focus on the phrase that distinguishes this term from the other founding-document concepts.`
+  };
+});
+})();
