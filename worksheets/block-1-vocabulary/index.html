@@ -31,7 +31,7 @@
       <label>Class period<select id="period"><option value="">Choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
       <label>School email<input id="email" type="email" autocomplete="email" placeholder="name@school.org"></label>
     </div>
-    <div class="actions"><button id="startBtn">Start / Continue</button><button id="loadBtn" class="secondary">Load previous work</button><button id="saveBtn" class="secondary">Save progress</button></div>
+    <div class="actions"><button id="startBtn">Start / Continue</button><button id="loadBtn" class="secondary">Load previous work</button><button id="saveBtn" class="secondary">Save progress</button><button id="resetBtn" class="danger">Reset Assignment</button></div>
     <p id="saveStatus" class="status" role="status"></p>
   </section>
 
@@ -63,6 +63,7 @@
     <h2>Assignment mastery complete</h2>
     <p id="completionSummary"></p>
     <button id="submitBtn">Submit completed assignment</button>
+    <button id="completionResetBtn" class="danger">Restart from Question 1</button>
     <p id="submitStatus" class="status" role="status"></p>
   </section>
 </main>
