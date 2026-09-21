@@ -4,7 +4,27 @@ const maps={intro:{key:"AS-CS8-13-INTRO-2026",title:"Industrialization and Progr
 const cfg=maps[mode];window.BLOCK_CONFIG={assignmentKey:cfg.key,title:cfg.title,description:cfg.desc,practice:cfg.practice};
 function shuffled(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function positions(n){let p=[];for(let i=0;i<n;i++)p.push(i%4);do{p=shuffled(p)}while(p.some((v,i)=>i>1&&p[i-1]===v&&p[i-2]===v));return p}
-function build(rows){const ordered=shuffled(rows),pos=positions(rows.length);return ordered.map((r,n)=>{const choices=shuffled(r[5]),answer=pos[n];choices.splice(answer,0,r[4]);return{id:r[0],cs:r[1],topic:r[2],prompt:r[3],choices,answer,source:r[6]||"",where:r[7]||"",explanation:r[8],hint:r[9]}})}
+const sourceByCs={
+  "CS 8":"https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/rise-of-industrial-america-1876-1900/overview/",
+  "CS 9":"https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/rise-of-industrial-america-1876-1900/overview/",
+  "CS 10":"https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/rise-of-industrial-america-1876-1900/overview/",
+  "CS 11":"https://www.archives.gov/milestone-documents/dawes-act",
+  "CS 12":"https://en.wikipedia.org/wiki/Jim_Crow_laws",
+  "CS 13":"https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/progressive-era-to-new-era-1900-1929/overview/"
+};
+const sourceById={
+  i38:"https://www.fsis.usda.gov/inspection/inspection-programs/inspection-meat-products",
+  i42:"https://www.usda.gov/sustainability/conservation/land-conservation"
+};
+const whereByCs={
+  "CS 8":"Read the overview sections on industrial growth, technology, railroads, and urbanization.",
+  "CS 9":"Read the overview sections describing workers, unions, industrial conflict, and government responses.",
+  "CS 10":"Read the overview sections connecting immigration, industrial employment, and rapidly growing cities.",
+  "CS 11":"Read the historical note explaining reservations, assimilation, allotment, and American Indian land loss.",
+  "CS 12":"Use the contents or page search for Reconstruction, segregation, Plessy, voting restrictions, or racial violence.",
+  "CS 13":"Read the overview sections on Progressive reform, muckrakers, regulation, political reform, and conservation."
+};
+function build(rows){const ordered=shuffled(rows),pos=positions(rows.length);return ordered.map((r,n)=>{const choices=shuffled(r[5]),answer=pos[n];choices.splice(answer,0,r[4]);return{id:r[0],cs:r[1],topic:r[2],prompt:r[3],choices,answer,source:sourceById[r[0]]||sourceByCs[r[1]]||r[6]||"",where:r[0]==="i38"?"Read the section explaining the 1906 Federal Meat Inspection Act and federal inspection requirements.":r[0]==="i42"?"Read how conservation protects natural resources while allowing productive, sustainable use.":whereByCs[r[1]]||r[7]||"",explanation:r[8],hint:r[9]}})}
 const intro=[
 ["i01","CS 8","Industrial Growth","Which combination most accelerated American industrial growth after 1877?","New inventions, investment capital, natural resources, and improved transportation",["Higher tariffs, declining cities, reduced immigration, and fewer factories","Small workshops, limited credit, scarce resources, and regional isolation","Falling demand, shrinking rail networks, farm labor, and hand production"],"https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/rise-of-industrial-america-1876-1900/overview/","Read about resources, inventions, capital, and railroads.","Industrial growth resulted from several mutually reinforcing advantages.","Look for the choice combining technology, resources, capital, and transportation."],
 ["i02","CS 8","Railroads","How did railroad expansion help create a national economy?","It linked producers and raw materials with consumers in distant markets",["It concentrated most trade within isolated communities and local markets","It shifted manufacturing away from cities and toward subsistence farms","It reduced the speed and volume at which businesses could ship products"],"https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/rise-of-industrial-america-1876-1900/overview/","Find how rail networks connected regions.","Railroads connected regional economies into a national market.","Consider how manufacturers reached customers far away."],
