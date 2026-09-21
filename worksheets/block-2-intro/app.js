@@ -1,7 +1,7 @@
 // ================================================================
 // PASTE THIS WORKSHEET'S GOOGLE APPS SCRIPT /exec WEB ADDRESS BELOW
 // ================================================================
-const APPS_SCRIPT_URL="PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbz_N40FGUxCgJBfpIUtR3CgC0nRfKFI1KdqalcKRtj_zK2rZcIIGReS9MEwDSODnsAn_Q/exec";
 const questions=window.BLOCK_QUESTIONS;
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
