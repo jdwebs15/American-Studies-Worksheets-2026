@@ -2,12 +2,18 @@ const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbyzpuCY264Jvp23O2
 const questions=window.BLOCK_QUESTIONS;
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
-const state={answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:new Date().toISOString(),sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
+const QUESTION_VERSION="20261001";
+const state={questionVersion:QUESTION_VERSION,answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:new Date().toISOString(),sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
 let saveTimer=null,advanceTimer=null,started=false;
+function setSaveStatus(message){$("saveStatus").textContent=message;$("workSaveStatus").textContent=message;}
+function resetAssignment(){if(!confirm("Start this assignment over? This begins a new attempt and clears this device’s answers."))return;clearTimeout(saveTimer);clearTimeout(advanceTimer);const info=student();localStorage.setItem(C.assignmentKey+"|student",JSON.stringify(info));localStorage.removeItem(storageKey());localStorage.setItem(storageKey()+"|resetAt",new Date().toISOString());location.reload();}
 
 function init(){
   $("pageTitle").textContent=C.title;$("pageDescription").textContent=C.description;$("practiceText").textContent=C.practice;
-  const reset=document.createElement("button");reset.type="button";reset.textContent="Start over";reset.onclick=()=>{if(!confirm("Start this assignment over? Your answers on this device will be cleared."))return;clearTimeout(saveTimer);clearTimeout(advanceTimer);localStorage.removeItem(storageKey());localStorage.setItem(storageKey()+"|resetAt",new Date().toISOString());location.reload()};$("saveBtn").insertAdjacentElement("afterend",reset);
+  const info=JSON.parse(localStorage.getItem(C.assignmentKey+"|student")||"null");if(info){$("studentName").value=info.name||"";$("email").value=info.email||"";$("period").value=info.period||"";}
+  const reset=document.createElement("button");reset.type="button";reset.textContent="Start over";reset.onclick=resetAssignment;$("saveBtn").insertAdjacentElement("afterend",reset);
+  $("workResetBtn").onclick=resetAssignment;$("workSaveBtn").onclick=()=>cloudSave(true);
+  setInterval(()=>{if(started)queueCloudSave()},30000);
   $("startBtn").onclick=start;$("loadBtn").onclick=loadCloud;$("saveBtn").onclick=()=>cloudSave(true);$("submitBtn").onclick=submit;
   ["studentName","email"].forEach(id=>$(id).addEventListener("change",restoreLocal));$("period").addEventListener("change",saveLocal);
   document.addEventListener("visibilitychange",()=>{tick();if(document.hidden)state.tabLeaves++;state.events.push({type:document.hidden?"leave":"return",at:new Date().toISOString()})});
@@ -18,13 +24,13 @@ function init(){
 function student(){return{name:$("studentName").value.trim(),period:$("period").value,email:$("email").value.trim().toLowerCase()}}
 function valid(show=true){const s=student(),ok=s.name&&s.period&&/^\S+@\S+\.\S+$/.test(s.email);if(!ok&&show)$("saveStatus").textContent="Enter full name, period, and a valid school email first.";return ok}
 function storageKey(){return `${C.assignmentKey}|${student().email}`}
-function start(){if(!valid(true))return;restoreLocal();started=true;state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
+function start(){if(!valid(true))return;restoreLocal();started=true;localStorage.setItem(C.assignmentKey+"|student",JSON.stringify(student()));$("workControls").classList.remove("hidden");state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
 function currentQuestion(){return questions[state.currentIndex]}
 function goToFirstUnmastered(){const i=questions.findIndex(q=>!state.mastered[q.id]);state.currentIndex=i<0?questions.length:i}
 function renderQuestion(){
   if(state.currentIndex>=questions.length){showCompletion();return}
   const q=currentQuestion(),n=state.currentIndex+1,letters=["A","B","C","D"];
-  $("questionCard").innerHTML=`<h2>${escapeHtml(q.topic||q.cs)}</h2><p class="prompt">${escapeHtml(q.prompt)}</p><div class="choices">${q.choices.map((choice,i)=>`<button class="choice" data-choice="${i}"><span class="choice-letter">${letters[i]}.</span><span>${escapeHtml(choice)}</span></button>`).join("")}</div><div id="feedback" class="feedback" role="status"></div>${q.source?`<div class="source-box"><a href="${q.source}" target="_blank" rel="noopener">Open supporting source ↗</a><p><strong>Where to look:</strong> ${escapeHtml(q.where)}</p></div>`:""}`;
+  $("questionCard").innerHTML=`<h2>${escapeHtml(`Question ${n} • ${q.cs}`)}</h2><p class="prompt">${escapeHtml(q.prompt)}</p><div class="choices">${q.choices.map((choice,i)=>`<button class="choice" data-choice="${i}"><span class="choice-letter">${letters[i]}.</span><span>${escapeHtml(choice)}</span></button>`).join("")}</div><div id="feedback" class="feedback" role="status"></div>${q.source?`<div class="source-box"><a href="${q.source}" target="_blank" rel="noopener">Open supporting source ↗</a><p><strong>Where to look:</strong> ${escapeHtml(q.where)}</p></div>`:""}`;
   document.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>answer(Number(b.dataset.choice),b));
   updateStats();window.scrollTo({top:Math.max(0,$("workspace").offsetTop-12),behavior:"smooth"});
 }
@@ -47,10 +53,39 @@ function showCompletion(){started=false;state.status="completed";state.completed
 function payload(){tick();const mastered=questions.filter(q=>state.mastered[q.id]).length;return{assignmentKey:C.assignmentKey,course:"American Studies",student:student(),state:{...state},answers:{...state.answers},mastered:{...state.mastered},score:mastered,total:questions.length,percent:Math.round(mastered/questions.length*100),answerCount:Object.keys(state.answers).length,wrongAttempts:state.wrongTotal,firstAttemptCorrect:Object.values(state.firstAttempts).filter(Boolean).length,updatedAt:new Date().toISOString()}}
 function saveLocal(){if(!student().email)return;localStorage.setItem(storageKey(),JSON.stringify(payload()))}
 function restoreLocal(){if(!student().email)return;const raw=localStorage.getItem(storageKey());if(!raw)return;try{mergeDraft(JSON.parse(raw));$("saveStatus").textContent="Saved work restored on this device."}catch{}}
-function mergeDraft(d){if(!d)return;const resetAt=localStorage.getItem(storageKey()+"|resetAt");if(resetAt&&Date.parse(d.updatedAt||0)<Date.parse(resetAt))return;const s=d.state||d;Object.assign(state.answers,d.answers||s.answers||{});Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);Object.assign(state.firstAttempts,s.firstAttempts||{});state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);state.firstStart=s.firstStart||state.firstStart;state.events=[...(state.events||[]),...(s.events||[])].slice(-500);state.questionSeconds=Object.assign({},s.questionSeconds||{},state.questionSeconds||{});goToFirstUnmastered()}
+function mergeDraft(d){if(!d)return;const resetAt=localStorage.getItem(storageKey()+"|resetAt");if(resetAt&&Date.parse(d.updatedAt||0)<Date.parse(resetAt))return;const s=d.state||d;let restoredAnswers={...(d.answers||s.answers||{})};if(s.questionVersion!==QUESTION_VERSION){for(const q of questions){if(restoredAnswers[q.id]!==undefined)restoredAnswers[q.id]=q.legacyChoiceMap[restoredAnswers[q.id]]??restoredAnswers[q.id];}}Object.assign(state.answers,restoredAnswers);Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);Object.assign(state.firstAttempts,s.firstAttempts||{});state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);state.firstStart=s.firstStart||state.firstStart;state.events=[...new Map([...(state.events||[]),...(s.events||[])].map(e=>[JSON.stringify(e),e])).values()].slice(-500);state.questionSeconds=Object.assign({},s.questionSeconds||{},state.questionSeconds||{});goToFirstUnmastered()}
 function queueCloudSave(){clearTimeout(saveTimer);saveTimer=setTimeout(()=>cloudSave(false),750)}
-async function cloudSave(manual){if(!valid(false)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(manual)$("saveStatus").textContent=APPS_SCRIPT_URL.startsWith("PASTE_")?"Saved on this device. Add the Apps Script web-app URL for teacher saving.":"Enter complete student information first.";return}saveLocal();try{await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams({action:"save",payload:JSON.stringify(payload())})});$("saveStatus").textContent="Saved on this device and sent to your teacher draft."}catch{$("saveStatus").textContent="Saved on this device. Teacher save could not be confirmed."}}
-function loadCloud(){if(!valid(true)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(APPS_SCRIPT_URL.startsWith("PASTE_"))$("saveStatus").textContent="Add the Apps Script web-app URL before loading teacher drafts.";return}const cb=`load_${Date.now()}`,script=document.createElement("script");window[cb]=r=>{try{if(r&&r.found)mergeDraft(r.payload);saveLocal();$("saveStatus").textContent=r&&r.found?"Previous work merged safely.":"No teacher draft was found."}finally{delete window[cb];script.remove()}};script.src=`${APPS_SCRIPT_URL}?action=load&assignmentKey=${encodeURIComponent(C.assignmentKey)}&email=${encodeURIComponent(student().email)}&callback=${cb}`;script.onerror=()=>{$("saveStatus").textContent="Could not load the teacher draft.";delete window[cb];script.remove()};document.body.appendChild(script)}
-async function submit(){if(!valid(true))return;state.status="submitted";state.submittedAt=new Date().toISOString();await cloudSave(true);$("submitStatus").textContent="Submitted successfully at 100% mastery.";$("submitBtn").disabled=true}
+async function cloudSave(manual){
+  if(!valid(false)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(manual)setSaveStatus("Enter complete student information first. Teacher saving requires the configured web-app URL.");return false;}
+  saveLocal();
+  try{
+    await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams({action:"save",payload:JSON.stringify(payload())})});
+    setSaveStatus("Saved on this device. Sent to your teacher; spreadsheet receipt is not confirmed.");return true;
+  }catch{setSaveStatus("Saved on this device. Teacher save failed—use Save progress to retry.");return false;}
+}
+function loadCloud(){
+  if(!valid(true)||APPS_SCRIPT_URL.startsWith("PASTE_"))return;
+  const cb=`load_${Date.now()}`,script=document.createElement("script");
+  setSaveStatus("Loading previous work…");
+  let timer;
+  const cleanup=()=>{clearTimeout(timer);delete window[cb];script.remove();};
+  window[cb]=r=>{try{if(r&&r.found)mergeDraft(r.payload);saveLocal();setSaveStatus(r&&r.found?"Previous work merged safely.":"No teacher draft was found.");}finally{cleanup();}};
+  script.src=`${APPS_SCRIPT_URL}?action=load&assignmentKey=${encodeURIComponent(C.assignmentKey)}&email=${encodeURIComponent(student().email)}&callback=${cb}`;
+  script.onerror=()=>{setSaveStatus("Could not load the teacher draft. Work on this device is still available.");cleanup();};
+  timer=setTimeout(()=>{setSaveStatus("Teacher draft request timed out. Retry Load previous work.");cleanup();},15000);
+  document.body.appendChild(script);
+}
+async function submit(){
+  if(!valid(true))return;
+  if(questions.some(q=>!state.mastered[q.id])){$("submitStatus").textContent="Correct every question before submitting.";return;}
+  $("submitBtn").disabled=true;$("submitStatus").textContent="Sending completed assignment…";
+  const oldStatus=state.status;const oldSubmittedAt=state.submittedAt;
+  state.status="submitted";state.submittedAt=new Date().toISOString();
+  const sent=await cloudSave(true);
+  if(sent){$("submitStatus").textContent=`${student().name} • Period ${student().period} • 32/32 mastered. Submission sent; your teacher must verify spreadsheet receipt.`;$("submitBtn").textContent="Send submission again";}
+  else{state.status=oldStatus;state.submittedAt=oldSubmittedAt;saveLocal();$("submitStatus").textContent="Completed on this device. Submission could not be sent. Please retry.";}
+  $("submitBtn").disabled=false;
+}
+
 function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 init();
