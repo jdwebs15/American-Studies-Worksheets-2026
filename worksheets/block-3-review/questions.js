@@ -24,7 +24,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 0,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/mahan",
+    "where": "Use Ctrl+F for “industrial.” Read the paragraph about domestic production and the search for buyers abroad."
   },
   {
     "id": "r02",
@@ -45,7 +47,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 3,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/mahan",
+    "where": "Use Ctrl+F for “fuel.” Read the paragraph identifying the ships and overseas bases needed to support trade."
   },
   {
     "id": "r03",
@@ -66,7 +70,9 @@ window.BLOCK_QUESTIONS=[
       "1": 1,
       "2": 3,
       "3": 2
-    }
+    },
+    "source": "https://www.nps.gov/articles/upload/01-Essay-1-Imperialism-and-Migration.pdf#page=3",
+    "where": "PDF page 3 (printed page 17): study the cartoon and its caption. Compare the labels on the opposing flags."
   },
   {
     "id": "r04",
@@ -87,7 +93,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 2,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/mahan",
+    "where": "Read the paragraphs about markets and naval bases. Combine those economic and strategic motives with the cultural justification examined in Question 3."
   },
   {
     "id": "r05",
@@ -108,7 +116,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 3,
       "3": 0
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "Near the end, find the discussion of Hawaii. Identify the economic and geographic arguments offered by annexation supporters."
   },
   {
     "id": "r06",
@@ -129,7 +139,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 1,
       "3": 2
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/yellow-journalism",
+    "where": "Use Ctrl+F for “Maine.” Read the explosion coverage and concluding discussion of how dramatic reporting influenced public opinion."
   },
   {
     "id": "r07",
@@ -150,7 +162,9 @@ window.BLOCK_QUESTIONS=[
       "1": 1,
       "2": 0,
       "3": 2
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "Read the opening paragraph. Identify the territories acquired from Spain and locate the ones in the Pacific."
   },
   {
     "id": "r08",
@@ -171,7 +185,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 0,
       "3": 2
-    }
+    },
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "Read the first two paragraphs. Compare U.S. influence in the Caribbean and Asia before and after victory."
   },
   {
     "id": "r09",
@@ -192,7 +208,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 1,
       "3": 2
-    }
+    },
+    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
+    "where": "Read the opening paragraph and the paragraph describing intervention. Connect diplomatic pressure with the possibility of military force."
   },
   {
     "id": "r10",
@@ -213,7 +231,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 0,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
+    "where": "Read the final two paragraphs of the article, before the table of contents. Identify the regional role claimed by the United States."
   },
   {
     "id": "r11",
@@ -234,7 +254,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 0,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "Read the opening paragraph, then the final paragraph of the article. Identify the developments cited in the decision for war."
   },
   {
     "id": "r12",
@@ -255,7 +277,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 3,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "Use Ctrl+F for “recover.” Read the description of the German proposal to Mexico and its implications for the United States."
   },
   {
     "id": "r13",
@@ -276,7 +300,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 1,
       "3": 2
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "Use Ctrl+F for “seamen.” Read the nearby paragraphs about attacks on U.S. shipping and the consequences for Americans."
   },
   {
     "id": "r14",
@@ -297,7 +323,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 2,
       "3": 0
-    }
+    },
+    "source": "https://www.nps.gov/wwim/wwioverview.htm",
+    "where": "Use Ctrl+F for “equip.” Read about building the army, then follow the account of American reinforcements and the 1918 offensives."
   },
   {
     "id": "r15",
@@ -318,7 +346,9 @@ window.BLOCK_QUESTIONS=[
       "1": 1,
       "2": 2,
       "3": 3
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/dawes",
+    "where": "Read the paragraph about European wartime devastation and the section “U.S. Loans to Allied Powers.” Compare European needs with American financial resources."
   },
   {
     "id": "r16",
@@ -339,7 +369,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 2,
       "3": 1
-    }
+    },
+    "source": "https://www.nps.gov/wwim/wwioverview.htm",
+    "where": "Read the account of American reinforcement and victory in 1918. Place that contribution after earlier naval expansion and the 1898 victory studied in Questions 1–8."
   },
   {
     "id": "r17",
@@ -360,7 +392,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 3,
       "3": 0
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/fourteen-points",
+    "where": "Find the paragraph describing the general peace principles. Ask what shared problem the diplomatic, trade, and armament proposals addressed."
   },
   {
     "id": "r18",
@@ -381,7 +415,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 1,
       "3": 3
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/fourteen-points",
+    "where": "Use Ctrl+F for “self-determination.” Read the paragraph connecting political status and colonial claims to Wilson’s peace principles."
   },
   {
     "id": "r19",
@@ -402,7 +438,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 3,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "Use Ctrl+F for “sanctions.” Read the paragraph about protecting member states and responding to threats to peace."
   },
   {
     "id": "r20",
@@ -423,7 +461,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 1,
       "3": 0
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/paris-peace",
+    "where": "Use Ctrl+F for “punitive.” Compare the penalties imposed on Germany with Wilson’s support for a peacekeeping organization earlier in the article."
   },
   {
     "id": "r21",
@@ -444,7 +484,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 1,
       "3": 3
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/fourteen-points",
+    "where": "Read the paragraph explaining the fourteenth point. Identify the proposed institution and the protection it was intended to provide."
   },
   {
     "id": "r22",
@@ -465,7 +507,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 1,
       "3": 2
-    }
+    },
+    "source": "https://www.archives.gov/founding-docs/constitution-transcript",
+    "where": "Scroll to Article II, Section 2. Read the treaty clause and identify the other branch required to participate."
   },
   {
     "id": "r23",
@@ -486,7 +530,9 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 1,
       "3": 0
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/paris-peace",
+    "where": "Use Ctrl+F for “Article 10.” Read the Senate objections and identify the authority opponents believed was at risk."
   },
   {
     "id": "r24",
@@ -507,7 +553,9 @@ window.BLOCK_QUESTIONS=[
       "1": 1,
       "2": 2,
       "3": 3
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "Use Ctrl+F for “compromise.” Read the concluding paragraphs about the Wilson–Lodge conflict and the Senate outcome."
   },
   {
     "id": "r25",
@@ -528,7 +576,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 0,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "Read the opening paragraph and the article’s conclusion. Identify the U.S. membership decision after the treaty debate."
   },
   {
     "id": "r26",
@@ -549,7 +599,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 3,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/foreword",
+    "where": "Read the two main paragraphs beneath the introduction. Distinguish avoiding long-term commitments from ending all foreign involvement."
   },
   {
     "id": "r27",
@@ -570,7 +622,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 1,
       "3": 3
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/naval-conference",
+    "where": "Read “The Four-Power Treaty,” especially its final paragraph. Compare consultation during a crisis with an obligation to fight."
   },
   {
     "id": "r28",
@@ -591,7 +645,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 1,
       "3": 2
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/kellogg",
+    "where": "Use Ctrl+F for “enforce.” Read the final paragraph of the article and identify the practical limitation on the agreement."
   },
   {
     "id": "r29",
@@ -612,7 +668,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 3,
       "3": 0
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/foreword",
+    "where": "Read the opening two paragraphs together. Compare reluctance toward commitments with continued investment and peace negotiations."
   },
   {
     "id": "r30",
@@ -633,7 +691,9 @@ window.BLOCK_QUESTIONS=[
       "1": 2,
       "2": 1,
       "3": 3
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/foreword",
+    "where": "Read the first two paragraphs. Look for the tension between avoiding another war and pursuing interests abroad."
   },
   {
     "id": "r31",
@@ -654,7 +714,9 @@ window.BLOCK_QUESTIONS=[
       "1": 0,
       "2": 3,
       "3": 1
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/kellogg",
+    "where": "Read the opening paragraph, then the discussion of American ratification. Identify participation in peace diplomacy despite limits on military commitments."
   },
   {
     "id": "r32",
@@ -675,6 +737,8 @@ window.BLOCK_QUESTIONS=[
       "1": 3,
       "2": 1,
       "3": 0
-    }
+    },
+    "source": "https://history.state.gov/milestones/1921-1936/foreword",
+    "where": "Read both main opening paragraphs. Connect the postwar policy described here with the growth of American power reviewed in Questions 1–16."
   }
 ];
