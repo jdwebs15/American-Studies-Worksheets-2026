@@ -1,9 +1,9 @@
 const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxENUBm5pd966tRn1g9R7HH0zSXcEI10LGLivzQzN0pn6b0ytZHJdV8HU9i0ihYtHJW/exec";
-const questions=window.BLOCK_QUESTIONS;
+const questions=window.BLOCK_QUESTIONS.slice();
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
 const QUESTION_VERSION="20261002-B4-40";
-const state={questionVersion:QUESTION_VERSION,answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:null,sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
+const state={questionVersion:QUESTION_VERSION,questionOrder:[],choiceOrders:{},answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:null,sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
 let saveTimer=null,advanceTimer=null,started=false;
 function setSaveStatus(message){$("saveStatus").textContent=message;$("workSaveStatus").textContent=message;}
 function resetAssignment(){if(!confirm("Start this assignment over? This begins a new attempt and clears this device’s answers."))return;clearTimeout(saveTimer);clearTimeout(advanceTimer);const info=student();localStorage.setItem(C.assignmentKey+"|student",JSON.stringify(info));localStorage.removeItem(storageKey());localStorage.setItem(storageKey()+"|resetAt",new Date().toISOString());location.reload();}
@@ -24,13 +24,14 @@ function init(){
 function student(){return{name:$("studentName").value.trim(),period:$("period").value,email:$("email").value.trim().toLowerCase()}}
 function valid(show=true){const s=student(),ok=s.name&&s.period&&/^\S+@\S+\.\S+$/.test(s.email);if(!ok&&show)$("saveStatus").textContent="Enter full name, period, and a valid school email first.";return ok}
 function storageKey(){return `${C.assignmentKey}|${student().email}`}
-function start(){if(!valid(true))return;restoreLocal();state.firstStart=state.firstStart||new Date().toISOString();state.lastTick=Date.now();started=true;localStorage.setItem(C.assignmentKey+"|student",JSON.stringify(student()));$("workControls").classList.remove("hidden");state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
+function start(){if(!valid(true))return;restoreLocal();ensureShuffle();state.firstStart=state.firstStart||new Date().toISOString();state.lastTick=Date.now();started=true;localStorage.setItem(C.assignmentKey+"|student",JSON.stringify(student()));$("workControls").classList.remove("hidden");state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
 function currentQuestion(){return questions[state.currentIndex]}
 function goToFirstUnmastered(){const i=questions.findIndex(q=>!state.mastered[q.id]);state.currentIndex=i<0?questions.length:i}
 function renderQuestion(){
+  if(state.currentIndex<questions.length){$("completion").classList.add("hidden");if(started)$("workspace").classList.remove("hidden");}
   if(state.currentIndex>=questions.length){showCompletion();return}
-  const q=currentQuestion(),n=state.currentIndex+1,letters=["A","B","C","D"];
-  $("questionCard").innerHTML=`<h2>${escapeHtml(`Question ${n} • ${q.cs}`)}</h2>${q.reading?`<details class="source-box" open><summary><strong>Reading: ${escapeHtml(q.readingTitle)}</strong></summary><p>${escapeHtml(q.reading)}</p></details>`:""}<p class="prompt">${escapeHtml(q.prompt)}</p><div class="choices">${q.choices.map((choice,i)=>`<button class="choice" data-choice="${i}"><span class="choice-letter">${letters[i]}.</span><span>${escapeHtml(choice)}</span></button>`).join("")}</div><div id="feedback" class="feedback" role="status"></div>${q.source?`<div class="source-box"><a href="${q.source}" target="_blank" rel="noopener">Open supporting source ↗</a><p><strong>Where to look:</strong> ${escapeHtml(q.where)}</p></div>`:""}`;
+  ensureShuffle();const q=currentQuestion(),n=state.currentIndex+1,letters=["A","B","C","D"];
+  $("questionCard").innerHTML=`<h2>${escapeHtml(`Question ${n} • ${q.cs}`)}</h2>${q.reading?`<details class="source-box" open><summary><strong>Reading: ${escapeHtml(q.readingTitle)}</strong></summary><p>${escapeHtml(q.reading)}</p></details>`:""}<p class="prompt">${escapeHtml(q.prompt)}</p><div class="choices">${state.choiceOrders[q.id].map((originalIndex,displayIndex)=>`<button class="choice" data-choice="${originalIndex}"><span class="choice-letter">${letters[displayIndex]}.</span><span>${escapeHtml(q.choices[originalIndex])}</span></button>`).join("")}</div><div id="feedback" class="feedback" role="status"></div>${q.source?`<div class="source-box"><a href="${q.source}" target="_blank" rel="noopener">Open supporting source ↗</a><p><strong>Where to look:</strong> ${escapeHtml(q.where)}</p></div>`:""}`;
   document.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>answer(Number(b.dataset.choice),b));
   updateStats();window.scrollTo({top:Math.max(0,$("workspace").offsetTop-12),behavior:"smooth"});
 }
@@ -53,7 +54,7 @@ function showCompletion(){tick();started=false;state.status="completed";state.co
 function payload(){tick();const mastered=questions.filter(q=>state.mastered[q.id]).length;return{assignmentKey:C.assignmentKey,course:"American Studies",student:student(),state:{...state},answers:{...state.answers},mastered:{...state.mastered},score:mastered,total:questions.length,percent:Math.round(mastered/questions.length*100),answerCount:Object.keys(state.answers).length,totalAttempts:Object.values(state.attempts).reduce((a,b)=>a+(Number(b)||0),0),wrongAttempts:state.wrongTotal,firstAttemptCorrect:Object.values(state.firstAttempts).filter(Boolean).length,updatedAt:new Date().toISOString()}}
 function saveLocal(){if(!student().email)return;localStorage.setItem(storageKey(),JSON.stringify(payload()))}
 function restoreLocal(){if(!student().email)return;const raw=localStorage.getItem(storageKey());if(!raw)return;try{mergeDraft(JSON.parse(raw));$("saveStatus").textContent="Saved work restored on this device."}catch{}}
-function mergeDraft(d){if(!d)return;const resetAt=localStorage.getItem(storageKey()+"|resetAt");if(resetAt&&Date.parse(d.updatedAt||0)<Date.parse(resetAt))return;const s=d.state||d;let restoredAnswers={...(d.answers||s.answers||{})};if(s.questionVersion!==QUESTION_VERSION){for(const q of questions){if(restoredAnswers[q.id]!==undefined)restoredAnswers[q.id]=q.legacyChoiceMap[restoredAnswers[q.id]]??restoredAnswers[q.id];}}Object.assign(state.answers,restoredAnswers);Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);Object.assign(state.firstAttempts,s.firstAttempts||{});state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);const starts=[state.firstStart,s.firstStart].filter(v=>v&&Number.isFinite(Date.parse(v)));state.firstStart=starts.length?starts.reduce((a,b)=>Date.parse(a)<Date.parse(b)?a:b):null;state.completedAt=state.completedAt||s.completedAt||null;state.submittedAt=state.submittedAt||s.submittedAt||null;state.events=[...new Map([...(state.events||[]),...(s.events||[])].map(e=>[JSON.stringify(e),e])).values()].slice(-500);state.questionSeconds=Object.assign({},s.questionSeconds||{},state.questionSeconds||{});goToFirstUnmastered()}
+function mergeDraft(d){if(!d)return;const resetAt=localStorage.getItem(storageKey()+"|resetAt");if(resetAt&&Date.parse(d.updatedAt||0)<Date.parse(resetAt))return;const s=d.state||d;ensureShuffle(s);let restoredAnswers={...(d.answers||s.answers||{})};if(s.questionVersion!==QUESTION_VERSION){for(const q of questions){if(restoredAnswers[q.id]!==undefined)restoredAnswers[q.id]=q.legacyChoiceMap?.[restoredAnswers[q.id]]??restoredAnswers[q.id];}}Object.assign(state.answers,restoredAnswers);Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);Object.assign(state.firstAttempts,s.firstAttempts||{});state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);const starts=[state.firstStart,s.firstStart].filter(v=>v&&Number.isFinite(Date.parse(v)));state.firstStart=starts.length?starts.reduce((a,b)=>Date.parse(a)<Date.parse(b)?a:b):null;state.completedAt=state.completedAt||s.completedAt||null;state.submittedAt=state.submittedAt||s.submittedAt||null;state.events=[...new Map([...(state.events||[]),...(s.events||[])].map(e=>[JSON.stringify(e),e])).values()].slice(-500);state.questionSeconds=Object.assign({},s.questionSeconds||{},state.questionSeconds||{});goToFirstUnmastered()}
 function queueCloudSave(){clearTimeout(saveTimer);saveTimer=setTimeout(()=>cloudSave(false),750)}
 async function cloudSave(manual){
   if(!valid(false)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(manual)setSaveStatus("Enter complete student information first. Teacher saving requires the configured web-app URL.");return false;}
@@ -69,7 +70,7 @@ function loadCloud(){
   setSaveStatus("Loading previous work…");
   let timer;
   const cleanup=()=>{clearTimeout(timer);delete window[cb];script.remove();};
-  window[cb]=r=>{try{if(r&&r.found)mergeDraft(r.payload);if(started)renderQuestion();saveLocal();setSaveStatus(r&&r.found?"Previous work merged safely.":"No teacher draft was found.");}finally{cleanup();}};
+  window[cb]=r=>{try{if(r&&r.found)mergeDraft(r.payload);if(started){clearTimeout(advanceTimer);advanceTimer=null;goToFirstUnmastered();renderQuestion();}saveLocal();setSaveStatus(r&&r.found?"Previous work merged safely.":"No teacher draft was found.");}finally{cleanup();}};
   script.src=`${APPS_SCRIPT_URL}?action=load&assignmentKey=${encodeURIComponent(C.assignmentKey)}&email=${encodeURIComponent(student().email)}&callback=${cb}`;
   script.onerror=()=>{setSaveStatus("Could not load the teacher draft. Work on this device is still available.");cleanup();};
   timer=setTimeout(()=>{setSaveStatus("Teacher draft request timed out. Retry Load previous work.");cleanup();},15000);
@@ -100,4 +101,23 @@ function renderTicketDetails(){
   detail.replaceChildren();
   const rows=[`Student: ${student().name}`,`Period: ${student().period}`,`Started: ${ticketTimestamp(state.firstStart)}`,`Stopped: ${ticketTimestamp(state.completedAt)}`];
   for(const row of rows){const line=document.createElement("p");line.textContent=row;detail.appendChild(line);}
+}
+
+// Save original question IDs and original choice indexes, regardless of display order.
+function shuffled(values){const a=values.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function validPermutation(order,expected){return Array.isArray(order)&&order.length===expected.length&&new Set(order).size===expected.length&&order.every(v=>expected.includes(v));}
+function ensureShuffle(saved){
+  const ids=window.BLOCK_QUESTIONS.map(q=>q.id);
+  if(saved&&validPermutation(saved.questionOrder,ids))state.questionOrder=saved.questionOrder.slice();
+  if(!validPermutation(state.questionOrder,ids))state.questionOrder=shuffled(ids);
+  const bank=new Map(window.BLOCK_QUESTIONS.map(q=>[q.id,q]));
+  questions.splice(0,questions.length,...state.questionOrder.map(id=>bank.get(id)));
+  const positions=shuffled(questions.map((_,i)=>i%4));
+  for(let i=0;i<questions.length;i++){
+    const q=questions[i],indexes=q.choices.map((_,j)=>j);
+    if(saved&&validPermutation(saved.choiceOrders?.[q.id],indexes))state.choiceOrders[q.id]=saved.choiceOrders[q.id].slice();
+    if(!validPermutation(state.choiceOrders[q.id],indexes)){
+      const order=shuffled(indexes.filter(j=>j!==q.answer));order.splice(positions[i],0,q.answer);state.choiceOrders[q.id]=order;
+    }
+  }
 }
