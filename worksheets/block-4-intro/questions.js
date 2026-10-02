@@ -1,102 +1,991 @@
-(function(){
-const LOC="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/progressive-era-to-new-era-1900-1929/",MIG="https://www.archives.gov/research/african-americans/migrations/great-migration",RED="https://www.loc.gov/classroom-materials/immigration/polish-russian/political-and-social-issues/red-scare/",HAR="https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",S19="https://www.archives.gov/milestone-documents/19th-amendment",PRO="https://www.archives.gov/research/investigations/prohibition";
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const maps={intro:{key:"AS-B4-CS16-18-INTRO-2026",title:"Block 4 Intro — Unrest and the Roaring Twenties",desc:"CS 16–18 • Postwar intolerance, the Red Scare, technological change, the Harlem Renaissance, suffrage, and Prohibition.",practice:"Discover the forces that produced unrest and dramatic social and cultural change after World War I."},vocabulary:{key:"AS-B4-CS16-18-VOCAB-2026",title:"Block 4 Vocabulary — Unrest and the Roaring Twenties",desc:"CS 16–18 • Twenty-eight essential terms for postwar unrest and 1920s transformation.",practice:"Build the vocabulary needed to explain nativism, the Red Scare, mass culture, the Harlem Renaissance, suffrage, and Prohibition."},review:{key:"AS-B4-CS16-18-REVIEW-2026",title:"Block 4 Comprehensive Review — Unrest and the Roaring Twenties",desc:"CS 16–18 • Thirty-two application, cause-and-effect, comparison, and synthesis questions.",practice:"Apply the complete story of postwar tensions, new technology, mass culture, African American expression, women's political participation, and Prohibition."}};
-const cfg=maps[mode];window.BLOCK_CONFIG={assignmentKey:cfg.key,title:cfg.title,description:cfg.desc,practice:cfg.practice};
-function build(rows){return rows.map((r,n)=>{const choices=r[5].slice(),answer=n%4;choices.splice(answer,0,r[4]);return{id:r[0],cs:r[1],topic:r[2],prompt:r[3],choices,answer,source:r[6]||"",where:r[7]||"",explanation:r[8],hint:r[9]}})}
-const intro=[
-["i01","CS 16","Great Migration","Why did many African Americans move from the South to northern cities?","To escape discrimination and pursue industrial jobs",["To strengthen Jim Crow laws","To enter western reservations","To avoid factory employment"],MIG,"Read the overview of push and pull factors.","Southern racism pushed migrants while northern jobs pulled them.","Look for one push factor and one pull factor."],
-["i02","CS 16","Racial Tension","How did the Great Migration sometimes increase northern racial tension?","Competition grew over jobs, housing, and public services",["Jim Crow immediately disappeared","Cities became less diverse","Industrial employment ended"],MIG,"Find the effects of rapid migration on northern communities.","Rapid population change intensified competition and discrimination.","Consider scarce urban resources."],
-["i03","CS 16","Jim Crow","What were Jim Crow laws?","Laws enforcing racial segregation and discrimination",["Federal workplace-safety rules","Treaties limiting naval weapons","Programs supporting jazz musicians"],LOC,"Look for the legal system African Americans sought to escape.","Jim Crow institutionalized racial separation and unequal treatment.","These laws operated mainly in the South."],
-["i04","CS 16","Postwar Violence","Which evidence reveals severe racial intolerance after World War I?","Lynchings, race riots, and threats of violence",["Peaceful integration everywhere","Abolition of the Klan","Universal voting protection"],LOC,"Read about racial conflict and the revival of extremist organizations.","Violence and intimidation exposed persistent racial hatred.","Choose the answer involving coercion and racial terror."],
-["i05","CS 16","Ku Klux Klan","Why did the revived Klan attract support in the 1920s?","It exploited racial, religious, and anti-immigrant prejudice",["It promoted cultural pluralism","It defended labor unions","It opposed all segregation"],LOC,"Look for groups targeted by nativist movements.","The revived Klan targeted African Americans, immigrants, Catholics, and Jews.","Focus on intolerance toward several groups."],
-["i06","CS 16","Immigration Quotas","What was the purpose of 1920s immigration quotas?","To restrict immigration, especially from southern and eastern Europe",["To guarantee open borders","To increase refugee admissions","To end citizenship"],LOC,"Find laws reflecting postwar nativism.","Quota laws used national origins to reduce immigration from disfavored regions.","Connect quotas with nativism."],
-["i07","CS 16","Nativism","What is nativism?","Preference for native-born people and hostility toward immigrants",["Support for international government","Celebration of all cultural differences","Movement from farms to cities"],LOC,"Read about anti-immigrant attitudes after the war.","Nativism treats immigrants as threats to jobs, culture, or security.","The root word is native."],
-["i08","CS 16","First Red Scare","What caused the First Red Scare?","Fear of communist revolution, labor unrest, and political violence",["Confidence in Russian democracy","Declining concern about strikes","The end of immigration"],RED,"Read how revolution in Russia and U.S. labor conflict shaped fear.","Events abroad and unrest at home produced exaggerated fears of radical subversion.","Connect Russia, strikes, and fear of revolution."],
-["i09","CS 16","Civil Liberties","How did the Red Scare threaten civil liberties?","People were arrested or deported based on suspected radicalism",["Every defendant received expanded protections","Congress ended deportation","Government ignored political beliefs"],RED,"Look for government raids, arrests, and deportations.","Fear encouraged broad actions against immigrants and political dissenters.","Which response punishes suspicion rather than proven crime?"],
-["i10","CS 17","Assembly Line","How did the assembly line change manufacturing?","It increased output by dividing production into repeated tasks",["It restored handcraft production","It eliminated mass production","It made goods more expensive"],LOC,"Find innovations that made production faster and cheaper.","Specialized repeated tasks enabled efficient mass production.","Think speed, repetition, and volume."],
-["i11","CS 17","Automobile","How did widespread automobile ownership change American life?","It increased mobility and reshaped work, leisure, and settlement",["It ended road construction","It reduced travel","It eliminated suburbs"],LOC,"Read about transportation and changing daily life.","Cars expanded where people could live, work, shop, and travel.","Focus on mobility."],
-["i12","CS 17","Commercial Aircraft","What did commercial aircraft begin to change?","The speed and reach of passenger and mail transportation",["The constitutional amendment process","Agricultural segregation","Prohibition enforcement"],LOC,"Look for transportation innovations of the 1920s.","Aircraft shortened long-distance travel and communication time.","This is a transportation effect."],
-["i13","CS 17","Talking Pictures","Why were talking motion pictures culturally important?","They helped create a shared national mass culture",["They ended entertainment","They isolated regions","They replaced newspapers entirely"],LOC,"Find new communications and entertainment technologies.","Nationally distributed films exposed large audiences to common stories and styles.","Think shared entertainment."],
-["i14","CS 17","Radio","How did commercial radio transform communication?","It delivered news, advertising, music, and entertainment to mass audiences",["It limited information to local elites","It ended consumer advertising","It prevented national culture"],LOC,"Read about mass communication in the new era.","Radio connected distant listeners to common broadcasts and markets.","Which medium enters many homes at once?"],
-["i15","CS 17","Print Culture","What was one effect of wider newspaper and magazine circulation?","Ideas, advertising, and popular culture spread more rapidly",["Literacy became illegal","National news disappeared","Consumer markets shrank"],LOC,"Look for communication changes and consumer culture.","Mass print helped build national audiences and consumer demand.","More circulation means wider distribution."],
-["i16","CS 17","Standard of Living","Why did the standard of living improve for many Americans?","Industrial productivity and new consumer goods increased",["Factories stopped producing","Transportation collapsed","Electricity disappeared"],LOC,"Connect industrial growth with household goods and purchasing.","Productivity and rising access to technologies improved material life for many, though unevenly.","Look for greater access to goods."],
-["i17","CS 17","Social Tension","Why did new technology sometimes increase cultural tension?","Rapid change challenged traditional values and social norms",["Everyone welcomed identical changes","Technology ended generational differences","Urban life disappeared"],LOC,"Read how modern culture conflicted with older expectations.","Modern lifestyles and media unsettled people defending traditional norms.","Change can create conflict with tradition."],
-["i18","CS 18","Harlem Renaissance","What was the Harlem Renaissance?","A flourishing of African American art, literature, and music",["A federal farm program","A nativist political movement","A naval arms treaty"],HAR,"Read the overview of the New Negro movement.","Black artists and writers celebrated culture and examined racism and urban life.","This movement centered cultural expression."],
-["i19","CS 18","Cultural Pride","How did Harlem Renaissance artists promote social change?","They built racial pride and increased awareness of injustice",["They defended segregation","They discouraged artistic expression","They supported immigration quotas"],HAR,"Look for the goals and influence of New Negro artists.","Creative work asserted dignity and confronted discrimination.","Art can change how people see identity and injustice."],
-["i20","CS 18","Jazz","Why is jazz important to this period?","It flourished as a major African American contribution to American culture",["It was banned nationwide","It began as European military policy","It ended mass entertainment"],HAR,"Find music associated with Harlem and Black urban culture.","Jazz became an influential and distinctly American musical form.","Connect Harlem with music."],
-["i21","CS 18","Women's Suffrage","What did the 19th Amendment accomplish?","It prohibited denying the vote on account of sex",["It established Prohibition","It created immigration quotas","It ended poll taxes nationwide"],S19,"Read the amendment's exact language.","The amendment constitutionally protected women's voting rights.","This amendment concerns sex and voting."],
-["i22","CS 18","Women's Participation","What followed expanded women's suffrage?","Women's political and economic participation increased",["Women withdrew from public life","Voting ended social debate","Employment became illegal"],S19,"Read about the amendment's broader democratic significance.","Voting rights strengthened women's public influence, though inequality remained.","Consider what political rights enable."],
-["i23","CS 18","Prohibition","What did national Prohibition ban?","The manufacture, sale, and transportation of alcoholic beverages",["All private consumption of food","Women's voting","Jazz performance"],PRO,"Read the basic provisions of the 18th Amendment era.","Prohibition targeted the alcoholic-beverage industry.","Which product was legally restricted?"],
-["i24","CS 18","Speakeasies","What was a speakeasy?","An illegal establishment that sold alcohol during Prohibition",["A women's voting organization","A radio network","A federal bank"],PRO,"Look for methods used to evade Prohibition.","Speakeasies served prohibited alcohol outside legal enforcement.","Think hidden nightclub."],
-["i25","CS 18","Organized Crime","How did Prohibition contribute to organized crime?","Illegal alcohol markets created profitable opportunities for criminal groups",["It removed demand for alcohol","It ended smuggling","It eliminated corruption"],PRO,"Read about enforcement problems and illegal markets.","Banning a desired product created black markets controlled by criminal organizations.","Connect demand with an illegal supply network."],
-["i26","CS 18","Mixed Results","Why is Prohibition described as having mixed results?","Alcohol consumption fell in some places, but evasion and crime grew",["It was universally obeyed","It had no supporters","It immediately ended all drinking"],PRO,"Compare reform goals with enforcement outcomes.","The policy achieved some reduction but lacked broad compliance and created unintended effects.","Look for both an intended and unintended result."],
-["i27","CS 16–18","Cause and Effect","Which chain best connects migration and cultural change?","Great Migration → growth of Black urban communities → Harlem Renaissance",["Prohibition → western settlement → Jim Crow","Radio → immigration quotas → lynching","Suffrage → Red Scare → assembly line"],MIG,"Connect population movement with cultural centers in northern cities.","Migration helped create the audiences and communities that supported a cultural flowering.","Put movement before cultural development."],
-["i28","CS 16–18","Big Picture","Which statement best summarizes the 1920s?","Prosperity and innovation coexisted with intolerance and conflict",["Technology ended social tension","Every group shared prosperity equally","The nation experienced no cultural change"],LOC,"Compare modern growth with nativism, racism, and the Red Scare.","The decade combined rapid modernization with serious exclusion and unrest.","Choose the answer showing contrast." ]
+window.BLOCK_CONFIG={"assignmentKey": "AS-B4-CS16-18-INTRO-2026", "title": "Block 4 Intro \u2014 Unrest and the Roaring Twenties", "description": "CS 16\u201318 \u2022 40 questions on postwar unrest, technology, the Harlem Renaissance, suffrage, and Prohibition.", "practice": "Discover the forces that produced unrest and dramatic social and cultural change after World War I."};
+window.BLOCK_QUESTIONS=[
+  {
+    "id": "i01",
+    "cs": "CS 16",
+    "topic": "Great Migration",
+    "prompt": "Why did many African Americans move from the South to northern cities?",
+    "choices": [
+      "To gain voting rights already equally protected in the North",
+      "To replace industrial work with ownership of southern farms",
+      "To escape discrimination and pursue industrial jobs",
+      "To join a federal program guaranteeing integrated neighborhoods"
+    ],
+    "answer": 2,
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Southern racism pushed migrants while northern jobs pulled them.",
+    "hint": "Look for one push factor and one pull factor.",
+    "legacyChoiceMap": [
+      2,
+      0,
+      1,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion."
+  },
+  {
+    "id": "i02",
+    "cs": "CS 16",
+    "topic": "Racial Tension",
+    "prompt": "How did the Great Migration sometimes increase northern racial tension?",
+    "choices": [
+      "Competition grew over jobs, housing, and public services",
+      "Uniform hiring bans",
+      "Migrants brought southern segregation statutes into federal law",
+      "Northern cities offered equal housing access but fewer factory jobs"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Rapid population change intensified competition and discrimination.",
+    "hint": "Consider scarce urban resources.",
+    "legacyChoiceMap": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion."
+  },
+  {
+    "id": "i03",
+    "cs": "CS 16",
+    "topic": "Jim Crow",
+    "prompt": "What were Jim Crow laws?",
+    "choices": [
+      "Public access protections",
+      "Union membership laws",
+      "Rules restricting immigration by national origin",
+      "Laws enforcing racial segregation and discrimination"
+    ],
+    "answer": 3,
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Jim Crow institutionalized racial separation and unequal treatment.",
+    "hint": "These laws operated mainly in the South.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion."
+  },
+  {
+    "id": "i04",
+    "cs": "CS 16",
+    "topic": "Postwar Violence",
+    "prompt": "Which evidence reveals severe racial intolerance after World War I?",
+    "choices": [
+      "Declining racial attacks",
+      "Lynchings, race riots, and threats of violence",
+      "Guaranteed equal city treatment",
+      "Consistent voting protection"
+    ],
+    "answer": 1,
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Violence and intimidation exposed persistent racial hatred.",
+    "hint": "Choose the answer involving coercion and racial terror.",
+    "legacyChoiceMap": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion."
+  },
+  {
+    "id": "i05",
+    "cs": "CS 16",
+    "topic": "Ku Klux Klan",
+    "prompt": "Why did the revived Klan attract support in the 1920s?",
+    "choices": [
+      "It linked opposition to immigration with support for religious equality",
+      "It exploited racial, religious, and anti-immigrant prejudice",
+      "It organized industrial workers across racial and religious divisions",
+      "It attracted supporters by defending equal citizenship for newcomers"
+    ],
+    "answer": 1,
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "The revived Klan targeted African Americans, immigrants, Catholics, and Jews.",
+    "hint": "Focus on intolerance toward several groups.",
+    "legacyChoiceMap": [
+      0,
+      2,
+      3,
+      1
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion."
+  },
+  {
+    "id": "i06",
+    "cs": "CS 16",
+    "topic": "Immigration Quotas",
+    "prompt": "What was the purpose of 1920s immigration quotas?",
+    "choices": [
+      "To allocate factory workers",
+      "To admit newcomers according to their employment qualifications",
+      "To encourage family immigration from recently industrializing regions",
+      "To restrict immigration, especially from southern and eastern Europe"
+    ],
+    "answer": 3,
+    "source": "https://history.state.gov/milestones/1921-1936/immigration-act",
+    "where": "Read the on-page section \u201cNativism and the First Red Scare\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Quota laws used national origins to reduce immigration from disfavored regions.",
+    "hint": "Connect quotas with nativism.",
+    "legacyChoiceMap": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "readingTitle": "Nativism and the First Red Scare",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime."
+  },
+  {
+    "id": "i07",
+    "cs": "CS 16",
+    "topic": "Nativism",
+    "prompt": "What is nativism?",
+    "choices": [
+      "Preference for native-born people and hostility toward immigrants",
+      "Favoring domestic products",
+      "Preferring rural traditions",
+      "Supporting citizenship rights for recently arrived immigrants"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1921-1936/immigration-act",
+    "where": "Read the on-page section \u201cNativism and the First Red Scare\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Nativism treats immigrants as threats to jobs, culture, or security.",
+    "hint": "The root word is native.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Nativism and the First Red Scare",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime."
+  },
+  {
+    "id": "i08",
+    "cs": "CS 16",
+    "topic": "First Red Scare",
+    "prompt": "What caused the First Red Scare?",
+    "choices": [
+      "Fear of radio networks",
+      "Fear of women voters",
+      "Fear of communist revolution, labor unrest, and political violence",
+      "Fear of alcohol smuggling"
+    ],
+    "answer": 2,
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the on-page section \u201cNativism and the First Red Scare\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Events abroad and unrest at home produced exaggerated fears of radical subversion.",
+    "hint": "Connect Russia, strikes, and fear of revolution.",
+    "legacyChoiceMap": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "readingTitle": "Nativism and the First Red Scare",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime."
+  },
+  {
+    "id": "i09",
+    "cs": "CS 16",
+    "topic": "Civil Liberties",
+    "prompt": "How did the Red Scare threaten civil liberties?",
+    "choices": [
+      "Officials expanded hearings before investigating political beliefs",
+      "Authorities limited raids to people already convicted in court",
+      "Congress required citizenship for anyone accused of radicalism",
+      "People were arrested or deported based on suspected radicalism"
+    ],
+    "answer": 3,
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the on-page section \u201cNativism and the First Red Scare\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Fear encouraged broad actions against immigrants and political dissenters.",
+    "hint": "Which response punishes suspicion rather than proven crime?",
+    "legacyChoiceMap": [
+      0,
+      3,
+      1,
+      2
+    ],
+    "readingTitle": "Nativism and the First Red Scare",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime."
+  },
+  {
+    "id": "i10",
+    "cs": "CS 17",
+    "topic": "Assembly Line",
+    "prompt": "How did the assembly line change manufacturing?",
+    "choices": [
+      "Whole-product craftsmanship",
+      "It increased output by dividing production into repeated tasks",
+      "It shifted production from factories to independent home workshops",
+      "It reduced output so manufacturers could maintain higher prices"
+    ],
+    "answer": 1,
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Specialized repeated tasks enabled efficient mass production.",
+    "hint": "Think speed, repetition, and volume.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i11",
+    "cs": "CS 17",
+    "topic": "Automobile",
+    "prompt": "How did widespread automobile ownership change American life?",
+    "choices": [
+      "Rail-centered tourism",
+      "Train-dependent commuting",
+      "It increased mobility and reshaped work, leisure, and settlement",
+      "It reduced demand for roadside businesses by limiting travel routes"
+    ],
+    "answer": 2,
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Cars expanded where people could live, work, shop, and travel.",
+    "hint": "Focus on mobility.",
+    "legacyChoiceMap": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i12",
+    "cs": "CS 17",
+    "topic": "Commercial Aircraft",
+    "prompt": "What did commercial aircraft begin to change?",
+    "choices": [
+      "The speed and reach of passenger and mail transportation",
+      "Faster auto assembly",
+      "Wider home broadcasting",
+      "Local retail distribution"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Aircraft shortened long-distance travel and communication time.",
+    "hint": "This is a transportation effect.",
+    "legacyChoiceMap": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i13",
+    "cs": "CS 17",
+    "topic": "Talking Pictures",
+    "prompt": "Why were talking motion pictures culturally important?",
+    "choices": [
+      "They restored silent films as the main form of urban entertainment",
+      "They restricted popular entertainment to audiences in one region",
+      "They helped create a shared national mass culture",
+      "They separated movie storytelling from national fashions and slang"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Nationally distributed films exposed large audiences to common stories and styles.",
+    "hint": "Think shared entertainment.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      3,
+      2
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i14",
+    "cs": "CS 17",
+    "topic": "Radio",
+    "prompt": "How did commercial radio transform communication?",
+    "choices": [
+      "It delivered news, advertising, music, and entertainment to mass audiences",
+      "Printed news delivery",
+      "It connected factory stations to speed automobile assembly",
+      "It moved advertising mainly from home audiences to theater screens"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Radio connected distant listeners to common broadcasts and markets.",
+    "hint": "Which medium enters many homes at once?",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i15",
+    "cs": "CS 17",
+    "topic": "Print Culture",
+    "prompt": "What was one effect of wider newspaper and magazine circulation?",
+    "choices": [
+      "Smaller advertising markets",
+      "Ideas, advertising, and popular culture spread more rapidly",
+      "Ideas confined to coastal cities",
+      "Newspapers increasingly served only people with specialized training"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Mass print helped build national audiences and consumer demand.",
+    "hint": "More circulation means wider distribution.",
+    "legacyChoiceMap": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i16",
+    "cs": "CS 17",
+    "topic": "Standard of Living",
+    "prompt": "Why did the standard of living improve for many Americans?",
+    "choices": [
+      "Scarcity of household goods",
+      "Equal income for all groups",
+      "Lower demand for electricity",
+      "Industrial productivity and new consumer goods increased"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Productivity and rising access to technologies improved material life for many, though unevenly.",
+    "hint": "Look for greater access to goods.",
+    "legacyChoiceMap": [
+      0,
+      3,
+      1,
+      2
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i17",
+    "cs": "CS 17",
+    "topic": "Social Tension",
+    "prompt": "Why did new technology sometimes increase cultural tension?",
+    "choices": [
+      "Rapid change challenged traditional values and social norms",
+      "National broadcasts strengthened agreement about changing youth behavior",
+      "Consumer products insulated rural communities from outside influences",
+      "Industrial growth removed conflicts over religion and social behavior"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Modern lifestyles and media unsettled people defending traditional norms.",
+    "hint": "Change can create conflict with tradition.",
+    "legacyChoiceMap": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations."
+  },
+  {
+    "id": "i18",
+    "cs": "CS 18",
+    "topic": "Harlem Renaissance",
+    "prompt": "What was the Harlem Renaissance?",
+    "choices": [
+      "Immigration restriction campaign",
+      "A reform movement focused on eliminating alcohol consumption",
+      "A flourishing of African American art, literature, and music",
+      "An industrial system for producing standardized consumer goods"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Black artists and writers celebrated culture and examined racism and urban life.",
+    "hint": "This movement centered cultural expression.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting."
+  },
+  {
+    "id": "i19",
+    "cs": "CS 18",
+    "topic": "Cultural Pride",
+    "prompt": "How did Harlem Renaissance artists promote social change?",
+    "choices": [
+      "Presenting racism as resolved",
+      "Avoiding discussion of injustice",
+      "They replaced political organizing with support for segregated institutions",
+      "They built racial pride and increased awareness of injustice"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Creative work asserted dignity and confronted discrimination.",
+    "hint": "Art can change how people see identity and injustice.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      3,
+      2
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting."
+  },
+  {
+    "id": "i20",
+    "cs": "CS 18",
+    "topic": "Jazz",
+    "prompt": "Why is jazz important to this period?",
+    "choices": [
+      "Mainly European influence",
+      "It flourished as a major African American contribution to American culture",
+      "Replacing radio with speeches",
+      "Restoring religious music"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Jazz became an influential and distinctly American musical form.",
+    "hint": "Connect Harlem with music.",
+    "legacyChoiceMap": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting."
+  },
+  {
+    "id": "i21",
+    "cs": "CS 18",
+    "topic": "Women's Suffrage",
+    "prompt": "What did the 19th Amendment accomplish?",
+    "choices": [
+      "It prohibited voting restrictions based on race or previous enslavement",
+      "It abolished poll taxes used to restrict voting in federal elections",
+      "It lowered the voting age for citizens in every state",
+      "It prohibited denying the vote on account of sex"
+    ],
+    "answer": 3,
+    "source": "https://www.archives.gov/milestone-documents/19th-amendment",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "The amendment constitutionally protected women's voting rights.",
+    "hint": "This amendment concerns sex and voting.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting."
+  },
+  {
+    "id": "i22",
+    "cs": "CS 18",
+    "topic": "Women's Participation",
+    "prompt": "What followed expanded women's suffrage?",
+    "choices": [
+      "Guaranteed equal pay",
+      "Women's political and economic participation increased",
+      "New voters ended disagreements over women\u2019s roles in public life",
+      "Voting rights automatically removed barriers facing Black women"
+    ],
+    "answer": 1,
+    "source": "https://www.archives.gov/milestone-documents/19th-amendment",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Voting rights strengthened women's public influence, though inequality remained.",
+    "hint": "Consider what political rights enable.",
+    "legacyChoiceMap": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting."
+  },
+  {
+    "id": "i23",
+    "cs": "CS 18",
+    "topic": "Prohibition",
+    "prompt": "What did national Prohibition ban?",
+    "choices": [
+      "The manufacture, sale, and transportation of alcoholic beverages",
+      "All private possession",
+      "Alcohol advertising alone",
+      "The public consumption of alcohol while permitting licensed manufacture"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Prohibition targeted the alcoholic-beverage industry.",
+    "hint": "Which product was legally restricted?",
+    "legacyChoiceMap": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict."
+  },
+  {
+    "id": "i24",
+    "cs": "CS 18",
+    "topic": "Speakeasies",
+    "prompt": "What was a speakeasy?",
+    "choices": [
+      "A licensed medical club",
+      "An anti-saloon group",
+      "An illegal establishment that sold alcohol during Prohibition",
+      "A legal import warehouse"
+    ],
+    "answer": 2,
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Speakeasies served prohibited alcohol outside legal enforcement.",
+    "hint": "Think hidden nightclub.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      3,
+      2
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict."
+  },
+  {
+    "id": "i25",
+    "cs": "CS 18",
+    "topic": "Organized Crime",
+    "prompt": "How did Prohibition contribute to organized crime?",
+    "choices": [
+      "Legal breweries expanded production to meet demand from new customers",
+      "Illegal alcohol markets created profitable opportunities for criminal groups",
+      "Reduced demand forced criminal groups to abandon liquor distribution",
+      "Federal licenses gave criminal groups exclusive rights to sell alcohol"
+    ],
+    "answer": 1,
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Banning a desired product created black markets controlled by criminal organizations.",
+    "hint": "Connect demand with an illegal supply network.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict."
+  },
+  {
+    "id": "i26",
+    "cs": "CS 18",
+    "topic": "Mixed Results",
+    "prompt": "Why is Prohibition described as having mixed results?",
+    "choices": [
+      "Broad compliance with the ban",
+      "Crime increased while legal alcohol sales continued under local permits",
+      "Support grew steadily because the ban removed most enforcement disputes",
+      "Alcohol consumption fell in some places, but evasion and crime grew"
+    ],
+    "answer": 3,
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "The policy achieved some reduction but lacked broad compliance and created unintended effects.",
+    "hint": "Look for both an intended and unintended result.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      3,
+      2
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict."
+  },
+  {
+    "id": "i27",
+    "cs": "CS 16\u201318",
+    "topic": "Cause and Effect",
+    "prompt": "Which chain best connects migration and cultural change?",
+    "choices": [
+      "Harlem \u2192 jobs \u2192 migration",
+      "Prohibition \u2192 migration \u2192 voting",
+      "Great Migration \u2192 growth of Black urban communities \u2192 Harlem Renaissance",
+      "Assembly lines \u2192 national-origin quotas \u2192 Harlem Renaissance"
+    ],
+    "answer": 2,
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "Migration helped create the audiences and communities that supported a cultural flowering.",
+    "hint": "Put movement before cultural development.",
+    "legacyChoiceMap": [
+      2,
+      0,
+      1,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion."
+  },
+  {
+    "id": "i28",
+    "cs": "CS 16\u201318",
+    "topic": "Big Picture",
+    "prompt": "Which statement best summarizes the 1920s?",
+    "choices": [
+      "Prosperity and innovation coexisted with intolerance and conflict",
+      "Modernization resolved racism",
+      "Immigration limits ended",
+      "Reforms guaranteed equality"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "explanation": "The decade combined rapid modernization with serious exclusion and unrest.",
+    "hint": "Choose the answer showing contrast.",
+    "legacyChoiceMap": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict."
+  },
+  {
+    "id": "i29",
+    "cs": "CS 16",
+    "prompt": "A Black family leaves the South after threats of violence and accepts a factory job in Chicago. Which identifies the push and pull factors?",
+    "choices": [
+      "Violence pushed them away; employment pulled them toward Chicago",
+      "Factory jobs pushed them away; racial threats pulled them toward Chicago",
+      "Voting rights pushed them away; agricultural work pulled them toward Chicago",
+      "Urban housing pushed them away; southern industry pulled them toward Chicago"
+    ],
+    "answer": 0,
+    "explanation": "Push factors encourage departure; pull factors attract people to a destination.",
+    "hint": "Separate the reason to leave from the reason to choose a destination.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration"
+  },
+  {
+    "id": "i30",
+    "cs": "CS 16",
+    "prompt": "A newspaper calls all foreign-born workers dangerous radicals. What makes this claim nativist?",
+    "choices": [
+      "Evidence of individual actions",
+      "It criticizes factory working conditions without blaming newcomers",
+      "It treats immigrant background as evidence of a threat",
+      "It supports restrictions that apply equally to citizens and immigrants"
+    ],
+    "answer": 2,
+    "explanation": "Nativism associates immigrant identity with threats rather than judging individual conduct.",
+    "hint": "Ask whether the accusation rests on behavior or birthplace.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Nativism and the First Red Scare",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "where": "Read the on-page section \u201cNativism and the First Red Scare\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://history.state.gov/milestones/1921-1936/immigration-act"
+  },
+  {
+    "id": "i31",
+    "cs": "CS 16",
+    "prompt": "During a raid, people are detained without meaningful hearings because they belong to a radical organization. Which concern is most direct?",
+    "choices": [
+      "Radio broadcast policy",
+      "Whether suspicion is replacing fair legal procedures",
+      "Factory employment subsidies",
+      "Whether local governments should extend roads into residential areas"
+    ],
+    "answer": 1,
+    "explanation": "Security fears can threaten due process when suspicion substitutes for fair procedures.",
+    "hint": "Focus on the missing hearing.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Nativism and the First Red Scare",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "where": "Read the on-page section \u201cNativism and the First Red Scare\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids"
+  },
+  {
+    "id": "i32",
+    "cs": "CS 16",
+    "prompt": "Why is it inaccurate to say the Great Migration ended racism for migrants?",
+    "choices": [
+      "No northern industrial work",
+      "Southern district requirements",
+      "Shrinking northern Black communities",
+      "Northern opportunities coexisted with discrimination and racial violence"
+    ],
+    "answer": 3,
+    "explanation": "Moving created opportunities without eliminating racism in the destination.",
+    "hint": "Opportunity and equal treatment are different claims.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Migration and racial conflict",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "where": "Read the on-page section \u201cMigration and racial conflict\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration"
+  },
+  {
+    "id": "i33",
+    "cs": "CS 17",
+    "prompt": "A factory divides automobile building into small repeated tasks. Which chain best explains an economic effect?",
+    "choices": [
+      "Lower output \u2192 higher production costs \u2192 more affordable cars",
+      "Higher output \u2192 less specialization \u2192 fewer affordable cars",
+      "Higher output \u2192 lower production costs \u2192 more affordable cars",
+      "Lower output \u2192 greater scarcity \u2192 larger mass markets"
+    ],
+    "answer": 2,
+    "explanation": "Efficient production lowered costs and helped expand consumer access.",
+    "hint": "Track how efficiency affects the cost of each car.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford"
+  },
+  {
+    "id": "i34",
+    "cs": "CS 17",
+    "prompt": "The same product advertisement reaches listeners in several states. What advantage does radio offer the company?",
+    "choices": [
+      "Guaranteed consumer income",
+      "It connects one advertising message with a large market",
+      "It prevents competing businesses from advertising similar products",
+      "It allows consumers to purchase without making any payment"
+    ],
+    "answer": 1,
+    "explanation": "Broadcasting lets advertisers reach large audiences; it does not guarantee sales.",
+    "hint": "Distinguish reaching buyers from guaranteeing purchases.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/"
+  },
+  {
+    "id": "i35",
+    "cs": "CS 17",
+    "prompt": "A farmer struggles financially while a city family buys new appliances. What conclusion is best supported?",
+    "choices": [
+      "Reduced urban living standards",
+      "Farmers gained the most",
+      "New household technology offered little benefit outside major cities",
+      "Prosperity differed among groups despite national economic growth"
+    ],
+    "answer": 3,
+    "explanation": "National growth did not mean all regions and occupations benefited equally.",
+    "hint": "Compare the two households rather than generalizing from one.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Technology and everyday life",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "where": "Read the on-page section \u201cTechnology and everyday life\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/"
+  },
+  {
+    "id": "i36",
+    "cs": "CS 18",
+    "prompt": "Which evidence would best show the Harlem Renaissance increased awareness of racial injustice?",
+    "choices": [
+      "A widely read Black author\u2019s story portraying discrimination",
+      "An installment advertisement",
+      "A comedy broadcast schedule",
+      "An alcohol restriction vote"
+    ],
+    "answer": 0,
+    "explanation": "Creative work could reach audiences while expressing Black experiences and criticizing racism.",
+    "hint": "Choose evidence connecting art with racial experience.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html"
+  },
+  {
+    "id": "i37",
+    "cs": "CS 18",
+    "prompt": "Why did ratification of the 19th Amendment not guarantee every woman could vote in practice?",
+    "choices": [
+      "The amendment applied only to women who owned industrial businesses",
+      "Racial barriers and other restrictions still excluded some women",
+      "States could continue denying the vote solely because a voter was female",
+      "Women needed a second national amendment before registering to vote"
+    ],
+    "answer": 1,
+    "explanation": "The amendment barred sex-based denial, but discriminatory barriers still affected many women.",
+    "hint": "Identify barriers the amendment did not itself eliminate.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Harlem Renaissance and suffrage",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "where": "Read the on-page section \u201cHarlem Renaissance and suffrage\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.archives.gov/milestone-documents/19th-amendment"
+  },
+  {
+    "id": "i38",
+    "cs": "CS 18",
+    "prompt": "A nightclub sells liquor secretly while paying officials to overlook it. Which unintended consequence of Prohibition appears?",
+    "choices": [
+      "The encouragement of illegal markets and official corruption",
+      "Legal entertainment spending",
+      "The transfer of liquor production into licensed public businesses",
+      "The expansion of federal tax revenue from regulated alcohol sales"
+    ],
+    "answer": 0,
+    "explanation": "Illegal trade could reward both criminal suppliers and corrupt officials.",
+    "hint": "Focus on the secret sales and payments to officials.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.archives.gov/education/lessons/volstead-act"
+  },
+  {
+    "id": "i39",
+    "cs": "CS 18",
+    "prompt": "What did the 21st Amendment do in 1933?",
+    "choices": [
+      "National-origin quotas",
+      "Sex-based voting protections",
+      "It established legal segregation in southern public facilities",
+      "It repealed national Prohibition under the 18th Amendment"
+    ],
+    "answer": 3,
+    "explanation": "The 21st Amendment repealed the 18th Amendment.",
+    "hint": "Match the amendment to the national alcohol ban.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.archives.gov/education/lessons/volstead-act"
+  },
+  {
+    "id": "i40",
+    "cs": "CS 16\u201318",
+    "prompt": "Which evidence best supports the claim that the 1920s combined change with continuing exclusion?",
+    "choices": [
+      "Cars and factory output",
+      "Radio and magazine audiences",
+      "New voting and cultural opportunities alongside quotas and racial violence",
+      "Suffrage and popular jazz"
+    ],
+    "answer": 2,
+    "explanation": "A balanced argument includes both transformation and exclusion.",
+    "hint": "Choose evidence that addresses both parts of the claim.",
+    "legacyChoiceMap": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "readingTitle": "Prohibition and the decade\u2019s contradictions",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "where": "Read the on-page section \u201cProhibition and the decade\u2019s contradictions\u201d before answering. Use the outside source for additional detail.",
+    "source": "https://www.archives.gov/education/lessons/volstead-act"
+  }
 ];
-const vocab=[
-["v01","CS 16","Great Migration","What was the Great Migration?","Mass movement of African Americans from the rural South to northern cities",["European immigration to western farms","Return of factories to villages","Military movement to Europe"],MIG,"Read the definition and destinations.","It reshaped northern cities economically and culturally.","Who moved, and in which direction?"],
-["v02","CS 16","Jim Crow","What does Jim Crow identify?","A system of laws and customs enforcing racial segregation",["A jazz performance style","A labor-union tactic","A consumer-credit plan"],LOC,"Find the system migrants sought to escape.","Jim Crow maintained white supremacy through law and practice.","Think legalized segregation."],
-["v03","CS 16","Nativism","What is nativism?","Hostility toward immigrants combined with preference for native-born people",["Support for cultural diversity","Mass production","Women's suffrage"],LOC,"Read about anti-immigrant attitudes.","Nativists portray newcomers as threats.","The word centers native-born status."],
-["v04","CS 16","Immigration Quota","What is an immigration quota?","A numerical limit on entrants from particular nations or regions",["A guarantee of unlimited entry","A radio license","A union wage demand"],LOC,"Find restriction policies of the 1920s.","Quotas restricted immigration using nationality-based limits.","Quota means numerical limit."],
-["v05","CS 16","Red Scare","What was the First Red Scare?","A period of intense fear of communism and radical revolution",["Celebration of Soviet culture","Movement for Prohibition repeal","Growth of automobile ownership"],RED,"Read the description of postwar radical fears.","Fear of subversion drove raids, arrests, and deportations.","Connect red with communism."],
-["v06","CS 16","Communism","What is communism in the context of the Red Scare?","An ideology associated with collective ownership and revolutionary change",["A method of assembly-line production","A constitutional voting amendment","A musical movement"],RED,"Read why the Russian Revolution alarmed Americans.","Communism became the ideological focus of postwar fears.","This is a political-economic ideology."],
-["v07","CS 16","Deportation","What is deportation?","Government removal of a noncitizen from the country",["Movement from farm to city","Election to public office","Boycott of a business"],RED,"Find what happened to some suspected radicals.","Deportation expels a noncitizen from national territory.","Think forced removal across a national border."],
-["v08","CS 16","Lynching","What is lynching?","Mob killing carried out without lawful trial",["A legal jury verdict","A peaceful strike","A radio broadcast"],LOC,"Read evidence of racial violence.","Lynching was racial terror outside due process.","The act bypasses courts and law."],
-["v09","CS 17","Assembly Line","What is an assembly line?","A production system moving goods through specialized repeated tasks",["A secret drinking club","A migration route","A voting restriction"],LOC,"Find the manufacturing innovation.","Assembly lines support fast mass production.","Think sequential factory stations."],
-["v10","CS 17","Mass Production","What is mass production?","Large-scale manufacture of standardized goods",["Handmaking one unique item","Reducing factory output","Banning consumer goods"],LOC,"Connect assembly lines with output.","Standardization and machinery make large quantities efficiently.","Mass means large quantity."],
-["v11","CS 17","Consumer Culture","What is consumer culture?","A society emphasizing purchasing and using widely marketed goods",["A society without advertising","A ban on household technology","A system of racial segregation"],LOC,"Read about goods, media, and advertising.","Mass production and advertising encouraged buying as part of modern life.","Focus on purchasing behavior."],
-["v12","CS 17","Standard of Living","What is standard of living?","The level of material comfort and access to goods and services",["A newspaper's circulation","A military alliance","A voting amendment"],LOC,"Connect prosperity with household life.","It measures material conditions, not just income.","Think quality of everyday material life."],
-["v13","CS 17","Mass Media","What is mass media?","Communication reaching very large audiences",["Private letters only","Local conversation","Factory machinery"],LOC,"Find radio, film, newspapers, and magazines.","Mass media distributes information and culture broadly.","Which term covers radio and popular print?"],
-["v14","CS 17","Commercial Radio","What made commercial radio different?","Stations broadcast programming and advertising to mass audiences",["It carried only military codes","It had no sponsors","It prevented national news"],LOC,"Read about radio broadcasting.","Commercial radio linked entertainment with advertising-supported networks.","Think broadcasts plus advertisements."],
-["v15","CS 17","Talking Picture","What was a talking picture?","A motion picture synchronized with recorded sound",["A silent newspaper","A radio-only drama","A political speech"],LOC,"Find film innovation.","Sound transformed movies and mass entertainment.","This technology added sound to film."],
-["v16","CS 17","Social Norm","What is a social norm?","A shared expectation about acceptable behavior",["A federal tax","A factory machine","A treaty"],LOC,"Read about modern changes challenging traditions.","Rapid cultural change can conflict with established expectations.","Norm means expected behavior."],
-["v17","CS 18","Harlem Renaissance","What was the Harlem Renaissance?","A Black cultural flowering in art, literature, and music",["An anti-immigrant law","A banking reform","A naval conference"],HAR,"Read the New Negro movement overview.","It celebrated Black identity and confronted injustice.","Connect Harlem with Black creativity."],
-["v18","CS 18","Jazz","What is jazz?","An African American musical form emphasizing rhythm and improvisation",["A prohibition law","A voting test","A factory method"],HAR,"Find music associated with the movement.","Jazz became a defining American art form.","This is a music genre."],
-["v19","CS 18","Cultural Diffusion","What is cultural diffusion?","Spread of cultural traits from one group or place to others",["Legal segregation","Immigration restriction","Industrial monopoly"],HAR,"Consider how jazz and literature reached national audiences.","Media and migration spread Black cultural contributions.","Diffusion means spreading."],
-["v20","CS 18","Suffrage","What is suffrage?","The right to vote",["A ban on alcohol","A criminal deportation","A factory wage"],S19,"Read what the 19th Amendment protects.","Suffrage means voting rights.","This is a political right."],
-["v21","CS 18","19th Amendment","What did the 19th Amendment prohibit?","Denial of voting rights on account of sex",["Manufacture of automobiles","Immigration from Europe","Publication of magazines"],S19,"Read the amendment text.","It constitutionally protected women's suffrage.","Connect 19th Amendment with women and voting."],
-["v22","CS 18","Prohibition","What was Prohibition?","National legal restriction on producing, selling, and transporting alcohol",["Restriction on women's voting","Ban on jazz","Limit on automobiles"],PRO,"Read the era's basic policy.","The 18th Amendment and enforcement laws created national Prohibition.","The restricted product was alcohol."],
-["v23","CS 18","18th Amendment","What did the 18th Amendment establish?","National Prohibition",["Women's suffrage","Direct election of senators","Income tax"],PRO,"Find the constitutional basis of Prohibition.","The 18th Amendment created the national alcohol ban.","Do not confuse it with the 19th."],
-["v24","CS 18","Speakeasy","What was a speakeasy?","A hidden illegal drinking establishment",["A suffrage parade","A radio station","A factory floor"],PRO,"Read about evasion of the alcohol ban.","Speakeasies sold alcohol despite Prohibition.","Think secret bar."],
-["v25","CS 18","Bootlegging","What is bootlegging?","Illegal production or distribution of alcohol",["Legal voter registration","Assembly-line labor","Magazine publishing"],PRO,"Find illegal alcohol activity.","Bootlegging supplied the black market.","This term concerns illegal liquor."],
-["v26","CS 18","Organized Crime","What is organized crime?","Coordinated criminal enterprise operating for profit",["A political amendment","A legal labor union","A cultural festival"],PRO,"Read about criminal networks during Prohibition.","Illegal alcohol created lucrative markets for criminal organizations.","Think structured criminal business."],
-["v27","CS 18","Unintended Consequence","What is an unintended consequence?","An unplanned result of a policy or action",["The stated goal","A guaranteed benefit","A constitutional requirement"],PRO,"Compare Prohibition's goal with crime and evasion.","Policies can create effects their supporters did not intend.","Look beyond the policy's official purpose."],
-["v28","CS 16–18","Modernism","What is modernism in this context?","New ideas and lifestyles challenging older traditions",["Return to every past custom","Legal racial segregation","A numerical immigration limit"],LOC,"Read about tensions produced by rapid cultural change.","Modernism captured experimentation and changing social norms.","It contrasts with traditionalism." ]
-];
-const review=[
-["r01","CS 16","Migration Causes","A Black family leaves Mississippi after racial violence and finds factory work in Chicago. Which explanation fits?","Push factors in the South and pull factors in the North drove the Great Migration",["Prohibition caused western settlement","Radio ended segregation","Immigration quotas created farm jobs"],"","","The example combines escape from discrimination with economic opportunity.","Identify both why they left and why they chose Chicago."],
-["r02","CS 16","Urban Effects","Northern housing discrimination confines newcomers to crowded neighborhoods. What does this show?","Migration changed location but did not eliminate racism",["Jim Crow ended nationally","All migrants gained equal opportunity","Cities had unlimited housing"],"","","Racial barriers followed migrants into northern life.","Moving north did not guarantee equality."],
-["r03","CS 16","Nativism","A politician blames immigrants for crime and demands nationality quotas. Which attitude is shown?","Nativism",["Collective bargaining","Modernism","Suffrage"],"","","The politician treats immigrants as threats and favors native-born people.","Focus on hostility to newcomers."],
-["r04","CS 16","Quota Effects","Which group was most directly restricted by 1920s national-origins quotas?","Immigrants from southern and eastern Europe",["Native-born industrialists","Women voters","African American jazz musicians"],"","","Quotas were designed to reduce immigration from disfavored European regions.","Recall which newer immigrant groups nativists targeted."],
-["r05","CS 16","Red Scare","Officials arrest immigrants because of suspected beliefs rather than proven crimes. Which tension is clearest?","National-security fear versus civil liberties",["Rural life versus automobiles","Jazz versus radio","Suffrage versus Prohibition"],"","","Red Scare enforcement often sacrificed rights in the name of security.","Compare fear of subversion with due process."],
-["r06","CS 16","Multiple Causes","Which combination best explains postwar unrest?","Racial tension, nativism, strikes, and fear of communism",["Universal prosperity alone","Declining immigration and no labor conflict","Jazz and automobiles only"],"","","Several racial, economic, and ideological conflicts converged.","Choose the multi-causal answer."],
-["r07","CS 16","KKK","The revived Klan targets Black citizens, Catholics, Jews, and immigrants. What unites these actions?","Organized intolerance defending a narrow definition of American identity",["Support for pluralism","Expansion of civil liberties","Opposition to segregation"],"","","The Klan fused racism, religious prejudice, and nativism.","Look for exclusion across several groups."],
-["r08","CS 16","Cause and Effect","Russian Revolution and violent strikes → public fear → raids and deportations. This sequence describes—","the First Red Scare",["the Harlem Renaissance","Prohibition repeal","mass production"],"","","Fear of revolution produced aggressive government action.","Connect Russia and suspected radicals."],
-["r09","CS 17","Production","A factory divides automobile construction into simple repeated jobs. What result is most likely?","Faster mass production using more unskilled labor",["Return to slower craft production","Higher cost for every unit","End of standardization"],"","","Assembly lines traded craft control for speed and volume.","Repeated specialized tasks increase output."],
-["r10","CS 17","Consumer Change","Lower-priced automobiles become widely available. Which effect follows?","Greater mobility and changes in work, leisure, and settlement",["Less travel","End of road building","Disappearance of suburbs"],"","","Affordable cars reshaped daily geography.","Think about how far people can travel."],
-["r11","CS 17","Mass Culture","Families across the country hear the same radio program. This best demonstrates—","development of a shared mass culture",["collapse of communication","regional isolation","end of advertising"],"","","Broadcasting created common national experiences.","Many people receive one message simultaneously."],
-["r12","CS 17","Advertising","Why did radio and magazines strengthen consumer culture?","They connected mass advertising with large audiences",["They banned brand names","They reduced information","They ended installment buying"],"","","Media encouraged demand for mass-produced products.","Advertising needs an audience."],
-["r13","CS 17","Uneven Prosperity","Why should historians qualify the phrase “Roaring Twenties prosperity”?","Benefits and improved living standards were not shared equally",["No technology improved","Every worker became wealthy","Cities stopped growing"],"","","Many prospered, but racial, regional, and class inequalities persisted.","Avoid an absolute claim about everyone."],
-["r14","CS 17","Cultural Conflict","Older Americans condemn movies and changing youth behavior. What caused the disagreement?","Modern mass culture challenged traditional social norms",["Technology ended generational differences","Rural values disappeared instantly","Prohibition was universally accepted"],"","","Rapid change often provoked resistance from traditionalists.","Contrast modernism with tradition."],
-["r15","CS 17","Technology","Which innovation most directly created real-time national home audiences?","Commercial radio",["Skyscraper","Assembly line","Commercial aircraft"],"","","Radio broadcast the same news and entertainment into homes.","Which device transmitted sound immediately?"],
-["r16","CS 17","Cause and Effect","Mass production → lower prices → more buyers → more advertising. This chain describes—","growth of consumer culture",["collapse of industry","end of credit","decline of mass media"],"","","Efficient output and marketing reinforced mass consumption.","Follow the link from goods to purchasing."],
-["r17","CS 18","Harlem Renaissance","A poet celebrates Black identity while exposing discrimination. Which movement is represented?","Harlem Renaissance",["Red Scare","Nativism","Prohibition"],"","","The movement joined cultural pride with criticism of injustice.","Look for Black art and literature."],
-["r18","CS 18","Migration and Culture","How did the Great Migration help cause the Harlem Renaissance?","It concentrated Black communities and talent in northern cultural centers",["It outlawed jazz","It ended urban life","It reduced Black audiences"],"","","Migration created vibrant communities supporting artists and institutions.","Population movement preceded cultural flowering."],
-["r19","CS 18","Jazz","Jazz spreads from Black communities to national audiences through recordings and radio. This is—","cultural diffusion",["deportation","segregation","immigration restriction"],"","","A cultural form moved from one community into broader society.","Diffusion means spread."],
-["r20","CS 18","Suffrage","Which immediate political change followed the 19th Amendment?","Women could vote without sex being used as a constitutional basis for denial",["All discrimination ended","Prohibition was repealed","Women received identical wages"],"","","The amendment addressed voting, not every inequality.","Choose the precise constitutional effect."],
-["r21","CS 18","Prohibition","A desired product is banned, but customers continue seeking it. What economic result is likely?","A profitable illegal market develops",["Demand instantly disappears","Organized crime loses revenue","Enforcement becomes unnecessary"],"","","Persistent demand creates opportunity for illegal suppliers.","Think black market."],
-["r22","CS 18","Policy Evaluation","Which evidence best supports calling Prohibition a mixed success?","Some drinking declined, but speakeasies and organized crime expanded",["Every citizen obeyed","No enforcement was attempted","Alcohol demand ended permanently"],"","","The policy produced both intended and unintended outcomes.","A mixed result contains success and failure."],
-["r23","CS 18","Reform Limits","Why did Prohibition lack durable popular support?","Enforcement conflicts and widespread evasion weakened legitimacy",["Alcohol had no consumers","Crime disappeared","The amendment protected voting"],"","","A rule repeatedly ignored becomes difficult to sustain.","Consider compliance and enforceability."],
-["r24","CS 18","Social Change","Which pairing correctly matches movement and result?","Women's suffrage—greater political participation",["Red Scare—expanded immigrant rights","Nativism—open immigration","Prohibition—elimination of crime"],"","","Voting rights widened women's formal political role.","Reject pairings that reverse actual effects."],
-["r25","CS 16–18","Comparison","What did the Red Scare and Prohibition share?","Both encouraged government enforcement that produced civil-liberty or crime concerns",["Both expanded immigration","Both centered jazz","Both guaranteed equality"],"","","Each policy area showed unintended costs of moral or security enforcement.","Look for government power and unintended results."],
-["r26","CS 16–18","Contradiction","Which contradiction best characterizes the decade?","Celebration of modern freedom coexisted with exclusion and repression",["No technology existed","Cultural creativity ended","Racism disappeared"],"","","Modern consumer life and art grew alongside nativism and racial violence.","Choose the contrast."],
-["r27","CS 16–18","Evidence","Which pair best demonstrates both cultural innovation and intolerance?","Harlem Renaissance and revived Ku Klux Klan",["Assembly line and automobile","Radio and movies","Suffrage and jazz"],"","","One represents Black cultural achievement; the other organized hatred.","Find one positive cultural movement and one exclusionary movement."],
-["r28","CS 16–18","Cause and Effect","Which development links technology to social tension?","Mass media spread modern values that challenged traditional beliefs",["Assembly lines ended communication","Airplanes caused segregation laws","Automobiles created the Red Scare"],"","","Communication technology accelerated exposure to new ideas.","Focus on ideas reaching broad audiences."],
-["r29","CS 16–18","Historical Argument","Which thesis is strongest?","The 1920s combined economic modernization with unresolved racial and cultural conflict",["The decade was only prosperous","Technology solved prejudice","Reform eliminated crime"],"","","A strong thesis accounts for multiple dimensions and contradictions.","Avoid one-sided absolutes."],
-["r30","CS 16–18","Continuity","Which condition showed continuity with earlier eras?","Racial discrimination and violence persisted despite migration and cultural achievement",["All social norms vanished","Immigration became unlimited","Women lost voting rights"],"","","Major changes did not erase longstanding racism.","Continuity means something persisted."],
-["r31","CS 16–18","Change","Which development best represents change during the 1920s?","Mass media created shared national consumer culture",["Jim Crow persisted","Racial prejudice continued","Nativism remained powerful"],"","","Radio, film, and print expanded a national culture in new ways.","Choose the new development rather than persistence."],
-["r32","CS 16–18","Synthesis","Which summary best fits Block 4?","Postwar fears produced exclusion while technology, migration, and reform transformed culture",["The nation experienced no tension","All reforms succeeded completely","Economic change had no social effect"],"","","The period's central story is simultaneous transformation and conflict.","Include CS 16, 17, and 18 in one claim." ]
-];
-window.BLOCK_QUESTIONS=build(mode==="intro"?intro:mode==="vocabulary"?vocab:review);
-})();
