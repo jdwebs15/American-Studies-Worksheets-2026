@@ -1,102 +1,697 @@
 (function(){
-const LOC="https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/progressive-era-to-new-era-1900-1929/",MIG="https://www.archives.gov/research/african-americans/migrations/great-migration",RED="https://www.loc.gov/classroom-materials/immigration/polish-russian/political-and-social-issues/red-scare/",HAR="https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",S19="https://www.archives.gov/milestone-documents/19th-amendment",PRO="https://www.archives.gov/research/investigations/prohibition";
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const maps={intro:{key:"AS-B4-CS16-18-INTRO-2026",title:"Block 4 Intro — Unrest and the Roaring Twenties",desc:"CS 16–18 • Postwar intolerance, the Red Scare, technological change, the Harlem Renaissance, suffrage, and Prohibition.",practice:"Discover the forces that produced unrest and dramatic social and cultural change after World War I."},vocabulary:{key:"AS-B4-CS16-18-VOCAB-2026",title:"Block 4 Vocabulary — Unrest and the Roaring Twenties",desc:"CS 16–18 • Twenty-eight essential terms for postwar unrest and 1920s transformation.",practice:"Build the vocabulary needed to explain nativism, the Red Scare, mass culture, the Harlem Renaissance, suffrage, and Prohibition."},review:{key:"AS-B4-CS16-18-REVIEW-2026",title:"Block 4 Comprehensive Review — Unrest and the Roaring Twenties",desc:"CS 16–18 • Thirty-two application, cause-and-effect, comparison, and synthesis questions.",practice:"Apply the complete story of postwar tensions, new technology, mass culture, African American expression, women's political participation, and Prohibition."}};
-const cfg=maps[mode];window.BLOCK_CONFIG={assignmentKey:cfg.key,title:cfg.title,description:cfg.desc,practice:cfg.practice};
-function build(rows){return rows.map((r,n)=>{const choices=r[5].slice(),answer=n%4;choices.splice(answer,0,r[4]);return{id:r[0],cs:r[1],topic:r[2],prompt:r[3],choices,answer,source:r[6]||"",where:r[7]||"",explanation:r[8],hint:r[9]}})}
-const intro=[
-["i01","CS 16","Great Migration","Why did many African Americans move from the South to northern cities?","To escape discrimination and pursue industrial jobs",["To strengthen Jim Crow laws","To enter western reservations","To avoid factory employment"],MIG,"Read the overview of push and pull factors.","Southern racism pushed migrants while northern jobs pulled them.","Look for one push factor and one pull factor."],
-["i02","CS 16","Racial Tension","How did the Great Migration sometimes increase northern racial tension?","Competition grew over jobs, housing, and public services",["Jim Crow immediately disappeared","Cities became less diverse","Industrial employment ended"],MIG,"Find the effects of rapid migration on northern communities.","Rapid population change intensified competition and discrimination.","Consider scarce urban resources."],
-["i03","CS 16","Jim Crow","What were Jim Crow laws?","Laws enforcing racial segregation and discrimination",["Federal workplace-safety rules","Treaties limiting naval weapons","Programs supporting jazz musicians"],LOC,"Look for the legal system African Americans sought to escape.","Jim Crow institutionalized racial separation and unequal treatment.","These laws operated mainly in the South."],
-["i04","CS 16","Postwar Violence","Which evidence reveals severe racial intolerance after World War I?","Lynchings, race riots, and threats of violence",["Peaceful integration everywhere","Abolition of the Klan","Universal voting protection"],LOC,"Read about racial conflict and the revival of extremist organizations.","Violence and intimidation exposed persistent racial hatred.","Choose the answer involving coercion and racial terror."],
-["i05","CS 16","Ku Klux Klan","Why did the revived Klan attract support in the 1920s?","It exploited racial, religious, and anti-immigrant prejudice",["It promoted cultural pluralism","It defended labor unions","It opposed all segregation"],LOC,"Look for groups targeted by nativist movements.","The revived Klan targeted African Americans, immigrants, Catholics, and Jews.","Focus on intolerance toward several groups."],
-["i06","CS 16","Immigration Quotas","What was the purpose of 1920s immigration quotas?","To restrict immigration, especially from southern and eastern Europe",["To guarantee open borders","To increase refugee admissions","To end citizenship"],LOC,"Find laws reflecting postwar nativism.","Quota laws used national origins to reduce immigration from disfavored regions.","Connect quotas with nativism."],
-["i07","CS 16","Nativism","What is nativism?","Preference for native-born people and hostility toward immigrants",["Support for international government","Celebration of all cultural differences","Movement from farms to cities"],LOC,"Read about anti-immigrant attitudes after the war.","Nativism treats immigrants as threats to jobs, culture, or security.","The root word is native."],
-["i08","CS 16","First Red Scare","What caused the First Red Scare?","Fear of communist revolution, labor unrest, and political violence",["Confidence in Russian democracy","Declining concern about strikes","The end of immigration"],RED,"Read how revolution in Russia and U.S. labor conflict shaped fear.","Events abroad and unrest at home produced exaggerated fears of radical subversion.","Connect Russia, strikes, and fear of revolution."],
-["i09","CS 16","Civil Liberties","How did the Red Scare threaten civil liberties?","People were arrested or deported based on suspected radicalism",["Every defendant received expanded protections","Congress ended deportation","Government ignored political beliefs"],RED,"Look for government raids, arrests, and deportations.","Fear encouraged broad actions against immigrants and political dissenters.","Which response punishes suspicion rather than proven crime?"],
-["i10","CS 17","Assembly Line","How did the assembly line change manufacturing?","It increased output by dividing production into repeated tasks",["It restored handcraft production","It eliminated mass production","It made goods more expensive"],LOC,"Find innovations that made production faster and cheaper.","Specialized repeated tasks enabled efficient mass production.","Think speed, repetition, and volume."],
-["i11","CS 17","Automobile","How did widespread automobile ownership change American life?","It increased mobility and reshaped work, leisure, and settlement",["It ended road construction","It reduced travel","It eliminated suburbs"],LOC,"Read about transportation and changing daily life.","Cars expanded where people could live, work, shop, and travel.","Focus on mobility."],
-["i12","CS 17","Commercial Aircraft","What did commercial aircraft begin to change?","The speed and reach of passenger and mail transportation",["The constitutional amendment process","Agricultural segregation","Prohibition enforcement"],LOC,"Look for transportation innovations of the 1920s.","Aircraft shortened long-distance travel and communication time.","This is a transportation effect."],
-["i13","CS 17","Talking Pictures","Why were talking motion pictures culturally important?","They helped create a shared national mass culture",["They ended entertainment","They isolated regions","They replaced newspapers entirely"],LOC,"Find new communications and entertainment technologies.","Nationally distributed films exposed large audiences to common stories and styles.","Think shared entertainment."],
-["i14","CS 17","Radio","How did commercial radio transform communication?","It delivered news, advertising, music, and entertainment to mass audiences",["It limited information to local elites","It ended consumer advertising","It prevented national culture"],LOC,"Read about mass communication in the new era.","Radio connected distant listeners to common broadcasts and markets.","Which medium enters many homes at once?"],
-["i15","CS 17","Print Culture","What was one effect of wider newspaper and magazine circulation?","Ideas, advertising, and popular culture spread more rapidly",["Literacy became illegal","National news disappeared","Consumer markets shrank"],LOC,"Look for communication changes and consumer culture.","Mass print helped build national audiences and consumer demand.","More circulation means wider distribution."],
-["i16","CS 17","Standard of Living","Why did the standard of living improve for many Americans?","Industrial productivity and new consumer goods increased",["Factories stopped producing","Transportation collapsed","Electricity disappeared"],LOC,"Connect industrial growth with household goods and purchasing.","Productivity and rising access to technologies improved material life for many, though unevenly.","Look for greater access to goods."],
-["i17","CS 17","Social Tension","Why did new technology sometimes increase cultural tension?","Rapid change challenged traditional values and social norms",["Everyone welcomed identical changes","Technology ended generational differences","Urban life disappeared"],LOC,"Read how modern culture conflicted with older expectations.","Modern lifestyles and media unsettled people defending traditional norms.","Change can create conflict with tradition."],
-["i18","CS 18","Harlem Renaissance","What was the Harlem Renaissance?","A flourishing of African American art, literature, and music",["A federal farm program","A nativist political movement","A naval arms treaty"],HAR,"Read the overview of the New Negro movement.","Black artists and writers celebrated culture and examined racism and urban life.","This movement centered cultural expression."],
-["i19","CS 18","Cultural Pride","How did Harlem Renaissance artists promote social change?","They built racial pride and increased awareness of injustice",["They defended segregation","They discouraged artistic expression","They supported immigration quotas"],HAR,"Look for the goals and influence of New Negro artists.","Creative work asserted dignity and confronted discrimination.","Art can change how people see identity and injustice."],
-["i20","CS 18","Jazz","Why is jazz important to this period?","It flourished as a major African American contribution to American culture",["It was banned nationwide","It began as European military policy","It ended mass entertainment"],HAR,"Find music associated with Harlem and Black urban culture.","Jazz became an influential and distinctly American musical form.","Connect Harlem with music."],
-["i21","CS 18","Women's Suffrage","What did the 19th Amendment accomplish?","It prohibited denying the vote on account of sex",["It established Prohibition","It created immigration quotas","It ended poll taxes nationwide"],S19,"Read the amendment's exact language.","The amendment constitutionally protected women's voting rights.","This amendment concerns sex and voting."],
-["i22","CS 18","Women's Participation","What followed expanded women's suffrage?","Women's political and economic participation increased",["Women withdrew from public life","Voting ended social debate","Employment became illegal"],S19,"Read about the amendment's broader democratic significance.","Voting rights strengthened women's public influence, though inequality remained.","Consider what political rights enable."],
-["i23","CS 18","Prohibition","What did national Prohibition ban?","The manufacture, sale, and transportation of alcoholic beverages",["All private consumption of food","Women's voting","Jazz performance"],PRO,"Read the basic provisions of the 18th Amendment era.","Prohibition targeted the alcoholic-beverage industry.","Which product was legally restricted?"],
-["i24","CS 18","Speakeasies","What was a speakeasy?","An illegal establishment that sold alcohol during Prohibition",["A women's voting organization","A radio network","A federal bank"],PRO,"Look for methods used to evade Prohibition.","Speakeasies served prohibited alcohol outside legal enforcement.","Think hidden nightclub."],
-["i25","CS 18","Organized Crime","How did Prohibition contribute to organized crime?","Illegal alcohol markets created profitable opportunities for criminal groups",["It removed demand for alcohol","It ended smuggling","It eliminated corruption"],PRO,"Read about enforcement problems and illegal markets.","Banning a desired product created black markets controlled by criminal organizations.","Connect demand with an illegal supply network."],
-["i26","CS 18","Mixed Results","Why is Prohibition described as having mixed results?","Alcohol consumption fell in some places, but evasion and crime grew",["It was universally obeyed","It had no supporters","It immediately ended all drinking"],PRO,"Compare reform goals with enforcement outcomes.","The policy achieved some reduction but lacked broad compliance and created unintended effects.","Look for both an intended and unintended result."],
-["i27","CS 16–18","Cause and Effect","Which chain best connects migration and cultural change?","Great Migration → growth of Black urban communities → Harlem Renaissance",["Prohibition → western settlement → Jim Crow","Radio → immigration quotas → lynching","Suffrage → Red Scare → assembly line"],MIG,"Connect population movement with cultural centers in northern cities.","Migration helped create the audiences and communities that supported a cultural flowering.","Put movement before cultural development."],
-["i28","CS 16–18","Big Picture","Which statement best summarizes the 1920s?","Prosperity and innovation coexisted with intolerance and conflict",["Technology ended social tension","Every group shared prosperity equally","The nation experienced no cultural change"],LOC,"Compare modern growth with nativism, racism, and the Red Scare.","The decade combined rapid modernization with serious exclusion and unrest.","Choose the answer showing contrast." ]
+window.BLOCK_CONFIG={assignmentKey:"AS-B3-CS14-15-VOCAB-2026-v2",title:"Block 3 Vocabulary — World Power and Isolationism",description:"CS 14–15 • Forty essential terms for overseas expansion, World War I, peacemaking, and isolationism.",practice:"Build precise command of the people, policies, events, and foreign-policy concepts needed for lecture and the comprehensive review."};
+window.BLOCK_QUESTIONS=[
+  {
+    "id": "v01",
+    "cs": "CS 14",
+    "topic": "Imperialism",
+    "prompt": "What is imperialism?",
+    "choices": [
+      "Extending national control over other lands",
+      "Withdrawing national control from overseas lands",
+      "Sharing governing authority among equal nations",
+      "Limiting national interests to domestic affairs"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for territories. Read how the war and overseas possessions expanded U.S. control and influence.",
+    "explanation": "Imperialism extends a nation's political, economic, or military influence over other lands.",
+    "hint": "Look for expansion of power beyond a nation's borders."
+  },
+  {
+    "id": "v02",
+    "cs": "CS 14",
+    "topic": "Expansionism",
+    "prompt": "What is expansionism?",
+    "choices": [
+      "Favoring growth in territory or influence",
+      "Favoring withdrawal from territories or markets",
+      "Favoring neutrality during an overseas conflict",
+      "Favoring reductions in weapons or forces"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for interests. Identify the actions through which U.S. territory and strategic reach grew.",
+    "explanation": "Expansionism favors extending a nation's territory, markets, or influence.",
+    "hint": "Which definition involves becoming geographically or internationally larger?"
+  },
+  {
+    "id": "v03",
+    "cs": "CS 14",
+    "topic": "Annexation",
+    "prompt": "What does annexation mean?",
+    "choices": [
+      "Formally adding territory to a country",
+      "Temporarily occupying territory during a war",
+      "Recognizing territory as an independent country",
+      "Dividing territory into foreign trading zones"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for annex. Read how Hawaii became a U.S. territory in 1898.",
+    "explanation": "Annexation is the formal incorporation of territory into a nation.",
+    "hint": "Think about Hawaii being added to the United States."
+  },
+  {
+    "id": "v04",
+    "cs": "CS 14",
+    "topic": "Yellow Journalism",
+    "prompt": "What was yellow journalism?",
+    "choices": [
+      "Sensationalized news reporting intended to influence readers",
+      "Investigative reporting used to expose corruption",
+      "Official reporting used to announce government decisions",
+      "Objective reporting used to compare verified evidence"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/yellow-journalism",
+    "where": "On the linked page, use Ctrl+F to search for sensational. Read how sensational newspapers affected public opinion about Cuba.",
+    "explanation": "Yellow journalism emphasized sensational stories, sometimes with exaggeration, to build readership and shape opinion.",
+    "hint": "The term describes a style of reporting, not a paper color."
+  },
+  {
+    "id": "v05",
+    "cs": "CS 14",
+    "topic": "USS Maine",
+    "prompt": "Why is the USS Maine important?",
+    "choices": [
+      "Its Havana explosion increased pressure for war",
+      "Its Pacific voyage helped negotiate naval limits",
+      "Its Atlantic crossing carried delegates to Versailles",
+      "Its Caribbean patrol enforced the Open Door"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for Maine. Locate the February 1898 explosion in Havana Harbor.",
+    "explanation": "The unexplained destruction of the Maine fueled public anger and interventionist pressure.",
+    "hint": "Connect this ship with Havana and the Spanish-American War."
+  },
+  {
+    "id": "v06",
+    "cs": "CS 14",
+    "topic": "Spanish-American War",
+    "prompt": "What was the Spanish-American War?",
+    "choices": [
+      "An 1898 U.S. conflict against Spanish rule",
+      "A 1917 U.S. conflict against German forces",
+      "An 1899 Filipino conflict against U.S. rule",
+      "A 1914 European conflict against Serbian expansion"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for 1898. Read the page title and opening summary.",
+    "explanation": "The 1898 war ended much of Spain's empire and increased U.S. overseas power.",
+    "hint": "Look for the conflict tied to Cuba, Puerto Rico, Guam, and the Philippines."
+  },
+  {
+    "id": "v07",
+    "cs": "CS 14",
+    "topic": "Treaty of Paris of 1898",
+    "prompt": "What did the Treaty of Paris of 1898 do?",
+    "choices": [
+      "Ended war with Spain and transferred territories",
+      "Ended war with Germany and established reparations",
+      "Limited naval weapons and addressed Pacific tensions",
+      "Renounced aggressive war and encouraged peaceful settlements"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for December 10. Read the paragraphs describing the December 1898 peace settlement.",
+    "explanation": "The treaty ended war with Spain and transferred Puerto Rico, Guam, and the Philippines to U.S. control.",
+    "hint": "Do not confuse the 1898 Treaty of Paris with the later Versailles settlement."
+  },
+  {
+    "id": "v08",
+    "cs": "CS 14",
+    "topic": "World Power",
+    "prompt": "What is a world power?",
+    "choices": [
+      "A nation with major influence in international affairs",
+      "A nation whose authority comes from foreign rulers",
+      "A nation with limited influence beyond its borders",
+      "A nation whose policies are set by international courts"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
+    "where": "On the linked page, use Ctrl+F to search for Pacific power. Read how victory secured U.S. status in the Caribbean and Pacific.",
+    "explanation": "A world power has substantial economic, political, or military influence beyond its region.",
+    "hint": "Focus on international influence rather than total domination."
+  },
+  {
+    "id": "v09",
+    "cs": "CS 14",
+    "topic": "Big Stick Diplomacy",
+    "prompt": "What was Big Stick diplomacy?",
+    "choices": [
+      "Using negotiation backed by the threat of military force",
+      "Negotiating through promises of loans and private investment",
+      "Negotiating by renouncing force as a policy tool",
+      "Negotiating through a permanent collective security organization"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
+    "where": "On the linked page, use Ctrl+F to search for Big Stick. Read the description of Roosevelt's assertive approach.",
+    "explanation": "Big Stick diplomacy used negotiation backed by the possibility of force.",
+    "hint": "Recall Roosevelt's phrase about speaking softly."
+  },
+  {
+    "id": "v10",
+    "cs": "CS 14",
+    "topic": "Roosevelt Corollary",
+    "prompt": "What was the Roosevelt Corollary?",
+    "choices": [
+      "Claiming a U.S. right to intervene in Western Hemisphere nations",
+      "Promising U.S. neutrality in disputes among nearby nations",
+      "Requiring European approval before intervention in nearby nations",
+      "Transferring U.S. territories to governments of nearby nations"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
+    "where": "On the linked page, use Ctrl+F to search for police. Read the paragraph stating when the United States might exercise international police power.",
+    "explanation": "The corollary expanded the Monroe Doctrine into a justification for regional intervention.",
+    "hint": "Which policy claimed a policing role in nearby nations?"
+  },
+  {
+    "id": "v11",
+    "cs": "CS 14",
+    "topic": "Sphere of Influence",
+    "prompt": "What is a sphere of influence?",
+    "choices": [
+      "An area under a power's special foreign influence",
+      "An area formally incorporated into a country's territory",
+      "An area governed jointly by several equal nations",
+      "An area granted independence from its former ruler"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/hay-and-china",
+    "where": "On the linked page, use Ctrl+F to search for spheres. Find the opening discussion of foreign spheres of influence in China. Use this example to identify what influence over a region means.",
+    "explanation": "A sphere of influence is a region where one power holds especially strong influence.",
+    "hint": "The term concerns influence over an area, not formal statehood."
+  },
+  {
+    "id": "v12",
+    "cs": "CS 14",
+    "topic": "Neutrality",
+    "prompt": "What is neutrality?",
+    "choices": [
+      "Remaining outside a war as a combatant",
+      "Supporting one side by entering a war",
+      "Defending members through a permanent military alliance",
+      "Taking foreign territory through an overseas military campaign"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "On the linked page, use Ctrl+F to search for neutral. Read about the United States before its 1917 entry.",
+    "explanation": "Neutrality means remaining outside a conflict rather than supporting one belligerent as a combatant.",
+    "hint": "Which choice means not choosing either warring side?"
+  },
+  {
+    "id": "v13",
+    "cs": "CS 14",
+    "topic": "Unrestricted Submarine Warfare",
+    "prompt": "What was unrestricted submarine warfare?",
+    "choices": [
+      "Attacking shipping in war zones without prior warning",
+      "Attacking warships while warning crews aboard merchant vessels",
+      "Blockading ports by inspecting cargo aboard neutral vessels",
+      "Protecting shipping in war zones with armed escorts"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "On the linked page, use Ctrl+F to search for unrestricted. Read Germany's January 1917 decision regarding Allied and neutral shipping.",
+    "explanation": "Germany's policy allowed submarines to attack shipping without the warning expected under older maritime rules.",
+    "hint": "Look for the policy that endangered passenger, merchant, and neutral ships."
+  },
+  {
+    "id": "v14",
+    "cs": "CS 14",
+    "topic": "Zimmermann Telegram",
+    "prompt": "What was the Zimmermann Telegram?",
+    "choices": [
+      "Germany's proposal for a Mexican alliance against America",
+      "Wilson's proposal for an international organization after war",
+      "Lodge's proposal for Senate reservations about League membership",
+      "Hay's proposal for equal commercial access in China"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "On the linked page, use Ctrl+F to search for Zimmermann. Read the section on the intercepted German message to Mexico.",
+    "explanation": "Germany proposed an alliance and offered to help Mexico recover lost territory.",
+    "hint": "Which message created a direct security threat near the U.S. border?"
+  },
+  {
+    "id": "v15",
+    "cs": "CS 14",
+    "topic": "Mobilization",
+    "prompt": "What is wartime mobilization?",
+    "choices": [
+      "Organizing a nation’s people and resources to support a war effort",
+      "Returning troops and factories to their peacetime roles",
+      "Reducing weapons and forces through international peace agreements",
+      "Negotiating borders and reparations after a military conflict"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "On the linked page, use Ctrl+F to search for troopships. Connect U.S. entry with the rapid expansion of military and economic effort.",
+    "explanation": "Mobilization converts national resources and personnel to support a war effort.",
+    "hint": "The word means preparing and organizing for action."
+  },
+  {
+    "id": "v16",
+    "cs": "CS 14",
+    "topic": "Allies",
+    "prompt": "Who were the Allies in World War I?",
+    "choices": [
+      "The coalition including Britain, France, and later America",
+      "The coalition led by Germany, Austria-Hungary, and their partners",
+      "The countries remaining outside the fighting throughout the war",
+      "The countries resisting U.S. expansion after war with Spain"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "On the linked page, use Ctrl+F to search for Allies. Read which side received U.S. support and entry.",
+    "explanation": "The United States entered the war alongside the Allied powers.",
+    "hint": "Identify the coalition opposed to Germany and the Central Powers."
+  },
+  {
+    "id": "v17",
+    "cs": "CS 15",
+    "topic": "Fourteen Points",
+    "prompt": "What were the Fourteen Points?",
+    "choices": [
+      "Wilson’s proposed principles for lasting peace after the war",
+      "Lodge's proposed conditions for accepting the Versailles treaty",
+      "Mahan's proposed strategies for building American naval power",
+      "Hay's proposed rules for protecting foreign trade in China"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for Fourteen. Read the introductory description of Wilson's January 1918 address.",
+    "explanation": "The Fourteen Points outlined Wilson's peace aims and ideas for preventing future wars.",
+    "hint": "This was Wilson's blueprint for postwar peace."
+  },
+  {
+    "id": "v18",
+    "cs": "CS 15",
+    "topic": "Self-Determination",
+    "prompt": "What is self-determination?",
+    "choices": [
+      "Peoples helping choose their own government and national political future",
+      "Foreign powers deciding a territory's government and political future",
+      "Victorious armies imposing a defeated country's government and borders",
+      "International creditors controlling a country's government and financial policies"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for nationalities. Read the explanation of Wilson's proposals for oppressed nationalities.",
+    "explanation": "Self-determination supports a people's ability to shape its own government and national future.",
+    "hint": "Focus on who gets to decide a people's political status."
+  },
+  {
+    "id": "v19",
+    "cs": "CS 15",
+    "topic": "Collective Security",
+    "prompt": "What is collective security?",
+    "choices": [
+      "Nations agreeing to respond together against aggression or threats to peace",
+      "Nations avoiding commitments to respond to foreign conflicts",
+      "Nations competing separately to gain more overseas territory",
+      "Nations relying solely on individual military responses to aggression"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for association. Read the description of Wilson's proposed world organization.",
+    "explanation": "Collective security treats aggression against one member as a concern for the broader group.",
+    "hint": "The word collective means acting together."
+  },
+  {
+    "id": "v20",
+    "cs": "CS 15",
+    "topic": "League of Nations",
+    "prompt": "What was the League of Nations?",
+    "choices": [
+      "An international organization established to promote cooperation and peace",
+      "A wartime coalition coordinating campaigns against Central Powers",
+      "A regional trading association dividing markets among empires",
+      "A national government agency managing overseas military bases"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for XIV. Read Point XIV and the background explaining the organization it inspired.",
+    "explanation": "The League was designed as an international forum and collective-security organization.",
+    "hint": "It was Wilson's proposed general association of nations."
+  },
+  {
+    "id": "v21",
+    "cs": "CS 15",
+    "topic": "Treaty of Versailles",
+    "prompt": "What was the Treaty of Versailles?",
+    "choices": [
+      "The postwar agreement establishing peace terms for defeated Germany",
+      "The earlier treaty transferring Spanish territories to America",
+      "The later agreement renouncing war as national policy",
+      "The naval agreement limiting fleets of major powers"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/paris-peace",
+    "where": "On the linked page, use Ctrl+F to search for Treaty. Read how Allied leaders shaped the peace settlement after World War I.",
+    "explanation": "The Treaty of Versailles set peace terms with Germany and included the League covenant.",
+    "hint": "Match Versailles with World War I, not 1898."
+  },
+  {
+    "id": "v22",
+    "cs": "CS 15",
+    "topic": "Ratification",
+    "prompt": "What is treaty ratification in the United States?",
+    "choices": [
+      "Presidential ratification after two-thirds approval of senators present",
+      "Presidential ratification after majority approval in the House alone",
+      "Presidential ratification after approval by the Supreme Court justices",
+      "Presidential ratification after a national referendum among registered voters"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "On the linked page, use Ctrl+F to search for Senate. Find the final paragraphs about the Senate vote on Versailles. Treaty consent requires two-thirds of senators present; signing alone is insufficient.",
+    "explanation": "The president ratifies a treaty after receiving the advice and consent of two-thirds of the senators present.",
+    "hint": "Which chamber has the constitutional treaty role?"
+  },
+  {
+    "id": "v23",
+    "cs": "CS 15",
+    "topic": "Reservationist",
+    "prompt": "Who was a reservationist in the Versailles debate?",
+    "choices": [
+      "A senator who would accept the treaty only with protective conditions",
+      "A senator favoring treaty approval without protective conditions",
+      "A senator opposing League membership even with protective conditions",
+      "A senator demanding U.S. annexation of former German colonies"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "On the linked page, use Ctrl+F to search for Lodge. Read Lodge’s objections and infer what accepting the treaty with conditions would mean.",
+    "explanation": "Reservationists sought conditions protecting U.S. authority and congressional powers.",
+    "hint": "The name signals reservations or conditions, not automatic rejection."
+  },
+  {
+    "id": "v24",
+    "cs": "CS 15",
+    "topic": "Irreconcilable",
+    "prompt": "Who was an irreconcilable in the Versailles debate?",
+    "choices": [
+      "A senator fundamentally opposed to the treaty and joining the League",
+      "A senator accepting the treaty with specific protective reservations",
+      "A senator endorsing the treaty without changes or reservations",
+      "A senator supporting stronger obligations under the League covenant"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "On the linked page, use Ctrl+F to search for Senate. Read the Senate opposition; infer what fundamental opposition to joining would mean.",
+    "explanation": "Irreconcilables rejected League membership rather than seeking limited amendments.",
+    "hint": "Which group could not be persuaded by reservations?"
+  },
+  {
+    "id": "v25",
+    "cs": "CS 15",
+    "topic": "Isolationism",
+    "prompt": "What is isolationism?",
+    "choices": [
+      "Limiting a nation’s binding political and military commitments overseas",
+      "Extending territorial and military control over other countries",
+      "Joining permanent alliances to defend other member countries",
+      "Accepting international authority over national military policy decisions"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "On the linked page, use Ctrl+F to search for isolation. Read how the United States stayed outside the League while participating selectively in diplomacy.",
+    "explanation": "Isolationism seeks to avoid binding foreign political and military commitments.",
+    "hint": "It is limited involvement—not complete disconnection."
+  },
+  {
+    "id": "v26",
+    "cs": "CS 15",
+    "topic": "Disarmament",
+    "prompt": "What is disarmament?",
+    "choices": [
+      "Reducing a nation's weapons or military forces",
+      "Organizing a nation's resources for military action",
+      "Increasing a nation's bases in overseas territories",
+      "Expanding a nation's alliances with foreign powers"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for IV.. Read Point IV concerning national armaments.",
+    "explanation": "Disarmament is the reduction or elimination of weapons and armed forces.",
+    "hint": "The prefix dis- signals removal or reduction."
+  },
+  {
+    "id": "v27",
+    "cs": "CS 15",
+    "topic": "Kellogg-Briand Pact",
+    "prompt": "What was the Kellogg-Briand Pact?",
+    "choices": [
+      "An agreement renouncing war as a national policy",
+      "An agreement limiting the size of major naval fleets",
+      "An agreement creating an international collective security organization",
+      "An agreement scheduling German payments for wartime damage"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1921-1936/kellogg",
+    "where": "On the linked page, use Ctrl+F to search for national policy. Read the pact's central promise.",
+    "explanation": "Signatories formally renounced war as a tool of national policy, although enforcement was weak.",
+    "hint": "Look for the postwar agreement that tried to outlaw war."
+  },
+  {
+    "id": "v28",
+    "cs": "CS 15",
+    "topic": "Foreign Entanglement",
+    "prompt": "What is a foreign entanglement?",
+    "choices": [
+      "An obligation that may draw a country into foreign conflict",
+      "An exchange that allows students to study in foreign countries",
+      "A purchase that brings products from a foreign market",
+      "A meeting that allows diplomats to discuss foreign disagreements"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/league",
+    "where": "On the linked page, use Ctrl+F to search for Article X. Read opponents' concerns about League obligations.",
+    "explanation": "Critics used the term for commitments they feared would limit U.S. freedom and create unwanted involvement.",
+    "hint": "Think about an obligation that could pull the United States into war."
+  },
+  {
+    "id": "v29",
+    "cs": "CS 14",
+    "topic": "Alfred Thayer Mahan",
+    "prompt": "Which idea is most closely associated with Alfred Thayer Mahan?",
+    "choices": [
+      "Strong sea power and overseas bases support trade and influence",
+      "Secret alliances and treaties provide lasting international peace",
+      "Lower tariffs and open markets replace military preparedness",
+      "Neutrality and domestic markets make overseas bases unnecessary"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/mahan",
+    "where": "On the linked page, use Ctrl+F to search for Mahan. Read the discussion of his book and arguments about sea power.",
+    "explanation": "Mahan argued that strong naval forces and bases supported trade and influence.",
+    "hint": "Find the argument connecting ships, bases, and markets."
+  },
+  {
+    "id": "v30",
+    "cs": "CS 14",
+    "topic": "Naval Base",
+    "prompt": "What is a naval base in the context of overseas expansion?",
+    "choices": [
+      "A port supplying and supporting military ships",
+      "A waterway shortening routes between two distant oceans",
+      "A territory governed by a foreign colonial administration",
+      "A trade zone reserved for one foreign commercial power"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1866-1898/mahan",
+    "where": "On the linked page, use Ctrl+F to search for bases. Find the need for stations that support ships on long routes.",
+    "explanation": "Overseas bases helped vessels refuel, resupply, and operate far from home.",
+    "hint": "Think about what a ship needs between distant ports."
+  },
+  {
+    "id": "v31",
+    "cs": "CS 14",
+    "topic": "Open Door Policy",
+    "prompt": "What was the Open Door policy in China?",
+    "choices": [
+      "A proposal allowing equal foreign commercial access to Chinese markets",
+      "Exclusive commercial access in China for American companies",
+      "Joint colonial administration of China by European governments",
+      "Complete withdrawal of foreign trade from Chinese ports"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/hay-and-china",
+    "where": "On the linked page, use Ctrl+F to search for commercial. Read Hay’s request about equal commercial access.",
+    "explanation": "The Open Door sought trade access without exclusive control by one power.",
+    "hint": "Focus on equal access to a market."
+  },
+  {
+    "id": "v32",
+    "cs": "CS 14",
+    "topic": "Philippine-American War",
+    "prompt": "What was the Philippine-American War?",
+    "choices": [
+      "Filipino resistance to American rule following the end of Spanish control",
+      "Cuban resistance to Spanish rule before U.S. intervention",
+      "Chinese resistance to foreign influence during the Boxer uprising",
+      "Mexican resistance to U.S. forces during a border conflict"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/war",
+    "where": "On the linked page, use Ctrl+F to search for independence. Read why Filipino independence leaders opposed U.S. annexation.",
+    "explanation": "Filipino forces fought U.S. rule after Spain ceded the islands.",
+    "hint": "Identify the group resisting new U.S. control."
+  },
+  {
+    "id": "v33",
+    "cs": "CS 14",
+    "topic": "Panama Canal",
+    "prompt": "Why was the Panama Canal strategically important?",
+    "choices": [
+      "It shortened sea travel between the Atlantic and Pacific Oceans",
+      "It established equal trading rights throughout Chinese ports",
+      "It transferred Spanish island colonies into American possession",
+      "It limited naval construction among the major Pacific powers"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/panama-canal",
+    "where": "On the linked page, use Ctrl+F to search for Atlantic. Read why leaders wanted an isthmian waterway.",
+    "explanation": "The canal shortened shipping and naval travel between oceans.",
+    "hint": "Think of the long alternative route around South America."
+  },
+  {
+    "id": "v34",
+    "cs": "CS 14",
+    "topic": "Monroe Doctrine",
+    "prompt": "What did the original Monroe Doctrine warn European powers against?",
+    "choices": [
+      "Further colonization or interference by European powers in the Americas",
+      "Further American commercial competition in East Asian markets",
+      "Further international agreements limiting national weapons and forces",
+      "Further German submarine attacks against neutral merchant vessels"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
+    "where": "On the linked page, use Ctrl+F to search for 1823. Compare the original doctrine with Roosevelt’s later, more active corollary.",
+    "explanation": "The doctrine opposed new European colonial influence in the Americas.",
+    "hint": "Identify the original warning to Europe."
+  },
+  {
+    "id": "v35",
+    "cs": "CS 14",
+    "topic": "Central Powers",
+    "prompt": "Who were the Central Powers in World War I?",
+    "choices": [
+      "Germany and Austria-Hungary together with their wartime partners",
+      "The coalition led by Britain and France",
+      "The organization formed to prevent future wars",
+      "The nations remaining outside the European conflict"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1914-1920/wwi",
+    "where": "On the linked page, use Ctrl+F to search for Austria. Read which side Germany fought for when the United States entered.",
+    "explanation": "Germany and Austria-Hungary were leading Central Powers.",
+    "hint": "Choose the side opposed by the Allies."
+  },
+  {
+    "id": "v36",
+    "cs": "CS 15",
+    "topic": "Open Diplomacy",
+    "prompt": "What did Wilson mean by open diplomacy?",
+    "choices": [
+      "Negotiating international agreements openly rather than using secret treaties",
+      "Negotiating agreements privately through exclusive wartime military alliances",
+      "Restricting agreements to discussions among victorious European governments",
+      "Submitting agreements to military commanders instead of civilian diplomats"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for I.. Read Point I of the Fourteen Points.",
+    "explanation": "Wilson proposed openly negotiated agreements to reduce secret commitments.",
+    "hint": "Look for the opposite of secret treaties."
+  },
+  {
+    "id": "v37",
+    "cs": "CS 15",
+    "topic": "Freedom of the Seas",
+    "prompt": "Which idea matches Wilson's call for freedom of the seas?",
+    "choices": [
+      "Generally open navigation outside nations' territorial waters",
+      "Exclusive Allied navigation within the defeated nations' territorial waters",
+      "Permanent American supervision of ships traveling between foreign ports",
+      "Mandatory neutral supervision of ships traveling through international waters"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for II.. Read Point II in the transcript. Notice the distinction between territorial waters and other waters, and the exception for international action.",
+    "explanation": "Wilson proposed open navigation outside territorial waters, with exceptions for international action enforcing international agreements.",
+    "hint": "Focus on access to navigation."
+  },
+  {
+    "id": "v38",
+    "cs": "CS 15",
+    "topic": "Economic Barriers",
+    "prompt": "What did Wilson want to do with economic barriers among nations?",
+    "choices": [
+      "Reduce international trade barriers and establish equal trading conditions",
+      "Raise trade barriers and reserve markets for national producers",
+      "Divide trade markets and grant exclusive rights to victors",
+      "Replace trade agreements and distribute markets through military alliances"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
+    "where": "On the linked page, use Ctrl+F to search for III.. Read Point III of the Fourteen Points.",
+    "explanation": "Wilson proposed freer commerce among nations consenting to peace.",
+    "hint": "Find the proposal concerning trade, not armaments."
+  },
+  {
+    "id": "v39",
+    "cs": "CS 15",
+    "topic": "Reparations",
+    "prompt": "What are war reparations?",
+    "choices": [
+      "Payments imposed to compensate for wartime destruction or financial losses",
+      "Loans to finance naval expansion or overseas bases",
+      "Tariffs to protect domestic goods from foreign competition",
+      "Donations to support troops before a military campaign"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1921-1936/dawes",
+    "where": "On the linked page, use Ctrl+F to search for reparations. Read why Germany’s payments were disputed after the war.",
+    "explanation": "Reparations are compensation imposed after wartime damage.",
+    "hint": "Think of a financial obligation after a conflict."
+  },
+  {
+    "id": "v40",
+    "cs": "CS 15",
+    "topic": "Washington Naval Conference",
+    "prompt": "What was the Washington Naval Conference?",
+    "choices": [
+      "A 1921–22 meeting on naval limits and Pacific tensions",
+      "A 1919 meeting on German peace terms and reparations",
+      "An 1898 meeting on Spanish territories and Cuban independence",
+      "A 1928 meeting on renouncing war and settling disputes"
+    ],
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1921-1936/naval-conference",
+    "where": "On the linked page, use Ctrl+F to search for 1921. Read who gathered in Washington and what they discussed.",
+    "explanation": "Major naval powers negotiated limits and addressed Pacific tensions.",
+    "hint": "Identify the gathering focused on warships after World War I."
+  }
 ];
-const vocab=[
-["v01","CS 16","Great Migration","What was the Great Migration?","Mass movement of African Americans from the rural South to northern cities",["European immigration to western farms","Return of factories to villages","Military movement to Europe"],MIG,"Read the definition and destinations.","It reshaped northern cities economically and culturally.","Who moved, and in which direction?"],
-["v02","CS 16","Jim Crow","What does Jim Crow identify?","A system of laws and customs enforcing racial segregation",["A jazz performance style","A labor-union tactic","A consumer-credit plan"],LOC,"Find the system migrants sought to escape.","Jim Crow maintained white supremacy through law and practice.","Think legalized segregation."],
-["v03","CS 16","Nativism","What is nativism?","Hostility toward immigrants combined with preference for native-born people",["Support for cultural diversity","Mass production","Women's suffrage"],LOC,"Read about anti-immigrant attitudes.","Nativists portray newcomers as threats.","The word centers native-born status."],
-["v04","CS 16","Immigration Quota","What is an immigration quota?","A numerical limit on entrants from particular nations or regions",["A guarantee of unlimited entry","A radio license","A union wage demand"],LOC,"Find restriction policies of the 1920s.","Quotas restricted immigration using nationality-based limits.","Quota means numerical limit."],
-["v05","CS 16","Red Scare","What was the First Red Scare?","A period of intense fear of communism and radical revolution",["Celebration of Soviet culture","Movement for Prohibition repeal","Growth of automobile ownership"],RED,"Read the description of postwar radical fears.","Fear of subversion drove raids, arrests, and deportations.","Connect red with communism."],
-["v06","CS 16","Communism","What is communism in the context of the Red Scare?","An ideology associated with collective ownership and revolutionary change",["A method of assembly-line production","A constitutional voting amendment","A musical movement"],RED,"Read why the Russian Revolution alarmed Americans.","Communism became the ideological focus of postwar fears.","This is a political-economic ideology."],
-["v07","CS 16","Deportation","What is deportation?","Government removal of a noncitizen from the country",["Movement from farm to city","Election to public office","Boycott of a business"],RED,"Find what happened to some suspected radicals.","Deportation expels a noncitizen from national territory.","Think forced removal across a national border."],
-["v08","CS 16","Lynching","What is lynching?","Mob killing carried out without lawful trial",["A legal jury verdict","A peaceful strike","A radio broadcast"],LOC,"Read evidence of racial violence.","Lynching was racial terror outside due process.","The act bypasses courts and law."],
-["v09","CS 17","Assembly Line","What is an assembly line?","A production system moving goods through specialized repeated tasks",["A secret drinking club","A migration route","A voting restriction"],LOC,"Find the manufacturing innovation.","Assembly lines support fast mass production.","Think sequential factory stations."],
-["v10","CS 17","Mass Production","What is mass production?","Large-scale manufacture of standardized goods",["Handmaking one unique item","Reducing factory output","Banning consumer goods"],LOC,"Connect assembly lines with output.","Standardization and machinery make large quantities efficiently.","Mass means large quantity."],
-["v11","CS 17","Consumer Culture","What is consumer culture?","A society emphasizing purchasing and using widely marketed goods",["A society without advertising","A ban on household technology","A system of racial segregation"],LOC,"Read about goods, media, and advertising.","Mass production and advertising encouraged buying as part of modern life.","Focus on purchasing behavior."],
-["v12","CS 17","Standard of Living","What is standard of living?","The level of material comfort and access to goods and services",["A newspaper's circulation","A military alliance","A voting amendment"],LOC,"Connect prosperity with household life.","It measures material conditions, not just income.","Think quality of everyday material life."],
-["v13","CS 17","Mass Media","What is mass media?","Communication reaching very large audiences",["Private letters only","Local conversation","Factory machinery"],LOC,"Find radio, film, newspapers, and magazines.","Mass media distributes information and culture broadly.","Which term covers radio and popular print?"],
-["v14","CS 17","Commercial Radio","What made commercial radio different?","Stations broadcast programming and advertising to mass audiences",["It carried only military codes","It had no sponsors","It prevented national news"],LOC,"Read about radio broadcasting.","Commercial radio linked entertainment with advertising-supported networks.","Think broadcasts plus advertisements."],
-["v15","CS 17","Talking Picture","What was a talking picture?","A motion picture synchronized with recorded sound",["A silent newspaper","A radio-only drama","A political speech"],LOC,"Find film innovation.","Sound transformed movies and mass entertainment.","This technology added sound to film."],
-["v16","CS 17","Social Norm","What is a social norm?","A shared expectation about acceptable behavior",["A federal tax","A factory machine","A treaty"],LOC,"Read about modern changes challenging traditions.","Rapid cultural change can conflict with established expectations.","Norm means expected behavior."],
-["v17","CS 18","Harlem Renaissance","What was the Harlem Renaissance?","A Black cultural flowering in art, literature, and music",["An anti-immigrant law","A banking reform","A naval conference"],HAR,"Read the New Negro movement overview.","It celebrated Black identity and confronted injustice.","Connect Harlem with Black creativity."],
-["v18","CS 18","Jazz","What is jazz?","An African American musical form emphasizing rhythm and improvisation",["A prohibition law","A voting test","A factory method"],HAR,"Find music associated with the movement.","Jazz became a defining American art form.","This is a music genre."],
-["v19","CS 18","Cultural Diffusion","What is cultural diffusion?","Spread of cultural traits from one group or place to others",["Legal segregation","Immigration restriction","Industrial monopoly"],HAR,"Consider how jazz and literature reached national audiences.","Media and migration spread Black cultural contributions.","Diffusion means spreading."],
-["v20","CS 18","Suffrage","What is suffrage?","The right to vote",["A ban on alcohol","A criminal deportation","A factory wage"],S19,"Read what the 19th Amendment protects.","Suffrage means voting rights.","This is a political right."],
-["v21","CS 18","19th Amendment","What did the 19th Amendment prohibit?","Denial of voting rights on account of sex",["Manufacture of automobiles","Immigration from Europe","Publication of magazines"],S19,"Read the amendment text.","It constitutionally protected women's suffrage.","Connect 19th Amendment with women and voting."],
-["v22","CS 18","Prohibition","What was Prohibition?","National legal restriction on producing, selling, and transporting alcohol",["Restriction on women's voting","Ban on jazz","Limit on automobiles"],PRO,"Read the era's basic policy.","The 18th Amendment and enforcement laws created national Prohibition.","The restricted product was alcohol."],
-["v23","CS 18","18th Amendment","What did the 18th Amendment establish?","National Prohibition",["Women's suffrage","Direct election of senators","Income tax"],PRO,"Find the constitutional basis of Prohibition.","The 18th Amendment created the national alcohol ban.","Do not confuse it with the 19th."],
-["v24","CS 18","Speakeasy","What was a speakeasy?","A hidden illegal drinking establishment",["A suffrage parade","A radio station","A factory floor"],PRO,"Read about evasion of the alcohol ban.","Speakeasies sold alcohol despite Prohibition.","Think secret bar."],
-["v25","CS 18","Bootlegging","What is bootlegging?","Illegal production or distribution of alcohol",["Legal voter registration","Assembly-line labor","Magazine publishing"],PRO,"Find illegal alcohol activity.","Bootlegging supplied the black market.","This term concerns illegal liquor."],
-["v26","CS 18","Organized Crime","What is organized crime?","Coordinated criminal enterprise operating for profit",["A political amendment","A legal labor union","A cultural festival"],PRO,"Read about criminal networks during Prohibition.","Illegal alcohol created lucrative markets for criminal organizations.","Think structured criminal business."],
-["v27","CS 18","Unintended Consequence","What is an unintended consequence?","An unplanned result of a policy or action",["The stated goal","A guaranteed benefit","A constitutional requirement"],PRO,"Compare Prohibition's goal with crime and evasion.","Policies can create effects their supporters did not intend.","Look beyond the policy's official purpose."],
-["v28","CS 16–18","Modernism","What is modernism in this context?","New ideas and lifestyles challenging older traditions",["Return to every past custom","Legal racial segregation","A numerical immigration limit"],LOC,"Read about tensions produced by rapid cultural change.","Modernism captured experimentation and changing social norms.","It contrasts with traditionalism." ]
-];
-const review=[
-["r01","CS 16","Migration Causes","A Black family leaves Mississippi after racial violence and finds factory work in Chicago. Which explanation fits?","Push factors in the South and pull factors in the North drove the Great Migration",["Prohibition caused western settlement","Radio ended segregation","Immigration quotas created farm jobs"],"","","The example combines escape from discrimination with economic opportunity.","Identify both why they left and why they chose Chicago."],
-["r02","CS 16","Urban Effects","Northern housing discrimination confines newcomers to crowded neighborhoods. What does this show?","Migration changed location but did not eliminate racism",["Jim Crow ended nationally","All migrants gained equal opportunity","Cities had unlimited housing"],"","","Racial barriers followed migrants into northern life.","Moving north did not guarantee equality."],
-["r03","CS 16","Nativism","A politician blames immigrants for crime and demands nationality quotas. Which attitude is shown?","Nativism",["Collective bargaining","Modernism","Suffrage"],"","","The politician treats immigrants as threats and favors native-born people.","Focus on hostility to newcomers."],
-["r04","CS 16","Quota Effects","Which group was most directly restricted by 1920s national-origins quotas?","Immigrants from southern and eastern Europe",["Native-born industrialists","Women voters","African American jazz musicians"],"","","Quotas were designed to reduce immigration from disfavored European regions.","Recall which newer immigrant groups nativists targeted."],
-["r05","CS 16","Red Scare","Officials arrest immigrants because of suspected beliefs rather than proven crimes. Which tension is clearest?","National-security fear versus civil liberties",["Rural life versus automobiles","Jazz versus radio","Suffrage versus Prohibition"],"","","Red Scare enforcement often sacrificed rights in the name of security.","Compare fear of subversion with due process."],
-["r06","CS 16","Multiple Causes","Which combination best explains postwar unrest?","Racial tension, nativism, strikes, and fear of communism",["Universal prosperity alone","Declining immigration and no labor conflict","Jazz and automobiles only"],"","","Several racial, economic, and ideological conflicts converged.","Choose the multi-causal answer."],
-["r07","CS 16","KKK","The revived Klan targets Black citizens, Catholics, Jews, and immigrants. What unites these actions?","Organized intolerance defending a narrow definition of American identity",["Support for pluralism","Expansion of civil liberties","Opposition to segregation"],"","","The Klan fused racism, religious prejudice, and nativism.","Look for exclusion across several groups."],
-["r08","CS 16","Cause and Effect","Russian Revolution and violent strikes → public fear → raids and deportations. This sequence describes—","the First Red Scare",["the Harlem Renaissance","Prohibition repeal","mass production"],"","","Fear of revolution produced aggressive government action.","Connect Russia and suspected radicals."],
-["r09","CS 17","Production","A factory divides automobile construction into simple repeated jobs. What result is most likely?","Faster mass production using more unskilled labor",["Return to slower craft production","Higher cost for every unit","End of standardization"],"","","Assembly lines traded craft control for speed and volume.","Repeated specialized tasks increase output."],
-["r10","CS 17","Consumer Change","Lower-priced automobiles become widely available. Which effect follows?","Greater mobility and changes in work, leisure, and settlement",["Less travel","End of road building","Disappearance of suburbs"],"","","Affordable cars reshaped daily geography.","Think about how far people can travel."],
-["r11","CS 17","Mass Culture","Families across the country hear the same radio program. This best demonstrates—","development of a shared mass culture",["collapse of communication","regional isolation","end of advertising"],"","","Broadcasting created common national experiences.","Many people receive one message simultaneously."],
-["r12","CS 17","Advertising","Why did radio and magazines strengthen consumer culture?","They connected mass advertising with large audiences",["They banned brand names","They reduced information","They ended installment buying"],"","","Media encouraged demand for mass-produced products.","Advertising needs an audience."],
-["r13","CS 17","Uneven Prosperity","Why should historians qualify the phrase “Roaring Twenties prosperity”?","Benefits and improved living standards were not shared equally",["No technology improved","Every worker became wealthy","Cities stopped growing"],"","","Many prospered, but racial, regional, and class inequalities persisted.","Avoid an absolute claim about everyone."],
-["r14","CS 17","Cultural Conflict","Older Americans condemn movies and changing youth behavior. What caused the disagreement?","Modern mass culture challenged traditional social norms",["Technology ended generational differences","Rural values disappeared instantly","Prohibition was universally accepted"],"","","Rapid change often provoked resistance from traditionalists.","Contrast modernism with tradition."],
-["r15","CS 17","Technology","Which innovation most directly created real-time national home audiences?","Commercial radio",["Skyscraper","Assembly line","Commercial aircraft"],"","","Radio broadcast the same news and entertainment into homes.","Which device transmitted sound immediately?"],
-["r16","CS 17","Cause and Effect","Mass production → lower prices → more buyers → more advertising. This chain describes—","growth of consumer culture",["collapse of industry","end of credit","decline of mass media"],"","","Efficient output and marketing reinforced mass consumption.","Follow the link from goods to purchasing."],
-["r17","CS 18","Harlem Renaissance","A poet celebrates Black identity while exposing discrimination. Which movement is represented?","Harlem Renaissance",["Red Scare","Nativism","Prohibition"],"","","The movement joined cultural pride with criticism of injustice.","Look for Black art and literature."],
-["r18","CS 18","Migration and Culture","How did the Great Migration help cause the Harlem Renaissance?","It concentrated Black communities and talent in northern cultural centers",["It outlawed jazz","It ended urban life","It reduced Black audiences"],"","","Migration created vibrant communities supporting artists and institutions.","Population movement preceded cultural flowering."],
-["r19","CS 18","Jazz","Jazz spreads from Black communities to national audiences through recordings and radio. This is—","cultural diffusion",["deportation","segregation","immigration restriction"],"","","A cultural form moved from one community into broader society.","Diffusion means spread."],
-["r20","CS 18","Suffrage","Which immediate political change followed the 19th Amendment?","Women could vote without sex being used as a constitutional basis for denial",["All discrimination ended","Prohibition was repealed","Women received identical wages"],"","","The amendment addressed voting, not every inequality.","Choose the precise constitutional effect."],
-["r21","CS 18","Prohibition","A desired product is banned, but customers continue seeking it. What economic result is likely?","A profitable illegal market develops",["Demand instantly disappears","Organized crime loses revenue","Enforcement becomes unnecessary"],"","","Persistent demand creates opportunity for illegal suppliers.","Think black market."],
-["r22","CS 18","Policy Evaluation","Which evidence best supports calling Prohibition a mixed success?","Some drinking declined, but speakeasies and organized crime expanded",["Every citizen obeyed","No enforcement was attempted","Alcohol demand ended permanently"],"","","The policy produced both intended and unintended outcomes.","A mixed result contains success and failure."],
-["r23","CS 18","Reform Limits","Why did Prohibition lack durable popular support?","Enforcement conflicts and widespread evasion weakened legitimacy",["Alcohol had no consumers","Crime disappeared","The amendment protected voting"],"","","A rule repeatedly ignored becomes difficult to sustain.","Consider compliance and enforceability."],
-["r24","CS 18","Social Change","Which pairing correctly matches movement and result?","Women's suffrage—greater political participation",["Red Scare—expanded immigrant rights","Nativism—open immigration","Prohibition—elimination of crime"],"","","Voting rights widened women's formal political role.","Reject pairings that reverse actual effects."],
-["r25","CS 16–18","Comparison","What did the Red Scare and Prohibition share?","Both encouraged government enforcement that produced civil-liberty or crime concerns",["Both expanded immigration","Both centered jazz","Both guaranteed equality"],"","","Each policy area showed unintended costs of moral or security enforcement.","Look for government power and unintended results."],
-["r26","CS 16–18","Contradiction","Which contradiction best characterizes the decade?","Celebration of modern freedom coexisted with exclusion and repression",["No technology existed","Cultural creativity ended","Racism disappeared"],"","","Modern consumer life and art grew alongside nativism and racial violence.","Choose the contrast."],
-["r27","CS 16–18","Evidence","Which pair best demonstrates both cultural innovation and intolerance?","Harlem Renaissance and revived Ku Klux Klan",["Assembly line and automobile","Radio and movies","Suffrage and jazz"],"","","One represents Black cultural achievement; the other organized hatred.","Find one positive cultural movement and one exclusionary movement."],
-["r28","CS 16–18","Cause and Effect","Which development links technology to social tension?","Mass media spread modern values that challenged traditional beliefs",["Assembly lines ended communication","Airplanes caused segregation laws","Automobiles created the Red Scare"],"","","Communication technology accelerated exposure to new ideas.","Focus on ideas reaching broad audiences."],
-["r29","CS 16–18","Historical Argument","Which thesis is strongest?","The 1920s combined economic modernization with unresolved racial and cultural conflict",["The decade was only prosperous","Technology solved prejudice","Reform eliminated crime"],"","","A strong thesis accounts for multiple dimensions and contradictions.","Avoid one-sided absolutes."],
-["r30","CS 16–18","Continuity","Which condition showed continuity with earlier eras?","Racial discrimination and violence persisted despite migration and cultural achievement",["All social norms vanished","Immigration became unlimited","Women lost voting rights"],"","","Major changes did not erase longstanding racism.","Continuity means something persisted."],
-["r31","CS 16–18","Change","Which development best represents change during the 1920s?","Mass media created shared national consumer culture",["Jim Crow persisted","Racial prejudice continued","Nativism remained powerful"],"","","Radio, film, and print expanded a national culture in new ways.","Choose the new development rather than persistence."],
-["r32","CS 16–18","Synthesis","Which summary best fits Block 4?","Postwar fears produced exclusion while technology, migration, and reform transformed culture",["The nation experienced no tension","All reforms succeeded completely","Economic change had no social effect"],"","","The period's central story is simultaneous transformation and conflict.","Include CS 16, 17, and 18 in one claim." ]
-];
-window.BLOCK_QUESTIONS=build(mode==="intro"?intro:mode==="vocabulary"?vocab:review);
+// A saved seed keeps choices aligned with saved answer indexes after a reload.
+let seed=Number(localStorage.getItem(window.BLOCK_CONFIG.assignmentKey+"|shuffle"));
+if(!seed){seed=Math.floor(Math.random()*4294967295)||1;localStorage.setItem(window.BLOCK_CONFIG.assignmentKey+"|shuffle",String(seed))}
+function random(){seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return(seed>>>0)/4294967296}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const ordered=shuffle(window.BLOCK_QUESTIONS),positions=shuffle(Array.from({length:ordered.length},(_,i)=>i%4));
+window.BLOCK_QUESTIONS=ordered.map((item,n)=>{
+ const correct=item.choices[item.answer],wrong=shuffle(item.choices.filter((_,i)=>i!==item.answer));
+ const choices=wrong.slice();choices.splice(positions[n],0,correct);
+ return{...item,choices,answer:positions[n]};
+});
 })();
+
