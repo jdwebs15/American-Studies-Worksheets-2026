@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>American Studies Mastery Assignment</title>
+  <title>Block 4 Vocabulary — Unrest and the Roaring Twenties</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <header class="hero">
     <div>
       <div class="eyebrow">LEGEND MASTERY SERIES • AMERICAN STUDIES</div>
-      <h1 id="pageTitle">American Studies Mastery Assignment</h1>
+      <h1 id="pageTitle">Block 4 Vocabulary — Unrest and the Roaring Twenties</h1>
       <p id="pageDescription"></p>
       <p>Mastery requires <strong>every question corrected</strong>. Incorrect attempts remain in your accuracy and attempt totals.</p>
     </div>
@@ -32,6 +32,7 @@
       <label>School email<input id="email" type="email" autocomplete="email" placeholder="name@school.org"></label>
     </div>
     <div class="actions"><button id="startBtn">Start / Continue</button><button id="loadBtn" class="secondary">Load previous work</button><button id="saveBtn" class="secondary">Save progress</button></div>
+    <button id="resetBtn" class="secondary">Reset / Start over</button>
     <p id="saveStatus" class="status" role="status"></p>
   </section>
 
@@ -39,7 +40,7 @@
     <section class="question-panel">
       <div class="section-label">QUESTION</div>
       <div class="stats">
-        <div><strong id="progressStat">1 / 28</strong><span>Progress</span></div>
+        <div><strong id="progressStat">1 / 40</strong><span>Progress</span></div>
         <div><strong id="accuracyStat">100%</strong><span>Accuracy</span></div>
         <div><strong id="runtimeStat">0:00</strong><span>Runtime</span></div>
       </div>
@@ -47,7 +48,7 @@
     </section>
 
     <aside class="side-panel">
-      <div class="section-label">RULES</div>
+      <button data-reset-assignment class="secondary">Reset / Start over</button><div class="section-label">RULES</div>
       <ul>
         <li><strong>Mastery</strong> means correcting every item.</li>
         <li>A wrong answer is counted, then a hint helps you retry.</li>
@@ -63,10 +64,10 @@
     <h2>Assignment mastery complete</h2>
     <p id="completionSummary"></p>
     <button id="submitBtn">Submit completed assignment</button>
-    <p id="submitStatus" class="status" role="status"></p>
+    <button id="completionResetBtn" class="secondary">Reset / Start over</button><p id="submitStatus" class="status" role="status"></p>
   </section>
 </main>
-<script src="questions.js"></script>
-<script src="app.js"></script>
+<script src="questions.js?v=b4-20261006"></script>
+<script src="app.js?v=b4-20261006"></script>
 </body>
 </html>

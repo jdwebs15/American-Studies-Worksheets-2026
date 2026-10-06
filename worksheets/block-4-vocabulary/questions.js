@@ -1,685 +1,725 @@
 (function(){
-window.BLOCK_CONFIG={assignmentKey:"AS-B3-CS14-15-VOCAB-2026-v2",title:"Block 3 Vocabulary — World Power and Isolationism",description:"CS 14–15 • Forty essential terms for overseas expansion, World War I, peacemaking, and isolationism.",practice:"Build precise command of the people, policies, events, and foreign-policy concepts needed for lecture and the comprehensive review."};
+window.BLOCK_CONFIG={"assignmentKey": "AS-B4-CS16-18-VOCAB-2026-v3", "title": "Block 4 Vocabulary \u2014 Unrest and the Roaring Twenties", "description": "CS 16\u201318 \u2022 40 terms on postwar unrest, technological change, the Harlem Renaissance, suffrage, and Prohibition.", "practice": "Learn the vocabulary of racial and political unrest, new technology, cultural change, voting rights, and Prohibition."};
 window.BLOCK_QUESTIONS=[
   {
-    "id": "v01",
-    "cs": "CS 14",
-    "topic": "Imperialism",
-    "prompt": "What is imperialism?",
+    "id": "b4v01",
+    "cs": "CS 16",
+    "topic": "Great Migration",
+    "prompt": "Which definition best identifies Great Migration?",
     "choices": [
-      "Extending national control over other lands",
-      "Withdrawing national control from overseas lands",
-      "Sharing governing authority among equal nations",
-      "Limiting national interests to domestic affairs"
+      "Movement of Black Americans from the South to other regions",
+      "Movement of European immigrants into southern farmland",
+      "Movement of northern factory workers into western mines",
+      "Movement of American soldiers into overseas colonies"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for territories. Read how the war and overseas possessions expanded U.S. control and influence.",
-    "explanation": "Imperialism extends a nation's political, economic, or military influence over other lands.",
-    "hint": "Look for expansion of power beyond a nation's borders."
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the reference note below, then use the linked source for more detail about Great Migration.",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "hint": "Connect this term to Great Migration. Revisit the reference note and compare all four definitions.",
+    "explanation": "Great Migration: Movement of Black Americans from the South to other regions."
   },
   {
-    "id": "v02",
-    "cs": "CS 14",
-    "topic": "Expansionism",
-    "prompt": "What is expansionism?",
+    "id": "b4v02",
+    "cs": "CS 16",
+    "topic": "Jim Crow",
+    "prompt": "Which definition best identifies Jim Crow?",
     "choices": [
-      "Favoring growth in territory or influence",
-      "Favoring withdrawal from territories or markets",
-      "Favoring neutrality during an overseas conflict",
-      "Favoring reductions in weapons or forces"
+      "Laws enforcing racial segregation and unequal treatment",
+      "Laws protecting equal voting access and treatment",
+      "Laws establishing national limits on immigration",
+      "Laws prohibiting alcohol production and sale"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for interests. Identify the actions through which U.S. territory and strategic reach grew.",
-    "explanation": "Expansionism favors extending a nation's territory, markets, or influence.",
-    "hint": "Which definition involves becoming geographically or internationally larger?"
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the reference note below, then use the linked source for more detail about Jim Crow.",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "hint": "Connect this term to Jim Crow. Revisit the reference note and compare all four definitions.",
+    "explanation": "Jim Crow: Laws enforcing racial segregation and unequal treatment."
   },
   {
-    "id": "v03",
-    "cs": "CS 14",
-    "topic": "Annexation",
-    "prompt": "What does annexation mean?",
+    "id": "b4v03",
+    "cs": "CS 16",
+    "topic": "Segregation",
+    "prompt": "Which definition best identifies Segregation?",
     "choices": [
-      "Formally adding territory to a country",
-      "Temporarily occupying territory during a war",
-      "Recognizing territory as an independent country",
-      "Dividing territory into foreign trading zones"
+      "Separation of people based on racial identity",
+      "Expansion of voting based on citizenship status",
+      "Restriction of immigration based on national origin",
+      "Distribution of jobs based on occupational training"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for annex. Read how Hawaii became a U.S. territory in 1898.",
-    "explanation": "Annexation is the formal incorporation of territory into a nation.",
-    "hint": "Think about Hawaii being added to the United States."
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the reference note below, then use the linked source for more detail about Jim Crow.",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "hint": "Connect this term to Jim Crow. Revisit the reference note and compare all four definitions.",
+    "explanation": "Segregation: Separation of people based on racial identity."
   },
   {
-    "id": "v04",
-    "cs": "CS 14",
-    "topic": "Yellow Journalism",
-    "prompt": "What was yellow journalism?",
+    "id": "b4v04",
+    "cs": "CS 16",
+    "topic": "Lynching",
+    "prompt": "Which definition best identifies Lynching?",
     "choices": [
-      "Sensationalized news reporting intended to influence readers",
-      "Investigative reporting used to expose corruption",
-      "Official reporting used to announce government decisions",
-      "Objective reporting used to compare verified evidence"
+      "Extrajudicial killing often used for racial intimidation",
+      "Legal sentencing following a jury criminal trial",
+      "Peaceful protest intended to change discriminatory laws",
+      "Federal investigation intended to protect minority rights"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/yellow-journalism",
-    "where": "On the linked page, use Ctrl+F to search for sensational. Read how sensational newspapers affected public opinion about Cuba.",
-    "explanation": "Yellow journalism emphasized sensational stories, sometimes with exaggeration, to build readership and shape opinion.",
-    "hint": "The term describes a style of reporting, not a paper color."
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the reference note below, then use the linked source for more detail about Postwar Violence.",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "hint": "Connect this term to Postwar Violence. Revisit the reference note and compare all four definitions.",
+    "explanation": "Lynching: Extrajudicial killing often used for racial intimidation."
   },
   {
-    "id": "v05",
-    "cs": "CS 14",
-    "topic": "USS Maine",
-    "prompt": "Why is the USS Maine important?",
+    "id": "b4v05",
+    "cs": "CS 16",
+    "topic": "Ku Klux Klan",
+    "prompt": "Which definition best identifies Ku Klux Klan?",
     "choices": [
-      "Its Havana explosion increased pressure for war",
-      "Its Pacific voyage helped negotiate naval limits",
-      "Its Atlantic crossing carried delegates to Versailles",
-      "Its Caribbean patrol enforced the Open Door"
+      "White supremacist organization using intimidation and violence",
+      "Civil rights organization challenging racial segregation",
+      "Labor organization seeking better factory conditions",
+      "Political organization promoting equal religious access"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for Maine. Locate the February 1898 explosion in Havana Harbor.",
-    "explanation": "The unexplained destruction of the Maine fueled public anger and interventionist pressure.",
-    "hint": "Connect this ship with Havana and the Spanish-American War."
+    "source": "https://www.archives.gov/research/african-americans/migrations/great-migration",
+    "where": "Read the reference note below, then use the linked source for more detail about Ku Klux Klan.",
+    "reading": "Southern racial violence, Jim Crow segregation, and limited opportunities pushed many African Americans to leave. Northern industrial jobs pulled migrants toward cities such as Chicago and Detroit. The Great Migration enlarged Black urban communities and helped support cultural institutions. Northern cities still had discrimination, housing barriers, competition for jobs, and racial attacks. Moving did not guarantee equal treatment. The revived Ku Klux Klan exploited hostility toward Black Americans, immigrants, Catholics, and Jews. Its appeal rested on racial and religious exclusion.",
+    "hint": "Connect this term to Ku Klux Klan. Revisit the reference note and compare all four definitions.",
+    "explanation": "Ku Klux Klan: White supremacist organization using intimidation and violence."
   },
   {
-    "id": "v06",
-    "cs": "CS 14",
-    "topic": "Spanish-American War",
-    "prompt": "What was the Spanish-American War?",
+    "id": "b4v06",
+    "cs": "CS 16",
+    "topic": "Nativism",
+    "prompt": "Which definition best identifies Nativism?",
     "choices": [
-      "An 1898 U.S. conflict against Spanish rule",
-      "A 1917 U.S. conflict against German forces",
-      "An 1899 Filipino conflict against U.S. rule",
-      "A 1914 European conflict against Serbian expansion"
+      "Favoring native-born residents over immigrants",
+      "Favoring immigrant workers over native-born residents",
+      "Favoring rural communities over industrial cities",
+      "Favoring international alliances over domestic concerns"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for 1898. Read the page title and opening summary.",
-    "explanation": "The 1898 war ended much of Spain's empire and increased U.S. overseas power.",
-    "hint": "Look for the conflict tied to Cuba, Puerto Rico, Guam, and the Philippines."
+    "source": "https://history.state.gov/milestones/1921-1936/immigration-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Nativism.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to Nativism. Revisit the reference note and compare all four definitions.",
+    "explanation": "Nativism: Favoring native-born residents over immigrants."
   },
   {
-    "id": "v07",
-    "cs": "CS 14",
-    "topic": "Treaty of Paris of 1898",
-    "prompt": "What did the Treaty of Paris of 1898 do?",
+    "id": "b4v07",
+    "cs": "CS 16",
+    "topic": "Immigration Quota",
+    "prompt": "Which definition best identifies Immigration Quota?",
     "choices": [
-      "Ended war with Spain and transferred territories",
-      "Ended war with Germany and established reparations",
-      "Limited naval weapons and addressed Pacific tensions",
-      "Renounced aggressive war and encouraged peaceful settlements"
+      "Numerical limit on immigrants admitted to a country",
+      "Financial payment required for goods entering a country",
+      "Voting requirement applied to residents seeking citizenship",
+      "Employment benefit provided to workers leaving a country"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for December 10. Read the paragraphs describing the December 1898 peace settlement.",
-    "explanation": "The treaty ended war with Spain and transferred Puerto Rico, Guam, and the Philippines to U.S. control.",
-    "hint": "Do not confuse the 1898 Treaty of Paris with the later Versailles settlement."
+    "source": "https://history.state.gov/milestones/1921-1936/immigration-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Immigration Quotas.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to Immigration Quotas. Revisit the reference note and compare all four definitions.",
+    "explanation": "Immigration Quota: Numerical limit on immigrants admitted to a country."
   },
   {
-    "id": "v08",
-    "cs": "CS 14",
-    "topic": "World Power",
-    "prompt": "What is a world power?",
+    "id": "b4v08",
+    "cs": "CS 16",
+    "topic": "National Origins Act",
+    "prompt": "Which definition best identifies National Origins Act?",
     "choices": [
-      "A nation with major influence in international affairs",
-      "A nation whose authority comes from foreign rulers",
-      "A nation with limited influence beyond its borders",
-      "A nation whose policies are set by international courts"
+      "1924 immigration law using restrictive national quotas",
+      "1920 voting amendment protecting rights regardless of sex",
+      "1919 enforcement law implementing national alcohol restrictions",
+      "1921 trade law establishing lower import taxes"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/spanish-american-war",
-    "where": "On the linked page, use Ctrl+F to search for Pacific power. Read how victory secured U.S. status in the Caribbean and Pacific.",
-    "explanation": "A world power has substantial economic, political, or military influence beyond its region.",
-    "hint": "Focus on international influence rather than total domination."
+    "source": "https://history.state.gov/milestones/1921-1936/immigration-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Immigration Quotas.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to Immigration Quotas. Revisit the reference note and compare all four definitions.",
+    "explanation": "National Origins Act: 1924 immigration law using restrictive national quotas."
   },
   {
-    "id": "v09",
-    "cs": "CS 14",
-    "topic": "Big Stick Diplomacy",
-    "prompt": "What was Big Stick diplomacy?",
+    "id": "b4v09",
+    "cs": "CS 16",
+    "topic": "First Red Scare",
+    "prompt": "Which definition best identifies First Red Scare?",
     "choices": [
-      "Using negotiation backed by the threat of military force",
-      "Negotiating through promises of loans and private investment",
-      "Negotiating by renouncing force as a policy tool",
-      "Negotiating through a permanent collective security organization"
+      "Postwar fear of communism and radical revolution",
+      "Postwar enthusiasm for immigration and cultural diversity",
+      "Postwar campaign for alcohol regulation and temperance",
+      "Postwar debate over automobiles and urban traffic"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
-    "where": "On the linked page, use Ctrl+F to search for Big Stick. Read the description of Roosevelt's assertive approach.",
-    "explanation": "Big Stick diplomacy used negotiation backed by the possibility of force.",
-    "hint": "Recall Roosevelt's phrase about speaking softly."
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about First Red Scare.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to First Red Scare. Revisit the reference note and compare all four definitions.",
+    "explanation": "First Red Scare: Postwar fear of communism and radical revolution."
   },
   {
-    "id": "v10",
-    "cs": "CS 14",
-    "topic": "Roosevelt Corollary",
-    "prompt": "What was the Roosevelt Corollary?",
+    "id": "b4v10",
+    "cs": "CS 16",
+    "topic": "Communism",
+    "prompt": "Which definition best identifies Communism?",
     "choices": [
-      "Claiming a U.S. right to intervene in Western Hemisphere nations",
-      "Promising U.S. neutrality in disputes among nearby nations",
-      "Requiring European approval before intervention in nearby nations",
-      "Transferring U.S. territories to governments of nearby nations"
+      "Ideology advocating common ownership of productive property",
+      "Ideology advocating hereditary ownership of political offices",
+      "Ideology advocating private ownership with market competition",
+      "Ideology advocating colonial ownership of foreign territories"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
-    "where": "On the linked page, use Ctrl+F to search for police. Read the paragraph stating when the United States might exercise international police power.",
-    "explanation": "The corollary expanded the Monroe Doctrine into a justification for regional intervention.",
-    "hint": "Which policy claimed a policing role in nearby nations?"
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about First Red Scare.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to First Red Scare. Revisit the reference note and compare all four definitions.",
+    "explanation": "Communism: Ideology advocating common ownership of productive property."
   },
   {
-    "id": "v11",
-    "cs": "CS 14",
-    "topic": "Sphere of Influence",
-    "prompt": "What is a sphere of influence?",
+    "id": "b4v11",
+    "cs": "CS 16",
+    "topic": "Anarchism",
+    "prompt": "Which definition best identifies Anarchism?",
     "choices": [
-      "An area under a power's special foreign influence",
-      "An area formally incorporated into a country's territory",
-      "An area governed jointly by several equal nations",
-      "An area granted independence from its former ruler"
+      "Political belief opposing government authority",
+      "Political belief supporting hereditary royal authority",
+      "Political belief favoring expanded colonial authority",
+      "Political belief defending unlimited executive authority"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/hay-and-china",
-    "where": "On the linked page, use Ctrl+F to search for spheres. Find the opening discussion of foreign spheres of influence in China. Use this example to identify what influence over a region means.",
-    "explanation": "A sphere of influence is a region where one power holds especially strong influence.",
-    "hint": "The term concerns influence over an area, not formal statehood."
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about First Red Scare.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to First Red Scare. Revisit the reference note and compare all four definitions.",
+    "explanation": "Anarchism: Political belief opposing government authority."
   },
   {
-    "id": "v12",
-    "cs": "CS 14",
-    "topic": "Neutrality",
-    "prompt": "What is neutrality?",
+    "id": "b4v12",
+    "cs": "CS 16",
+    "topic": "Palmer Raids",
+    "prompt": "Which definition best identifies Palmer Raids?",
     "choices": [
-      "Remaining outside a war as a combatant",
-      "Supporting one side by entering a war",
-      "Defending members through a permanent military alliance",
-      "Taking foreign territory through an overseas military campaign"
+      "Federal raids targeting suspected radicals in 1919\u20131920",
+      "Federal inspections targeting illegal liquor during Prohibition",
+      "Federal hearings targeting monopolies in railroad ownership",
+      "Federal patrols targeting smugglers along overseas shipping"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/wwi",
-    "where": "On the linked page, use Ctrl+F to search for neutral. Read about the United States before its 1917 entry.",
-    "explanation": "Neutrality means remaining outside a conflict rather than supporting one belligerent as a combatant.",
-    "hint": "Which choice means not choosing either warring side?"
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about First Red Scare.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to First Red Scare. Revisit the reference note and compare all four definitions.",
+    "explanation": "Palmer Raids: Federal raids targeting suspected radicals in 1919\u20131920."
   },
   {
-    "id": "v13",
-    "cs": "CS 14",
-    "topic": "Unrestricted Submarine Warfare",
-    "prompt": "What was unrestricted submarine warfare?",
+    "id": "b4v13",
+    "cs": "CS 16",
+    "topic": "Deportation",
+    "prompt": "Which definition best identifies Deportation?",
     "choices": [
-      "Attacking shipping in war zones without prior warning",
-      "Attacking warships while warning crews aboard merchant vessels",
-      "Blockading ports by inspecting cargo aboard neutral vessels",
-      "Protecting shipping in war zones with armed escorts"
+      "Removal of a noncitizen from a country",
+      "Admission of a noncitizen into a country",
+      "Granting of citizenship to a foreign resident",
+      "Granting of voting rights to a citizen"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/wwi",
-    "where": "On the linked page, use Ctrl+F to search for unrestricted. Read Germany's January 1917 decision regarding Allied and neutral shipping.",
-    "explanation": "Germany's policy allowed submarines to attack shipping without the warning expected under older maritime rules.",
-    "hint": "Look for the policy that endangered passenger, merchant, and neutral ships."
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about First Red Scare.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to First Red Scare. Revisit the reference note and compare all four definitions.",
+    "explanation": "Deportation: Removal of a noncitizen from a country."
   },
   {
-    "id": "v14",
-    "cs": "CS 14",
-    "topic": "Zimmermann Telegram",
-    "prompt": "What was the Zimmermann Telegram?",
+    "id": "b4v14",
+    "cs": "CS 16",
+    "topic": "Civil Liberties",
+    "prompt": "Which definition best identifies Civil Liberties?",
     "choices": [
-      "Germany's proposal for a Mexican alliance against America",
-      "Wilson's proposal for an international organization after war",
-      "Lodge's proposal for Senate reservations about League membership",
-      "Hay's proposal for equal commercial access in China"
+      "Individual freedoms protected against government interference",
+      "Economic benefits provided through government spending",
+      "Military obligations required through government mobilization",
+      "Trade privileges negotiated through government diplomacy"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/wwi",
-    "where": "On the linked page, use Ctrl+F to search for Zimmermann. Read the section on the intercepted German message to Mexico.",
-    "explanation": "Germany proposed an alliance and offered to help Mexico recover lost territory.",
-    "hint": "Which message created a direct security threat near the U.S. border?"
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about Civil Liberties.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to Civil Liberties. Revisit the reference note and compare all four definitions.",
+    "explanation": "Civil Liberties: Individual freedoms protected against government interference."
   },
   {
-    "id": "v15",
-    "cs": "CS 14",
-    "topic": "Mobilization",
-    "prompt": "What is wartime mobilization?",
+    "id": "b4v15",
+    "cs": "CS 16",
+    "topic": "Labor Strike",
+    "prompt": "Which definition best identifies Labor Strike?",
     "choices": [
-      "Organizing a nation’s people and resources to support a war effort",
-      "Returning troops and factories to their peacetime roles",
-      "Reducing weapons and forces through international peace agreements",
-      "Negotiating borders and reparations after a military conflict"
+      "Workers collectively stopping work to press demands",
+      "Employers collectively increasing wages to attract workers",
+      "Consumers collectively buying goods to increase demand",
+      "Officials collectively lowering taxes to encourage investment"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/wwi",
-    "where": "On the linked page, use Ctrl+F to search for troopships. Connect U.S. entry with the rapid expansion of military and economic effort.",
-    "explanation": "Mobilization converts national resources and personnel to support a war effort.",
-    "hint": "The word means preparing and organizing for action."
+    "source": "https://www.fbi.gov/history/cases-and-criminals/palmer-raids",
+    "where": "Read the reference note below, then use the linked source for more detail about First Red Scare.",
+    "reading": "Nativism favors native-born people and portrays immigrants as threats. National-origin quotas restricted immigration, especially from southern and eastern Europe; the 1924 law also excluded immigration from Asia. The Russian Revolution, strikes, and political bombings intensified fears of radical revolution after World War I. During the Palmer Raids, officials arrested suspected radicals and sought deportations. Raids and inadequate legal protections raised civil-liberty concerns. A person\u2019s birthplace or political beliefs alone do not establish that the person committed a crime.",
+    "hint": "Connect this term to First Red Scare. Revisit the reference note and compare all four definitions.",
+    "explanation": "Labor Strike: Workers collectively stopping work to press demands."
   },
   {
-    "id": "v16",
-    "cs": "CS 14",
-    "topic": "Allies",
-    "prompt": "Who were the Allies in World War I?",
+    "id": "b4v16",
+    "cs": "CS 17",
+    "topic": "Assembly Line",
+    "prompt": "Which definition best identifies Assembly Line?",
     "choices": [
-      "The coalition including Britain, France, and later America",
-      "The coalition led by Germany, Austria-Hungary, and their partners",
-      "The countries remaining outside the fighting throughout the war",
-      "The countries resisting U.S. expansion after war with Spain"
+      "Production system moving products through sequential workstations",
+      "Production system completing each item through one craftworker",
+      "Production system importing finished goods from foreign factories",
+      "Production system distributing ownership among factory employees"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/wwi",
-    "where": "On the linked page, use Ctrl+F to search for Allies. Read which side received U.S. support and entry.",
-    "explanation": "The United States entered the war alongside the Allied powers.",
-    "hint": "Identify the coalition opposed to Germany and the Central Powers."
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford",
+    "where": "Read the reference note below, then use the linked source for more detail about Assembly Line.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Assembly Line. Revisit the reference note and compare all four definitions.",
+    "explanation": "Assembly Line: Production system moving products through sequential workstations."
   },
   {
-    "id": "v17",
-    "cs": "CS 15",
-    "topic": "Fourteen Points",
-    "prompt": "What were the Fourteen Points?",
+    "id": "b4v17",
+    "cs": "CS 17",
+    "topic": "Mass Production",
+    "prompt": "Which definition best identifies Mass Production?",
     "choices": [
-      "Wilson’s proposed principles for lasting peace after the war",
-      "Lodge's proposed conditions for accepting the Versailles treaty",
-      "Mahan's proposed strategies for building American naval power",
-      "Hay's proposed rules for protecting foreign trade in China"
+      "Manufacturing large quantities of standardized goods",
+      "Manufacturing individual items according to custom designs",
+      "Selling imported products according to national quotas",
+      "Growing varied crops according to seasonal conditions"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for Fourteen. Read the introductory description of Wilson's January 1918 address.",
-    "explanation": "The Fourteen Points outlined Wilson's peace aims and ideas for preventing future wars.",
-    "hint": "This was Wilson's blueprint for postwar peace."
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford",
+    "where": "Read the reference note below, then use the linked source for more detail about Assembly Line.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Assembly Line. Revisit the reference note and compare all four definitions.",
+    "explanation": "Mass Production: Manufacturing large quantities of standardized goods."
   },
   {
-    "id": "v18",
-    "cs": "CS 15",
-    "topic": "Self-Determination",
-    "prompt": "What is self-determination?",
+    "id": "b4v18",
+    "cs": "CS 17",
+    "topic": "Henry Ford",
+    "prompt": "Which definition best identifies Henry Ford?",
     "choices": [
-      "Peoples helping choose their own government and national political future",
-      "Foreign powers deciding a territory's government and political future",
-      "Victorious armies imposing a defeated country's government and borders",
-      "International creditors controlling a country's government and financial policies"
+      "Automaker associated with the moving assembly line",
+      "Inventor associated with the first successful radio broadcast",
+      "Musician associated with the growth of Harlem jazz",
+      "Reformer associated with the campaign for national Prohibition"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for nationalities. Read the explanation of Wilson's proposals for oppressed nationalities.",
-    "explanation": "Self-determination supports a people's ability to shape its own government and national future.",
-    "hint": "Focus on who gets to decide a people's political status."
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford",
+    "where": "Read the reference note below, then use the linked source for more detail about Assembly Line.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Assembly Line. Revisit the reference note and compare all four definitions.",
+    "explanation": "Henry Ford: Automaker associated with the moving assembly line."
   },
   {
-    "id": "v19",
-    "cs": "CS 15",
-    "topic": "Collective Security",
-    "prompt": "What is collective security?",
+    "id": "b4v19",
+    "cs": "CS 17",
+    "topic": "Consumer Goods",
+    "prompt": "Which definition best identifies Consumer Goods?",
     "choices": [
-      "Nations agreeing to respond together against aggression or threats to peace",
-      "Nations avoiding commitments to respond to foreign conflicts",
-      "Nations competing separately to gain more overseas territory",
-      "Nations relying solely on individual military responses to aggression"
+      "Products purchased for personal or household use",
+      "Machines purchased for factory or industrial production",
+      "Materials purchased for military or naval construction",
+      "Buildings purchased for commercial or institutional rental"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for association. Read the description of Wilson's proposed world organization.",
-    "explanation": "Collective security treats aggression against one member as a concern for the broader group.",
-    "hint": "The word collective means acting together."
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Standard of Living.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Standard of Living. Revisit the reference note and compare all four definitions.",
+    "explanation": "Consumer Goods: Products purchased for personal or household use."
   },
   {
-    "id": "v20",
-    "cs": "CS 15",
-    "topic": "League of Nations",
-    "prompt": "What was the League of Nations?",
+    "id": "b4v20",
+    "cs": "CS 17",
+    "topic": "Standard of Living",
+    "prompt": "Which definition best identifies Standard of Living?",
     "choices": [
-      "An international organization established to promote cooperation and peace",
-      "A wartime coalition coordinating campaigns against Central Powers",
-      "A regional trading association dividing markets among empires",
-      "A national government agency managing overseas military bases"
+      "Level of material comfort and access to goods",
+      "Level of political authority and control over laws",
+      "Level of military readiness and access to weapons",
+      "Level of cultural uniformity and agreement on traditions"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for XIV. Read Point XIV and the background explaining the organization it inspired.",
-    "explanation": "The League was designed as an international forum and collective-security organization.",
-    "hint": "It was Wilson's proposed general association of nations."
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Standard of Living.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Standard of Living. Revisit the reference note and compare all four definitions.",
+    "explanation": "Standard of Living: Level of material comfort and access to goods."
   },
   {
-    "id": "v21",
-    "cs": "CS 15",
-    "topic": "Treaty of Versailles",
-    "prompt": "What was the Treaty of Versailles?",
+    "id": "b4v21",
+    "cs": "CS 17",
+    "topic": "Installment Buying",
+    "prompt": "Which definition best identifies Installment Buying?",
     "choices": [
-      "The postwar agreement establishing peace terms for defeated Germany",
-      "The earlier treaty transferring Spanish territories to America",
-      "The later agreement renouncing war as national policy",
-      "The naval agreement limiting fleets of major powers"
+      "Purchasing goods through a series of scheduled payments",
+      "Purchasing goods through a single immediate cash payment",
+      "Exchanging goods through direct barter without monetary payments",
+      "Obtaining goods through donations without repayment obligations"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/paris-peace",
-    "where": "On the linked page, use Ctrl+F to search for Treaty. Read how Allied leaders shaped the peace settlement after World War I.",
-    "explanation": "The Treaty of Versailles set peace terms with Germany and included the League covenant.",
-    "hint": "Match Versailles with World War I, not 1898."
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Standard of Living.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Standard of Living. Revisit the reference note and compare all four definitions.",
+    "explanation": "Installment Buying: Purchasing goods through a series of scheduled payments."
   },
   {
-    "id": "v22",
-    "cs": "CS 15",
-    "topic": "Ratification",
-    "prompt": "What is treaty ratification in the United States?",
+    "id": "b4v22",
+    "cs": "CS 17",
+    "topic": "Mass Media",
+    "prompt": "Which definition best identifies Mass Media?",
     "choices": [
-      "Presidential ratification after two-thirds approval of senators present",
-      "Presidential ratification after majority approval in the House alone",
-      "Presidential ratification after approval by the Supreme Court justices",
-      "Presidential ratification after a national referendum among registered voters"
+      "Communication reaching large audiences through shared channels",
+      "Communication reaching one recipient through private letters",
+      "Transportation moving large populations through common routes",
+      "Manufacturing producing many items through standard procedures"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/league",
-    "where": "On the linked page, use Ctrl+F to search for Senate. Find the final paragraphs about the Senate vote on Versailles. Treaty consent requires two-thirds of senators present; signing alone is insufficient.",
-    "explanation": "The president ratifies a treaty after receiving the advice and consent of two-thirds of the senators present.",
-    "hint": "Which chamber has the constitutional treaty role?"
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Radio.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Radio. Revisit the reference note and compare all four definitions.",
+    "explanation": "Mass Media: Communication reaching large audiences through shared channels."
   },
   {
-    "id": "v23",
-    "cs": "CS 15",
-    "topic": "Reservationist",
-    "prompt": "Who was a reservationist in the Versailles debate?",
+    "id": "b4v23",
+    "cs": "CS 17",
+    "topic": "Radio",
+    "prompt": "Which definition best identifies Radio?",
     "choices": [
-      "A senator who would accept the treaty only with protective conditions",
-      "A senator favoring treaty approval without protective conditions",
-      "A senator opposing League membership even with protective conditions",
-      "A senator demanding U.S. annexation of former German colonies"
+      "Medium broadcasting sound to listeners over the air",
+      "Medium projecting moving images onto theater screens",
+      "Medium printing written stories for newspaper readers",
+      "Medium transmitting physical letters through postal routes"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/league",
-    "where": "On the linked page, use Ctrl+F to search for Lodge. Read Lodge’s objections and infer what accepting the treaty with conditions would mean.",
-    "explanation": "Reservationists sought conditions protecting U.S. authority and congressional powers.",
-    "hint": "The name signals reservations or conditions, not automatic rejection."
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Radio.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Radio. Revisit the reference note and compare all four definitions.",
+    "explanation": "Radio: Medium broadcasting sound to listeners over the air."
   },
   {
-    "id": "v24",
-    "cs": "CS 15",
-    "topic": "Irreconcilable",
-    "prompt": "Who was an irreconcilable in the Versailles debate?",
+    "id": "b4v24",
+    "cs": "CS 17",
+    "topic": "Talking Pictures",
+    "prompt": "Which definition best identifies Talking Pictures?",
     "choices": [
-      "A senator fundamentally opposed to the treaty and joining the League",
-      "A senator accepting the treaty with specific protective reservations",
-      "A senator endorsing the treaty without changes or reservations",
-      "A senator supporting stronger obligations under the League covenant"
+      "Motion pictures incorporating synchronized recorded sound",
+      "Motion pictures showing dialogue only through printed cards",
+      "Radio programs presenting stories without moving pictures",
+      "Stage productions presenting dialogue without recorded images"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/league",
-    "where": "On the linked page, use Ctrl+F to search for Senate. Read the Senate opposition; infer what fundamental opposition to joining would mean.",
-    "explanation": "Irreconcilables rejected League membership rather than seeking limited amendments.",
-    "hint": "Which group could not be persuaded by reservations?"
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Talking Pictures.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Talking Pictures. Revisit the reference note and compare all four definitions.",
+    "explanation": "Talking Pictures: Motion pictures incorporating synchronized recorded sound."
   },
   {
-    "id": "v25",
-    "cs": "CS 15",
-    "topic": "Isolationism",
-    "prompt": "What is isolationism?",
+    "id": "b4v25",
+    "cs": "CS 17",
+    "topic": "Commercial Aviation",
+    "prompt": "Which definition best identifies Commercial Aviation?",
     "choices": [
-      "Limiting a nation’s binding political and military commitments overseas",
-      "Extending territorial and military control over other countries",
-      "Joining permanent alliances to defend other member countries",
-      "Accepting international authority over national military policy decisions"
+      "Use of aircraft to transport paying passengers or freight",
+      "Use of automobiles to transport commuters between suburbs",
+      "Use of ships to transport immigrants between continents",
+      "Use of trains to transport goods between industrial cities"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/league",
-    "where": "On the linked page, use Ctrl+F to search for isolation. Read how the United States stayed outside the League while participating selectively in diplomacy.",
-    "explanation": "Isolationism seeks to avoid binding foreign political and military commitments.",
-    "hint": "It is limited involvement—not complete disconnection."
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Commercial Aircraft.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Commercial Aircraft. Revisit the reference note and compare all four definitions.",
+    "explanation": "Commercial Aviation: Use of aircraft to transport paying passengers or freight."
   },
   {
-    "id": "v26",
-    "cs": "CS 15",
-    "topic": "Disarmament",
-    "prompt": "What is disarmament?",
+    "id": "b4v26",
+    "cs": "CS 17",
+    "topic": "Urbanization",
+    "prompt": "Which definition best identifies Urbanization?",
     "choices": [
-      "Reducing a nation's weapons or military forces",
-      "Organizing a nation's resources for military action",
-      "Increasing a nation's bases in overseas territories",
-      "Expanding a nation's alliances with foreign powers"
+      "Growth in the share of people living in cities",
+      "Growth in the share of people working on farms",
+      "Growth in the share of people serving in armies",
+      "Growth in the share of people entering religious orders"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for IV.. Read Point IV concerning national armaments.",
-    "explanation": "Disarmament is the reduction or elimination of weapons and armed forces.",
-    "hint": "The prefix dis- signals removal or reduction."
+    "source": "https://guides.loc.gov/this-month-in-business-history/October/Ford",
+    "where": "Read the reference note below, then use the linked source for more detail about Automobile.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Automobile. Revisit the reference note and compare all four definitions.",
+    "explanation": "Urbanization: Growth in the share of people living in cities."
   },
   {
-    "id": "v27",
-    "cs": "CS 15",
-    "topic": "Kellogg-Briand Pact",
-    "prompt": "What was the Kellogg-Briand Pact?",
+    "id": "b4v27",
+    "cs": "CS 17",
+    "topic": "Cultural Conflict",
+    "prompt": "Which definition best identifies Cultural Conflict?",
     "choices": [
-      "An agreement renouncing war as a national policy",
-      "An agreement limiting the size of major naval fleets",
-      "An agreement creating an international collective security organization",
-      "An agreement scheduling German payments for wartime damage"
+      "Tension between competing values and ways of life",
+      "Agreement between regions about traditions and social roles",
+      "Cooperation between nations about borders and peace terms",
+      "Competition between companies about prices and product quality"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1921-1936/kellogg",
-    "where": "On the linked page, use Ctrl+F to search for national policy. Read the pact's central promise.",
-    "explanation": "Signatories formally renounced war as a tool of national policy, although enforcement was weak.",
-    "hint": "Look for the postwar agreement that tried to outlaw war."
+    "source": "https://www.loc.gov/collections/calvin-coolidge-papers/articles-and-essays/introduction-to-prosperity-and-thrift/prosperity-of-the-coolidge-era/",
+    "where": "Read the reference note below, then use the linked source for more detail about Social Tension.",
+    "reading": "Assembly lines divided manufacturing into repeated specialized tasks. Greater efficiency increased output and lowered costs, making products such as automobiles more affordable. Cars expanded mobility and influenced commuting, leisure, settlement, and roadside businesses. Commercial aviation began speeding passenger and mail transportation. Radio delivered news, music, entertainment, and advertising to large home audiences. Talking movies and widely circulated newspapers and magazines spread shared stories, styles, and ideas. Mass advertising encouraged consumer purchases. New goods improved material living standards for many, but prosperity remained uneven. Modern media and changing behavior also challenged traditional social expectations.",
+    "hint": "Connect this term to Social Tension. Revisit the reference note and compare all four definitions.",
+    "explanation": "Cultural Conflict: Tension between competing values and ways of life."
   },
   {
-    "id": "v28",
-    "cs": "CS 15",
-    "topic": "Foreign Entanglement",
-    "prompt": "What is a foreign entanglement?",
+    "id": "b4v28",
+    "cs": "CS 18",
+    "topic": "Harlem Renaissance",
+    "prompt": "Which definition best identifies Harlem Renaissance?",
     "choices": [
-      "An obligation that may draw a country into foreign conflict",
-      "An exchange that allows students to study in foreign countries",
-      "A purchase that brings products from a foreign market",
-      "A meeting that allows diplomats to discuss foreign disagreements"
+      "Flourishing of African American arts and cultural expression",
+      "Expansion of American naval power and overseas possessions",
+      "Revival of southern segregation laws and voting restrictions",
+      "Development of federal banking controls and currency policies"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/league",
-    "where": "On the linked page, use Ctrl+F to search for Article X. Read opponents' concerns about League obligations.",
-    "explanation": "Critics used the term for commitments they feared would limit U.S. freedom and create unwanted involvement.",
-    "hint": "Think about an obligation that could pull the United States into war."
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the reference note below, then use the linked source for more detail about Harlem Renaissance.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Harlem Renaissance. Revisit the reference note and compare all four definitions.",
+    "explanation": "Harlem Renaissance: Flourishing of African American arts and cultural expression."
   },
   {
-    "id": "v29",
-    "cs": "CS 14",
-    "topic": "Alfred Thayer Mahan",
-    "prompt": "Which idea is most closely associated with Alfred Thayer Mahan?",
+    "id": "b4v29",
+    "cs": "CS 18",
+    "topic": "Jazz",
+    "prompt": "Which definition best identifies Jazz?",
     "choices": [
-      "Strong sea power and overseas bases support trade and influence",
-      "Secret alliances and treaties provide lasting international peace",
-      "Lower tariffs and open markets replace military preparedness",
-      "Neutrality and domestic markets make overseas bases unnecessary"
+      "Musical style emphasizing improvisation and syncopated rhythms",
+      "Musical style emphasizing uniform military marching patterns",
+      "Literary style emphasizing factual reporting without artistic expression",
+      "Artistic style emphasizing geometric buildings without musical performance"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/mahan",
-    "where": "On the linked page, use Ctrl+F to search for Mahan. Read the discussion of his book and arguments about sea power.",
-    "explanation": "Mahan argued that strong naval forces and bases supported trade and influence.",
-    "hint": "Find the argument connecting ships, bases, and markets."
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the reference note below, then use the linked source for more detail about Jazz.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Jazz. Revisit the reference note and compare all four definitions.",
+    "explanation": "Jazz: Musical style emphasizing improvisation and syncopated rhythms."
   },
   {
-    "id": "v30",
-    "cs": "CS 14",
-    "topic": "Naval Base",
-    "prompt": "What is a naval base in the context of overseas expansion?",
+    "id": "b4v30",
+    "cs": "CS 18",
+    "topic": "Langston Hughes",
+    "prompt": "Which definition best identifies Langston Hughes?",
     "choices": [
-      "A port supplying and supporting military ships",
-      "A waterway shortening routes between two distant oceans",
-      "A territory governed by a foreign colonial administration",
-      "A trade zone reserved for one foreign commercial power"
+      "Poet associated with the Harlem Renaissance",
+      "Attorney associated with the federal Palmer Raids",
+      "Automaker associated with the moving assembly line",
+      "President associated with the creation of national quotas"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1866-1898/mahan",
-    "where": "On the linked page, use Ctrl+F to search for bases. Find the need for stations that support ships on long routes.",
-    "explanation": "Overseas bases helped vessels refuel, resupply, and operate far from home.",
-    "hint": "Think about what a ship needs between distant ports."
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the reference note below, then use the linked source for more detail about Harlem Renaissance.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Harlem Renaissance. Revisit the reference note and compare all four definitions.",
+    "explanation": "Langston Hughes: Poet associated with the Harlem Renaissance."
   },
   {
-    "id": "v31",
-    "cs": "CS 14",
-    "topic": "Open Door Policy",
-    "prompt": "What was the Open Door policy in China?",
+    "id": "b4v31",
+    "cs": "CS 18",
+    "topic": "Cultural Pride",
+    "prompt": "Which definition best identifies Cultural Pride?",
     "choices": [
-      "A proposal allowing equal foreign commercial access to Chinese markets",
-      "Exclusive commercial access in China for American companies",
-      "Joint colonial administration of China by European governments",
-      "Complete withdrawal of foreign trade from Chinese ports"
+      "Confidence in the heritage and achievements of a community",
+      "Rejection of the traditions and accomplishments of a community",
+      "Requirement that different communities abandon their own traditions",
+      "Belief that all communities must accept one official culture"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/hay-and-china",
-    "where": "On the linked page, use Ctrl+F to search for commercial. Read Hay’s request about equal commercial access.",
-    "explanation": "The Open Door sought trade access without exclusive control by one power.",
-    "hint": "Focus on equal access to a market."
+    "source": "https://www.loc.gov/exhibits/naacp/the-new-negro-movement.html",
+    "where": "Read the reference note below, then use the linked source for more detail about Cultural Pride.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Cultural Pride. Revisit the reference note and compare all four definitions.",
+    "explanation": "Cultural Pride: Confidence in the heritage and achievements of a community."
   },
   {
-    "id": "v32",
-    "cs": "CS 14",
-    "topic": "Philippine-American War",
-    "prompt": "What was the Philippine-American War?",
+    "id": "b4v32",
+    "cs": "CS 18",
+    "topic": "Women's Suffrage",
+    "prompt": "Which definition best identifies Women's Suffrage?",
     "choices": [
-      "Filipino resistance to American rule following the end of Spanish control",
-      "Cuban resistance to Spanish rule before U.S. intervention",
-      "Chinese resistance to foreign influence during the Boxer uprising",
-      "Mexican resistance to U.S. forces during a border conflict"
+      "The right of women to vote",
+      "The right of women to inherit titles",
+      "The right of women to regulate trade",
+      "The right of women to command armies"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/war",
-    "where": "On the linked page, use Ctrl+F to search for independence. Read why Filipino independence leaders opposed U.S. annexation.",
-    "explanation": "Filipino forces fought U.S. rule after Spain ceded the islands.",
-    "hint": "Identify the group resisting new U.S. control."
+    "source": "https://www.archives.gov/milestone-documents/19th-amendment",
+    "where": "Read the reference note below, then use the linked source for more detail about Women's Suffrage.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Women's Suffrage. Revisit the reference note and compare all four definitions.",
+    "explanation": "Women's Suffrage: The right of women to vote."
   },
   {
-    "id": "v33",
-    "cs": "CS 14",
-    "topic": "Panama Canal",
-    "prompt": "Why was the Panama Canal strategically important?",
+    "id": "b4v33",
+    "cs": "CS 18",
+    "topic": "Nineteenth Amendment",
+    "prompt": "Which definition best identifies Nineteenth Amendment?",
     "choices": [
-      "It shortened sea travel between the Atlantic and Pacific Oceans",
-      "It established equal trading rights throughout Chinese ports",
-      "It transferred Spanish island colonies into American possession",
-      "It limited naval construction among the major Pacific powers"
+      "Prohibits denying voting rights on account of sex",
+      "Prohibits denying voting rights on account of age above eighteen",
+      "Prohibits charging poll taxes in federal voting contests",
+      "Prohibits alcohol manufacture and sale throughout the nation"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/panama-canal",
-    "where": "On the linked page, use Ctrl+F to search for Atlantic. Read why leaders wanted an isthmian waterway.",
-    "explanation": "The canal shortened shipping and naval travel between oceans.",
-    "hint": "Think of the long alternative route around South America."
+    "source": "https://www.archives.gov/milestone-documents/19th-amendment",
+    "where": "Read the reference note below, then use the linked source for more detail about Women's Suffrage.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Women's Suffrage. Revisit the reference note and compare all four definitions.",
+    "explanation": "Nineteenth Amendment: Prohibits denying voting rights on account of sex."
   },
   {
-    "id": "v34",
-    "cs": "CS 14",
-    "topic": "Monroe Doctrine",
-    "prompt": "What did the original Monroe Doctrine warn European powers against?",
+    "id": "b4v34",
+    "cs": "CS 18",
+    "topic": "Political Participation",
+    "prompt": "Which definition best identifies Political Participation?",
     "choices": [
-      "Further colonization or interference by European powers in the Americas",
-      "Further American commercial competition in East Asian markets",
-      "Further international agreements limiting national weapons and forces",
-      "Further German submarine attacks against neutral merchant vessels"
+      "Involvement in voting, campaigns, and public affairs",
+      "Involvement in shopping, advertising, and private business",
+      "Involvement in recording, broadcasting, and public entertainment",
+      "Involvement in manufacturing, shipping, and industrial production"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1899-1913/roosevelt-and-monroe-doctrine",
-    "where": "On the linked page, use Ctrl+F to search for 1823. Compare the original doctrine with Roosevelt’s later, more active corollary.",
-    "explanation": "The doctrine opposed new European colonial influence in the Americas.",
-    "hint": "Identify the original warning to Europe."
+    "source": "https://www.archives.gov/milestone-documents/19th-amendment",
+    "where": "Read the reference note below, then use the linked source for more detail about Women's Participation.",
+    "reading": "The Harlem Renaissance was a flowering of African American literature, art, and music. Migration helped concentrate communities, talent, institutions, and audiences in northern cultural centers. Artists expressed racial pride and drew attention to discrimination. Jazz became an influential African American contribution to national culture; recordings and radio helped it reach wider audiences. Ratified in 1920, the 19th Amendment prohibited denial of the vote on account of sex. Expanded suffrage strengthened women\u2019s political participation, alongside growing public and economic roles. It did not create equal pay or end all discrimination. Racial barriers and other restrictions still prevented many women from voting.",
+    "hint": "Connect this term to Women's Participation. Revisit the reference note and compare all four definitions.",
+    "explanation": "Political Participation: Involvement in voting, campaigns, and public affairs."
   },
   {
-    "id": "v35",
-    "cs": "CS 14",
-    "topic": "Central Powers",
-    "prompt": "Who were the Central Powers in World War I?",
+    "id": "b4v35",
+    "cs": "CS 18",
+    "topic": "Temperance",
+    "prompt": "Which definition best identifies Temperance?",
     "choices": [
-      "Germany and Austria-Hungary together with their wartime partners",
-      "The coalition led by Britain and France",
-      "The organization formed to prevent future wars",
-      "The nations remaining outside the European conflict"
+      "Movement encouraging reduced alcohol use or abstinence",
+      "Movement encouraging increased immigration and cultural exchange",
+      "Movement encouraging expanded voting and political participation",
+      "Movement encouraging greater consumption and installment buying"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1914-1920/wwi",
-    "where": "On the linked page, use Ctrl+F to search for Austria. Read which side Germany fought for when the United States entered.",
-    "explanation": "Germany and Austria-Hungary were leading Central Powers.",
-    "hint": "Choose the side opposed by the Allies."
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Prohibition.",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "hint": "Connect this term to Prohibition. Revisit the reference note and compare all four definitions.",
+    "explanation": "Temperance: Movement encouraging reduced alcohol use or abstinence."
   },
   {
-    "id": "v36",
-    "cs": "CS 15",
-    "topic": "Open Diplomacy",
-    "prompt": "What did Wilson mean by open diplomacy?",
+    "id": "b4v36",
+    "cs": "CS 18",
+    "topic": "Prohibition",
+    "prompt": "Which definition best identifies Prohibition?",
     "choices": [
-      "Negotiating international agreements openly rather than using secret treaties",
-      "Negotiating agreements privately through exclusive wartime military alliances",
-      "Restricting agreements to discussions among victorious European governments",
-      "Submitting agreements to military commanders instead of civilian diplomats"
+      "National ban on manufacturing, selling, and transporting intoxicating liquor",
+      "National ban on possessing all beverages inside private homes",
+      "National ban on purchasing imported goods through installment payments",
+      "National ban on publishing political opinions through radio broadcasts"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for I.. Read Point I of the Fourteen Points.",
-    "explanation": "Wilson proposed openly negotiated agreements to reduce secret commitments.",
-    "hint": "Look for the opposite of secret treaties."
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Prohibition.",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "hint": "Connect this term to Prohibition. Revisit the reference note and compare all four definitions.",
+    "explanation": "Prohibition: National ban on manufacturing, selling, and transporting intoxicating liquor."
   },
   {
-    "id": "v37",
-    "cs": "CS 15",
-    "topic": "Freedom of the Seas",
-    "prompt": "Which idea matches Wilson's call for freedom of the seas?",
+    "id": "b4v37",
+    "cs": "CS 18",
+    "topic": "Eighteenth Amendment",
+    "prompt": "Which definition best identifies Eighteenth Amendment?",
     "choices": [
-      "Generally open navigation outside nations' territorial waters",
-      "Exclusive Allied navigation within the defeated nations' territorial waters",
-      "Permanent American supervision of ships traveling between foreign ports",
-      "Mandatory neutral supervision of ships traveling through international waters"
+      "Established constitutional authority for national Prohibition",
+      "Ended constitutional authority for national Prohibition",
+      "Established constitutional voting protection regardless of sex",
+      "Ended constitutional limits on presidential terms of office"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for II.. Read Point II in the transcript. Notice the distinction between territorial waters and other waters, and the exception for international action.",
-    "explanation": "Wilson proposed open navigation outside territorial waters, with exceptions for international action enforcing international agreements.",
-    "hint": "Focus on access to navigation."
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Prohibition.",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "hint": "Connect this term to Prohibition. Revisit the reference note and compare all four definitions.",
+    "explanation": "Eighteenth Amendment: Established constitutional authority for national Prohibition."
   },
   {
-    "id": "v38",
-    "cs": "CS 15",
-    "topic": "Economic Barriers",
-    "prompt": "What did Wilson want to do with economic barriers among nations?",
+    "id": "b4v38",
+    "cs": "CS 18",
+    "topic": "Volstead Act",
+    "prompt": "Which definition best identifies Volstead Act?",
     "choices": [
-      "Reduce international trade barriers and establish equal trading conditions",
-      "Raise trade barriers and reserve markets for national producers",
-      "Divide trade markets and grant exclusive rights to victors",
-      "Replace trade agreements and distribute markets through military alliances"
+      "Federal law defining and enforcing national Prohibition",
+      "Federal law establishing national origins immigration quotas",
+      "Federal law granting women nationwide voting protections",
+      "Federal law authorizing investigation of suspected foreign radicals"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points",
-    "where": "On the linked page, use Ctrl+F to search for III.. Read Point III of the Fourteen Points.",
-    "explanation": "Wilson proposed freer commerce among nations consenting to peace.",
-    "hint": "Find the proposal concerning trade, not armaments."
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Prohibition.",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "hint": "Connect this term to Prohibition. Revisit the reference note and compare all four definitions.",
+    "explanation": "Volstead Act: Federal law defining and enforcing national Prohibition."
   },
   {
-    "id": "v39",
-    "cs": "CS 15",
-    "topic": "Reparations",
-    "prompt": "What are war reparations?",
+    "id": "b4v39",
+    "cs": "CS 18",
+    "topic": "Speakeasy",
+    "prompt": "Which definition best identifies Speakeasy?",
     "choices": [
-      "Payments imposed to compensate for wartime destruction or financial losses",
-      "Loans to finance naval expansion or overseas bases",
-      "Tariffs to protect domestic goods from foreign competition",
-      "Donations to support troops before a military campaign"
+      "Illegal establishment selling alcohol during Prohibition",
+      "Legal establishment manufacturing automobiles during industrial expansion",
+      "Public establishment broadcasting radio during election campaigns",
+      "Federal establishment examining immigrants during quota enforcement"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1921-1936/dawes",
-    "where": "On the linked page, use Ctrl+F to search for reparations. Read why Germany’s payments were disputed after the war.",
-    "explanation": "Reparations are compensation imposed after wartime damage.",
-    "hint": "Think of a financial obligation after a conflict."
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Speakeasies.",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "hint": "Connect this term to Speakeasies. Revisit the reference note and compare all four definitions.",
+    "explanation": "Speakeasy: Illegal establishment selling alcohol during Prohibition."
   },
   {
-    "id": "v40",
-    "cs": "CS 15",
-    "topic": "Washington Naval Conference",
-    "prompt": "What was the Washington Naval Conference?",
+    "id": "b4v40",
+    "cs": "CS 18",
+    "topic": "Bootlegging",
+    "prompt": "Which definition best identifies Bootlegging?",
     "choices": [
-      "A 1921–22 meeting on naval limits and Pacific tensions",
-      "A 1919 meeting on German peace terms and reparations",
-      "An 1898 meeting on Spanish territories and Cuban independence",
-      "A 1928 meeting on renouncing war and settling disputes"
+      "Illegal production, transport, or sale of alcoholic drinks",
+      "Legal distribution, marketing, or sale of household goods",
+      "Illegal suppression, alteration, or counting of election ballots",
+      "Legal admission, processing, or employment of immigrant workers"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1921-1936/naval-conference",
-    "where": "On the linked page, use Ctrl+F to search for 1921. Read who gathered in Washington and what they discussed.",
-    "explanation": "Major naval powers negotiated limits and addressed Pacific tensions.",
-    "hint": "Identify the gathering focused on warships after World War I."
+    "source": "https://www.archives.gov/education/lessons/volstead-act",
+    "where": "Read the reference note below, then use the linked source for more detail about Organized Crime.",
+    "reading": "The 18th Amendment prohibited the manufacture, sale, and transportation of intoxicating liquors for beverage purposes. It did not simply ban all private consumption. Reformers hoped to reduce drinking and alcohol-related harm. Some consumption declined, but continued demand supported illegal suppliers, smuggling, and speakeasies: establishments selling alcohol illegally. Profitable illegal markets strengthened organized crime and encouraged corruption. Widespread evasion and enforcement difficulties weakened support. The 21st Amendment repealed national Prohibition in 1933. The 1920s combined technological growth, artistic innovation, and new political opportunities with continuing racial violence, nativism, and cultural conflict.",
+    "hint": "Connect this term to Organized Crime. Revisit the reference note and compare all four definitions.",
+    "explanation": "Bootlegging: Illegal production, transport, or sale of alcoholic drinks."
   }
 ];
 // A saved seed keeps choices aligned with saved answer indexes after a reload.
