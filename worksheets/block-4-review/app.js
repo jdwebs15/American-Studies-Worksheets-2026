@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbz_N40FGUxCgJBfpIUtR3CgC0nRfKFI1KdqalcKRtj_zK2rZcIIGReS9MEwDSODnsAn_Q/exec";
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxENUBm5pd966tRn1g9R7HH0zSXcEI10LGLivzQzN0pn6b0ytZHJdV8HU9i0ihYtHJW/exec";
 const questions=window.BLOCK_QUESTIONS;
 questions.forEach(q=>{if(!Array.isArray(q.choices)||q.choices.length!==4)return;const correct=q.choices[q.answer];const shift=[...String(q.id)].reduce((n,c)=>((n*31+c.charCodeAt(0))>>>0),0)%4;q.choices=q.choices.slice(shift).concat(q.choices.slice(0,shift));q.answer=q.choices.indexOf(correct)});
 const C=window.BLOCK_CONFIG;
