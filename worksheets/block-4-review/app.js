@@ -1,6 +1,25 @@
 const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbxENUBm5pd966tRn1g9R7HH0zSXcEI10LGLivzQzN0pn6b0ytZHJdV8HU9i0ihYtHJW/exec";
 const questions=window.BLOCK_QUESTIONS;
-questions.forEach(q=>{if(!Array.isArray(q.choices)||q.choices.length!==4)return;const correct=q.choices[q.answer];const shift=[...String(q.id)].reduce((n,c)=>((n*31+c.charCodeAt(0))>>>0),0)%4;q.choices=q.choices.slice(shift).concat(q.choices.slice(0,shift));q.answer=q.choices.indexOf(correct)});
+// Stable per-student shuffle: different students see different orders, but a
+// returning student sees the same positions, preserving saved answer indices.
+let orderConfigured=false;
+function hash32(str){let h=2166136261;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),16777619)}return h>>>0}
+function rng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296}}
+function shuffle(a,random){for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function configureOrder(){
+ if(orderConfigured)return;
+ const email=student().email;
+ if(!email)return;
+ const random=rng(hash32(C.assignmentKey+'|'+email+'|shuffle-v2'));
+ for(const q of questions){
+  if(!Array.isArray(q.choices)||q.choices.length!==4)continue;
+  const correct=q.choices[q.answer];
+  shuffle(q.choices,random);
+  q.answer=q.choices.indexOf(correct);
+ }
+ shuffle(questions,random);
+ orderConfigured=true;
+}
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
 const state={answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:new Date().toISOString(),sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
@@ -18,7 +37,7 @@ function init(){
 function student(){return{name:$("studentName").value.trim(),period:$("period").value,email:$("email").value.trim().toLowerCase()}}
 function valid(show=true){const s=student(),ok=s.name&&s.period&&/^\S+@\S+\.\S+$/.test(s.email);if(!ok&&show)$("saveStatus").textContent="Enter full name, period, and a valid school email first.";return ok}
 function storageKey(){return `${C.assignmentKey}|${student().email}`}
-function start(){if(!valid(true))return;restoreLocal();started=true;state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
+function start(){if(!valid(true))return;configureOrder();restoreLocal();started=true;state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
 function currentQuestion(){return questions[state.currentIndex]}
 function goToFirstUnmastered(){const i=questions.findIndex(q=>!state.mastered[q.id]);state.currentIndex=i<0?questions.length:i}
 function renderQuestion(){
