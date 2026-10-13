@@ -31,6 +31,13 @@ let saveTimer=null,advanceTimer=null,started=false;
 function init(){
   $("pageTitle").textContent=C.title;$("pageDescription").textContent=C.description;$("practiceText").textContent=C.practice;
   $("startBtn").onclick=start;$("loadBtn").onclick=loadCloud;$("saveBtn").onclick=()=>cloudSave(true);$("submitBtn").onclick=submit;
+  // Explicit testing restart; never silently erase saved progress.
+  const restartBtn=document.createElement("button");
+  restartBtn.id="restartBtn";restartBtn.type="button";
+  restartBtn.textContent="Restart worksheet (erase my saved progress)";
+  restartBtn.style.cssText="margin:10px 0;padding:10px 14px;border:1px solid #d79c63;border-radius:8px;background:#332619;color:#ffe5c8;cursor:pointer;font-weight:600";
+  restartBtn.onclick=restartWorksheet;
+  $("startBtn").insertAdjacentElement("afterend",restartBtn);
   ["studentName","email"].forEach(id=>$(id).addEventListener("change",restoreLocal));$("period").addEventListener("change",saveLocal);
   document.addEventListener("visibilitychange",()=>{tick();if(document.hidden)state.tabLeaves++;state.events.push({type:document.hidden?"leave":"return",at:new Date().toISOString()})});
   document.addEventListener("copy",()=>(state.copies=(state.copies||0)+1,state.events.push({type:"copy",question:currentQuestion()?.id||"",at:new Date().toISOString()})));
@@ -41,6 +48,22 @@ function student(){return{name:$("studentName").value.trim(),period:$("period").
 function valid(show=true){const s=student(),ok=s.name&&s.period&&/^\S+@\S+\.\S+$/.test(s.email);if(!ok&&show)$("saveStatus").textContent="Enter full name, period, and a valid school email first.";return ok}
 function storageKey(){return `${C.assignmentKey}|${student().email}`}
 function start(){if(!valid(true))return;prepareQuestions();restoreLocal();started=true;state.sessions=Math.max(1,state.sessions||1);$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");goToFirstUnmastered();renderQuestion();updateStats();queueCloudSave()}
+function restartWorksheet(){
+  if(!valid(true))return;
+  const who=student();
+  if(!window.confirm(`Restart Block 5 Intro for ${who.name} (${who.email})? This clears saved progress on this device and starts a new attempt. Previous teacher spreadsheet records may remain.`))return;
+  clearTimeout(saveTimer);clearTimeout(advanceTimer);
+  const key=storageKey();
+  // A reset timestamp prevents older cloud drafts from reappearing when Load is used.
+  const at=new Date().toISOString();
+  localStorage.setItem(key+"|resetAt",at);
+  localStorage.removeItem(key);
+  Object.assign(state,{answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:at,sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,copies:0,pastes:0,events:[{type:"restart",at}],questionSeconds:{},lastTick:Date.now(),status:"in progress"});
+  delete state.completedAt;delete state.submittedAt;
+  $("completion").classList.add("hidden");$("studentPanel").classList.add("hidden");$("workspace").classList.remove("hidden");
+  prepareQuestions();started=true;renderQuestion();updateStats();saveLocal();
+  $("saveStatus").textContent="Fresh attempt started. Previous spreadsheet records are not deleted.";
+}
 function currentQuestion(){return questions[state.currentIndex]}
 function goToFirstUnmastered(){const i=questions.findIndex(q=>!state.mastered[q.id]);state.currentIndex=i<0?questions.length:i}
 function renderQuestion(){
@@ -69,7 +92,7 @@ function showCompletion(){started=false;state.status="completed";state.completed
 function payload(){tick();const mastered=questions.filter(q=>state.mastered[q.id]).length;return{assignmentKey:C.assignmentKey,course:"American Studies",student:student(),state:{...state},answers:{...state.answers},mastered:{...state.mastered},score:mastered,total:questions.length,percent:Math.round(mastered/questions.length*100),answerCount:Object.keys(state.answers).length,copies:state.copies||0,pastes:state.pastes||0,totalAttempts:Object.values(state.attempts).reduce((a,b)=>a+(Number(b)||0),0),wrongAttempts:state.wrongTotal,firstAttemptCorrect:Object.values(state.firstAttempts).filter(Boolean).length,updatedAt:new Date().toISOString()}}
 function saveLocal(){if(!student().email)return;localStorage.setItem(storageKey(),JSON.stringify(payload()))}
 function restoreLocal(){if(!student().email)return;const raw=localStorage.getItem(storageKey());if(!raw)return;try{mergeDraft(JSON.parse(raw));$("saveStatus").textContent="Saved work restored on this device."}catch{}}
-function mergeDraft(d){if(!d)return;const resetAt=localStorage.getItem(storageKey()+"|resetAt");if(resetAt&&Date.parse(d.updatedAt||0)<Date.parse(resetAt))return;const s=d.state||d;Object.assign(state.answers,d.answers||s.answers||{});Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);Object.assign(state.firstAttempts,s.firstAttempts||{});state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);state.copies=Math.max(state.copies||0,s.copies||0);state.pastes=Math.max(state.pastes||0,s.pastes||0);state.firstStart=s.firstStart||state.firstStart;{const all=[...(state.events||[]),...(s.events||[])];const seen=new Set();state.events=all.filter(e=>{const key=JSON.stringify(e);if(seen.has(key))return false;seen.add(key);return true}).slice(-500)}for(const [k,v] of Object.entries(s.questionSeconds||{}))state.questionSeconds[k]=Math.max(state.questionSeconds[k]||0,Number(v)||0);goToFirstUnmastered()}
+function mergeDraft(d){if(!d)return;const resetAt=localStorage.getItem(storageKey()+"|resetAt");if(resetAt&&(!d.updatedAt||Date.parse(d.updatedAt)<=Date.parse(resetAt)))return;const s=d.state||d;Object.assign(state.answers,d.answers||s.answers||{});Object.assign(state.mastered,d.mastered||s.mastered||{});for(const[k,v]of Object.entries(s.attempts||{}))state.attempts[k]=Math.max(state.attempts[k]||0,Number(v)||0);state.wrongTotal=Math.max(state.wrongTotal||0,s.wrongTotal||d.wrongAttempts||0);state.correctChecks=Math.max(state.correctChecks||0,s.correctChecks||0);Object.assign(state.firstAttempts,s.firstAttempts||{});state.activeSeconds=Math.max(state.activeSeconds||0,s.activeSeconds||0);state.awaySeconds=Math.max(state.awaySeconds||0,s.awaySeconds||0);state.tabLeaves=Math.max(state.tabLeaves||0,s.tabLeaves||0);state.copies=Math.max(state.copies||0,s.copies||0);state.pastes=Math.max(state.pastes||0,s.pastes||0);state.firstStart=s.firstStart||state.firstStart;{const all=[...(state.events||[]),...(s.events||[])];const seen=new Set();state.events=all.filter(e=>{const key=JSON.stringify(e);if(seen.has(key))return false;seen.add(key);return true}).slice(-500)}for(const [k,v] of Object.entries(s.questionSeconds||{}))state.questionSeconds[k]=Math.max(state.questionSeconds[k]||0,Number(v)||0);goToFirstUnmastered()}
 function queueCloudSave(){clearTimeout(saveTimer);saveTimer=setTimeout(()=>cloudSave(false),750)}
 async function cloudSave(manual){if(!valid(false)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(manual)$("saveStatus").textContent=APPS_SCRIPT_URL.startsWith("PASTE_")?"Saved on this device. Add the Apps Script web-app URL for teacher saving.":"Enter complete student information first.";return}saveLocal();try{await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams({action:"save",payload:JSON.stringify(payload())})});$("saveStatus").textContent="Saved on this device; teacher delivery attempted (not verified)."}catch{$("saveStatus").textContent="Saved on this device. Teacher save could not be confirmed."}}
 function loadCloud(){if(!valid(true)||APPS_SCRIPT_URL.startsWith("PASTE_")){if(APPS_SCRIPT_URL.startsWith("PASTE_"))$("saveStatus").textContent="Add the Apps Script web-app URL before loading teacher drafts.";return}prepareQuestions();const cb=`load_${Date.now()}`,script=document.createElement("script");window[cb]=r=>{try{if(r&&r.found)mergeDraft(r.payload);saveLocal();$("saveStatus").textContent=r&&r.found?"Previous work merged safely.":"No teacher draft was found."}finally{delete window[cb];script.remove()}};script.src=`${APPS_SCRIPT_URL}?action=load&assignmentKey=${encodeURIComponent(C.assignmentKey)}&email=${encodeURIComponent(student().email)}&callback=${cb}`;script.onerror=()=>{$("saveStatus").textContent="Could not load the teacher draft.";delete window[cb];script.remove()};document.body.appendChild(script)}
