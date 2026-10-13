@@ -30,7 +30,6 @@ let saveTimer=null,advanceTimer=null,started=false;
 
 function init(){
   $("pageTitle").textContent=C.title;$("pageDescription").textContent=C.description;$("practiceText").textContent=C.practice;
-  const reset=document.createElement("button");reset.type="button";reset.id="resetBtn";reset.textContent="Start over";reset.onclick=()=>{if(!confirm("Start this assignment over? Your current answers on this device will be cleared."))return;clearTimeout(saveTimer);clearTimeout(advanceTimer);localStorage.removeItem(storageKey());localStorage.setItem(storageKey()+"|resetAt",new Date().toISOString());location.reload()};$("saveBtn").insertAdjacentElement("afterend",reset);
   $("startBtn").onclick=start;$("loadBtn").onclick=loadCloud;$("saveBtn").onclick=()=>cloudSave(true);$("submitBtn").onclick=submit;
   ["studentName","email"].forEach(id=>$(id).addEventListener("change",restoreLocal));$("period").addEventListener("change",saveLocal);
   document.addEventListener("visibilitychange",()=>{tick();if(document.hidden)state.tabLeaves++;state.events.push({type:document.hidden?"leave":"return",at:new Date().toISOString()})});
