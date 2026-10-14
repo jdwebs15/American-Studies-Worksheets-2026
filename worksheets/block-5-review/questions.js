@@ -7,9 +7,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "An investor purchases shares using borrowed money. What makes this especially dangerous during a market decline?",
     "choices": [
       "The investor still owes the loan even if the shares lose value",
-      "The loan becomes a government grant",
-      "The investor automatically gains voting rights",
-      "The bank must refund every market loss"
+      "The broker absorbs the losses whenever shares decline during this period",
+      "The debt is canceled if prices fall below purchase cost",
+      "The investor only loses the cash paid at the beginning"
     ],
     "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -23,9 +23,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which condition helped make the 1929 economy vulnerable before the stock market crashed?",
     "choices": [
-      "Most workers had more income than they could spend",
-      "Banks stopped issuing any loans nationwide",
-      "Factories consistently sold every item produced",
+      "Rising wages increased demand faster than factories could produce",
+      "Banks held larger reserves while consumer borrowing declined during this period",
+      "Factories reduced output as household purchasing power increased",
       "Families used credit while incomes failed to keep pace with production"
     ],
     "answer": 3,
@@ -40,10 +40,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "A factory produces more goods than customers can afford. Which problem is illustrated?",
     "choices": [
-      "An increase in overseas military aid",
+      "Reduced production caused by unusually strong consumer demand",
       "Overproduction combined with weak consumer demand",
-      "The end of industrial manufacturing",
-      "A shortage caused by rationing"
+      "An industrial shortage resulting from rising household incomes",
+      "Declining supply as factories shifted to military production"
     ],
     "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -57,10 +57,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Why did the failure of many banks deepen the Great Depression?",
     "choices": [
-      "Businesses received unlimited new private loans",
-      "The government immediately replaced every deposit",
+      "Higher interest payments increased the value of bank deposits",
+      "Banks expanded credit to help businesses replace lost revenue",
       "Savings disappeared and businesses had less access to credit",
-      "Bank failures raised all household incomes"
+      "Government lending immediately offset the loss of private savings"
     ],
     "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -74,10 +74,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "What was a major effect of the Federal Reserve allowing the money supply to contract?",
     "choices": [
-      "Stock prices became permanently stable",
-      "Households received automatic wage increases",
+      "Reduced borrowing costs quickly restored consumer spending",
+      "Higher wages increased demand despite falling industrial output",
       "Less money and credit circulated, worsening the downturn",
-      "All banks gained access to unlimited deposits"
+      "More lending by banks reversed the decline in business investment"
     ],
     "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -91,9 +91,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "A family loses its income when a factory closes. Which New Deal objective would provide the most immediate help?",
     "choices": [
-      "Reform through long-term financial regulation",
-      "Mobilization through military enlistment",
-      "Neutrality through restrictions on trade",
+      "Recovery through incentives for businesses to expand production",
+      "Reform through tighter rules governing investment and lending",
+      "Recovery through policies designed to strengthen banking confidence",
       "Relief through employment or direct assistance"
     ],
     "answer": 3,
@@ -108,10 +108,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which policy is most clearly an example of economic recovery?",
     "choices": [
-      "Creating permanent rules against stock fraud",
-      "Establishing retirement benefits for older workers",
+      "Expanding federal oversight to prevent future banking failures",
+      "Providing emergency food assistance to unemployed families",
       "Funding projects that put people to work and increase spending",
-      "Limiting the sale of goods to countries at war"
+      "Creating a pension system for workers reaching retirement age"
     ],
     "answer": 2,
     "source": "https://www.archives.gov/milestone-documents/social-security-act",
@@ -125,10 +125,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which action is best classified as reform rather than immediate relief?",
     "choices": [
-      "Distributing emergency meals to unemployed families",
+      "Offering temporary work to families facing immediate hardship",
       "Requiring oversight of securities markets to discourage fraud",
-      "Providing a one-time payment after a disaster",
-      "Hiring workers for a temporary construction project"
+      "Increasing factory output through short-term federal spending",
+      "Providing emergency funds to households that lost their savings"
     ],
     "answer": 1,
     "source": "https://www.archives.gov/milestone-documents/social-security-act",
@@ -142,9 +142,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "What was the main purpose of the Social Security Act of 1935?",
     "choices": [
-      "Replace state governments with federal agencies",
-      "Require all workers to invest in the stock market",
-      "Guarantee a job to every American citizen",
+      "Provide federal employment for workers displaced by the Depression",
+      "Create government insurance for all private stock investments",
+      "Establish permanent federal control over every state pension",
       "Provide a federal system of old-age and other social insurance"
     ],
     "answer": 3,
@@ -159,10 +159,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "How did deposit insurance aim to reduce bank runs?",
     "choices": [
-      "It guaranteed that investments could never decline",
+      "It promised to repay every loss from risky stock investments",
       "It reassured depositors that eligible savings had protection",
-      "It eliminated the need for banks to hold money",
-      "It required every household to buy stocks"
+      "It prevented banks from ever restricting customer withdrawals",
+      "It guaranteed that all bank investments would earn a profit"
     ],
     "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -176,9 +176,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which New Deal change most directly addressed deceptive stock sales?",
     "choices": [
-      "Military production quotas for factories",
-      "Restrictions on immigration during wartime",
-      "Mandatory ration books for consumers",
+      "Federal insurance covering losses from individual stock purchases",
+      "Government ownership of every privately operated stock exchange",
+      "Federal limits on the amount of money investors could borrow",
       "Federal oversight and disclosure requirements for securities"
     ],
     "answer": 3,
@@ -193,10 +193,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which statement best explains the New Deal’s impact on government?",
     "choices": [
-      "The president lost all authority over economic policy",
-      "State governments were abolished by executive order",
+      "State governments assumed responsibility for all federal relief",
+      "Federal agencies shifted most economic duties to private charities",
       "The federal government assumed greater responsibility for economic security",
-      "The federal government stopped regulating banks"
+      "The federal government reduced its involvement in banking regulation during this period"
     ],
     "answer": 2,
     "source": "https://www.archives.gov/milestone-documents/social-security-act",
@@ -211,9 +211,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Why did unemployment contribute to a downward economic spiral?",
     "choices": [
       "Jobless households bought less, causing businesses to cut production",
-      "Jobless households increased factory profits",
-      "Unemployment forced prices and wages to rise everywhere",
-      "Fewer jobs automatically expanded consumer credit"
+      "Jobless workers borrowed more, allowing factories to expand output during this period",
+      "Declining wages raised demand and encouraged new factory hiring",
+      "Businesses lowered prices while maintaining full employment"
     ],
     "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -227,10 +227,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which evidence would best support the claim that the Depression affected everyday Americans?",
     "choices": [
-      "A map showing only overseas military alliances",
-      "A list of presidential cabinet appointments",
+      "Photographs of Congress debating proposed banking regulations",
+      "Newspaper reports describing international military alliances",
       "Photographs of breadlines and families displaced from their homes",
-      "A diagram of postwar United Nations membership"
+      "Charts comparing presidential appointments across administrations"
     ],
     "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
@@ -244,9 +244,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Why did many Americans support isolationism during the 1930s?",
     "choices": [
-      "They had already declared war on Germany and Japan",
-      "They believed the United States had no economic ties abroad",
-      "They wanted to join every European military alliance",
+      "They hoped trade restrictions would end the domestic Depression",
+      "They believed European disputes would be settled through diplomacy",
+      "They feared intervention would worsen domestic economic problems",
       "They wanted to avoid being drawn into another overseas war"
     ],
     "answer": 3,
@@ -261,10 +261,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "What was the general aim of the Neutrality Acts?",
     "choices": [
-      "Make the president commander of European armies",
-      "Require the United States to defend every allied nation",
+      "Expand military aid while requiring American ships to transport it",
+      "Allow Congress to declare war without consulting the president",
       "Reduce actions that might pull the United States into foreign wars",
-      "Provide unlimited military loans to belligerents"
+      "Require trade with every nation involved in a foreign conflict"
     ],
     "answer": 2,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -279,9 +279,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Under cash-and-carry, how could a belligerent purchase certain American goods?",
     "choices": [
       "Pay immediately and transport the goods on its own ships",
-      "Purchase only if the United States declared war",
-      "Pay after the war and use American warships",
-      "Receive the goods free without arranging transport"
+      "Pay after delivery while American ships carried the goods",
+      "Pay through government loans and use American merchant ships",
+      "Purchase supplies on credit and arrange U.S. military escorts"
     ],
     "answer": 0,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -296,9 +296,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "How did Lend-Lease represent a change in American policy?",
     "choices": [
       "It allowed aid to nations considered vital to U.S. defense without immediate payment",
-      "It barred all supplies from reaching Britain",
-      "It required U.S. soldiers to enter every foreign battle",
-      "It ended American industrial production for defense"
+      "It permitted weapons sales only after Britain paid in cash",
+      "It required American merchant ships to deliver all military aid",
+      "It restricted military supplies to countries not yet at war during this period of American history"
     ],
     "answer": 0,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -313,9 +313,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "What did the Atlantic Charter demonstrate in 1941?",
     "choices": [
       "Roosevelt and Churchill were discussing shared principles for the postwar world",
-      "The United States had already defeated Japan",
-      "Congress had outlawed diplomatic talks with Britain",
-      "Britain and Germany had agreed to divide Europe"
+      "The two leaders negotiated immediate U.S. entry into the war during this period of American history",
+      "The two leaders agreed to create a joint wartime government",
+      "The two leaders outlined plans for American neutrality after war"
     ],
     "answer": 0,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -329,9 +329,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which event directly prompted U.S. entry into World War II?",
     "choices": [
-      "The passage of the Social Security Act",
-      "The stock market crash in October 1929",
-      "The signing of the Neutrality Acts",
+      "Germany’s invasion of Poland at the beginning of the war",
+      "Britain’s request for additional supplies through Lend-Lease",
+      "Germany’s occupation of France during the European campaign",
       "Japan’s attack on Pearl Harbor in December 1941"
     ],
     "answer": 3,
@@ -346,10 +346,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which sequence correctly describes changing U.S. involvement?",
     "choices": [
-      "Entry into war, neutrality laws, then military aid",
-      "Pearl Harbor, neutrality laws, Atlantic Charter, then isolation",
+      "Neutrality laws, Lend-Lease, cash-and-carry, then Pearl Harbor",
+      "Cash-and-carry, neutrality laws, Pearl Harbor, then Lend-Lease",
       "Neutrality laws, cash-and-carry, Lend-Lease, then entry after Pearl Harbor",
-      "Lend-Lease, Pearl Harbor, neutrality laws, then cash-and-carry"
+      "Neutrality laws, Pearl Harbor, Lend-Lease, then cash-and-carry during this period"
     ],
     "answer": 2,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -363,10 +363,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Why did aid to Britain challenge strict neutrality?",
     "choices": [
-      "It required Britain to surrender to Germany",
+      "It allowed equal access to military supplies for all nations during this period",
       "It favored one side in the war while stopping short of direct combat",
-      "It banned every American export to Europe",
-      "It ended all U.S. contact with Allied governments"
+      "It committed American troops to fight alongside British forces",
+      "It prohibited American companies from trading with Germany"
     ],
     "answer": 1,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -381,9 +381,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "A 1940 newspaper argues that defending Britain also protects American security. Which position does it support?",
     "choices": [
       "Providing assistance to nations resisting Axis expansion",
-      "Supporting Axis conquest of European territories",
-      "Immediately withdrawing from all Atlantic trade",
-      "Prohibiting every shipment to countries at war"
+      "Maintaining strict neutrality by suspending military exports",
+      "Ending overseas trade to protect the domestic economy",
+      "Avoiding commitments that could favor either side in the war"
     ],
     "answer": 0,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -397,10 +397,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which distinction between isolationism and neutrality is most accurate?",
     "choices": [
-      "Isolationism requires alliances; neutrality requires military occupation",
+      "Isolationism avoids trade; neutrality requires ending diplomacy",
       "Isolationism discourages entanglement; neutrality avoids taking sides in a conflict",
-      "Isolationism means declaring war; neutrality means annexing territory",
-      "Isolationism concerns only taxes; neutrality concerns only elections"
+      "Isolationism means nonintervention; neutrality requires no commerce",
+      "Isolationism avoids alliances; neutrality requires withdrawing troops during this period"
     ],
     "answer": 1,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -414,10 +414,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "How did the War Production Board affect American industry?",
     "choices": [
-      "It transferred all farms to military ownership",
-      "It closed all factories that produced civilian goods permanently",
+      "It encouraged factories to return to peacetime consumer output",
+      "It gave state governments control of all defense contracts",
       "It coordinated the shift toward manufacturing military supplies",
-      "It prohibited private companies from employing women"
+      "It limited industrial conversion to protect civilian production"
     ],
     "answer": 2,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -431,10 +431,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Why did the government ration gasoline, sugar, and other goods?",
     "choices": [
-      "To make all goods equally inexpensive without shortages",
-      "To end the need for military transportation",
+      "To prevent inflation by reducing all military production",
+      "To encourage consumers to buy goods before shortages developed",
       "To allocate scarce supplies between civilians and wartime needs",
-      "To guarantee that every family could buy unlimited supplies"
+      "To direct scarce goods primarily toward overseas commercial sales"
     ],
     "answer": 2,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -448,10 +448,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "What did the Double V campaign demand?",
     "choices": [
-      "Victory over unions and a return to isolationism",
+      "Victory against Axis forces abroad and economic hardship at home",
       "Victory against fascism overseas and racial discrimination at home",
-      "Victory for segregation in both military and civilian life",
-      "Victory in Europe followed by an end to voting"
+      "Victory in Europe followed by immediate military desegregation",
+      "Victory against fascism abroad and unemployment at home during this period"
     ],
     "answer": 1,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -465,10 +465,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "What contradiction was exposed by Japanese American incarceration?",
     "choices": [
-      "The United States refused to fight against authoritarian governments",
+      "The government expanded voting rights while limiting overseas travel during this period",
       "The United States defended freedom abroad while denying rights to many at home",
-      "The federal government abandoned every wartime security policy",
-      "All Japanese Americans received individual trials before removal"
+      "The nation promoted democracy while imposing race-based confinement",
+      "The government protected property while limiting wartime military service"
     ],
     "answer": 1,
     "source": "https://www.archives.gov/education/lessons/japanese-relocation",
@@ -483,9 +483,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Which action followed Executive Order 9066?",
     "choices": [
       "Removal and confinement of many Japanese Americans from designated areas",
-      "Immediate restoration of all property lost during removal",
-      "Automatic citizenship for all prisoners of war",
-      "A universal draft exemption for West Coast residents"
+      "Voluntary relocation assistance offered to West Coast residents",
+      "Individual security hearings before any removal could take place during this period",
+      "Mandatory registration without exclusion from military zones"
     ],
     "answer": 0,
     "source": "https://www.archives.gov/education/lessons/japanese-relocation",
@@ -499,9 +499,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "What was a major contribution of Navajo Code Talkers?",
     "choices": [
-      "They directed all industrial rationing in the United States",
-      "They created the federal old-age pension system",
-      "They negotiated the Neutrality Acts in Congress",
+      "They used radio equipment to intercept enemy military messages",
+      "They translated Japanese orders into English for Allied commanders",
+      "They developed encrypted messages using standard military ciphers during this period",
       "They used Navajo-based communications to transmit secure military messages"
     ],
     "answer": 3,
@@ -517,9 +517,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "How did wartime labor shortages affect women?",
     "choices": [
       "More women entered jobs in factories and other war-related industries",
-      "Women were prohibited from industrial employment",
-      "Federal law required all women to serve overseas",
-      "Most women stopped participating in paid work entirely"
+      "More women entered clerical jobs while factory employment declined during this period",
+      "Women replaced most soldiers in combat positions overseas",
+      "Women increasingly worked in agriculture but not in defense plants"
     ],
     "answer": 0,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -533,10 +533,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Why was the Bracero Program established?",
     "choices": [
-      "To draft Mexican citizens into the U.S. Navy",
-      "To replace the Social Security system with farm subsidies",
+      "To recruit agricultural workers from U.S. cities for defense jobs",
+      "To provide temporary work in Mexico for U.S. farm laborers",
       "To bring Mexican workers to fill wartime labor shortages",
-      "To close agricultural operations during wartime"
+      "To train American soldiers in agricultural production overseas"
     ],
     "answer": 2,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -550,10 +550,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which example shows wartime mobilization changing daily life?",
     "choices": [
-      "An automobile plant abandons all military contracts",
+      "A family buys extra fuel while a factory shifts to civilian cars",
       "A family uses ration coupons while a nearby plant builds aircraft",
-      "A family purchases unlimited gasoline without restrictions",
-      "A city ends every civilian contribution to the war effort"
+      "A factory reduces aircraft production as civilians purchase more",
+      "A household avoids shortages while industries return to peacetime"
     ],
     "answer": 1,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -568,9 +568,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "How did the war affect African American demands for civil rights?",
     "choices": [
       "Military service and defense work strengthened calls for equal treatment",
-      "The war eliminated discrimination in all parts of American society",
-      "Federal officials banned public discussion of racial equality",
-      "Civil rights organizations stopped seeking reforms until the 1960s"
+      "Military service immediately ended racial segregation nationwide during this period",
+      "Defense work reduced public support for equal employment rights",
+      "Wartime unity convinced civil rights groups to delay their campaigns"
     ],
     "answer": 0,
     "source": "https://www.archives.gov/research/african-americans/ww2-pictures",
@@ -584,10 +584,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Why is it inaccurate to say that wartime sacrifices were experienced equally?",
     "choices": [
-      "Every American received identical wages and working conditions",
+      "Military service and defense jobs provided equal opportunities to all",
       "Groups faced different burdens, including discrimination and forced removal",
-      "Wartime laws treated all residents identically in practice",
-      "Only soldiers experienced shortages or restrictions"
+      "Government restrictions affected only families serving overseas during this period",
+      "Civilian workers and soldiers faced the same legal limits everywhere"
     ],
     "answer": 1,
     "source": "https://www.archives.gov/education/lessons/japanese-relocation",
@@ -601,9 +601,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which cause-and-effect chain best links the Depression to lasting policy change?",
     "choices": [
-      "Pearl Harbor led Congress to create the stock exchange",
-      "Wartime rationing caused the Great Depression",
-      "New Deal regulation caused the 1929 crash",
+      "Financial reform increased speculation and produced the crash",
+      "Federal relief programs reduced demand and caused unemployment",
+      "Industrial conversion caused bank failures and prompted reform during this period",
       "Economic collapse led to federal relief programs and long-term regulation"
     ],
     "answer": 3,
@@ -618,9 +618,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which comparison between the New Deal and wartime mobilization is most accurate?",
     "choices": [
-      "Both were designed solely to keep America neutral",
-      "Both prohibited cooperation with private businesses",
-      "Both eliminated the federal government’s role in economic life",
+      "Both reduced federal spending but expanded state responsibilities during this period",
+      "Both emphasized banking reform as their main immediate objective",
+      "Both relied entirely on voluntary action by private charities",
       "Both increased federal involvement, but for different immediate purposes"
     ],
     "answer": 3,
@@ -636,9 +636,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Which evidence best shows the United States had moved away from strict isolationism before Pearl Harbor?",
     "choices": [
       "Lend-Lease provided military supplies to nations resisting Axis powers",
-      "Congress passed a law guaranteeing no foreign trade",
-      "American factories stopped producing military equipment",
-      "The United States disbanded its navy in 1940"
+      "Neutrality laws prohibited all sales of weapons to the Allies",
+      "Cash-and-carry required Allied nations to repay wartime loans during this period",
+      "Congress formally declared war before providing aid to Britain"
     ],
     "answer": 0,
     "source": "https://history.state.gov/milestones/1937-1945/american-isolationism",
@@ -652,9 +652,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "A historian argues that crises can expand federal authority while creating disputes about liberty. Which evidence best supports this?",
     "choices": [
-      "The Neutrality Acts permanently ended overseas conflict",
-      "The 1929 crash abolished all federal economic programs",
-      "The Code Talkers wrote the Social Security Act",
+      "New Deal programs restricted federal authority as wartime rights expanded",
+      "Depression policies ended federal regulation while war preserved all liberties",
+      "New Deal laws shifted relief to states while wartime rules protected all residents during this period",
       "New Deal agencies expanded economic action, while wartime removal curtailed civil liberties"
     ],
     "answer": 3,
@@ -669,10 +669,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "Historical Reasoning",
     "prompt": "Which conclusion best captures the changes of the 1930s and 1940s?",
     "choices": [
-      "Overseas war had no effects on American daily life",
+      "Economic crisis and war reduced federal authority and industrial jobs during this period of American history",
       "Economic emergency and global war transformed government, work, and debates over equality",
-      "Federal involvement in society consistently disappeared",
-      "The Great Depression ended before any public response"
+      "Economic changes restored isolationism and ended debates about rights",
+      "Federal programs preserved prewar employment patterns and social divisions"
     ],
     "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/great-depression-and-world-war-ii-1929-1945/",
