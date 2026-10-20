@@ -5,14 +5,14 @@ window.BLOCK_QUESTIONS=[
     "id": "r01",
     "cs": "CS 22",
     "topic": "CS 22 • Decision",
-    "prompt": "Which factor most directly shaped Truman’s decision to use atomic weapons against Japan?",
+    "prompt": "Which consideration was central to arguments supporting Truman’s decision to use atomic weapons against Japan?",
     "choices": [
-      "Pressure to defeat Soviet troops occupying Japan during the postwar years",
-      "Pressure to protect Japan from Chinese forces",
-      "Pressure to end the Pacific war without invading Japan",
-      "Pressure to prevent Germany from rearming"
+      "Avoiding the casualties expected from an invasion of Japan",
+      "Preventing a Soviet attack on American territory",
+      "Forcing Germany to accept unconditional surrender",
+      "Protecting American bases from a Japanese nuclear attack"
     ],
-    "answer": 2,
+    "answer": 0,
     "source": "https://www.trumanlibrary.gov/education/presidential-inquiries/decision-drop-atomic-bomb",
     "where": "Examine the competing arguments surrounding the decision.",
     "explanation": "American leaders considered how to end the Pacific war and avoid further casualties.",
@@ -24,12 +24,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 22 • Chronology",
     "prompt": "Which sequence correctly places these developments in historical order?",
     "choices": [
+      "Hiroshima bombing → Soviet atomic test → Nagasaki bombing",
       "Hiroshima bombing → Nagasaki bombing → Soviet atomic test",
       "Nagasaki bombing → Hiroshima bombing → Soviet atomic test",
-      "Soviet atomic test → Hiroshima bombing → Nagasaki bombing",
-      "Hiroshima bombing → Soviet atomic test → Nagasaki bombing"
+      "Soviet atomic test → Hiroshima bombing → Nagasaki bombing"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://www.trumanlibrary.gov/education/presidential-inquiries/decision-drop-atomic-bomb",
     "where": "Compare the dates of the 1945 bombings and the 1949 Soviet test.",
     "explanation": "Hiroshima was August 6, Nagasaki August 9, and the Soviet test came in 1949.",
@@ -58,12 +58,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 22 • Human impact",
     "prompt": "Which consequence distinguishes nuclear attacks from many conventional bombing raids?",
     "choices": [
+      "Civilians were displaced from damaged neighborhoods",
       "Air raids destroyed transportation and communications after the Second World War",
       "Radiation exposure caused illness long after the blasts",
-      "Fire damaged buildings in densely populated districts",
-      "Civilians were displaced from damaged neighborhoods"
+      "Fire damaged buildings in densely populated districts"
     ],
-    "answer": 1,
+    "answer": 2,
     "source": "https://www.trumanlibrary.gov/education/presidential-inquiries/decision-drop-atomic-bomb",
     "where": "Look for the lasting effects of nuclear radiation.",
     "explanation": "Radiation injuries continued after the immediate explosion and fires.",
@@ -192,12 +192,12 @@ window.BLOCK_QUESTIONS=[
     "id": "r12",
     "cs": "CS 22",
     "topic": "CS 22 • Balance",
-    "prompt": "Which development most directly changed the nuclear balance of power after World War II?",
+    "prompt": "A U.S. adviser in 1950 warns that an American nuclear attack might lead to retaliation rather than a quick victory. Which change best explains that concern?",
     "choices": [
-      "The United States formed a postwar economic aid program",
-      "The United Nations organized peacekeeping negotiations",
-      "Western European states negotiated regional trade agreements",
-      "The Soviet Union successfully tested its own atomic weapon"
+      "Japan had developed intercontinental missiles",
+      "NATO had replaced the United Nations",
+      "The Marshall Plan had ended military competition",
+      "The Soviet Union had acquired atomic weapons"
     ],
     "answer": 3,
     "source": "https://history.state.gov/milestones/1945-1952/kennan",
@@ -209,18 +209,18 @@ window.BLOCK_QUESTIONS=[
     "id": "r13",
     "cs": "CS 22",
     "topic": "CS 22 • Evaluation",
-    "prompt": "Which argument was made by supporters of using atomic bombs in 1945?",
+    "prompt": "Which evidence would best support a historian arguing that the 1945 atomic bombings were unnecessary?",
     "choices": [
-      "The attacks would guarantee lasting peace with Moscow",
-      "The attacks would prevent any future civilian casualties",
-      "The attacks would eliminate the need for occupation forces",
-      "The attacks might shorten the war and avoid an invasion"
+      "Japan had already occupied most of the United States",
+      "The Soviet Union had formally surrendered to Japan",
+      "Germany was preparing to reenter the Pacific war",
+      "Some officials believed Japan could surrender under modified terms"
     ],
     "answer": 3,
     "source": "https://www.trumanlibrary.gov/education/presidential-inquiries/decision-drop-atomic-bomb",
-    "where": "Review arguments presented for the decision.",
-    "explanation": "Supporters argued the weapons could hasten surrender and avoid invasion losses.",
-    "hint": "Focus on the immediate military objectives of 1945."
+    "where": "Compare the evidence and arguments offered by critics of the decision.",
+    "explanation": "Some critics argued alternatives such as modifying surrender terms deserved more consideration.",
+    "hint": "Look for a historically documented alternative rather than a claim about another war."
   },
   {
     "id": "r14",
@@ -566,12 +566,12 @@ window.BLOCK_QUESTIONS=[
     "id": "r34",
     "cs": "CS 23",
     "topic": "CS 23 • Public policy",
-    "prompt": "Which scenario best illustrates different branches contributing to containment?",
+    "prompt": "Congress authorizes foreign-aid funding while the president negotiates with recipient countries. What does this show about containment?",
     "choices": [
-      "The Supreme Court declares war while governors negotiate treaties",
-      "Congress commands U.N. armies while courts appoint ambassadors",
-      "Congress funds foreign aid while the president directs its implementation",
-      "The president writes tax laws while the Senate issues court verdicts after the Second World War"
+      "Containment removed Congress from foreign policy",
+      "Containment relied solely on military commanders",
+      "Containment required cooperation between federal branches",
+      "Containment transferred treaty powers to state governments"
     ],
     "answer": 2,
     "source": "https://history.state.gov/milestones/1945-1952/truman-doctrine",
@@ -634,12 +634,12 @@ window.BLOCK_QUESTIONS=[
     "id": "r38",
     "cs": "CS 22–23",
     "topic": "CS 22–23 • Analysis",
-    "prompt": "A European country faces economic collapse but no invasion. Which U.S. response best fits early containment?",
+    "prompt": "In 1948, unemployment and shortages destabilize a Western European democracy. Which response best reflects economic containment?",
     "choices": [
-      "Offer reconstruction assistance to support political and economic stability",
-      "Launch an invasion to replace its elected national legislature",
-      "Threaten atomic strikes against its neighboring democratic states",
-      "Withdraw from diplomacy until the country joins a military alliance across the affected region"
+      "Provide recovery funds tied to rebuilding production",
+      "Send combat troops to replace the elected government",
+      "Demand that the country abandon all foreign trade",
+      "Threaten nuclear strikes unless voters support one party"
     ],
     "answer": 0,
     "source": "https://history.state.gov/milestones/1945-1952/marshall-plan",
@@ -651,12 +651,12 @@ window.BLOCK_QUESTIONS=[
     "id": "r39",
     "cs": "CS 22–23",
     "topic": "CS 22–23 • Analysis",
-    "prompt": "An ally is attacked by communist-led forces. Which response most directly reflects military containment?",
+    "prompt": "A communist-led army invades a U.S.-aligned country. Which policy most closely follows military containment?",
     "choices": [
-      "Suspend all defensive treaties to preserve neutrality",
-      "Fund agricultural exports without addressing the invasion",
-      "Organize defensive support to prevent the ally’s defeat",
-      "Recognize the invading army as the ally’s government"
+      "Suspend defensive commitments to avoid involvement",
+      "Finance only long-term industrial reconstruction",
+      "Organize allied defensive forces to repel the invasion",
+      "Recognize the invaders as the legitimate government"
     ],
     "answer": 2,
     "source": "https://history.state.gov/milestones/1953-1960/korean-war-armistice",
