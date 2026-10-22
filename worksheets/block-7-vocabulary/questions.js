@@ -1,11 +1,683 @@
-(function(){
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const meta={intro:["AS-B7-CS24-26-INTRO-2026","Block 7 Intro — Cold War at Home and Abroad","CS 24–26 • Twenty-eight linked foundation questions."],vocabulary:["AS-B7-CS24-26-VOCAB-2026","Block 7 Vocabulary — Cold War at Home and Abroad","CS 24–26 • Twenty-eight essential terms and concepts."],review:["AS-B7-CS24-26-REVIEW-2026","Block 7 Comprehensive Review — Cold War at Home and Abroad","CS 24–26 • Thirty-two application, comparison, causation, and synthesis questions."]}[mode];
-window.BLOCK_CONFIG={assignmentKey:meta[0],title:meta[1],description:meta[2],practice:"Explain how Cold War fears affected civil liberties, how Korea and Vietnam shaped the United States, and why the Cold War ended."};
-const C=[["CS 24","Second Red Scare","renewed fear that communists had infiltrated American institutions","Investigations and accusations spread through government, media, labor, universities, and the military"],["CS 24","McCarthyism","reckless public accusations of communist disloyalty without sufficient evidence","A senator gains influence by naming alleged subversives but often fails to prove his charges"],["CS 24","HUAC","House committee that investigated alleged communist influence","Congressional hearings question people about political associations"],["CS 24","Blacklisting","denying employment to people accused of communist ties","A performer cannot find work after refusing to cooperate with investigators"],["CS 24","Civil liberties","constitutional freedoms placed at risk during anti-communist investigations","Fear leads officials to punish beliefs and associations"],["CS 24","Loyalty program","government screening intended to identify disloyal employees","Federal workers face investigations of their political activities"],["CS 24","Soviet expansion","growth of Soviet power that increased American fears of communism","Eastern European nations come under Moscow-aligned governments"],["CS 24","Communist China","1949 establishment of a communist government under Mao Zedong","American anxiety rises when China changes governments"],["CS 24","Hollywood Ten","film figures punished after refusing to answer HUAC questions","Contempt convictions become a symbol of anti-communist pressure"],["CS 25","Korean War","Cold War conflict that left Korea divided near the 38th parallel","U.S. and U.N. forces defend South Korea against invasion"],["CS 25","Divided Korea","continuing separation of communist North Korea and noncommunist South Korea","An armistice stops fighting without reunifying the peninsula"],["CS 25","U.S.–China tension","hostility intensified when Chinese forces entered the Korean War","Two nations confront one another on the Korean peninsula"],["CS 25","U.S.–Japan alliance","postwar partnership strengthened partly by Cold War security needs","Japan becomes an important American ally in Asia"],["CS 25","Nuclear arms race","competition to build increasingly powerful nuclear arsenals","Superpowers test weapons and plan for retaliation"],["CS 25","Bay of Pigs","failed U.S.-supported invasion of Cuba in 1961","Exiles attempt unsuccessfully to overthrow Fidel Castro"],["CS 25","Cuban Missile Crisis","1962 confrontation over Soviet nuclear missiles in Cuba","The superpowers approach nuclear war before negotiating removal"],["CS 25","Vietnam War","conflict that deeply divided Americans over containment","Escalation, casualties, and the draft fuel a large antiwar movement"],["CS 25","Antiwar movement","organized opposition to U.S. involvement in Vietnam","Students and other citizens protest policy and military escalation"],["CS 25","Domestic spending pressure","war costs that competed with funding for programs at home","Vietnam expenses make Great Society goals harder to sustain"],["CS 25","Urban unrest","riots and violence that intensified domestic division during the Vietnam era","War abroad coincides with conflict over inequality at home"],["CS 25","United Nations expansion","growth in U.N. membership as former colonies became independent","New nations from Africa and Asia join the international body"],["CS 26","Berlin Wall","symbol of Cold War division whose 1989 fall signaled communist collapse","East Germans cross freely after border controls open"],["CS 26","Mass demonstrations","popular protests that pressured communist governments in Eastern Europe","Citizens demand political freedom and reform"],["CS 26","Soviet collapse","1991 breakup of the USSR into independent republics","A superpower dissolves and the Cold War ends"],["CS 26","Economic pressure","burden created when the Soviet Union struggled to match U.S. spending and technology","Competition strains an already weak Soviet economy"],["CS 26","Democratic reforms","changes toward competitive elections and political freedom","Former communist states establish new representative institutions"],["CS 26","Free-market reforms","changes replacing central planning with greater private ownership and trade","Former Soviet-bloc economies move toward markets"],["CS 26","U.S. assistance","American aid supporting transitions after communist rule","Resources help emerging democracies and market economies"]]; const SOURCE="https://history.state.gov/milestones/1953-1960";
-function sourceFor(c){const topic=c[1].toLowerCase();if(/mccarthy|red\ scare|huac|blacklisting|loyalty|hollywood|civil\ liberties/i.test(topic))return "https://www.archives.gov/education/lessons/mccarthy-telegram";if(/korean|korea|china|japan/i.test(topic))return "https://history.state.gov/milestones/1945-1952/korean-war-2";if(/bay\ of\ pigs|cuban/i.test(topic))return "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis";if(/vietnam|antiwar|spending|urban\ unrest|demonstrations/i.test(topic))return "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin";if(/berlin|soviet\ collapse|economic\ pressure|democratic\ reforms|free\-market\ reforms|u\.s\.\ assistance/i.test(topic))return "https://history.state.gov/departmenthistory/short-history/endofcoldwar";return SOURCE;}
-function distract(n){return[1,7,13].map(k=>C[(n+k)%C.length][1])}
-function make(kind){return C.map((c,n)=>{const answer=n%4,choices=distract(n);choices.splice(answer,0,c[1]);return{id:kind[0]+String(n+1).padStart(2,"0"),cs:c[0],topic:c[1],prompt:kind==="vocabulary"?"Which term matches this definition: "+c[2]+"?":kind==="intro"?"Use the linked source and identify the concept: "+c[2]+".":c[3]+". Which concept best applies?",choices,answer,source:kind==="review"?"":sourceFor(c),where:kind==="review"?"":"Look for the historical context of this topic. The definition in the question gives a starting clue.",explanation:"This is "+c[1]+": "+c[2]+".",hint:"Focus on the defining clue and its historical role."}})}
-const E=[["CS 24","Civil Liberties","Which conclusion is best supported by the Second Red Scare?","Fear can lead democratic governments to restrict association and expression without adequate evidence"],["CS 25","Comparison","Which statement accurately compares Korea and Vietnam?","Both grew from containment, but Korea ended in a continued division while Vietnam produced deep U.S. domestic opposition"],["CS 26","Cause and Effect","Which chain best explains the Cold War ending?","Economic strain and U.S. pressure → reform and protest → communist governments fall → Soviet Union dissolves"],["CS 24–26","Synthesis","Which thesis best unites Block 7?","Cold War rivalry shaped foreign wars and domestic freedoms before economic strain, protest, and reform helped end Soviet power"]];function extras(){return E.map((e,j)=>{const n=28+j,a=n%4,ch=["It had no meaningful historical effect","It proves one cause always explains every event","It ended political disagreement permanently"];ch.splice(a,0,e[3]);return{id:"r"+(n+1),cs:e[0],topic:e[1],prompt:e[2],choices:ch,answer:a,source:"",where:"",explanation:e[3]+".",hint:"Choose the answer that makes an accurate, supportable historical connection."}})}
-window.BLOCK_QUESTIONS=mode==="intro"?make("intro"):mode==="vocabulary"?make("vocabulary"):[...make("review"),...extras()];
-})();
+window.BLOCK_CONFIG={"assignmentKey": "AS-B7-CS24-26-VOCAB-2026", "title": "Block 7 Vocabulary — Cold War at Home and Abroad", "description": "CS 24–26 • 40 essential terms and concepts.", "practice": "Red Scare and civil liberties; Cold War conflict in Asia and Cuba; Vietnam at home; the collapse of communism."};
+window.BLOCK_QUESTIONS=[
+ {
+  "cs": "24",
+  "prompt": "What term describes the broad postwar fear of communist infiltration in American society?",
+  "choices": [
+   "Second Red Scare",
+   "McCarthyism",
+   "Loyalty program",
+   "HUAC"
+  ],
+  "hint": "Think of the nationwide climate, not one senator or agency.",
+  "explanation": "The Second Red Scare was the widespread postwar fear of communist influence.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Read the background about anti-communist fears.",
+  "answer": 0,
+  "id": "v01",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which term describes sensational accusations of disloyalty made without adequate supporting evidence?",
+  "choices": [
+   "HUAC",
+   "McCarthyism",
+   "Loyalty program",
+   "Blacklisting"
+  ],
+  "hint": "Identify the tactic of making unsupported accusations.",
+  "explanation": "McCarthyism refers to reckless accusations of communist ties, associated with Senator Joseph McCarthy.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Look for the senator’s allegations and their evidentiary basis.",
+  "answer": 1,
+  "id": "v02",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which institution conducted congressional hearings into alleged communist influence?",
+  "choices": [
+   "FBI",
+   "Senate Internal Security Subcommittee",
+   "HUAC",
+   "Federal Employee Loyalty Program"
+  ],
+  "hint": "Look for a committee of the House of Representatives.",
+  "explanation": "The House Un-American Activities Committee conducted congressional investigations.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Identify which part of Congress held investigative hearings.",
+  "answer": 2,
+  "id": "v03",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "What practice prevented some performers from obtaining work after allegations about political associations?",
+  "choices": [
+   "Loyalty screening",
+   "Censorship",
+   "Contempt citation",
+   "Blacklisting"
+  ],
+  "hint": "The clue concerns employment exclusion, not prosecution.",
+  "explanation": "Blacklisting excluded accused individuals from jobs, particularly in entertainment.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Find the consequences for people accused of communist ties.",
+  "answer": 3,
+  "id": "v04",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "What general term covers freedoms of speech, association, and due process threatened by anti-communist investigations?",
+  "choices": [
+   "Civil liberties",
+   "Loyalty oaths",
+   "Security clearances",
+   "Executive privileges"
+  ],
+  "hint": "These are protections individuals hold against government intrusion.",
+  "explanation": "Civil liberties are individual constitutional freedoms and protections.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Consider rights potentially affected by investigations.",
+  "answer": 0,
+  "id": "v05",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which policy investigated federal workers for possible disloyalty?",
+  "choices": [
+   "HUAC",
+   "Loyalty program",
+   "Hollywood blacklist",
+   "Espionage Act"
+  ],
+  "hint": "Distinguish an executive-branch employee screening process from a congressional hearing.",
+  "explanation": "Federal loyalty programs screened government employees for alleged security risks.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Look for government employee investigations.",
+  "answer": 1,
+  "id": "v06",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which development describes Moscow-aligned governments extending across Eastern Europe after World War II?",
+  "choices": [
+   "Communist China",
+   "Warsaw Pact",
+   "Soviet expansion",
+   "Berlin blockade"
+  ],
+  "hint": "Think of the geographic spread of Soviet political influence.",
+  "explanation": "Soviet expansion extended Soviet influence over Eastern Europe.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Review postwar communist influence in Europe.",
+  "answer": 2,
+  "id": "v07",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which development occurred in 1949 when Mao Zedong’s forces established a new government?",
+  "choices": [
+   "Soviet expansion",
+   "Korean armistice",
+   "Cultural Revolution",
+   "Communist China"
+  ],
+  "hint": "Identify the change in control of China in 1949.",
+  "explanation": "The Communist victory in China in 1949 heightened U.S. Cold War fears.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Locate the change in Chinese leadership.",
+  "answer": 3,
+  "id": "v08",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which group of film-industry witnesses was cited for contempt after refusing to answer HUAC questions?",
+  "choices": [
+   "Hollywood Ten",
+   "Rosenbergs",
+   "Army–McCarthy witnesses",
+   "Freedom Riders"
+  ],
+  "hint": "Focus on the film-industry group and congressional testimony.",
+  "explanation": "The Hollywood Ten resisted HUAC questioning and faced contempt convictions.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Review the entertainment industry and congressional investigations.",
+  "answer": 0,
+  "id": "v09",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which right is implicated when officials penalize a person solely for belonging to a lawful political group?",
+  "choices": [
+   "Freedom from self-incrimination",
+   "Freedom of association",
+   "Right to counsel",
+   "Protection against unreasonable searches"
+  ],
+  "hint": "The issue is group membership, not a criminal trial.",
+  "explanation": "Freedom of association protects joining groups and pursuing shared ideas.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Connect investigations to political membership.",
+  "answer": 1,
+  "id": "v10",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which constitutional principle requires fair legal procedures before government deprives someone of liberty or property?",
+  "choices": [
+   "Equal protection",
+   "Judicial review",
+   "Due process",
+   "Federalism"
+  ],
+  "hint": "Look for fairness in government procedures.",
+  "explanation": "Due process requires government to follow fair procedures.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Think about the fairness of loyalty proceedings.",
+  "answer": 2,
+  "id": "v11",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "What is a required pledge affirming allegiance, sometimes demanded of public employees during the Red Scare?",
+  "choices": [
+   "Security clearance",
+   "Subpoena",
+   "Contempt citation",
+   "Loyalty oath"
+  ],
+  "hint": "This is a signed or spoken pledge rather than an investigation.",
+  "explanation": "A loyalty oath is a declaration of allegiance used in some employment settings.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Consider pledges of allegiance and anti-communist policies.",
+  "answer": 3,
+  "id": "v12",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "Which legal instrument compels a witness to appear or produce evidence at a hearing?",
+  "choices": [
+   "Subpoena",
+   "Indictment",
+   "Loyalty oath",
+   "Blacklist"
+  ],
+  "hint": "It is a compulsory demand for testimony or records.",
+  "explanation": "A subpoena legally requires testimony or documents.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Review the investigative powers of congressional committees.",
+  "answer": 0,
+  "id": "v13",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "24",
+  "prompt": "What charge may follow a refusal to comply with a lawful congressional demand for testimony?",
+  "choices": [
+   "Espionage",
+   "Contempt of Congress",
+   "Treason",
+   "Perjury"
+  ],
+  "hint": "This concerns refusing Congress, not lying under oath.",
+  "explanation": "Contempt of Congress can punish refusal to comply with lawful congressional processes.",
+  "source": "https://www.archives.gov/education/lessons/mccarthy-telegram",
+  "where": "Review what happened to witnesses who refused questions.",
+  "answer": 1,
+  "id": "v14",
+  "topic": "24 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which conflict began in 1950 when North Korean forces crossed into South Korea?",
+  "choices": [
+   "Vietnam War",
+   "Chinese Civil War",
+   "Korean War",
+   "Soviet–Afghan War"
+  ],
+  "hint": "Identify the conflict beginning with a 1950 invasion across the peninsula.",
+  "explanation": "The Korean War began with North Korea’s 1950 invasion of South Korea.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Find the date and parties involved in the Korean conflict.",
+  "answer": 2,
+  "id": "v15",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What geographic line is most closely associated with the division of North and South Korea?",
+  "choices": [
+   "17th parallel",
+   "Demilitarized zone",
+   "Yalu River",
+   "38th parallel"
+  ],
+  "hint": "Think of the latitude used to divide Korea after World War II.",
+  "explanation": "The 38th parallel was the original dividing line between occupation zones in Korea.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Locate the initial dividing line in Korea.",
+  "answer": 3,
+  "id": "v16",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What 1953 agreement stopped major fighting without producing a permanent peace treaty?",
+  "choices": [
+   "Korean armistice",
+   "Geneva Accords",
+   "Panmunjom declaration",
+   "Mutual defense treaty"
+  ],
+  "hint": "An armistice halts fighting; it does not necessarily end a war legally.",
+  "explanation": "The 1953 Korean armistice halted combat without a peace treaty.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Look for how the fighting stopped in 1953.",
+  "answer": 0,
+  "id": "v17",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which multinational force fought alongside South Korea under a U.N. command?",
+  "choices": [
+   "NATO forces",
+   "United Nations coalition",
+   "Warsaw Pact forces",
+   "SEATO forces"
+  ],
+  "hint": "Identify the international organization that authorized collective military action.",
+  "explanation": "A U.N.-authorized coalition defended South Korea.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Find the role of the United Nations in Korea.",
+  "answer": 1,
+  "id": "v18",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What changed the Korean War after U.N. forces advanced near China’s border?",
+  "choices": [
+   "Soviet withdrawal",
+   "Japanese rearmament",
+   "Chinese intervention",
+   "NATO intervention"
+  ],
+  "hint": "Consider which neighboring country sent major ground forces.",
+  "explanation": "Chinese forces entered the Korean War in late 1950.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Review the response to forces approaching the Yalu River.",
+  "answer": 2,
+  "id": "v19",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which partnership made Japan a major U.S. security partner in East Asia after World War II?",
+  "choices": [
+   "U.S.–China rapprochement",
+   "Korean armistice",
+   "SEATO",
+   "U.S.–Japan alliance"
+  ],
+  "hint": "Think of the postwar relationship between Washington and Tokyo.",
+  "explanation": "The U.S.–Japan security relationship became central to American strategy in Asia.",
+  "source": "https://history.state.gov/milestones/1945-1952/korean-war-2",
+  "where": "Review Cold War partnerships in East Asia.",
+  "answer": 3,
+  "id": "v20",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What describes U.S.–Soviet competition to develop and stockpile more powerful nuclear weapons?",
+  "choices": [
+   "Nuclear arms race",
+   "Nuclear deterrence",
+   "Mutually assured destruction",
+   "Conventional rearmament"
+  ],
+  "hint": "Focus on competition to build weapons rather than a strategy for preventing attack.",
+  "explanation": "The nuclear arms race was competitive expansion of nuclear arsenals.",
+  "source": "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis",
+  "where": "Read about nuclear weapons and superpower rivalry.",
+  "answer": 0,
+  "id": "v21",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which strategy seeks to prevent attack by threatening unacceptable retaliation?",
+  "choices": [
+   "Nuclear arms race",
+   "Nuclear deterrence",
+   "Brinkmanship",
+   "Containment"
+  ],
+  "hint": "The key idea is discouraging attack through credible consequences.",
+  "explanation": "Nuclear deterrence aims to prevent aggression through the threat of retaliation.",
+  "source": "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis",
+  "where": "Look for the logic behind threatening retaliation.",
+  "answer": 1,
+  "id": "v22",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What was the failed 1961 U.S.-supported invasion by Cuban exiles?",
+  "choices": [
+   "Cuban Missile Crisis",
+   "Operation Rolling Thunder",
+   "Bay of Pigs",
+   "Berlin blockade"
+  ],
+  "hint": "This was an attempted invasion, not a missile confrontation.",
+  "explanation": "The Bay of Pigs invasion failed to overthrow Fidel Castro in 1961.",
+  "source": "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis",
+  "where": "Find events in Cuba immediately before the missile crisis.",
+  "answer": 2,
+  "id": "v23",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which 1962 standoff arose after the United States discovered Soviet missiles in Cuba?",
+  "choices": [
+   "Bay of Pigs",
+   "Berlin Crisis",
+   "U-2 incident",
+   "Cuban Missile Crisis"
+  ],
+  "hint": "Identify the standoff involving Soviet missiles placed near the U.S.",
+  "explanation": "The Cuban Missile Crisis was the 1962 confrontation over Soviet missiles in Cuba.",
+  "source": "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis",
+  "where": "Read about the October 1962 confrontation.",
+  "answer": 3,
+  "id": "v24",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What term described Kennedy’s maritime restriction intended to stop delivery of offensive weapons to Cuba?",
+  "choices": [
+   "Naval quarantine",
+   "Naval blockade",
+   "Air interdiction",
+   "Amphibious invasion"
+  ],
+  "hint": "Kennedy used a specific term to avoid the legal implications of a blockade.",
+  "explanation": "Kennedy announced a naval quarantine of offensive military shipments to Cuba.",
+  "source": "https://history.state.gov/milestones/1961-1968/cuban-missile-crisis",
+  "where": "Look for the U.S. naval response to Soviet missiles.",
+  "answer": 0,
+  "id": "v25",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which Cold War conflict involved extensive U.S. combat operations in Southeast Asia and ended with communist victory in 1975?",
+  "choices": [
+   "Korean War",
+   "Vietnam War",
+   "Laotian Civil War",
+   "Cambodian–Vietnamese War"
+  ],
+  "hint": "Identify the prolonged U.S. conflict centered on South Vietnam.",
+  "explanation": "The Vietnam War deeply divided Americans and ended in 1975 with North Vietnamese victory.",
+  "source": "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin",
+  "where": "Review U.S. escalation and the outcome in Vietnam.",
+  "answer": 1,
+  "id": "v26",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What term describes organized protests against U.S. military involvement in Vietnam?",
+  "choices": [
+   "Civil rights movement",
+   "Counterculture",
+   "Antiwar movement",
+   "Draft resistance"
+  ],
+  "hint": "This is the broad political opposition to the war.",
+  "explanation": "The antiwar movement organized protests and campaigns against the Vietnam War.",
+  "source": "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin",
+  "where": "Find domestic responses to escalation in Vietnam.",
+  "answer": 2,
+  "id": "v27",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which system required eligible Americans to serve in the armed forces, contributing to Vietnam-era protests?",
+  "choices": [
+   "Voluntary enlistment",
+   "Reserve mobilization",
+   "National Guard activation",
+   "Military draft"
+  ],
+  "hint": "The government selects eligible people for compulsory service.",
+  "explanation": "The draft compelled eligible individuals to enter military service.",
+  "source": "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin",
+  "where": "Look for how the military obtained personnel.",
+  "answer": 3,
+  "id": "v28",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which domestic reform agenda faced budgetary competition from the costs of the Vietnam War?",
+  "choices": [
+   "Great Society",
+   "New Deal",
+   "Fair Deal",
+   "New Frontier"
+  ],
+  "hint": "Think of Lyndon Johnson’s anti-poverty and social reform agenda.",
+  "explanation": "Johnson’s Great Society programs competed for resources with war spending.",
+  "source": "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin",
+  "where": "Connect Johnson’s domestic priorities to Vietnam spending.",
+  "answer": 0,
+  "id": "v29",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "Which term describes outbreaks of violence and disorder in some American cities amid 1960s tensions?",
+  "choices": [
+   "Antiwar movement",
+   "Urban unrest",
+   "Civil disobedience",
+   "Student sit-ins"
+  ],
+  "hint": "This refers to episodes of disorder in cities, not all peaceful protest.",
+  "explanation": "Urban unrest reflected racial inequality and domestic tensions during the era.",
+  "source": "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin",
+  "where": "Review simultaneous domestic tensions in the 1960s.",
+  "answer": 1,
+  "id": "v30",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What process created many newly independent African and Asian states that subsequently joined the United Nations?",
+  "choices": [
+   "Collective security",
+   "Nonalignment",
+   "Decolonization",
+   "Self-determination"
+  ],
+  "hint": "Focus on the end of colonial rule rather than a foreign policy stance.",
+  "explanation": "Decolonization ended colonial rule and created independent states.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Review the emergence of new independent states.",
+  "answer": 2,
+  "id": "v31",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "25",
+  "prompt": "What development followed as newly independent countries entered the world organization?",
+  "choices": [
+   "NATO enlargement",
+   "Warsaw Pact formation",
+   "SEATO dissolution",
+   "United Nations expansion"
+  ],
+  "hint": "Identify growth in the global organization’s membership.",
+  "explanation": "U.N. membership expanded as decolonized nations joined.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Consider how independence affected U.N. membership.",
+  "answer": 3,
+  "id": "v32",
+  "topic": "25 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "Which barrier became a symbol of Europe’s division and opened in November 1989?",
+  "choices": [
+   "Berlin Wall",
+   "Iron Curtain",
+   "Inner German border",
+   "Checkpoint Charlie"
+  ],
+  "hint": "Identify the physical barrier dividing a city.",
+  "explanation": "The Berlin Wall divided East and West Berlin until border openings in 1989.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Look for the 1989 opening of borders in Berlin.",
+  "answer": 0,
+  "id": "v33",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "Which form of popular pressure helped force communist leaders in Eastern Europe to permit reforms?",
+  "choices": [
+   "Military coups",
+   "Mass demonstrations",
+   "Economic sanctions",
+   "Party purges"
+  ],
+  "hint": "Think of large-scale public protest rather than action by armies.",
+  "explanation": "Mass demonstrations demanded political change and weakened communist regimes.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Read about popular protest in Eastern Europe.",
+  "answer": 1,
+  "id": "v34",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "Which event in 1991 dissolved the USSR into independent republics?",
+  "choices": [
+   "German reunification",
+   "Warsaw Pact dissolution",
+   "Soviet collapse",
+   "Fall of the Berlin Wall"
+  ],
+  "hint": "Identify the breakup of the Soviet state itself.",
+  "explanation": "The Soviet Union formally dissolved in December 1991.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Find the events culminating in the USSR’s dissolution.",
+  "answer": 2,
+  "id": "v35",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "Which factor describes the Soviet economy’s difficulty sustaining military competition and domestic needs?",
+  "choices": [
+   "Political liberalization",
+   "Nationalist separatism",
+   "Diplomatic détente",
+   "Economic pressure"
+  ],
+  "hint": "The clue is financial and productive strain.",
+  "explanation": "Economic pressure contributed to the Soviet Union’s difficulties.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Review economic weaknesses and military expenditures.",
+  "answer": 3,
+  "id": "v36",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "What Gorbachev policy promoted greater openness and public discussion?",
+  "choices": [
+   "Glasnost",
+   "Perestroika",
+   "Détente",
+   "Containment"
+  ],
+  "hint": "This Russian term means openness, not economic restructuring.",
+  "explanation": "Glasnost expanded openness and discussion in Soviet public life.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Identify Gorbachev’s policy of openness.",
+  "answer": 0,
+  "id": "v37",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "What Gorbachev initiative sought to restructure the Soviet economic and political system?",
+  "choices": [
+   "Glasnost",
+   "Perestroika",
+   "Democratization",
+   "Détente"
+  ],
+  "hint": "This Russian term means restructuring.",
+  "explanation": "Perestroika was Gorbachev’s restructuring program.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Compare Gorbachev’s reform initiatives.",
+  "answer": 1,
+  "id": "v38",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "Which changes introduced competitive elections and greater political participation after communist rule?",
+  "choices": [
+   "Free-market reforms",
+   "Privatization",
+   "Democratic reforms",
+   "Central planning"
+  ],
+  "hint": "Focus on political representation rather than ownership of industry.",
+  "explanation": "Democratic reforms expanded elections and political freedoms.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Distinguish political from economic transitions.",
+  "answer": 2,
+  "id": "v39",
+  "topic": "26 • Vocabulary"
+ },
+ {
+  "cs": "26",
+  "prompt": "Which changes expanded private ownership and market competition in former communist economies?",
+  "choices": [
+   "Democratic reforms",
+   "Collectivization",
+   "Central planning",
+   "Free-market reforms"
+  ],
+  "hint": "These are economic rather than electoral changes.",
+  "explanation": "Free-market reforms moved economies away from state planning.",
+  "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
+  "where": "Look for economic changes after communist rule.",
+  "answer": 3,
+  "id": "v40",
+  "topic": "26 • Vocabulary"
+ }
+];
