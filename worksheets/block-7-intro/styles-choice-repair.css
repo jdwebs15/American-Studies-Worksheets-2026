@@ -1,0 +1,33 @@
+/* BLOCK 7 INTRO — ANSWER CHOICE REPAIR
+   Append this entire block to the END of worksheets/block-7-intro/styles.css.
+   Block 7 app.js creates each choice as a single text node ('A.  Answer'),
+   unlike Block 3's separate letter/text elements. Do not use a two-column grid. */
+#questionCard .choices,
+.question-card .choices,
+.choices {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+#questionCard button.choice,
+.question-card button.choice,
+button.choice,
+.choice {
+  display: block !important;
+  grid-template-columns: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  line-height: 1.5 !important;
+  padding: 13px 16px !important;
+}
+#questionCard,
+.question-card,
+.question-panel,
+.workspace { min-width: 0; }
