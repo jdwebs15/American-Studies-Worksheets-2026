@@ -14,7 +14,7 @@
 .status{min-height:1.4em}.workspace{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(285px,.8fr);gap:14px;margin-top:32px}.question-panel,.side-panel{padding:17px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:9px 0 13px}.stats div{border:1px solid var(--line);border-radius:12px;background:#171e2a;padding:9px 12px}.stats strong{display:block;font-size:1.05rem}.stats span{display:block;color:var(--muted);font-size:.76rem}
 .question-card h2{font-size:1.05rem;margin:11px 0 4px}.question-card .prompt{margin:0 0 13px;color:#e1e6f1}.choices{display:grid;gap:10px}
-.choice{width:100%;display:grid;grid-template-columns:28px 1fr;align-items:start;text-align:left;background:#171d27;border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--text);font-weight:600}.choice:hover,.choice:focus-visible{border-color:#668bc5;background:#192438}.choice-letter{color:var(--blue);font-weight:950}.choice.wrong{border-color:#a7474d;background:var(--badbg)}.choice.correct{border-color:#3e9c6a;background:var(--goodbg)}
+.choice{width:100%;display:block;white-space:normal;overflow-wrap:break-word;word-break:normal;line-height:1.5;text-align:left;background:#171d27;border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--text);font-weight:600}.choice:hover,.choice:focus-visible{border-color:#668bc5;background:#192438}.choice-letter{color:var(--blue);font-weight:950}.choice.wrong{border-color:#a7474d;background:var(--badbg)}.choice.correct{border-color:#3e9c6a;background:var(--goodbg)}
 .feedback{margin-top:13px;border-radius:12px;padding:12px;display:none}.feedback.bad{display:block;color:#ffd2cf;background:var(--badbg);border:1px solid #8f3d43}.feedback.good{display:block;color:#c8f6da;background:var(--goodbg);border:1px solid #347d59}
 .source-box{margin-top:14px;padding:11px 12px;border-left:4px solid #668bc5;background:#121d31;border-radius:9px}.source-box a{color:#a9caff;font-weight:850}.source-box p{margin:6px 0 0;color:#bdc8da;font-size:.88rem}.advance-note{display:block;margin-top:7px;font-size:.82rem;opacity:.84}
 .side-panel{color:var(--muted)}.side-panel ul{padding-left:22px}.side-panel li{margin:7px 0}.side-section{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.side-section p{margin:.55rem 0}
@@ -41,3 +41,6 @@ a{color:#a9caff}a:focus-visible,button:focus-visible,.choice:focus-visible{outli
 .actions{align-items:center}
 .workspace{margin-top:22px}
 @media(max-width:760px){.hero{padding:21px}.student-panel,.student-info,#studentPanel{padding:20px}.fields{grid-template-columns:1fr}.hero h1,.hero #pageTitle{font-size:clamp(1.75rem,6vw,2.25rem)}}
+
+/* Block 7 uses a single text node for each A–D button, not separate grid children. */
+.question-card .choices .choice{display:block!important;grid-template-columns:none!important;width:100%;max-width:100%;white-space:normal;overflow-wrap:break-word;word-break:normal;text-align:left;line-height:1.5;}
