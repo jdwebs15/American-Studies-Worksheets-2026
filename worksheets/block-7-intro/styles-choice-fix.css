@@ -1,0 +1,21 @@
+/* Block 7 Intro — answer choice layout repair.
+   Add this at the END of your existing styles.css.
+   The game creates each choice as a single text node, not separate
+   letter/text elements; grid-template-columns:28px 1fr therefore
+   squeezes the entire answer into a 28px column. */
+.choice,
+button.choice,
+.choices > button {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-height: 1.5;
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+.choices { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
