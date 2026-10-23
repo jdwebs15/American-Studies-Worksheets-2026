@@ -22,7 +22,48 @@ async function cloudSave(manual){if(!student().email)return;saveLocal();try{awai
 function cloudLoad(){if(!valid())return;const cb='load_'+Date.now(),script=document.createElement('script');let done=false;const finish=(msg)=>{if(done)return;done=true;$('saveStatus').textContent=msg;delete window[cb];script.remove()};window[cb]=r=>{if(r&&r.found){restore(r.payload);saveLocal();finish('Cloud progress loaded.');if(started){firstOpen();showQuestion()}}else finish('No cloud draft found.')};script.onerror=()=>finish('Could not load cloud draft.');script.src=APPS_SCRIPT_URL+'?'+new URLSearchParams({action:'load',assignmentKey:C.assignmentKey,email:student().email,callback:cb});document.body.append(script);setTimeout(()=>finish('Cloud load timed out; local work is still available.'),12000)}
 function start(){if(!valid())return;localLoad();state.sessions++;state.lastTick=Date.now();started=true;$('studentPanel').classList.add('hidden');$('workspace').classList.remove('hidden');firstOpen();showQuestion();queueSave()}
 function complete(){tick();started=false;state.status=state.status==='submitted'?'submitted':'completed';state.completedAt=state.completedAt||new Date().toISOString();$('workspace').classList.add('hidden');$('completion').classList.remove('hidden');ticket();saveLocal();queueSave()}
-function ticket(){const s=student(),rows=[['Assignment',C.title],['Assignment ID',C.assignmentKey],['Student',s.name],['Period',s.period],['School email',s.email],['Score',`${mastered()} / ${Q.length} (${Math.round(mastered()/Q.length*100)}%)`],['Total attempts',count()],['Incorrect attempts',state.wrongTotal],['First-attempt correct',Object.values(state.firstAttempts).filter(Boolean).length],['Accuracy',Math.round(mastered()/Math.max(1,count())*100)+'%'],['First started',new Date(state.firstStart).toLocaleString()],['Completed',state.completedAt?new Date(state.completedAt).toLocaleString():'—'],['Submitted',state.submittedAt?new Date(state.submittedAt).toLocaleString():'Not yet'],['Active time',fmt(state.activeSeconds)],['Sessions',state.sessions]];const el=$('completionTicket');el.replaceChildren();const h=document.createElement('h3');h.textContent='AMERICAN STUDIES • COMPLETION TICKET';el.append(h);for(const [k,v] of rows){const p=document.createElement('p'),strong=document.createElement('strong');strong.textContent=k+': ';p.append(strong,document.createTextNode(String(v)));el.append(p)}}
+function ticket(){
+  const s=student();
+  const total=Q.length, done=mastered(), attempts=count();
+  const accuracy=Math.round(done/Math.max(1,attempts)*100);
+  const startedAt=state.firstStart?new Date(state.firstStart).toLocaleString():'—';
+  const completedAt=state.completedAt?new Date(state.completedAt).toLocaleString():'—';
+  const submittedAt=state.submittedAt?new Date(state.submittedAt).toLocaleString():'Not submitted';
+  const el=$('completionTicket');
+  el.replaceChildren();
+  el.classList.add('b7-ticket');
+  const add=(parent,tag,className,content)=>{const node=document.createElement(tag);if(className)node.className=className;if(content!==undefined)node.textContent=String(content);parent.append(node);return node};
+  const header=add(el,'div','b7-ticket-head');
+  const intro=add(header,'div','b7-ticket-intro');
+  add(intro,'div','b7-ticket-eyebrow','AMERICAN STUDIES • COMPLETION TICKET');
+  add(intro,'h2','','Block 7 Intro — Mastery Complete');
+  add(intro,'p','','Cold War at Home and Abroad • CS 24–26');
+  const seal=add(header,'div','b7-ticket-seal');
+  add(seal,'strong','',Math.round(done/total*100)+'%');
+  add(seal,'span','','MASTERED');
+  const studentBlock=add(el,'section','b7-ticket-section');
+  add(studentBlock,'h3','','Student & Assignment');
+  const info=add(studentBlock,'div','b7-ticket-info');
+  const field=(label,value)=>{const cell=add(info,'div','b7-ticket-field');add(cell,'span','',label);add(cell,'strong','',value||'—')};
+  field('Student',s.name);field('Period',s.period);field('School email',s.email);
+  field('Assignment ID',C.assignmentKey);
+  const scoreBlock=add(el,'section','b7-ticket-section');
+  add(scoreBlock,'h3','','Performance');
+  const metrics=add(scoreBlock,'div','b7-ticket-metrics');
+  const metric=(value,label)=>{const cell=add(metrics,'div','b7-ticket-metric');add(cell,'strong','',value);add(cell,'span','',label)};
+  metric(done+' / '+total,'Questions mastered');metric(accuracy+'%','Attempt accuracy');
+  metric(attempts,'Total attempts');metric(state.wrongTotal,'Incorrect attempts');
+  metric(Object.values(state.firstAttempts).filter(Boolean).length,'First-attempt correct');metric(fmt(state.activeSeconds),'Active time');
+  const timeBlock=add(el,'section','b7-ticket-section');
+  add(timeBlock,'h3','','Assignment Record');
+  const times=add(timeBlock,'div','b7-ticket-times');
+  const stamp=(label,value)=>{const cell=add(times,'div','b7-ticket-time');add(cell,'span','',label);add(cell,'strong','',value)};
+  stamp('First started',startedAt);stamp('Completed',completedAt);stamp('Submitted',submittedAt);stamp('Sessions',state.sessions);
+  const status=add(el,'div',state.submittedAt?'b7-ticket-banner is-submitted':'b7-ticket-banner');
+  add(status,'strong','',state.submittedAt?'SUBMISSION RECORDED ON DEVICE':'STEP 1 COMPLETE — MASTERY ACHIEVED');
+  add(status,'p','',state.submittedAt?'Take a screenshot of this ticket and attach it to Google Classroom. Cloud receipt cannot be confirmed here.':'Click Submit Assignment below, then take a screenshot of the updated ticket and attach it to Google Classroom.');
+}
+
 async function submit(){if(mastered()!==Q.length)return;state.status='submitted';state.submittedAt=new Date().toISOString();ticket();saveLocal();await cloudSave(false);$('submitStatus').textContent='Submission recorded on this device and sent to the teacher backend. Take your screenshot. Server receipt cannot be verified here.';$('submitBtn').disabled=true}
 function restart(){if(!valid())return;if(!confirm('Permanently restart this assignment on this device? Existing cloud records may remain.'))return;clearTimeout(saveTimer);clearTimeout(advanceTimer);advanceTimer=null;locked=false;started=false;const resetAt=new Date().toISOString();localStorage.removeItem(key());localStorage.setItem(key()+'|resetAt',resetAt);state=fresh();$('completion').classList.add('hidden');$('workspace').classList.add('hidden');$('studentPanel').classList.remove('hidden');$('submitBtn').disabled=false;$('submitStatus').textContent='';$('saveStatus').textContent='Restarted on this device. Previous cloud records are not deleted; do not load the old draft.'}
 $('pageTitle').textContent=C.title;$('pageDescription').textContent=C.description;$('practiceText').textContent=C.practice;$('startBtn').onclick=start;$('loadBtn').onclick=cloudLoad;$('saveBtn').onclick=()=>cloudSave(true);$('submitBtn').onclick=submit;['restartBtn','restartWorkspaceBtn','restartCompletionBtn'].forEach(id=>$(id).onclick=restart);document.addEventListener('visibilitychange',()=>{tick();if(started){if(document.hidden)state.tabLeaves++;state.events.push({type:document.hidden?'leave':'return',at:new Date().toISOString()})}});for(const event of ['copy','paste'])document.addEventListener(event,()=>{if(started)state.events.push({type:event,question:Q[state.currentIndex]?.id||'',at:new Date().toISOString()})});setInterval(()=>{tick();if(started){stats();saveLocal()}},1000);
