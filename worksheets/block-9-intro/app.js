@@ -10,9 +10,6 @@ questions.forEach(q=>{const key=orderKey+'|'+q.id;let permutation;try{permutatio
 if(!Array.isArray(permutation)||permutation.length!==4||new Set(permutation).size!==4){permutation=randomize([0,1,2,3]);localStorage.setItem(key,JSON.stringify(permutation));}
 const old=q.choices.slice(),correct=old[q.answer];q.choices=permutation.map(i=>old[i]);q.answer=q.choices.indexOf(correct);
 });
-const shuffle=a=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x};
-questions.forEach(q=>{const correct=q.choices[q.answer];q.choices=shuffle(q.choices);q.answer=q.choices.indexOf(correct)});
-shuffle(questions).forEach((q,i)=>questions[i]=q);
 const C=window.BLOCK_CONFIG;
 const $=id=>document.getElementById(id);
 const state={answers:{},mastered:{},attempts:{},firstAttempts:{},wrongTotal:0,correctChecks:0,currentIndex:0,firstStart:new Date().toISOString(),sessions:1,activeSeconds:0,awaySeconds:0,tabLeaves:0,events:[],questionSeconds:{},lastTick:Date.now(),status:"in progress"};
