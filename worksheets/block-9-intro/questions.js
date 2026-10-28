@@ -1,687 +1,686 @@
 (function(){
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const meta={intro:["AS-B9-CS29-30-INTRO-2026","Block 9 Intro — Migration, Demographics, and Public Policy","CS 29–30 • Forty linked foundation questions."],vocabulary:["AS-B9-CS29-30-VOCAB-2026","Block 9 Vocabulary — Migration, Demographics, and Public Policy","CS 29–30 • Forty essential terms and concepts."],review:["AS-B9-CS29-30-REVIEW-2026","Block 9 Comprehensive Review — Migration, Demographics, and Public Policy","CS 29–30 • Forty application, comparison, causation, and synthesis questions."]}[mode];
-window.BLOCK_CONFIG={assignmentKey:meta[0],title:meta[1],description:meta[2],practice:"Explain postwar migration and immigration changes, then evaluate debates over economic policy, the environment, social welfare, and national security."};
+const mode="intro";
+window.BLOCK_CONFIG={assignmentKey:"AS-B9-CS29-30-INTRO-2026",title:"Block 9 Intro — Migration, Demographics, and Public Policy",description:"CS 29–30 • 40 introductory questions with optional sources.",practice:"Understand postwar migration, immigration, and debates about federal policy."};
 window.BLOCK_QUESTIONS=[
   {
     "id": "i01",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "A lender refuses mortgages in a neighborhood largely because of its racial composition. Which practice does this illustrate?",
+    "prompt": "Which postwar movement involved families leaving central cities for nearby residential communities?",
     "choices": [
-      "Redlining",
-      "Blockbusting",
-      "Racial steering",
-      "Exclusionary zoning"
+      "Suburbanization",
+      "Urban renewal",
+      "Rural resettlement",
+      "Overseas migration"
     ],
     "answer": 0,
     "source": "https://www.census.gov/topics/housing.html",
-    "where": "Housing topics → housing patterns and community change",
-    "explanation": "Redlining describes discriminatory lending practices that restricted access to mortgages in particular neighborhoods.",
-    "hint": "Focus on the historical distinction in the question. Review: housing patterns and community change."
+    "where": "Housing patterns and suburban change",
+    "explanation": "Suburbanization increased the population living outside central cities.",
+    "hint": "Think about where people moved after leaving cities."
   },
   {
     "id": "i02",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "Which development most directly reduced the tax base of some central cities after World War II?",
+    "prompt": "What does white flight describe in postwar American communities?",
     "choices": [
-      "Federal aid to city schools expanded",
-      "Middle-class households moved to suburbs",
-      "Industrial employment shifted downtown",
-      "Urban property values rose steadily"
+      "Factories returning downtown",
+      "White residents leaving cities",
+      "Immigrants moving to cities",
+      "Farmers moving to suburbs"
     ],
     "answer": 1,
     "source": "https://www.census.gov/topics/housing.html",
-    "where": "Housing topics → housing patterns and community change",
-    "explanation": "Suburban movement of residents and businesses could reduce a central city’s tax revenue even as demand for services continued.",
-    "hint": "Focus on the historical distinction in the question. Review: housing patterns and community change."
+    "where": "Housing patterns and suburban change",
+    "explanation": "White flight describes many white residents moving from cities to suburbs.",
+    "hint": "Consider who moved and in which direction."
   },
   {
     "id": "i03",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "A city and its surrounding suburbs disagree about school funding and public services. This is an example of what growing divide?",
+    "prompt": "A bank denies home loans in certain neighborhoods because of residents’ race. What is this practice called?",
     "choices": [
-      "Differences in local tax bases",
-      "Disputes over metropolitan boundaries",
-      "Urban-suburban polarization",
-      "Changes in municipal voting districts"
+      "Reapportionment",
+      "Deregulation",
+      "Redlining",
+      "Gerrymandering"
     ],
     "answer": 2,
     "source": "https://www.census.gov/topics/housing.html",
-    "where": "Housing topics → housing patterns and community change",
-    "explanation": "Urban-suburban polarization — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: housing patterns and community change."
+    "where": "Housing patterns and suburban change",
+    "explanation": "Redlining restricted mortgage access based on neighborhood racial makeup.",
+    "hint": "Think about discrimination in mortgage lending."
   },
   {
     "id": "i04",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "What was one underlying cause of unrest in several American cities during the 1960s?",
+    "prompt": "What was one effect of discriminatory suburban lending practices?",
     "choices": [
-      "Falling industrial wages alone",
-      "Debates over school attendance zones",
-      "Opposition to suburban road projects",
-      "Frustration with inequality and policing"
+      "Equal mortgage access for all",
+      "An end to housing segregation",
+      "More loans in excluded areas",
+      "Unequal access to homeownership"
     ],
     "answer": 3,
     "source": "https://www.census.gov/topics/housing.html",
-    "where": "Housing topics → housing patterns and community change",
-    "explanation": "Frustration with inequality and policing — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: housing patterns and community change."
+    "where": "Housing patterns and suburban change",
+    "explanation": "Discriminatory lending limited minority families’ opportunities to buy homes.",
+    "hint": "Think about who could obtain home loans."
   },
   {
     "id": "i05",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "Which region experienced major job losses as older manufacturing industries declined?",
+    "prompt": "Why did movement to suburbs create challenges for some central cities?",
     "choices": [
-      "The Rust Belt",
-      "The Sun Belt",
-      "The Cotton Belt",
-      "The Silicon Valley region"
+      "Their tax bases became smaller",
+      "Their populations doubled rapidly",
+      "Their industries all disappeared",
+      "Their boundaries grew nationwide"
     ],
     "answer": 0,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "The Rust Belt — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://www.census.gov/topics/housing.html",
+    "where": "Housing patterns and suburban change",
+    "explanation": "As some residents moved out, cities could lose tax revenue.",
+    "hint": "Consider the effects of residents moving away."
   },
   {
     "id": "i06",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "Why did many Americans move to southern and western states after World War II?",
+    "prompt": "Which political difference grew as communities changed after World War II?",
     "choices": [
-      "Declining housing costs in northern cities",
-      "Expanding jobs and growing industries",
-      "A return of textile jobs to New England",
-      "Reduced federal spending in the West"
+      "Agreement on every social policy",
+      "Urban and rural voter divisions",
+      "An end to local political parties",
+      "Equal voting patterns everywhere"
     ],
     "answer": 1,
-    "source": "https://www.census.gov/topics/population.html",
-    "where": "Population topics → migration, regional change, and population estimates",
-    "explanation": "Expanding jobs and growing industries — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: migration, regional change, and population estimates."
+    "source": "https://www.census.gov/topics/housing.html",
+    "where": "Housing patterns and suburban change",
+    "explanation": "Urban and rural communities often developed different political priorities.",
+    "hint": "Think about contrasting voting interests."
   },
   {
     "id": "i07",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "How could population growth in the Sun Belt affect Congress?",
+    "prompt": "Which development reflected racial tensions in many American cities during the 1960s?",
     "choices": [
-      "States gained additional senators",
-      "States received more Supreme Court seats",
-      "States gaining residents could gain House seats",
-      "States obtained equal House delegations"
+      "A nationwide end to protests",
+      "The closing of all suburbs",
+      "Urban riots and unrest",
+      "The abolition of city elections"
     ],
     "answer": 2,
-    "source": "https://www.census.gov/programs-surveys/decennial-census/about/rdo/congressional-apportionment.html",
-    "where": "Congressional apportionment → population counts and House seats",
-    "explanation": "House seats are apportioned by state population after the decennial census; every state still has two senators.",
-    "hint": "Focus on the historical distinction in the question. Review: population counts and house seats."
+    "source": "https://www.census.gov/topics/housing.html",
+    "where": "Housing patterns and suburban change",
+    "explanation": "Urban riots reflected social tensions, discrimination, and frustration.",
+    "hint": "Recall the unrest mentioned in CS 29."
   },
   {
     "id": "i08",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "Which change resulted from the Immigration and Nationality Act of 1965?",
+    "prompt": "Which statement best connects suburban growth and racial inequality?",
     "choices": [
-      "It retained quotas but raised the limits",
-      "It gave states control of admission",
-      "It restricted family-based immigration",
-      "National-origin quotas were abolished"
+      "Every family received the same loan",
+      "Segregation ended in all suburbs",
+      "Cities stopped enforcing housing laws",
+      "Housing access was often unequal"
     ],
     "answer": 3,
-    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
-    "where": "Immigration Act of 1965 → national-origins quota system and effects",
-    "explanation": "The 1965 law ended the national-origins quota formula, changing immigration patterns in subsequent decades.",
-    "hint": "Focus on the historical distinction in the question. Review: national-origins quota system and effects."
+    "source": "https://www.census.gov/topics/housing.html",
+    "where": "Housing patterns and suburban change",
+    "explanation": "Discrimination affected who could benefit from suburban growth.",
+    "hint": "Consider unequal opportunities in housing."
   },
   {
     "id": "i09",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "A census shows a state has gained many residents through migration. What is the most likely political consequence?",
+    "prompt": "What was the Rust Belt known for before many jobs moved elsewhere?",
     "choices": [
-      "Its representation may increase after reapportionment",
-      "Its number of senators may increase",
-      "Its electoral votes must stay unchanged",
-      "Its state legislature gains federal authority"
+      "Older industrial manufacturing",
+      "New desert technology centers",
+      "Tropical agricultural exports",
+      "Large federal spaceports"
     ],
     "answer": 0,
-    "source": "https://www.census.gov/programs-surveys/decennial-census/about/rdo/congressional-apportionment.html",
-    "where": "Congressional apportionment → population counts and House seats",
-    "explanation": "Its representation may increase after reapportionment — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: population counts and house seats."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "The Rust Belt included older manufacturing areas facing industrial change.",
+    "hint": "Think about traditional factories and industry."
   },
   {
     "id": "i10",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "How did immigration after 1965 change American communities?",
+    "prompt": "Why did some Rust Belt residents move south and west?",
     "choices": [
-      "It made migration primarily European",
-      "It increased cultural and linguistic diversity",
-      "It reduced family reunification",
-      "It ended migration from Latin America"
+      "They were required to relocate",
+      "They sought new job opportunities",
+      "They wanted to avoid all cities",
+      "They lost the right to vote"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
-    "where": "Immigration Act of 1965 → national-origins quota system and effects",
-    "explanation": "It increased cultural and linguistic diversity — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: national-origins quota system and effects."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "Defense plants and high-tech industries attracted workers to new regions.",
+    "hint": "Think about employment opportunities."
   },
   {
     "id": "i11",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "A school offers instruction in English and another language to support learning. Which policy is it using?",
+    "prompt": "Which region gained population as industries expanded in the South and West?",
     "choices": [
-      "English-only instruction",
-      "School desegregation",
-      "Bilingual education",
-      "Vocational education"
+      "Rust Belt",
+      "Corn Belt",
+      "Sun Belt",
+      "Great Lakes"
     ],
     "answer": 2,
-    "source": "https://www.ed.gov/laws-and-policy/civil-rights-laws/race-color-and-national-origin-discrimination",
-    "where": "National origin discrimination → access for English learners",
-    "explanation": "Bilingual education — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: access for english learners."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "The Sun Belt grew as people and jobs moved south and west.",
+    "hint": "Recall the region associated with southern and western growth."
   },
   {
     "id": "i12",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "Why can migration change the outcome of national elections over time?",
+    "prompt": "What kinds of industries helped attract migrants to the Sun Belt?",
     "choices": [
-      "It changes the number of senators",
-      "It changes the minimum voting age",
-      "It replaces the Electoral College",
-      "It changes where voters live and how seats are distributed"
+      "Textiles and whaling",
+      "Canals and horse transport",
+      "Mining and fur trading",
+      "Defense and high technology"
     ],
     "answer": 3,
-    "source": "https://www.census.gov/programs-surveys/decennial-census/about/rdo/congressional-apportionment.html",
-    "where": "Congressional apportionment → population counts and House seats",
-    "explanation": "It changes where voters live and how seats are distributed — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: population counts and house seats."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "Defense production and high-tech jobs drew workers to the Sun Belt.",
+    "hint": "Think about the new industries named in the standard."
   },
   {
     "id": "i13",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "What helped create employment in some fast-growing western and southern states?",
+    "prompt": "How could Sun Belt population growth change national politics?",
     "choices": [
-      "Federal defense and aerospace contracts",
-      "Federal agricultural price supports",
-      "Declining military production contracts",
-      "The return of textile mills to New England"
+      "It could increase House seats",
+      "It could end presidential elections",
+      "It could eliminate state borders",
+      "It could reduce the voting age"
     ],
     "answer": 0,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "Federal defense and aerospace contracts — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "Population shifts affect the allocation of House seats among states.",
+    "hint": "Think about congressional representation."
   },
   {
     "id": "i14",
     "cs": "CS 29",
     "topic": "CS 29",
-    "prompt": "Why did new technology companies contribute to Sun Belt growth?",
+    "prompt": "What is congressional reapportionment?",
     "choices": [
-      "They moved workers into rural farming",
-      "They attracted skilled workers and investment",
-      "They reduced demand for local colleges",
-      "They shifted investment toward older mills"
+      "Redrawing every state boundary",
+      "Allocating House seats by population",
+      "Appointing new federal judges",
+      "Changing the number of senators"
     ],
     "answer": 1,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "They attracted skilled workers and investment — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "Reapportionment reallocates U.S. House seats among states after a census.",
+    "hint": "Think about seats, states, and population counts."
   },
   {
     "id": "i15",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Which objective best describes President Johnson's Great Society?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "Which change would most likely follow sustained population loss in a state?",
     "choices": [
-      "Limiting federal anti-poverty efforts",
-      "Reducing public education funding",
-      "Reducing poverty and expanding opportunity",
-      "Replacing health programs with private charity"
+      "More seats in the U.S. Senate",
+      "A new state constitution",
+      "Fewer seats in the U.S. House",
+      "Automatic control of Congress"
     ],
     "answer": 2,
-    "source": "https://www.lbjlibrary.org/learn/educators/primary-sources",
-    "where": "Great Society and War on Poverty → Johnson administration initiatives",
-    "explanation": "The Great Society expanded federal efforts in health, education, and poverty reduction.",
-    "hint": "Focus on the historical distinction in the question. Review: johnson administration initiatives."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "States losing population share can lose House seats through reapportionment.",
+    "hint": "Think about how House representation is allocated."
   },
   {
     "id": "i16",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Which person is most directly served by Medicare?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "Why does the census matter to congressional representation?",
     "choices": [
-      "An unemployed adult seeking cash aid",
-      "A child needing school meal support",
-      "A family requesting housing vouchers",
-      "A retiree who qualifies by age"
+      "It selects federal court judges",
+      "It sets all local tax rates",
+      "It appoints state governors",
+      "It counts people for House seats"
     ],
     "answer": 3,
-    "source": "https://www.medicare.gov/basics/get-started-with-medicare",
-    "where": "Get started with Medicare → who is eligible",
-    "explanation": "Medicare is primarily federal health insurance for people 65 and older and some younger eligible people.",
-    "hint": "Focus on the historical distinction in the question. Review: who is eligible."
+    "source": "https://www.census.gov/topics/population.html",
+    "where": "Population movement, census, and representation",
+    "explanation": "The census supplies population counts used for House reapportionment.",
+    "hint": "Consider the link between population and representation."
   },
   {
     "id": "i17",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "How does Medicaid differ from Medicare?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "What did the Immigration Act of 1965 change?",
     "choices": [
-      "It covers eligible low-income people through federal-state funding",
-      "It is an age-based federal insurance program",
-      "It only covers veterans and their families",
-      "It is funded entirely by local property taxes"
+      "It widened immigration opportunities",
+      "It ended all legal immigration",
+      "It restricted entry to Europe",
+      "It banned permanent residence"
     ],
     "answer": 0,
-    "source": "https://www.medicaid.gov/medicaid/eligibility/index.html",
-    "where": "Medicaid eligibility → qualifying groups and income",
-    "explanation": "Medicaid is a joint federal-state program for eligible people with limited income and resources.",
-    "hint": "Focus on the historical distinction in the question. Review: qualifying groups and income."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "The 1965 law opened immigration more broadly, including from Asia, Africa, and Latin America.",
+    "hint": "Think about who gained opportunities to immigrate."
   },
   {
     "id": "i18",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Supporters of supply-side economics argued that lower tax rates could encourage what?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "Which regions supplied more immigrants after the 1965 immigration law?",
     "choices": [
-      "Higher tax rates would reduce investment",
-      "Investment, production, and economic growth",
-      "Price controls would increase factory output",
-      "Import quotas would expand domestic demand"
+      "Only northern Europe",
+      "Asia, Africa, and Latin America",
+      "Only Australia and Canada",
+      "Only the British Isles"
     ],
     "answer": 1,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "Investment, production, and economic growth — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "Immigration increased from Asia, Africa, and Latin America.",
+    "hint": "Recall the regions named in CS 29."
   },
   {
     "id": "i19",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "A government reduces rules governing a particular industry. What policy is this?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "How did post-1965 immigration affect the United States?",
     "choices": [
-      "Federal enforcement of pollution standards",
-      "New rules for bank lending",
-      "Deregulation",
-      "Expanded oversight of workplace safety"
+      "It ended population growth",
+      "It eliminated language differences",
+      "It increased cultural diversity",
+      "It reduced all urban populations"
     ],
     "answer": 2,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "Deregulation reduces government restrictions or requirements in a particular sector.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "New immigration changed the nation’s demographic and cultural makeup.",
+    "hint": "Think about changing population composition."
   },
   {
     "id": "i20",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "What concern helped strengthen the environmental movement?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "Which population was identified as rapidly growing in the CS 29 elaboration?",
     "choices": [
-      "Growing pressure to reduce city taxes",
-      "Rising demand for congressional districts",
-      "Concern about the number of new immigrants",
-      "Pollution threatened health and natural resources"
+      "Scandinavian Americans",
+      "Native Alaskans",
+      "Pacific Islanders",
+      "Hispanic Americans"
     ],
     "answer": 3,
-    "source": "https://www.epa.gov/history",
-    "where": "EPA history → agency creation and environmental responsibilities",
-    "explanation": "Pollution threatened health and natural resources — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: agency creation and environmental responsibilities."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "The standard identifies Hispanics as a rapidly growing minority population.",
+    "hint": "Look for the group specifically named in the standard."
   },
   {
     "id": "i21",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Why was the Environmental Protection Agency established?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "What change accompanied growth in Spanish-speaking communities?",
     "choices": [
-      "To implement and enforce environmental protections",
-      "To manage federal health insurance",
-      "To oversee national park admissions",
-      "To set congressional district boundaries"
+      "More Spanish-language media",
+      "Fewer multilingual broadcasts",
+      "A ban on foreign-language news",
+      "The closure of language programs"
     ],
     "answer": 0,
-    "source": "https://www.epa.gov/history",
-    "where": "EPA history → agency creation and environmental responsibilities",
-    "explanation": "The EPA was created to coordinate and enforce federal environmental protections.",
-    "hint": "Focus on the historical distinction in the question. Review: agency creation and environmental responsibilities."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "Population change increased demand for Spanish-language media.",
+    "hint": "Think about how media respond to audiences."
   },
   {
     "id": "i22",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Which activity would most directly contribute to greenhouse-gas emissions?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "Why did some communities expand bilingual education programs?",
     "choices": [
-      "Increasing energy efficiency in homes",
-      "Burning large quantities of fossil fuels",
-      "Expanding use of wind-generated electricity",
-      "Reducing the burning of coal in factories"
+      "To eliminate public education",
+      "To serve changing student populations",
+      "To replace all English instruction",
+      "To restrict school enrollment"
     ],
     "answer": 1,
-    "source": "https://www.epa.gov/history",
-    "where": "EPA history → agency creation and environmental responsibilities",
-    "explanation": "Burning large quantities of fossil fuels — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: agency creation and environmental responsibilities."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "Changing demographics increased demand for bilingual education support.",
+    "hint": "Think about student language needs."
   },
   {
     "id": "i23",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Which question most directly concerns the size of federal social welfare programs?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "How can immigration affect elections over time?",
     "choices": [
-      "How should states redraw House districts?",
-      "How should cities regulate industrial pollution?",
-      "How broadly should federal aid support families facing poverty?",
-      "How should schools teach newly arrived students?"
+      "It can cancel congressional terms",
+      "It can remove state governments",
+      "It can change voter coalitions",
+      "It can prohibit party competition"
     ],
     "answer": 2,
-    "source": "https://www.lbjlibrary.org/learn/educators/primary-sources",
-    "where": "Great Society and War on Poverty → Johnson administration initiatives",
-    "explanation": "How broadly should federal aid support families facing poverty? — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: johnson administration initiatives."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "Demographic changes can influence voting patterns and party support.",
+    "hint": "Think about changing populations and political power."
   },
   {
     "id": "i24",
-    "cs": "CS 30",
-    "topic": "CS 30",
-    "prompt": "Which situation illustrates a potential conflict between national security and civil liberties?",
+    "cs": "CS 29",
+    "topic": "CS 29",
+    "prompt": "Which pair best summarizes the political effects of CS 29 population shifts?",
     "choices": [
-      "A state funds new emergency response vehicles",
-      "Congress increases salaries for military personnel",
-      "An agency replaces outdated airport equipment",
-      "Officials monitor private communications without adequate safeguards"
+      "New monarchies and royal courts",
+      "Military drafts and naval treaties",
+      "Judicial appointments and term limits",
+      "Reapportionment and voting changes"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/founding-docs/bill-of-rights",
-    "where": "Bill of Rights → privacy, searches, speech, and due process",
-    "explanation": "Security measures can conflict with civil liberties when government monitoring lacks adequate legal safeguards.",
-    "hint": "Focus on the historical distinction in the question. Review: privacy, searches, speech, and due process."
+    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
+    "where": "Immigration and Nationality Act of 1965",
+    "explanation": "Migration affected House representation, while demographic shifts influenced voting.",
+    "hint": "Connect migration to representation and elections."
   },
   {
     "id": "i25",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "Which reason best explains the growth of antiwar protests during the Vietnam War?",
+    "prompt": "What central question drove many postwar debates over federal economic policy?",
     "choices": [
-      "Many Americans questioned the war and the draft",
-      "Americans wanted to expand the conflict into Europe",
-      "Protesters demanded a return to immigration quotas",
-      "Protesters opposed the establishment of Medicare"
+      "How much government should intervene",
+      "Whether states should stop voting",
+      "Whether Congress should close courts",
+      "How to eliminate private property"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/milestones/1961-1968/vietnam-war",
-    "where": "Vietnam War → escalation and domestic opposition",
-    "explanation": "Many Americans questioned the war and the draft — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: escalation and domestic opposition."
+    "source": "https://www.lbjlibrary.org/learn/educators",
+    "where": "Great Society and debates over federal programs",
+    "explanation": "Americans disagreed about the appropriate federal role in the economy.",
+    "hint": "Think about the size and role of government."
   },
   {
     "id": "i26",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "What is an example of federal civil-rights enforcement?",
+    "prompt": "Which conditions often shaped opinions about federal economic action?",
     "choices": [
-      "A federal court hears a school funding appeal",
-      "Federal officials act to implement desegregation orders",
-      "A city council changes its election calendar",
-      "A state legislature debates a new voting rule"
+      "Ocean tides and moon phases",
+      "Poverty and unemployment",
+      "School mascots and team records",
+      "Seasonal daylight and rainfall"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/founding-docs/bill-of-rights",
-    "where": "Bill of Rights → privacy, searches, speech, and due process",
-    "explanation": "Federal officials act to implement desegregation orders — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: privacy, searches, speech, and due process."
+    "source": "https://www.lbjlibrary.org/learn/educators",
+    "where": "Great Society and debates over federal programs",
+    "explanation": "Economic hardship often influenced public support for government programs.",
+    "hint": "Think about problems facing workers and families."
   },
   {
     "id": "i27",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "Which situation would an anti-poverty program be designed to address most directly?",
+    "prompt": "Which president's Great Society expanded federal anti-poverty programs?",
     "choices": [
-      "A state loses one House seat after a census",
-      "A corporation plans to build a new office park",
-      "A household cannot reliably afford food and housing",
-      "A city proposes a new highway interchange"
+      "Ronald Reagan",
+      "Dwight Eisenhower",
+      "Lyndon B. Johnson",
+      "George H. W. Bush"
     ],
     "answer": 2,
-    "source": "https://www.lbjlibrary.org/learn/educators/primary-sources",
-    "where": "Great Society and War on Poverty → Johnson administration initiatives",
-    "explanation": "A household cannot reliably afford food and housing — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: johnson administration initiatives."
+    "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
+    "where": "Medicare and Medicaid program overview",
+    "explanation": "Johnson's Great Society expanded social welfare and anti-poverty efforts.",
+    "hint": "Recall the president associated with the Great Society."
   },
   {
     "id": "i28",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "Which proposal raises the clearest civil-liberties concern during a security emergency?",
+    "prompt": "What was a major purpose of Great Society programs?",
     "choices": [
-      "Increasing funding for emergency medical teams",
-      "Improving communication between local agencies",
-      "Training firefighters to respond to disasters",
-      "Allowing searches without warrants or judicial oversight"
+      "Remove all federal health programs",
+      "End public assistance nationwide",
+      "Replace Congress with agencies",
+      "Reduce poverty and expand services"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/founding-docs/bill-of-rights",
-    "where": "Bill of Rights → privacy, searches, speech, and due process",
-    "explanation": "Allowing searches without warrants or judicial oversight — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: privacy, searches, speech, and due process."
+    "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
+    "where": "Medicare and Medicaid program overview",
+    "explanation": "Great Society initiatives sought to reduce poverty and improve access to services.",
+    "hint": "Think about the goals of social welfare policy."
   },
   {
     "id": "i29",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "A factory closes in Ohio while a new aerospace facility opens in Arizona. Which trend does this illustrate?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "Which program chiefly provides health coverage for older Americans?",
     "choices": [
-      "Industrial decline in one region alongside Sun Belt growth",
-      "Manufacturing expanded evenly across regions",
-      "Factory work shifted chiefly to New England",
-      "Sun Belt growth depended on farm jobs alone"
+      "Medicare",
+      "Medicaid",
+      "Social Security",
+      "Head Start"
     ],
     "answer": 0,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "Industrial decline in one region alongside Sun Belt growth — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
+    "where": "Medicare and Medicaid program overview",
+    "explanation": "Medicare primarily serves people age 65 and older and certain other eligible groups.",
+    "hint": "Distinguish age-based health coverage from income-based assistance."
   },
   {
     "id": "i30",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "Why did suburban migration sometimes deepen inequality between cities and suburbs?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "Which program helps eligible people with limited income obtain health coverage?",
     "choices": [
-      "Suburbs relied more heavily on city taxes",
-      "Resources and tax revenue shifted unevenly",
-      "City populations grew at equal rates",
-      "All districts received identical school revenue"
+      "Medicare",
+      "Medicaid",
+      "Peace Corps",
+      "Job Corps"
     ],
     "answer": 1,
-    "source": "https://www.census.gov/topics/housing.html",
-    "where": "Housing topics → housing patterns and community change",
-    "explanation": "When wealthier households and businesses move away, some cities lose taxable resources that help fund services.",
-    "hint": "Focus on the historical distinction in the question. Review: housing patterns and community change."
+    "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
+    "where": "Medicare and Medicaid program overview",
+    "explanation": "Medicaid supports health coverage for eligible low-income individuals and families.",
+    "hint": "Think about financial eligibility for health coverage."
   },
   {
     "id": "i31",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "Which development most directly increased the political influence of growing states?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "Which policy is most closely associated with Reaganomics?",
     "choices": [
-      "Equal Senate representation after migration",
-      "Federal appointment of new governors",
-      "Reapportionment after population changes",
-      "Uniform electoral votes for every state"
+      "Expanded federal price controls",
+      "Nationalization of all businesses",
+      "Supply-side tax reductions",
+      "A ban on private investment"
     ],
     "answer": 2,
-    "source": "https://www.census.gov/programs-surveys/decennial-census/about/rdo/congressional-apportionment.html",
-    "where": "Congressional apportionment → population counts and House seats",
-    "explanation": "Reapportionment after population changes — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: population counts and house seats."
+    "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
+    "where": "Economic policy and Reagan administration",
+    "explanation": "Reaganomics emphasized tax reductions, deregulation, and supply-side ideas.",
+    "hint": "Think about tax policy and market incentives."
   },
   {
     "id": "i32",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "Which factor made the 1965 immigration law important for later demographic change?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "What does supply-side economics emphasize?",
     "choices": [
-      "It restored national-origin quotas",
-      "It eliminated family-based visas",
-      "It limited admissions to Western Europe",
-      "It opened immigration beyond earlier national-origin restrictions"
+      "Government ownership of all factories",
+      "Limits on every private purchase",
+      "Ending trade between all states",
+      "Incentives for production and investment"
     ],
     "answer": 3,
-    "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
-    "where": "Immigration Act of 1965 → national-origins quota system and effects",
-    "explanation": "It opened immigration beyond earlier national-origin restrictions — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: national-origins quota system and effects."
+    "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
+    "where": "Economic policy and Reagan administration",
+    "explanation": "Supply-side economics emphasizes incentives intended to expand production and investment.",
+    "hint": "Think about encouraging businesses to produce more."
   },
   {
     "id": "i33",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "Why might a school district expand bilingual instruction after a rise in immigration?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "What is deregulation?",
     "choices": [
-      "To help students learn academic content while developing English",
-      "To replace the study of American history",
-      "To exempt all students from state assessments",
-      "To eliminate the need for teacher certification"
+      "Reducing government rules on business",
+      "Increasing every federal price control",
+      "Creating new licensing for all jobs",
+      "Requiring public ownership of firms"
     ],
     "answer": 0,
-    "source": "https://www.ed.gov/laws-and-policy/civil-rights-laws/race-color-and-national-origin-discrimination",
-    "where": "National origin discrimination → access for English learners",
-    "explanation": "To help students learn academic content while developing English — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: access for english learners."
+    "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
+    "where": "Economic policy and Reagan administration",
+    "explanation": "Deregulation reduces certain government restrictions on business activity.",
+    "hint": "Focus on the number of rules affecting businesses."
   },
   {
     "id": "i34",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "What is a likely economic effect when high-technology companies move into a region?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "How did Great Society and Reaganomics differ?",
     "choices": [
-      "Manufacturing employment must end statewide",
-      "More skilled jobs attract workers and investment",
-      "Housing demand necessarily falls in nearby towns",
-      "The region loses access to national markets"
+      "Both ended all government assistance",
+      "They favored different federal economic roles",
+      "Both required identical tax increases",
+      "Neither addressed economic policy"
     ],
     "answer": 1,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "More skilled jobs attract workers and investment — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
+    "where": "Economic policy and Reagan administration",
+    "explanation": "Great Society expanded federal programs; Reaganomics stressed tax cuts and deregulation.",
+    "hint": "Compare their approaches to government involvement."
   },
   {
     "id": "i35",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "Which policy would be most closely associated with the Great Society?",
+    "prompt": "Which concern helped strengthen environmental activism after World War II?",
     "choices": [
-      "Reducing federal assistance for medical care",
-      "Ending support for public education",
-      "Expanding health care and anti-poverty programs",
-      "Eliminating job training for low-income workers"
+      "A shortage of political parties",
+      "The end of suburban housing",
+      "Pollution and pesticide effects",
+      "The disappearance of industry"
     ],
     "answer": 2,
-    "source": "https://www.lbjlibrary.org/learn/educators/primary-sources",
-    "where": "Great Society and War on Poverty → Johnson administration initiatives",
-    "explanation": "Expanding health care and anti-poverty programs — this best matches the historical development or policy described. The other choices refer to different developments or would not produce the stated result.",
-    "hint": "Focus on the historical distinction in the question. Review: johnson administration initiatives."
+    "source": "https://www.epa.gov/history",
+    "where": "EPA origins and environmental concerns",
+    "explanation": "Research on pollution, pesticides, and waste increased environmental concerns.",
+    "hint": "Think about threats to air, water, and ecosystems."
   },
   {
     "id": "i36",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "Two adults need health coverage: one is 70, and the other has a low income and meets state eligibility rules. Which pairing is accurate?",
+    "prompt": "Why was the Environmental Protection Agency established?",
     "choices": [
-      "Both policies set stricter industry standards",
-      "Both policies transfer power to Congress",
-      "Both policies eliminate federal agencies",
-      "Medicare for the older adult; Medicaid for the eligible low-income adult"
+      "To supervise congressional elections",
+      "To manage immigration visas",
+      "To administer military drafts",
+      "To address environmental hazards"
     ],
     "answer": 3,
-    "source": "https://www.medicaid.gov/medicaid/eligibility/index.html",
-    "where": "Medicaid eligibility → qualifying groups and income",
-    "explanation": "The Great Society included federal health coverage and programs aimed at reducing poverty.",
-    "hint": "Focus on the historical distinction in the question. Review: qualifying groups and income."
+    "source": "https://www.epa.gov/history",
+    "where": "EPA origins and environmental concerns",
+    "explanation": "The EPA was created to help enforce environmental protections.",
+    "hint": "Think about the agency's mission."
   },
   {
     "id": "i37",
     "cs": "CS 30",
     "topic": "CS 30",
-    "prompt": "What distinguishes environmental regulation from deregulation?",
+    "prompt": "Which issue belongs in debates over federal environmental regulation?",
     "choices": [
-      "Regulation sets or enforces rules; deregulation reduces them",
-      "Some regions gained jobs while others declined",
-      "Some communities faced persistent poverty",
-      "Some families were excluded from housing loans"
+      "Industrial waste disposal",
+      "The number of House seats",
+      "Presidential succession rules",
+      "Eligibility for jury service"
     ],
     "answer": 0,
     "source": "https://www.epa.gov/history",
-    "where": "EPA history → agency creation and environmental responsibilities",
-    "explanation": "Regulation imposes or enforces requirements; deregulation removes or relaxes them.",
-    "hint": "Focus on the historical distinction in the question. Review: agency creation and environmental responsibilities."
+    "where": "EPA origins and environmental concerns",
+    "explanation": "Waste disposal was among the environmental concerns prompting debate.",
+    "hint": "Think about pollution and its regulation."
   },
   {
     "id": "i38",
-    "cs": "CS 29",
-    "topic": "CS 29",
-    "prompt": "Which evidence most clearly challenges the claim that postwar growth benefited all communities equally?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "Why did environmental protection become politically controversial?",
     "choices": [
-      "New interstate highways linked distant cities",
-      "Some industrial cities lost jobs as other regions grew",
-      "Consumer spending increased after World War II",
-      "Television became common in American homes"
+      "Everyone favored identical restrictions",
+      "People disagreed over federal regulation",
+      "Pollution had been completely eliminated",
+      "States had no environmental interests"
     ],
     "answer": 1,
-    "source": "https://www.federalreservehistory.org/",
-    "where": "Browse economic history → inflation, growth, and federal policy",
-    "explanation": "Uneven regional employment patterns show that national growth did not benefit all communities equally.",
-    "hint": "Focus on the historical distinction in the question. Review: inflation, growth, and federal policy."
+    "source": "https://www.epa.gov/history",
+    "where": "EPA origins and environmental concerns",
+    "explanation": "Debates weighed environmental safeguards against costs and government authority.",
+    "hint": "Think about competing views on federal rules."
   },
   {
     "id": "i39",
-    "cs": "CS 29–30",
-    "topic": "CS 29–30",
-    "prompt": "Which political effect can follow a sustained shift of population between states?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "Which Vietnam-era activity fueled debate about national security and dissent?",
     "choices": [
-      "Each state gains additional Senate seats",
-      "State governors appoint new Supreme Court justices",
-      "House seats may be redistributed after the census",
-      "The voting age changes in growing states"
+      "Suburban home construction",
+      "Passenger airline expansion",
+      "Anti-war demonstrations",
+      "Changes in factory automation"
     ],
     "answer": 2,
-    "source": "https://www.census.gov/programs-surveys/decennial-census/about/rdo/congressional-apportionment.html",
-    "where": "Congressional apportionment → population counts and House seats",
-    "explanation": "Population shifts can change each state’s share of seats in the House of Representatives after a census.",
-    "hint": "Focus on the historical distinction in the question. Review: population counts and house seats."
+    "source": "https://www.archives.gov/research/vietnam-war",
+    "where": "Vietnam War protests and national-security debates",
+    "explanation": "Anti-war protests raised questions about dissent and government security policy.",
+    "hint": "Think about opposition to the Vietnam War."
   },
   {
     "id": "i40",
-    "cs": "CS 29–30",
-    "topic": "CS 29–30",
-    "prompt": "Which statement best connects postwar population change with federal policy debates?",
+    "cs": "CS 30",
+    "topic": "CS 30",
+    "prompt": "What tension lay at the center of national-security debates during this era?",
     "choices": [
-      "Migration eliminated differences in local wealth",
-      "Federal policies ended every regional job decline",
-      "Population growth made public services unnecessary",
-      "Migration reshaped communities as policy debates addressed new needs"
+      "Farm prices versus school calendars",
+      "House seats versus state nicknames",
+      "Highway funding versus airline fares",
+      "Civil liberties versus security measures"
     ],
     "answer": 3,
-    "source": "https://www.lbjlibrary.org/learn/educators/primary-sources",
-    "where": "Great Society and War on Poverty → Johnson administration initiatives",
-    "explanation": "Migration changed where people lived and what services communities needed, influencing debates about government policy.",
-    "hint": "Focus on the historical distinction in the question. Review: johnson administration initiatives."
+    "source": "https://www.archives.gov/research/vietnam-war",
+    "where": "Vietnam War protests and national-security debates",
+    "explanation": "Officials and citizens debated protecting national security while respecting individual rights.",
+    "hint": "Think about balancing freedoms and protection from threats."
   }
 ];
 })();
