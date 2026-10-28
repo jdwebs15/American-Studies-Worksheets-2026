@@ -1,11 +1,683 @@
-(function(){
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const meta={intro:["AS-B8-CS27-28-INTRO-2026","Block 8 Intro — Rights Movements and Postwar Prosperity","CS 27–28 • Twenty-eight linked foundation questions."],vocabulary:["AS-B8-CS27-28-VOCAB-2026","Block 8 Vocabulary — Rights Movements and Postwar Prosperity","CS 27–28 • Twenty-eight essential terms and concepts."],review:["AS-B8-CS27-28-REVIEW-2026","Block 8 Comprehensive Review — Rights Movements and Postwar Prosperity","CS 27–28 • Thirty-two application, comparison, causation, and synthesis questions."]}[mode];
-window.BLOCK_CONFIG={assignmentKey:meta[0],title:meta[1],description:meta[2],practice:"Connect civil-rights strategies and legislation with campaigns for equality, then explain how prosperity, population growth, and technology changed daily life."};
-const C=[["CS 27","NAACP","civil-rights organization that used courts and legal challenges","Lawyers attack segregation through constitutional litigation"],["CS 27","SCLC","organization associated with Martin Luther King Jr. and nonviolent direct action","Black churches help coordinate regional civil-rights campaigns"],["CS 27","SNCC","student-led organization known for sit-ins and grassroots organizing","Young activists register voters and challenge segregated facilities"],["CS 27","Montgomery Bus Boycott","mass protest against segregated city buses","Black residents sustain a year-long boycott after Rosa Parks is arrested"],["CS 27","Freedom Rides","interracial bus trips challenging segregation in interstate travel","Activists test federal desegregation rulings in the South"],["CS 27","March on Washington","1963 mass demonstration for jobs and freedom","Hundreds of thousands gather at the Lincoln Memorial"],["CS 27","Brown v. Board of Education","Supreme Court decision rejecting school segregation","The Court rules separate public schools are inherently unequal"],["CS 27","Civil Rights Act of 1964","law prohibiting discrimination in public accommodations and employment","Congress attacks segregation and job discrimination"],["CS 27","Voting Rights Act of 1965","law strengthening federal protection of minority voting rights","Literacy tests and discriminatory election practices face federal enforcement"],["CS 27","United Farm Workers","labor and civil-rights organization associated with César Chávez and Dolores Huerta","Boycotts support better pay and conditions for agricultural workers"],["CS 27","NOW","organization advocating expanded equality for women","Activists press for equal opportunity in employment and law"],["CS 27","American Indian Movement","organization advocating Indigenous rights and sovereignty","Native activists protest treaty violations and discrimination"],["CS 27","Stonewall uprising","1969 resistance that energized the modern gay-rights movement","Patrons confront police during a raid at a New York gay bar"],["CS 27","Nonviolent direct action","protest strategy using peaceful confrontation to expose injustice","Sit-ins and marches dramatize unequal treatment"],["CS 28","Postwar economic boom","sustained growth in production, income, and consumption after World War II","Families purchase homes, automobiles, and household appliances"],["CS 28","Pent-up demand","consumer desire accumulated during wartime shortages","After rationing ends, buyers seek goods unavailable during the war"],["CS 28","Suburbanization","movement of families and housing development beyond central cities","New subdivisions grow around metropolitan areas"],["CS 28","Baby Boom","large rise in U.S. births after World War II","Schools and communities expand for a rapidly growing youth population"],["CS 28","Polio vaccine","medical innovation that sharply reduced a feared disease","Mass immunization protects children from paralysis"],["CS 28","Birth-control pill","medical technology that gave women greater control over reproduction","A reliable oral contraceptive influences family and career choices"],["CS 28","Nuclear power","use of atomic energy to generate electricity","Reactors convert nuclear energy into civilian electrical power"],["CS 28","Passenger jet","aircraft innovation that made long-distance travel faster","Commercial flights connect cities and continents in hours"],["CS 28","Automobile culture","way of life shaped by widespread car ownership and highways","Shopping centers, commuting, and roadside businesses expand"],["CS 28","Television","mass medium that brought entertainment, advertising, and news into homes","Shared broadcasts influence consumer culture and politics"],["CS 28","Consumerism","emphasis on purchasing goods and services","Advertising and rising incomes encourage household spending"],["CS 28","Standard of living","material well-being measured through income, goods, housing, and services","Many postwar families gain access to conveniences and leisure"],["CS 28","GI Bill","federal benefits that helped veterans attend college and buy homes","Education and mortgage assistance expand the middle class"],["CS 28","Interstate Highway System","national road network supporting travel, commerce, and suburban growth","High-speed roads connect metropolitan regions"]]; const SOURCE="https://www.archives.gov/research/african-americans/civil-rights";
-function sourceFor(c){const topic=c[1].toLowerCase();if(/naacp|sclc|sncc|montgomery|freedom\ rides|march\ on\ washington|brown|civil\ rights|voting\ rights|nonviolent/i.test(topic))return "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/";if(/postwar|demand|suburban|baby\ boom|polio|birth\-control|nuclear|passenger|automobile|television|consumer|living|gi\ bill|interstate/i.test(topic))return "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/";return SOURCE;}
-function distract(n){return[1,7,13].map(k=>C[(n+k)%C.length][1])}
-function make(kind){return C.map((c,n)=>{const answer=n%4,choices=distract(n);choices.splice(answer,0,c[1]);return{id:kind[0]+String(n+1).padStart(2,"0"),cs:c[0],topic:c[1],prompt:kind==="vocabulary"?"Which term matches this definition: "+c[2]+"?":kind==="intro"?"Use the linked source and identify the concept: "+c[2]+".":c[3]+". Which concept best applies?",choices,answer,source:kind==="review"?"":sourceFor(c),where:kind==="review"?"":"Look for the historical context of this topic. The definition in the question gives a starting clue.",explanation:"This is "+c[1]+": "+c[2]+".",hint:"Focus on the defining clue and its historical role."}})}
-const E=[["CS 27","Strategy","Which pairing accurately connects a civil-rights goal and method?","NAACP—court challenges; SNCC—student organizing and direct action"],["CS 27","Expansion","Which conclusion best describes the era’s equality movements?","African American activism helped inspire organized campaigns by women, Latinos, Indigenous people, and gay Americans"],["CS 28","Cause and Effect","Which chain best explains suburban growth?","Postwar prosperity and GI benefits → home and car purchases → expanding subdivisions and highways"],["CS 27–28","Synthesis","Which thesis best connects this block?","Postwar Americans experienced rising prosperity and technological change while organized movements challenged unequal access to the nation’s rights and opportunities"]];function extras(){return E.map((e,j)=>{const n=28+j,a=n%4,ch=["It had no meaningful historical effect","It proves one cause always explains every event","It ended political disagreement permanently"];ch.splice(a,0,e[3]);return{id:"r"+(n+1),cs:e[0],topic:e[1],prompt:e[2],choices:ch,answer:a,source:"",where:"",explanation:e[3]+".",hint:"Choose the answer that makes an accurate, supportable historical connection."}})}
-window.BLOCK_QUESTIONS=mode==="intro"?make("intro"):mode==="vocabulary"?make("vocabulary"):[...make("review"),...extras()];
-})();
+window.BLOCK_CONFIG={"assignmentKey": "AS-B8-CS27-28-VOCAB-2026", "title": "Block 8 Vocabulary — Rights Movements and Postwar Prosperity", "description": "CS 27–28 • 40 vocabulary questions with mastery corrections.", "practice": "Distinguish civil-rights organizations, people, strategies and laws; recognize postwar economic, demographic and technological vocabulary."};
+window.BLOCK_QUESTIONS=[
+  {
+    "id": "v01",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Organization using constitutional lawsuits to challenge racial segregation?",
+    "choices": [
+      "NAACP",
+      "SNCC",
+      "American Indian Movement",
+      "SCLC"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/",
+    "where": "Read the section on court challenges and desegregation; connect legal action to the organization.",
+    "explanation": "NAACP: organization using constitutional lawsuits to challenge racial segregation.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v02",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? King-associated coalition coordinating nonviolent campaigns through churches?",
+    "choices": [
+      "SNCC",
+      "SCLC",
+      "United Farm Workers",
+      "NAACP"
+    ],
+    "answer": 1,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Find the discussion of King and nonviolent civil-rights campaigns.",
+    "explanation": "SCLC: king-associated coalition coordinating nonviolent campaigns through churches.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v03",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Student-led group organizing sit-ins and grassroots voter registration?",
+    "choices": [
+      "SCLC",
+      "NOW",
+      "SNCC",
+      "NAACP"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/",
+    "where": "Look for student-led protests, sit-ins, and voter-registration efforts.",
+    "explanation": "SNCC: student-led group organizing sit-ins and grassroots voter registration.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v04",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Sustained refusal to ride segregated buses in an Alabama city?",
+    "choices": [
+      "March on Washington",
+      "Freedom Rides",
+      "Stonewall uprising",
+      "Montgomery Bus Boycott"
+    ],
+    "answer": 3,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Find Rosa Parks and Montgomery; identify the form of protest and what it challenged.",
+    "explanation": "Montgomery Bus Boycott: sustained refusal to ride segregated buses in an Alabama city.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v05",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Interracial bus journeys testing desegregation in interstate transportation?",
+    "choices": [
+      "Freedom Rides",
+      "NAACP",
+      "Montgomery Bus Boycott",
+      "March on Washington"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/",
+    "where": "Find interstate travel and the enforcement of desegregation decisions.",
+    "explanation": "Freedom Rides: interracial bus journeys testing desegregation in interstate transportation.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v06",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? 1963 demonstration demanding jobs and racial equality?",
+    "choices": [
+      "Montgomery Bus Boycott",
+      "March on Washington",
+      "Stonewall uprising",
+      "Freedom Rides"
+    ],
+    "answer": 1,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Look for the 1963 Washington demonstration and its demands for jobs and rights.",
+    "explanation": "March on Washington: 1963 demonstration demanding jobs and racial equality.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v07",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? 1954 Supreme Court ruling that segregated public schools are unequal?",
+    "choices": [
+      "NAACP",
+      "Civil Rights Act of 1964",
+      "Brown v. Board of Education",
+      "Voting Rights Act of 1965"
+    ],
+    "answer": 2,
+    "source": "https://www.archives.gov/research/african-americans/civil-rights",
+    "where": "Locate the 1954 school desegregation decision and its constitutional conclusion.",
+    "explanation": "Brown v. Board of Education: 1954 Supreme Court ruling that segregated public schools are unequal.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v08",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Federal law addressing discrimination in employment and public accommodations?",
+    "choices": [
+      "Voting Rights Act of 1965",
+      "Brown v. Board of Education",
+      "NAACP",
+      "Civil Rights Act of 1964"
+    ],
+    "answer": 3,
+    "source": "https://www.archives.gov/research/african-americans/civil-rights",
+    "where": "Look for the 1964 federal law; distinguish public facilities and jobs from voting rules.",
+    "explanation": "Civil Rights Act of 1964: federal law addressing discrimination in employment and public accommodations.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v09",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Federal law targeting discriminatory barriers to voting?",
+    "choices": [
+      "Voting Rights Act of 1965",
+      "NAACP",
+      "Brown v. Board of Education",
+      "Civil Rights Act of 1964"
+    ],
+    "answer": 0,
+    "source": "https://www.archives.gov/research/african-americans/civil-rights",
+    "where": "Find the 1965 voting law and the barriers it was designed to counter.",
+    "explanation": "Voting Rights Act of 1965: federal law targeting discriminatory barriers to voting.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v10",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Union linked to Chávez and Huerta that organized farmworkers?",
+    "choices": [
+      "NOW",
+      "United Farm Workers",
+      "NAACP",
+      "SCLC"
+    ],
+    "answer": 1,
+    "source": "https://www.nps.gov/subjects/latinoheritage/index.htm",
+    "where": "Find Chávez, Huerta, or farmworker organizing; focus on labor goals and boycotts.",
+    "explanation": "United Farm Workers: union linked to Chávez and Huerta that organized farmworkers.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v11",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Women’s rights organization formed to advance equal opportunities?",
+    "choices": [
+      "SCLC",
+      "NAACP",
+      "NOW",
+      "SNCC"
+    ],
+    "answer": 2,
+    "source": "https://www.womenshistory.org/",
+    "where": "Search for the National Organization for Women and identify its goals.",
+    "explanation": "NOW: women’s rights organization formed to advance equal opportunities.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v12",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Native activist group defending treaty rights and tribal sovereignty?",
+    "choices": [
+      "NOW",
+      "NAACP",
+      "SCLC",
+      "American Indian Movement"
+    ],
+    "answer": 3,
+    "source": "https://www.nps.gov/subjects/americanindian/index.htm",
+    "where": "Look for Native American activism, treaty rights, and self-determination.",
+    "explanation": "American Indian Movement: native activist group defending treaty rights and tribal sovereignty.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v13",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? 1969 resistance to a police raid that energized gay-rights activism?",
+    "choices": [
+      "Stonewall uprising",
+      "Freedom Rides",
+      "NAACP",
+      "March on Washington"
+    ],
+    "answer": 0,
+    "source": "https://www.nps.gov/ston/index.htm",
+    "where": "Read the historical significance of the 1969 Stonewall uprising.",
+    "explanation": "Stonewall uprising: 1969 resistance to a police raid that energized gay-rights activism.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v14",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Peaceful protest method confronting injustice through public action?",
+    "choices": [
+      "Sit-in",
+      "Nonviolent direct action",
+      "Freedom Rides",
+      "NAACP"
+    ],
+    "answer": 1,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Look for sit-ins, boycotts, and marches; identify why activists used them.",
+    "explanation": "Nonviolent direct action: peaceful protest method confronting injustice through public action.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v15",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Period of rapid growth in income, output, and purchases after WWII?",
+    "choices": [
+      "Pent-up demand",
+      "Consumerism",
+      "Postwar economic boom",
+      "Suburbanization"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/",
+    "where": "Find examples of student protests at segregated public facilities.",
+    "explanation": "Postwar economic boom: period of rapid growth in income, output, and purchases after WWII.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v16",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Accumulated desire to buy goods unavailable during wartime?",
+    "choices": [
+      "Suburbanization",
+      "Postwar economic boom",
+      "Consumerism",
+      "Pent-up demand"
+    ],
+    "answer": 3,
+    "source": "https://www.archives.gov/research/african-americans/civil-rights",
+    "where": "Compare court decisions with the federal laws enacted in 1964 and 1965.",
+    "explanation": "Pent-up demand: accumulated desire to buy goods unavailable during wartime.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v17",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Population and housing growth outside central cities?",
+    "choices": [
+      "Suburbanization",
+      "Baby Boom",
+      "Postwar economic boom",
+      "Levittown"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/",
+    "where": "Find community-level campaigns and local voter-registration efforts.",
+    "explanation": "Suburbanization: population and housing growth outside central cities.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v18",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Sharp increase in births after the Second World War?",
+    "choices": [
+      "Suburbanization",
+      "Baby Boom",
+      "Pent-up demand",
+      "Postwar economic boom"
+    ],
+    "answer": 1,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Review the Montgomery bus protest and explain the role of economic pressure.",
+    "explanation": "Baby Boom: sharp increase in births after the Second World War.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v19",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Immunization that helped prevent a dangerous paralytic disease?",
+    "choices": [
+      "Postwar economic boom",
+      "Birth-control pill",
+      "Polio vaccine",
+      "Nuclear power"
+    ],
+    "answer": 2,
+    "source": "https://www.archives.gov/research/african-americans/civil-rights",
+    "where": "Find constitutional arguments used in school desegregation and equal-rights cases.",
+    "explanation": "Polio vaccine: immunization that helped prevent a dangerous paralytic disease.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v20",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Oral contraceptive that expanded control over family planning?",
+    "choices": [
+      "Nuclear power",
+      "Postwar economic boom",
+      "Polio vaccine",
+      "Birth-control pill"
+    ],
+    "answer": 3,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Compare the goals of movements for equality and the barriers they challenged.",
+    "explanation": "Birth-control pill: oral contraceptive that expanded control over family planning.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v21",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Civilian electricity generated through controlled atomic reactions?",
+    "choices": [
+      "Nuclear power",
+      "Passenger jet",
+      "Interstate Highway System",
+      "Postwar economic boom"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
+    "where": "Find the postwar economic expansion and growth in household purchasing.",
+    "explanation": "Nuclear power: civilian electricity generated through controlled atomic reactions.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v22",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Aircraft technology that sped up commercial long-distance flights?",
+    "choices": [
+      "Interstate Highway System",
+      "Passenger jet",
+      "Postwar economic boom",
+      "Nuclear power"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
+    "where": "Look for wartime shortages followed by renewed consumer purchases.",
+    "explanation": "Passenger jet: aircraft technology that sped up commercial long-distance flights.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v23",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Social patterns built around car ownership, driving, and commuting?",
+    "choices": [
+      "Postwar economic boom",
+      "Suburbanization",
+      "Automobile culture",
+      "Consumerism"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
+    "where": "Find postwar housing construction and population shifts outside urban centers.",
+    "explanation": "Automobile culture: social patterns built around car ownership, driving, and commuting.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v24",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Broadcast medium bringing shared news and entertainment into homes?",
+    "choices": [
+      "Postwar economic boom",
+      "Mass media",
+      "Consumerism",
+      "Television"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
+    "where": "Look for postwar population growth and its effects on schools and communities.",
+    "explanation": "Television: broadcast medium bringing shared news and entertainment into homes.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v25",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Emphasis on buying products and services?",
+    "choices": [
+      "Consumerism",
+      "Postwar economic boom",
+      "Standard of living",
+      "Pent-up demand"
+    ],
+    "answer": 0,
+    "source": "https://www.cdc.gov/polio/",
+    "where": "Find the role of vaccination in preventing poliomyelitis.",
+    "explanation": "Consumerism: emphasis on buying products and services.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v26",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Measure of material well-being and access to goods and services?",
+    "choices": [
+      "Postwar economic boom",
+      "Standard of living",
+      "Pent-up demand",
+      "Consumerism"
+    ],
+    "answer": 1,
+    "source": "https://www.nlm.nih.gov/",
+    "where": "Search the history of oral contraception and identify its effect on family planning.",
+    "explanation": "Standard of living: measure of material well-being and access to goods and services.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v27",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Veterans’ benefits supporting education and home purchases?",
+    "choices": [
+      "Interstate Highway System",
+      "Postwar economic boom",
+      "GI Bill",
+      "Levittown"
+    ],
+    "answer": 2,
+    "source": "https://www.energy.gov/ne/nuclear-power",
+    "where": "Find the explanation of nuclear reactors producing electricity.",
+    "explanation": "GI Bill: veterans’ benefits supporting education and home purchases.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v28",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Federally supported network of highways linking regions?",
+    "choices": [
+      "GI Bill",
+      "Postwar economic boom",
+      "Passenger jet",
+      "Interstate Highway System"
+    ],
+    "answer": 3,
+    "source": "https://airandspace.si.edu/",
+    "where": "Search for jet-age passenger travel and compare it with earlier air travel.",
+    "explanation": "Interstate Highway System: federally supported network of highways linking regions.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v29",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Activist whose arrest helped spark the Montgomery bus protest?",
+    "choices": [
+      "Rosa Parks",
+      "NAACP",
+      "Martin Luther King Jr.",
+      "Dolores Huerta"
+    ],
+    "answer": 0,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Find the account of the bus boycott and the arrest that sparked it.",
+    "explanation": "Rosa Parks: activist whose arrest helped spark the Montgomery bus protest.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v30",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Civil-rights leader identified with nonviolent resistance and SCLC?",
+    "choices": [
+      "César Chávez",
+      "Martin Luther King Jr.",
+      "NAACP",
+      "Rosa Parks"
+    ],
+    "answer": 1,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Find the discussion of nonviolent civil-rights leadership and church organizing.",
+    "explanation": "Martin Luther King Jr.: civil-rights leader identified with nonviolent resistance and SCLC.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v31",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Labor organizer who helped lead the farmworker movement?",
+    "choices": [
+      "Dolores Huerta",
+      "NAACP",
+      "César Chávez",
+      "Martin Luther King Jr."
+    ],
+    "answer": 2,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Look for farmworker organizing and the role of union leadership.",
+    "explanation": "César Chávez: labor organizer who helped lead the farmworker movement.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v32",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Labor organizer and cofounder of the farmworkers union?",
+    "choices": [
+      "Rosa Parks",
+      "César Chávez",
+      "NAACP",
+      "Dolores Huerta"
+    ],
+    "answer": 3,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Find farmworker organizing and the work of women leaders.",
+    "explanation": "Dolores Huerta: labor organizer and cofounder of the farmworkers union.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v33",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Protest in which participants remain seated at a segregated facility?",
+    "choices": [
+      "Sit-in",
+      "NAACP",
+      "Freedom Rides",
+      "Nonviolent direct action"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/civil-rights-movement/",
+    "where": "Locate examples of seated protests at segregated lunch counters.",
+    "explanation": "Sit-in: protest in which participants remain seated at a segregated facility.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v34",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Reading examination used to exclude some prospective voters?",
+    "choices": [
+      "Rationing",
+      "Literacy test",
+      "Redlining",
+      "NAACP"
+    ],
+    "answer": 1,
+    "source": "https://www.archives.gov/research/african-americans/vote",
+    "where": "Look for barriers such as literacy requirements that restricted voting.",
+    "explanation": "Literacy test: reading examination used to exclude some prospective voters.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v35",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Discriminatory lending practice restricting mortgages by neighborhood?",
+    "choices": [
+      "NAACP",
+      "Literacy test",
+      "Redlining",
+      "Rationing"
+    ],
+    "answer": 2,
+    "source": "https://www.nps.gov/subjects/civilrights/index.htm",
+    "where": "Find housing discrimination and unequal access to mortgages.",
+    "explanation": "Redlining: discriminatory lending practice restricting mortgages by neighborhood.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v36",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Large planned suburban development emblematic of postwar housing?",
+    "choices": [
+      "Suburbanization",
+      "Postwar economic boom",
+      "GI Bill",
+      "Levittown"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
+    "where": "Look for examples of mass-produced suburban housing after WWII.",
+    "explanation": "Levittown: large planned suburban development emblematic of postwar housing.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v37",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Wartime limits on consumer access to scarce goods?",
+    "choices": [
+      "Rationing",
+      "Pent-up demand",
+      "Postwar economic boom",
+      "Consumerism"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/world-war-ii-1939-1945/overview/",
+    "where": "Find wartime shortages and government controls on purchases.",
+    "explanation": "Rationing: wartime limits on consumer access to scarce goods.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v38",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Researcher who developed an early effective polio vaccine?",
+    "choices": [
+      "César Chávez",
+      "Jonas Salk",
+      "Postwar economic boom",
+      "Martin Luther King Jr."
+    ],
+    "answer": 1,
+    "source": "https://www.cdc.gov/polio/about/index.html",
+    "where": "Look for the vaccine and its role in preventing polio.",
+    "explanation": "Jonas Salk: researcher who developed an early effective polio vaccine.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v39",
+    "cs": "28",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Communication channels reaching large audiences simultaneously?",
+    "choices": [
+      "Television",
+      "Postwar economic boom",
+      "Mass media",
+      "Passenger jet"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
+    "where": "Locate the discussion of broadcasting and its reach into households.",
+    "explanation": "Mass media: communication channels reaching large audiences simultaneously.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  },
+  {
+    "id": "v40",
+    "cs": "27",
+    "topic": "Vocabulary • Identify the concept",
+    "prompt": "Which historical term best matches this description? Principle that hiring and workplace treatment should not discriminate?",
+    "choices": [
+      "Civil Rights Act of 1964",
+      "NAACP",
+      "Voting Rights Act of 1965",
+      "Equal employment opportunity"
+    ],
+    "answer": 3,
+    "source": "https://www.eeoc.gov/history",
+    "where": "Find the principle of nondiscrimination in employment.",
+    "explanation": "Equal employment opportunity: principle that hiring and workplace treatment should not discriminate.",
+    "hint": "Look for the specific organization, law, event, person, or development described; compare closely related choices."
+  }
+];
