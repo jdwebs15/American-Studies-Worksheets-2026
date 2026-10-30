@@ -1,11 +1,603 @@
-(function(){
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const meta={intro:["AS-B9-CS29-30-INTRO-2026","Block 9 Intro — Migration, Demographics, and Public Policy","CS 29–30 • Twenty-eight linked foundation questions."],vocabulary:["AS-B9-CS29-30-VOCAB-2026","Block 9 Vocabulary — Migration, Demographics, and Public Policy","CS 29–30 • Twenty-eight essential terms and concepts."],review:["AS-B9-CS29-30-REVIEW-2026","Block 9 Comprehensive Review — Migration, Demographics, and Public Policy","CS 29–30 • Thirty-two application, comparison, causation, and synthesis questions."]}[mode];
-window.BLOCK_CONFIG={assignmentKey:meta[0],title:meta[1],description:meta[2],practice:"Explain postwar migration and immigration changes, then evaluate debates over economic policy, the environment, social welfare, and national security."};
-const C=[["CS 29","White flight","movement of many white residents from cities to suburbs","Urban neighborhoods lose residents and tax resources as suburban communities grow"],["CS 29","Redlining","discriminatory denial of loans or services based on neighborhood race","Maps and lending practices restrict minority home ownership"],["CS 29","Urban-suburban polarization","growing political and economic differences between central cities and suburbs","Metropolitan residents divide over taxes, schools, services, and elections"],["CS 29","Urban riots","violent unrest connected to inequality, policing, and economic frustration","Several cities experience destructive disturbances during the 1960s"],["CS 29","Rust Belt","older industrial region losing factories and population","Manufacturing decline affects Great Lakes and northeastern communities"],["CS 29","Sun Belt","southern and western region gaining people, jobs, and political influence","Defense, aerospace, air conditioning, and high-tech growth attract migrants"],["CS 29","Reapportionment","redistribution of legislative seats based on population","Population growth shifts representation toward southern and western states"],["CS 29","1965 Immigration Act","law ending the national-origins quota system","Family reunification and skills preferences reshape immigration"],["CS 29","Demographic change","shift in the size, location, or composition of a population","Immigration and internal migration make the nation more diverse"],["CS 29","Hispanic population growth","increasing number and influence of Americans with Latin American heritage","Spanish-language media and political participation expand"],["CS 29","Bilingual education","instruction using two languages to support student learning","Schools respond to growing linguistic diversity"],["CS 29","Voting balance","distribution of political influence among groups and regions","Migration and immigration alter party coalitions and elections"],["CS 29","Defense industry","businesses producing military technology and equipment","Federal contracts help drive growth in California and the South"],["CS 29","High-technology industry","business sector based on advanced science and computing","New jobs cluster in fast-growing Sun Belt regions"],["CS 30","Great Society","federal programs designed to reduce poverty and expand opportunity","Government creates major health, education, and anti-poverty initiatives"],["CS 30","Medicare","federal health-insurance program primarily serving older Americans","Citizens age 65 and older gain health coverage"],["CS 30","Medicaid","joint federal-state health program for eligible low-income people","Public insurance expands access to medical care"],["CS 30","Supply-side economics","policy emphasizing tax cuts and incentives for investment and production","Supporters argue lower taxes can stimulate economic growth"],["CS 30","Deregulation","reduction of government rules affecting business activity","Officials remove or loosen regulations to encourage competition"],["CS 30","Environmental movement","organized effort to protect natural systems and public health","Citizens demand action on pesticides, pollution, and hazardous waste"],["CS 30","EPA","federal agency created to enforce environmental protections","National rules address clean air, water, and pollution"],["CS 30","Climate change","long-term alteration of climate strongly linked to greenhouse-gas emissions","Debate grows over regulation, energy, and environmental responsibility"],["CS 30","Social welfare debate","disagreement over government responsibility for economic security and opportunity","Americans dispute the cost and reach of aid programs"],["CS 30","National security debate","disagreement over how government should protect the country","Officials balance defense and intelligence needs against individual liberty"],["CS 30","Vietnam protest","public opposition that challenged Cold War policy and government credibility","Demonstrations question military escalation and the draft"],["CS 30","Civil rights enforcement","government action to implement equal protection and anti-discrimination law","Federal authority confronts resistance to legal equality"],["CS 30","Poverty","lack of sufficient income and resources for basic needs","Anti-poverty programs seek to expand opportunity"],["CS 30","Liberty-security balance","tension between personal freedoms and protective government powers","Policies intended to stop threats may intrude on constitutional rights"]]; const SOURCE="https://www.archives.gov/milestone-documents/immigration-and-nationality-act";
-function sourceFor(c){const topic=c[1].toLowerCase();if(/immigration|hispanic|demographic|bilingual/i.test(topic))return "https://www.archives.gov/milestone-documents/immigration-and-nationality-act";if(/white\ flight|redlining|suburban|rust\ belt|sun\ belt|poverty/i.test(topic))return "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/";if(/vietnam|security/i.test(topic))return "https://history.state.gov/milestones/1961-1968/gulf-of-tonkin";return SOURCE;}
-function distract(n){return[1,7,13].map(k=>C[(n+k)%C.length][1])}
-function make(kind){return C.map((c,n)=>{const answer=n%4,choices=distract(n);choices.splice(answer,0,c[1]);return{id:kind[0]+String(n+1).padStart(2,"0"),cs:c[0],topic:c[1],prompt:kind==="vocabulary"?"Which term matches this definition: "+c[2]+"?":kind==="intro"?"Use the linked source and identify the concept: "+c[2]+".":c[3]+". Which concept best applies?",choices,answer,source:kind==="review"?"":sourceFor(c),where:kind==="review"?"":"Look for the historical context of this topic. The definition in the question gives a starting clue.",explanation:"This is "+c[1]+": "+c[2]+".",hint:"Focus on the defining clue and its historical role."}})}
-const E=[["CS 29","Cause and Effect","Which chain best explains Sun Belt political growth?","Jobs and migration → population increase → reapportionment → greater representation"],["CS 29","Immigration","What was a major consequence of the 1965 Immigration Act?","Immigration increasingly came from Asia, Africa, and Latin America, changing U.S. demographics"],["CS 30","Policy Comparison","Which pairing is accurate?","Great Society—expanded social programs; supply-side economics—tax and investment incentives"],["CS 29–30","Synthesis","Which thesis best summarizes Block 9?","Migration and immigration changed regional power and diversity while Americans debated how government should address prosperity, inequality, environment, and security"]];function extras(){return E.map((e,j)=>{const n=28+j,a=n%4,ch=["It had no meaningful historical effect","It proves one cause always explains every event","It ended political disagreement permanently"];ch.splice(a,0,e[3]);return{id:"r"+(n+1),cs:e[0],topic:e[1],prompt:e[2],choices:ch,answer:a,source:"",where:"",explanation:e[3]+".",hint:"Choose the answer that makes an accurate, supportable historical connection."}})}
-window.BLOCK_QUESTIONS=mode==="intro"?make("intro"):mode==="vocabulary"?make("vocabulary"):[...make("review"),...extras()];
-})();
+window.BLOCK_CONFIG={"assignmentKey": "AS-B9-CS29-30-VOCAB-2026", "title": "Block 9 Vocabulary — Migration, Demographics, and Public Policy", "description": "CS 29–30 • 40 essential terms and concepts.", "practice": "Recognize vocabulary about migration, immigration, demographic shifts, and debates over government policy."};
+window.BLOCK_QUESTIONS=[
+  {
+    "id": "v01",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Movement of residents from central cities into surrounding communities.",
+    "choices": [
+      "Suburbanization",
+      "White flight",
+      "Urbanization",
+      "Residential segregation"
+    ],
+    "answer": 0,
+    "explanation": "Suburbanization: Movement of residents from central cities into surrounding communities.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v02",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Movement of many white residents from cities to suburbs.",
+    "choices": [
+      "Redlining",
+      "White flight",
+      "Urban unrest",
+      "Urban tax base"
+    ],
+    "answer": 1,
+    "explanation": "White flight: Movement of many white residents from cities to suburbs.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v03",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Discriminatory mortgage lending based on the racial makeup of neighborhoods.",
+    "choices": [
+      "Urbanization",
+      "Residential segregation",
+      "Redlining",
+      "Urban-suburban polarization"
+    ],
+    "answer": 2,
+    "explanation": "Redlining: Discriminatory mortgage lending based on the racial makeup of neighborhoods.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v04",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Growth in the share of people living in cities.",
+    "choices": [
+      "Urban unrest",
+      "Urban tax base",
+      "Suburbanization",
+      "Urbanization"
+    ],
+    "answer": 3,
+    "explanation": "Urbanization: Growth in the share of people living in cities.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v05",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Civil disturbances linked to racial injustice and unequal opportunity.",
+    "choices": [
+      "Urban unrest",
+      "Residential segregation",
+      "Urban-suburban polarization",
+      "White flight"
+    ],
+    "answer": 0,
+    "explanation": "Urban unrest: Civil disturbances linked to racial injustice and unequal opportunity.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v06",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Separation of population groups into different neighborhoods.",
+    "choices": [
+      "Urban tax base",
+      "Residential segregation",
+      "Suburbanization",
+      "Redlining"
+    ],
+    "answer": 1,
+    "explanation": "Residential segregation: Separation of population groups into different neighborhoods.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v07",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Revenue-producing property and economic activity that support city services.",
+    "choices": [
+      "Urban-suburban polarization",
+      "White flight",
+      "Urban tax base",
+      "Urbanization"
+    ],
+    "answer": 2,
+    "explanation": "Urban tax base: Revenue-producing property and economic activity that support city services.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v08",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Growing social and political divisions between cities and suburbs.",
+    "choices": [
+      "Suburbanization",
+      "Redlining",
+      "Urban unrest",
+      "Urban-suburban polarization"
+    ],
+    "answer": 3,
+    "explanation": "Urban-suburban polarization: Growing social and political divisions between cities and suburbs.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v09",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Older manufacturing region around the Great Lakes and Northeast.",
+    "choices": [
+      "Rust Belt",
+      "Sun Belt",
+      "Deindustrialization",
+      "High-technology industry"
+    ],
+    "answer": 0,
+    "explanation": "Rust Belt: Older manufacturing region around the Great Lakes and Northeast.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v10",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Southern and western states that experienced rapid postwar growth.",
+    "choices": [
+      "Internal migration",
+      "Sun Belt",
+      "Defense industry",
+      "Reapportionment"
+    ],
+    "answer": 1,
+    "explanation": "Sun Belt: Southern and western states that experienced rapid postwar growth.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v11",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Movement of people from one region of the United States to another.",
+    "choices": [
+      "Deindustrialization",
+      "High-technology industry",
+      "Internal migration",
+      "Electoral College votes"
+    ],
+    "answer": 2,
+    "explanation": "Internal migration: Movement of people from one region of the United States to another.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v12",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Decline of factory production and industrial employment.",
+    "choices": [
+      "Defense industry",
+      "Reapportionment",
+      "Rust Belt",
+      "Deindustrialization"
+    ],
+    "answer": 3,
+    "explanation": "Deindustrialization: Decline of factory production and industrial employment.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v13",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Businesses producing equipment and technology for national defense.",
+    "choices": [
+      "Defense industry",
+      "High-technology industry",
+      "Electoral College votes",
+      "Sun Belt"
+    ],
+    "answer": 0,
+    "explanation": "Defense industry: Businesses producing equipment and technology for national defense.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v14",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Businesses centered on advanced computing, electronics, and research.",
+    "choices": [
+      "Reapportionment",
+      "High-technology industry",
+      "Rust Belt",
+      "Internal migration"
+    ],
+    "answer": 1,
+    "explanation": "High-technology industry: Businesses centered on advanced computing, electronics, and research.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v15",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Redistribution of legislative seats after population changes.",
+    "choices": [
+      "Electoral College votes",
+      "Sun Belt",
+      "Reapportionment",
+      "Deindustrialization"
+    ],
+    "answer": 2,
+    "explanation": "Reapportionment: Redistribution of legislative seats after population changes.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v16",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Presidential election votes allocated to states based on congressional representation.",
+    "choices": [
+      "Rust Belt",
+      "Internal migration",
+      "Defense industry",
+      "Electoral College votes"
+    ],
+    "answer": 3,
+    "explanation": "Electoral College votes: Presidential election votes allocated to states based on congressional representation.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v17",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Federal law that ended the national-origins quota system.",
+    "choices": [
+      "Immigration and Nationality Act of 1965",
+      "National-origins quotas",
+      "Demographic change",
+      "Asian immigration"
+    ],
+    "answer": 0,
+    "explanation": "Immigration and Nationality Act of 1965: Federal law that ended the national-origins quota system.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v18",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Earlier immigration limits based on immigrants’ countries of origin.",
+    "choices": [
+      "Family reunification",
+      "National-origins quotas",
+      "Hispanic population growth",
+      "Bilingual education"
+    ],
+    "answer": 1,
+    "explanation": "National-origins quotas: Earlier immigration limits based on immigrants’ countries of origin.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v19",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Immigration policy preference for joining close relatives already in the United States.",
+    "choices": [
+      "Demographic change",
+      "Asian immigration",
+      "Family reunification",
+      "Political representation"
+    ],
+    "answer": 2,
+    "explanation": "Family reunification: Immigration policy preference for joining close relatives already in the United States.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v20",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Shift in a population’s size, composition, or location.",
+    "choices": [
+      "Hispanic population growth",
+      "Bilingual education",
+      "Immigration and Nationality Act of 1965",
+      "Demographic change"
+    ],
+    "answer": 3,
+    "explanation": "Demographic change: Shift in a population’s size, composition, or location.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v21",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Increase in the number of Americans with roots in Spanish-speaking Latin America.",
+    "choices": [
+      "Hispanic population growth",
+      "Asian immigration",
+      "Political representation",
+      "National-origins quotas"
+    ],
+    "answer": 0,
+    "explanation": "Hispanic population growth: Increase in the number of Americans with roots in Spanish-speaking Latin America.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v22",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? Arrival of migrants from Asian countries in growing numbers after 1965.",
+    "choices": [
+      "Bilingual education",
+      "Asian immigration",
+      "Immigration and Nationality Act of 1965",
+      "Family reunification"
+    ],
+    "answer": 1,
+    "explanation": "Asian immigration: Arrival of migrants from Asian countries in growing numbers after 1965.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v23",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? School instruction using two languages to support learning.",
+    "choices": [
+      "Political representation",
+      "National-origins quotas",
+      "Bilingual education",
+      "Demographic change"
+    ],
+    "answer": 2,
+    "explanation": "Bilingual education: School instruction using two languages to support learning.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v24",
+    "cs": "CS 29",
+    "topic": "CS 29 • Vocabulary",
+    "prompt": "Which term best matches this definition? The extent to which a population has a voice through elected officials.",
+    "choices": [
+      "Immigration and Nationality Act of 1965",
+      "Family reunification",
+      "Hispanic population growth",
+      "Political representation"
+    ],
+    "answer": 3,
+    "explanation": "Political representation: The extent to which a population has a voice through elected officials.",
+    "hint": "Compare the terms in this migration and population group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v25",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Johnson-era initiatives to reduce poverty and expand educational and health opportunities.",
+    "choices": [
+      "Great Society",
+      "War on Poverty",
+      "Medicaid",
+      "Deregulation"
+    ],
+    "answer": 0,
+    "explanation": "Great Society: Johnson-era initiatives to reduce poverty and expand educational and health opportunities.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v26",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Federal campaign to reduce poverty through programs and assistance.",
+    "choices": [
+      "Medicare",
+      "War on Poverty",
+      "Supply-side economics",
+      "Social welfare"
+    ],
+    "answer": 1,
+    "explanation": "War on Poverty: Federal campaign to reduce poverty through programs and assistance.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v27",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Federal health insurance primarily for people age 65 and older.",
+    "choices": [
+      "Medicaid",
+      "Deregulation",
+      "Medicare",
+      "Public policy"
+    ],
+    "answer": 2,
+    "explanation": "Medicare: Federal health insurance primarily for people age 65 and older.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v28",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Joint federal-state health coverage for eligible people with limited incomes.",
+    "choices": [
+      "Supply-side economics",
+      "Social welfare",
+      "Great Society",
+      "Medicaid"
+    ],
+    "answer": 3,
+    "explanation": "Medicaid: Joint federal-state health coverage for eligible people with limited incomes.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v29",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Approach emphasizing lower taxes and incentives to encourage production and investment.",
+    "choices": [
+      "Supply-side economics",
+      "Deregulation",
+      "Public policy",
+      "War on Poverty"
+    ],
+    "answer": 0,
+    "explanation": "Supply-side economics: Approach emphasizing lower taxes and incentives to encourage production and investment.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v30",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Reduction or removal of government rules affecting businesses.",
+    "choices": [
+      "Social welfare",
+      "Deregulation",
+      "Great Society",
+      "Medicare"
+    ],
+    "answer": 1,
+    "explanation": "Deregulation: Reduction or removal of government rules affecting businesses.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v31",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Programs designed to help people meet basic economic and social needs.",
+    "choices": [
+      "Public policy",
+      "War on Poverty",
+      "Social welfare",
+      "Medicaid"
+    ],
+    "answer": 2,
+    "explanation": "Social welfare: Programs designed to help people meet basic economic and social needs.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v32",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? A course of government action taken to address an issue.",
+    "choices": [
+      "Great Society",
+      "Medicare",
+      "Supply-side economics",
+      "Public policy"
+    ],
+    "answer": 3,
+    "explanation": "Public policy: A course of government action taken to address an issue.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v33",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Organized public effort to protect ecosystems and reduce pollution.",
+    "choices": [
+      "Environmental movement",
+      "Environmental Protection Agency",
+      "Climate change",
+      "Civil liberties"
+    ],
+    "answer": 0,
+    "explanation": "Environmental movement: Organized public effort to protect ecosystems and reduce pollution.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v34",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Federal agency responsible for implementing environmental protections.",
+    "choices": [
+      "Clean Air Act",
+      "Environmental Protection Agency",
+      "National security",
+      "Vietnam War protests"
+    ],
+    "answer": 1,
+    "explanation": "Environmental Protection Agency: Federal agency responsible for implementing environmental protections.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v35",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Federal law establishing controls on air pollution.",
+    "choices": [
+      "Climate change",
+      "Civil liberties",
+      "Clean Air Act",
+      "Liberty-security balance"
+    ],
+    "answer": 2,
+    "explanation": "Clean Air Act: Federal law establishing controls on air pollution.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v36",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Long-term changes in climate patterns, including warming linked to greenhouse gases.",
+    "choices": [
+      "National security",
+      "Vietnam War protests",
+      "Environmental movement",
+      "Climate change"
+    ],
+    "answer": 3,
+    "explanation": "Climate change: Long-term changes in climate patterns, including warming linked to greenhouse gases.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v37",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Protection of the nation against foreign and domestic threats.",
+    "choices": [
+      "National security",
+      "Civil liberties",
+      "Liberty-security balance",
+      "Environmental Protection Agency"
+    ],
+    "answer": 0,
+    "explanation": "National security: Protection of the nation against foreign and domestic threats.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v38",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Individual freedoms protected from unwarranted government interference.",
+    "choices": [
+      "Vietnam War protests",
+      "Civil liberties",
+      "Environmental movement",
+      "Clean Air Act"
+    ],
+    "answer": 1,
+    "explanation": "Civil liberties: Individual freedoms protected from unwarranted government interference.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v39",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Public demonstrations opposing U.S. involvement in the Vietnam War.",
+    "choices": [
+      "Liberty-security balance",
+      "Environmental Protection Agency",
+      "Vietnam War protests",
+      "Climate change"
+    ],
+    "answer": 2,
+    "explanation": "Vietnam War protests: Public demonstrations opposing U.S. involvement in the Vietnam War.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  },
+  {
+    "id": "v40",
+    "cs": "CS 30",
+    "topic": "CS 30 • Vocabulary",
+    "prompt": "Which term best matches this definition? Challenge of protecting the public without unduly restricting individual freedoms.",
+    "choices": [
+      "Environmental movement",
+      "Clean Air Act",
+      "National security",
+      "Liberty-security balance"
+    ],
+    "answer": 3,
+    "explanation": "Liberty-security balance: Challenge of protecting the public without unduly restricting individual freedoms.",
+    "hint": "Compare the terms in this government policy group. Focus on the specific meaning of the definition."
+  }
+];
