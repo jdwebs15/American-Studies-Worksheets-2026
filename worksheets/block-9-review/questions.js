@@ -7,13 +7,13 @@ window.BLOCK_QUESTIONS=[
     "prompt": "A city loses middle-income residents to surrounding suburbs after 1950. Which municipal problem is most likely?",
     "choices": [
       "A shrinking tax base for city services",
-      "A larger share of suburban property taxes",
       "Automatic increases in city representation",
-      "An immediate end to housing inequality"
+      "An immediate end to housing inequality",
+      "A larger share of suburban property taxes"
     ],
     "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on urban tax bases and public services. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Fewer taxable residents can reduce revenue for urban services.",
     "hint": "Consider how residential moves change local revenue."
   },
@@ -23,14 +23,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A lender refuses mortgages in a predominantly Black neighborhood despite qualified applicants. Which policy is illustrated?",
     "choices": [
-      "Reapportionment after the census",
-      "Redlining in mortgage lending",
       "Zoning for industrial facilities",
-      "Federal deregulation of banks"
+      "Federal deregulation of banks",
+      "Redlining in mortgage lending",
+      "Reapportionment after the census"
     ],
-    "answer": 1,
+    "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on mortgage discrimination and housing access. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Redlining restricted access to credit based on neighborhood racial composition.",
     "hint": "Focus on discriminatory lending rather than district boundaries."
   },
@@ -40,14 +40,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which explanation best connects white flight with inequality in metropolitan areas?",
     "choices": [
-      "Suburban migration guaranteed equal housing opportunities",
       "City tax revenue rose as taxpayers departed",
       "Suburban departures could concentrate resources outside central cities",
+      "Suburban migration guaranteed equal housing opportunities",
       "Federal voting districts disappeared as cities shrank"
     ],
-    "answer": 2,
+    "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on white flight and metropolitan inequality. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "White flight could intensify disparities in investment and tax bases.",
     "hint": "Follow the movement of people and taxable property."
   },
@@ -57,14 +57,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Two neighboring communities disagree over school funding and public transit. Which postwar pattern does this illustrate?",
     "choices": [
+      "A nationwide decline in population",
       "The abolition of local government",
       "The end of metropolitan commuting",
-      "A nationwide decline in population",
       "Urban-suburban political polarization"
     ],
     "answer": 3,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on suburbanization and local policy disagreements. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Urban and suburban interests sometimes diverged over public spending.",
     "hint": "Think about different priorities within one metro area."
   },
@@ -74,14 +74,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A historian links 1960s urban unrest to discrimination, poor housing, and police-community tensions. What is the strongest conclusion?",
     "choices": [
-      "Unrest reflected multiple longstanding urban grievances",
       "Unrest resulted only from overseas wars",
+      "Unrest reflected multiple longstanding urban grievances",
       "Unrest proved suburbs had no racial divisions",
       "Unrest ended demands for civil rights"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on urban unrest and its overlapping causes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Urban riots had complex social and economic causes.",
     "hint": "Avoid explanations based on a single cause."
   },
@@ -91,14 +91,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A steelworker leaves Ohio for an aerospace job in Arizona. Which broader trend does this represent?",
     "choices": [
-      "Migration from the Sun Belt to the Rust Belt",
       "Migration from the Rust Belt to the Sun Belt",
       "Immigration from Europe to the United States",
-      "Suburbanization within a single Ohio county"
+      "Suburbanization within a single Ohio county",
+      "Migration from the Sun Belt to the Rust Belt"
     ],
-    "answer": 1,
+    "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on Rust Belt–Sun Belt migration. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Industrial decline and growing southern and western industries shifted population.",
     "hint": "Identify the origin and destination regions."
   },
@@ -110,12 +110,12 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "They required all factories to relocate from the Northeast",
       "They eliminated the need for skilled workers",
-      "They created jobs that attracted workers and families",
-      "They prevented western states from gaining residents"
+      "They prevented western states from gaining residents",
+      "They created jobs that attracted workers and families"
     ],
-    "answer": 2,
+    "answer": 3,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on defense industries and regional employment. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Defense and technology industries offered new employment opportunities.",
     "hint": "Connect government contracts to job opportunities."
   },
@@ -127,12 +127,12 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "Redlining of residential neighborhoods",
       "Deregulation of interstate commerce",
-      "Incorporation of constitutional rights",
-      "Reapportionment of congressional seats"
+      "Reapportionment of congressional seats",
+      "Incorporation of constitutional rights"
     ],
-    "answer": 3,
+    "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on census and House reapportionment. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "House seats are redistributed among states according to census population.",
     "hint": "Distinguish seat allocation from drawing district lines."
   },
@@ -142,14 +142,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A state gains population but not additional U.S. senators. Why?",
     "choices": [
-      "Each state retains two Senate seats regardless of population",
-      "The Senate is reapportioned every twenty years",
+      "Senate seats depend on manufacturing employment",
       "New residents cannot vote in federal elections",
-      "Senate seats depend on manufacturing employment"
+      "Each state retains two Senate seats regardless of population",
+      "The Senate is reapportioned every twenty years"
     ],
-    "answer": 0,
+    "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on Senate representation compared with House representation. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The House is apportioned by population, but Senate representation is equal.",
     "hint": "Compare how the two chambers represent states."
   },
@@ -159,14 +159,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which development most directly helped western states gain presidential electoral votes?",
     "choices": [
-      "A constitutional change granting three senators",
-      "Population gains that increased their House seats",
       "A decrease in eligible voters nationwide",
-      "An end to the decennial census"
+      "An end to the decennial census",
+      "A constitutional change granting three senators",
+      "Population gains that increased their House seats"
     ],
-    "answer": 1,
+    "answer": 3,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on population shifts and Electoral College votes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Electoral votes equal House seats plus two Senate seats.",
     "hint": "Link census counts, House seats, and electoral votes."
   },
@@ -176,14 +176,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which statement best explains the Immigration and Nationality Act of 1965?",
     "choices": [
-      "It prohibited all immigration from Asia",
-      "It required immigrants to settle in the Rust Belt",
       "It removed national-origins quotas and reshaped immigration patterns",
-      "It established identical annual quotas for each continent"
+      "It prohibited all immigration from Asia",
+      "It established identical annual quotas for each continent",
+      "It required immigrants to settle in the Rust Belt"
     ],
-    "answer": 2,
+    "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on 1965 immigration-law changes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The act ended the old national-origins quota framework.",
     "hint": "Identify what changed about selection by national origin."
   },
@@ -194,13 +194,13 @@ window.BLOCK_QUESTIONS=[
     "prompt": "A researcher finds a larger share of newcomers arriving from Asia and Latin America after 1965. Which policy change helps explain it?",
     "choices": [
       "Restoration of the 1924 quota formula",
+      "Removal of national-origins quotas",
       "Elimination of family immigration preferences",
-      "Closure of every U.S. port of entry",
-      "Removal of national-origins quotas"
+      "Closure of every U.S. port of entry"
     ],
-    "answer": 3,
+    "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on immigration origins after 1965. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The 1965 reform helped diversify countries of origin.",
     "hint": "Think about the effect of ending older quotas."
   },
@@ -210,14 +210,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A city school district expands bilingual services after immigration increases. What is the clearest relationship?",
     "choices": [
-      "Demographic change prompted an educational response",
       "School policy caused the 1965 immigration law",
+      "Immigration reduced the need for language support",
       "Bilingual education eliminated population mobility",
-      "Immigration reduced the need for language support"
+      "Demographic change prompted an educational response"
     ],
-    "answer": 0,
+    "answer": 3,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on school services responding to immigration. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Changing student populations influenced education services.",
     "hint": "Look for a response to changing language needs."
   },
@@ -229,12 +229,12 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "A federal ban on local elections",
       "Greater linguistic diversity among eligible voters",
-      "The replacement of voting with appointments",
-      "A decline in all immigrant communities"
+      "A decline in all immigrant communities",
+      "The replacement of voting with appointments"
     ],
     "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on voting access in linguistically diverse communities. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Demographic change can influence election administration and outreach.",
     "hint": "Connect population composition to political participation."
   },
@@ -245,13 +245,13 @@ window.BLOCK_QUESTIONS=[
     "prompt": "A fast-growing southern state receives more federal infrastructure attention. Which explanation is strongest?",
     "choices": [
       "Every southern state receives identical federal funding",
-      "Population decline automatically expands federal services",
+      "Federal spending is unrelated to regional change",
       "Population growth increased demands and political influence",
-      "Federal spending is unrelated to regional change"
+      "Population decline automatically expands federal services"
     ],
     "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on population growth and public infrastructure. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Population shifts can alter needs and representation.",
     "hint": "Connect residents, needs, and political power."
   },
@@ -261,14 +261,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which comparison accurately distinguishes the Rust Belt and Sun Belt after World War II?",
     "choices": [
-      "Both regions experienced identical manufacturing growth",
-      "The Sun Belt lost defense work as the Rust Belt gained it",
+      "The Rust Belt faced industrial losses while the Sun Belt gained many jobs",
       "Both regions stopped receiving internal migrants",
-      "The Rust Belt faced industrial losses while the Sun Belt gained many jobs"
+      "The Sun Belt lost defense work as the Rust Belt gained it",
+      "Both regions experienced identical manufacturing growth"
     ],
-    "answer": 3,
+    "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on industrial change across U.S. regions. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Regional economic changes helped drive internal migration.",
     "hint": "Compare employment trends in each region."
   },
@@ -278,14 +278,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A family moves from a central city to a nearby subdivision but keeps jobs downtown. Which term best describes the residential change?",
     "choices": [
+      "Interregional migration to the Sun Belt",
       "Suburbanization",
-      "International immigration",
       "Rural depopulation",
-      "Interregional migration to the Sun Belt"
+      "International immigration"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on postwar suburban growth. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Suburbanization is movement to residential areas outside central cities.",
     "hint": "This move stays within the same metropolitan area."
   },
@@ -295,14 +295,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which evidence would best support a claim that migration changed political power?",
     "choices": [
-      "A single family account of moving to a suburb",
-      "Census-based shifts in House seats between regions",
       "An advertisement for a new housing development",
-      "A photograph of a factory assembly line"
+      "A single family account of moving to a suburb",
+      "A photograph of a factory assembly line",
+      "Census-based shifts in House seats between regions"
     ],
-    "answer": 1,
+    "answer": 3,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on census evidence of shifting political representation. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Reapportionment directly demonstrates changed representation.",
     "hint": "Seek evidence of measurable political representation."
   },
@@ -312,14 +312,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A historian argues that population changes influenced party strategies. Which evidence best supports the argument?",
     "choices": [
-      "All parties stopped competing in newly growing states",
-      "Immigrant communities became politically identical",
       "Campaign outreach expanded toward growing regional and ethnic electorates",
-      "Elections were replaced by demographic surveys"
+      "Immigrant communities became politically identical",
+      "Elections were replaced by demographic surveys",
+      "All parties stopped competing in newly growing states"
     ],
-    "answer": 2,
+    "answer": 0,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on electoral coalition changes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Parties adjust coalitions and outreach as populations change.",
     "hint": "Look for how campaigns respond to new voters."
   },
@@ -329,14 +329,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which conclusion about postwar migration is most defensible?",
     "choices": [
-      "Every migration decision had one identical cause",
       "Government policy had no effect on residential patterns",
-      "All growing regions experienced equal social outcomes",
-      "Economic opportunities and housing practices shaped where people lived"
+      "Every migration decision had one identical cause",
+      "Economic opportunities and housing practices shaped where people lived",
+      "All growing regions experienced equal social outcomes"
     ],
-    "answer": 3,
+    "answer": 2,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on economic and discriminatory causes of migration. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Jobs, public policy, and discrimination all influenced migration.",
     "hint": "Choose the explanation that recognizes several causes."
   },
@@ -346,14 +346,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A president proposes federal education and anti-poverty programs. Which agenda most closely resembles this approach?",
     "choices": [
-      "The Great Society",
-      "Supply-side tax reduction",
       "Industrial deregulation alone",
-      "Military containment without domestic reform"
+      "Supply-side tax reduction",
+      "Military containment without domestic reform",
+      "The Great Society"
     ],
-    "answer": 0,
+    "answer": 3,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on Great Society policy goals. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The Great Society expanded federal efforts against poverty and inequality.",
     "hint": "Think about federal social programs in the 1960s."
   },
@@ -363,14 +363,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which pair correctly distinguishes Medicare and Medicaid?",
     "choices": [
-      "Medicare funds schools; Medicaid funds highways",
       "Medicare mainly covers older adults; Medicaid assists eligible low-income groups",
-      "Medicare is state-only; Medicaid is private insurance",
-      "Medicare covers only children; Medicaid covers only retirees"
+      "Medicare covers only children; Medicaid covers only retirees",
+      "Medicare funds schools; Medicaid funds highways",
+      "Medicare is state-only; Medicaid is private insurance"
     ],
-    "answer": 1,
+    "answer": 0,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on Medicare versus Medicaid eligibility. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The programs serve overlapping but different eligibility populations.",
     "hint": "Compare age-based and income-based eligibility."
   },
@@ -380,14 +380,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A critic says anti-poverty programs are costly; a supporter says they improve opportunity. What disagreement is central?",
     "choices": [
-      "Whether the United States should hold elections",
       "Whether states should have equal Senate seats",
+      "Whether all public education should end",
       "The appropriate scope and cost of federal social welfare",
-      "Whether all public education should end"
+      "Whether the United States should hold elections"
     ],
     "answer": 2,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on competing evaluations of anti-poverty programs. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Social welfare debates concern benefits, responsibilities, and costs.",
     "hint": "Identify what the two sides actually disagree about."
   },
@@ -397,14 +397,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A tax proposal lowers marginal rates to encourage investment and production. Which theory supports it?",
     "choices": [
-      "Expansionary public-works spending alone",
-      "A universal wage and price freeze",
       "Government ownership of all industries",
-      "Supply-side economics"
+      "Supply-side economics",
+      "A universal wage and price freeze",
+      "Expansionary public-works spending alone"
     ],
-    "answer": 3,
+    "answer": 1,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on supply-side economic arguments. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Supply-side policies emphasize incentives for work and investment.",
     "hint": "Focus on tax incentives and production."
   },
@@ -415,13 +415,13 @@ window.BLOCK_QUESTIONS=[
     "prompt": "A government removes restrictions on airline routes and pricing to encourage competition. Which policy is illustrated?",
     "choices": [
       "Deregulation",
-      "Nationalization",
+      "Reapportionment",
       "Redlining",
-      "Reapportionment"
+      "Nationalization"
     ],
     "answer": 0,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on deregulation and market competition. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Deregulation reduces certain government rules on business activity.",
     "hint": "Is government adding or reducing business rules?"
   },
@@ -438,7 +438,7 @@ window.BLOCK_QUESTIONS=[
     ],
     "answer": 1,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on Great Society versus supply-side approaches. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The approaches differ in preferred federal economic tools.",
     "hint": "Contrast direct services with incentives."
   },
@@ -450,12 +450,12 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "Suburban reapportionment movement",
       "National-origins quota movement",
-      "Environmental protection movement",
-      "Supply-side tax reform movement"
+      "Supply-side tax reform movement",
+      "Environmental protection movement"
     ],
-    "answer": 2,
+    "answer": 3,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on environmental activism. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Environmental activists pushed for pollution controls and cleanup.",
     "hint": "Identify the policy issue motivating the protest."
   },
@@ -465,14 +465,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Why did the federal government create the Environmental Protection Agency?",
     "choices": [
-      "To decide how many senators each state receives",
-      "To administer Social Security retirement checks",
       "To establish immigration quotas by nationality",
-      "To coordinate and enforce national pollution protections"
+      "To decide how many senators each state receives",
+      "To coordinate and enforce national pollution protections",
+      "To administer Social Security retirement checks"
     ],
-    "answer": 3,
+    "answer": 2,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on EPA responsibilities. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The EPA was created in 1970 to strengthen environmental oversight.",
     "hint": "Think about air, water, and pollution rules."
   },
@@ -482,14 +482,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "An industry argues a pollution rule raises costs while residents argue it protects health. Which conflict is illustrated?",
     "choices": [
-      "Economic costs versus environmental protections",
       "Federalism versus presidential succession",
       "National origins versus family reunification",
+      "Economic costs versus environmental protections",
       "Urban growth versus congressional term limits"
     ],
-    "answer": 0,
+    "answer": 2,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on trade-offs in pollution regulation. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Environmental policy often balances costs and public health.",
     "hint": "Identify the competing goals of each side."
   },
@@ -499,14 +499,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A scientist warns that rising greenhouse-gas emissions may alter global temperatures. Which debate is implicated?",
     "choices": [
-      "Reapportionment and census timing",
       "Climate change and energy policy",
       "Medicare and retirement eligibility",
+      "Reapportionment and census timing",
       "National-origins immigration quotas"
     ],
-    "answer": 1,
+    "answer": 0,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on climate and energy debates. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Climate policy addresses emissions, energy choices, and environmental effects.",
     "hint": "Focus on emissions and long-term temperature trends."
   },
@@ -516,14 +516,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which evidence best tests whether an environmental regulation worked?",
     "choices": [
-      "The number of speeches supporting the rule",
       "The popularity of a single political candidate",
       "Pollution measurements before and after implementation",
+      "The number of speeches supporting the rule",
       "The age of the agency director"
     ],
-    "answer": 2,
+    "answer": 1,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on evidence for evaluating pollution rules. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Outcome data provide a stronger test than political claims.",
     "hint": "Look for measurable results."
   },
@@ -533,14 +533,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "After a security threat, officials propose broader surveillance powers. What constitutional concern might arise?",
     "choices": [
-      "Allocation of congressional seats",
       "Federal minimum age for retirement",
+      "Allocation of congressional seats",
       "State authority over zoning permits",
       "Protection of civil liberties and privacy"
     ],
     "answer": 3,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on surveillance and constitutional rights. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Security measures can create tension with individual rights.",
     "hint": "Consider government power versus personal freedoms."
   },
@@ -550,14 +550,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which response best recognizes the national security–liberty dilemma?",
     "choices": [
+      "Treat privacy concerns as unrelated to security",
       "Protect the public while limiting unnecessary intrusions on rights",
       "Suspend every constitutional protection indefinitely",
-      "Assume every security proposal is automatically unlawful",
-      "Treat privacy concerns as unrelated to security"
+      "Assume every security proposal is automatically unlawful"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on balancing public safety and civil liberties. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "The policy challenge is to balance protection and constitutional safeguards.",
     "hint": "Avoid absolute positions that ignore competing interests."
   },
@@ -568,13 +568,13 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Vietnam War protesters challenged military escalation and the draft. Which broader issue did they raise?",
     "choices": [
       "The formula for distributing House seats",
+      "The enforcement of air-quality standards",
       "Government accountability for foreign policy decisions",
-      "Eligibility rules for Medicaid",
-      "The enforcement of air-quality standards"
+      "Eligibility rules for Medicaid"
     ],
-    "answer": 1,
+    "answer": 2,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on Vietnam-era protest and accountability. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Protests questioned government decisions and public consent.",
     "hint": "Think about dissent and foreign policy."
   },
@@ -584,14 +584,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A federal agency enforces anti-discrimination laws despite resistance from local officials. Which issue is central?",
     "choices": [
-      "A shift from the Rust Belt to the Sun Belt",
       "The elimination of the federal court system",
-      "Federal enforcement of civil rights protections",
-      "Tax incentives for new technology firms"
+      "A shift from the Rust Belt to the Sun Belt",
+      "Tax incentives for new technology firms",
+      "Federal enforcement of civil rights protections"
     ],
-    "answer": 2,
+    "answer": 3,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on federal civil-rights enforcement. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Federal authority can be used to enforce equal protection.",
     "hint": "Identify the law being enforced."
   },
@@ -601,14 +601,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A policymaker argues that private competition can lower prices; another wants stronger consumer rules. What is the core difference?",
     "choices": [
-      "Whether the census should count all residents",
+      "How much government should regulate markets",
       "Whether Congress has two chambers",
-      "How many electoral votes each state receives",
-      "How much government should regulate markets"
+      "Whether the census should count all residents",
+      "How many electoral votes each state receives"
     ],
-    "answer": 3,
+    "answer": 0,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on regulatory versus market-based arguments. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Economic debates often concern regulation versus market freedom.",
     "hint": "Compare the role each assigns to government."
   },
@@ -618,14 +618,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which proposal most closely reflects an expanded federal social safety net?",
     "choices": [
-      "Broader access to health coverage for eligible low-income families",
-      "Reduced eligibility for all assistance programs",
       "Removal of every workplace safety standard",
-      "A ban on federal education funding"
+      "Reduced eligibility for all assistance programs",
+      "A ban on federal education funding",
+      "Broader access to health coverage for eligible low-income families"
     ],
-    "answer": 0,
+    "answer": 3,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on social safety-net proposals. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Expanding coverage is an example of social welfare policy.",
     "hint": "Look for direct support to households."
   },
@@ -635,14 +635,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "A lawmaker says national defense spending must be weighed against funding for social programs. What is being debated?",
     "choices": [
+      "The definition of international immigration",
       "The geography of redlining alone",
       "Federal budget priorities and trade-offs",
-      "The number of congressional districts per county",
-      "The definition of international immigration"
+      "The number of congressional districts per county"
     ],
-    "answer": 1,
+    "answer": 2,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on defense and domestic spending priorities. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Budgets require choices among competing public priorities.",
     "hint": "Think about limited resources and competing goals."
   },
@@ -652,14 +652,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which claim about U.S. policy debates since the 1960s is best supported?",
     "choices": [
-      "All major policy debates ended after the Great Society",
-      "Environmental issues replaced every economic issue",
       "Americans continued to disagree about government roles in economic and social life",
-      "Security concerns made civil liberties irrelevant"
+      "Security concerns made civil liberties irrelevant",
+      "All major policy debates ended after the Great Society",
+      "Environmental issues replaced every economic issue"
     ],
-    "answer": 2,
+    "answer": 0,
     "source": "https://www.archives.gov/research/american-history",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on continuing debates about the federal role. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Competing priorities remained central to national politics.",
     "hint": "Reject claims that disagreement disappeared."
   },
@@ -669,14 +669,14 @@ window.BLOCK_QUESTIONS=[
     "topic": "Analysis and Application",
     "prompt": "Which synthesis best connects the two content statements?",
     "choices": [
-      "Migration stopped as federal policy debates intensified",
       "Economic policy had no relationship to changing communities",
-      "Demographic change removed regional political differences",
-      "Population shifts changed political demands as Americans debated government responses"
+      "Population shifts changed political demands as Americans debated government responses",
+      "Migration stopped as federal policy debates intensified",
+      "Demographic change removed regional political differences"
     ],
-    "answer": 3,
+    "answer": 1,
     "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Review the historical background for this content statement; use the evidence in the question to distinguish causes, effects, and policy choices.",
+    "where": "Look for the section on connections between demographic change and policy debates. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
     "explanation": "Demographic change and policy debates influenced one another.",
     "hint": "Connect changes in communities to public-policy choices."
   }
