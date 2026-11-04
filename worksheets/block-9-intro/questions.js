@@ -8,12 +8,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which postwar movement involved families leaving central cities for nearby residential communities?",
     "choices": [
-      "Suburbanization",
-      "Urban renewal",
+      "Overseas migration",
       "Rural resettlement",
-      "Overseas migration"
+      "Suburbanization",
+      "Urban renewal"
     ],
-    "answer": 0,
+    "answer": 2,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "Suburbanization increased the population living outside central cities.",
@@ -25,12 +25,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What does white flight describe in postwar American communities?",
     "choices": [
-      "Factories returning downtown",
       "White residents leaving cities",
-      "Immigrants moving to cities",
-      "Farmers moving to suburbs"
+      "Farmers moving to suburbs",
+      "Factories returning downtown",
+      "Immigrants moving to cities"
     ],
-    "answer": 1,
+    "answer": 0,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "White flight describes many white residents moving from cities to suburbs.",
@@ -44,10 +44,10 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "Reapportionment",
       "Deregulation",
-      "Redlining",
-      "Gerrymandering"
+      "Gerrymandering",
+      "Redlining"
     ],
-    "answer": 2,
+    "answer": 3,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "Redlining restricted mortgage access based on neighborhood racial makeup.",
@@ -59,12 +59,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What was one effect of discriminatory suburban lending practices?",
     "choices": [
-      "Equal mortgage access for all",
       "An end to housing segregation",
+      "Unequal access to homeownership",
       "More loans in excluded areas",
-      "Unequal access to homeownership"
+      "Equal mortgage access for all"
     ],
-    "answer": 3,
+    "answer": 1,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "Discriminatory lending limited minority families’ opportunities to buy homes.",
@@ -76,12 +76,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Why did movement to suburbs create challenges for some central cities?",
     "choices": [
+      "Their industries all disappeared",
       "Their tax bases became smaller",
       "Their populations doubled rapidly",
-      "Their industries all disappeared",
       "Their boundaries grew nationwide"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "As some residents moved out, cities could lose tax revenue.",
@@ -94,11 +94,11 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Which political difference grew as communities changed after World War II?",
     "choices": [
       "Agreement on every social policy",
-      "Urban and rural voter divisions",
       "An end to local political parties",
-      "Equal voting patterns everywhere"
+      "Equal voting patterns everywhere",
+      "Urban and rural voter divisions"
     ],
-    "answer": 1,
+    "answer": 3,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "Urban and rural communities often developed different political priorities.",
@@ -110,12 +110,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which development reflected racial tensions in many American cities during the 1960s?",
     "choices": [
-      "A nationwide end to protests",
-      "The closing of all suburbs",
       "Urban riots and unrest",
-      "The abolition of city elections"
+      "The closing of all suburbs",
+      "The abolition of city elections",
+      "A nationwide end to protests"
     ],
-    "answer": 2,
+    "answer": 0,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "Urban riots reflected social tensions, discrimination, and frustration.",
@@ -127,12 +127,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which statement best connects suburban growth and racial inequality?",
     "choices": [
-      "Every family received the same loan",
-      "Segregation ended in all suburbs",
       "Cities stopped enforcing housing laws",
-      "Housing access was often unequal"
+      "Segregation ended in all suburbs",
+      "Housing access was often unequal",
+      "Every family received the same loan"
     ],
-    "answer": 3,
+    "answer": 2,
     "source": "https://www.census.gov/topics/housing.html",
     "where": "Housing patterns and suburban change",
     "explanation": "Discrimination affected who could benefit from suburban growth.",
@@ -144,12 +144,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What was the Rust Belt known for before many jobs moved elsewhere?",
     "choices": [
-      "Older industrial manufacturing",
-      "New desert technology centers",
       "Tropical agricultural exports",
-      "Large federal spaceports"
+      "Large federal spaceports",
+      "New desert technology centers",
+      "Older industrial manufacturing"
     ],
-    "answer": 0,
+    "answer": 3,
     "source": "https://www.census.gov/topics/population.html",
     "where": "Population movement, census, and representation",
     "explanation": "The Rust Belt included older manufacturing areas facing industrial change.",
@@ -161,9 +161,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Why did some Rust Belt residents move south and west?",
     "choices": [
-      "They were required to relocate",
-      "They sought new job opportunities",
       "They wanted to avoid all cities",
+      "They sought new job opportunities",
+      "They were required to relocate",
       "They lost the right to vote"
     ],
     "answer": 1,
@@ -178,10 +178,10 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which region gained population as industries expanded in the South and West?",
     "choices": [
-      "Rust Belt",
       "Corn Belt",
+      "Great Lakes",
       "Sun Belt",
-      "Great Lakes"
+      "Rust Belt"
     ],
     "answer": 2,
     "source": "https://www.census.gov/topics/population.html",
@@ -195,12 +195,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What kinds of industries helped attract migrants to the Sun Belt?",
     "choices": [
-      "Textiles and whaling",
-      "Canals and horse transport",
+      "Defense and high technology",
       "Mining and fur trading",
-      "Defense and high technology"
+      "Canals and horse transport",
+      "Textiles and whaling"
     ],
-    "answer": 3,
+    "answer": 0,
     "source": "https://www.census.gov/topics/population.html",
     "where": "Population movement, census, and representation",
     "explanation": "Defense production and high-tech jobs drew workers to the Sun Belt.",
@@ -213,9 +213,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "How could Sun Belt population growth change national politics?",
     "choices": [
       "It could increase House seats",
-      "It could end presidential elections",
+      "It could reduce the voting age",
       "It could eliminate state borders",
-      "It could reduce the voting age"
+      "It could end presidential elections"
     ],
     "answer": 0,
     "source": "https://www.census.gov/topics/population.html",
@@ -229,12 +229,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What is congressional reapportionment?",
     "choices": [
+      "Appointing new federal judges",
       "Redrawing every state boundary",
       "Allocating House seats by population",
-      "Appointing new federal judges",
       "Changing the number of senators"
     ],
-    "answer": 1,
+    "answer": 2,
     "source": "https://www.census.gov/topics/population.html",
     "where": "Population movement, census, and representation",
     "explanation": "Reapportionment reallocates U.S. House seats among states after a census.",
@@ -247,11 +247,11 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Which change would most likely follow sustained population loss in a state?",
     "choices": [
       "More seats in the U.S. Senate",
-      "A new state constitution",
       "Fewer seats in the U.S. House",
-      "Automatic control of Congress"
+      "Automatic control of Congress",
+      "A new state constitution"
     ],
-    "answer": 2,
+    "answer": 1,
     "source": "https://www.census.gov/topics/population.html",
     "where": "Population movement, census, and representation",
     "explanation": "States losing population share can lose House seats through reapportionment.",
@@ -263,8 +263,8 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Why does the census matter to congressional representation?",
     "choices": [
-      "It selects federal court judges",
       "It sets all local tax rates",
+      "It selects federal court judges",
       "It appoints state governors",
       "It counts people for House seats"
     ],
@@ -280,12 +280,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What did the Immigration Act of 1965 change?",
     "choices": [
-      "It widened immigration opportunities",
+      "It banned permanent residence",
       "It ended all legal immigration",
-      "It restricted entry to Europe",
-      "It banned permanent residence"
+      "It widened immigration opportunities",
+      "It restricted entry to Europe"
     ],
-    "answer": 0,
+    "answer": 2,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
     "where": "Immigration and Nationality Act of 1965",
     "explanation": "The 1965 law opened immigration more broadly, including from Asia, Africa, and Latin America.",
@@ -297,12 +297,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which regions supplied more immigrants after the 1965 immigration law?",
     "choices": [
+      "Only the British Isles",
       "Only northern Europe",
-      "Asia, Africa, and Latin America",
       "Only Australia and Canada",
-      "Only the British Isles"
+      "Asia, Africa, and Latin America"
     ],
-    "answer": 1,
+    "answer": 3,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
     "where": "Immigration and Nationality Act of 1965",
     "explanation": "Immigration increased from Asia, Africa, and Latin America.",
@@ -314,12 +314,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "How did post-1965 immigration affect the United States?",
     "choices": [
-      "It ended population growth",
-      "It eliminated language differences",
+      "It reduced all urban populations",
       "It increased cultural diversity",
-      "It reduced all urban populations"
+      "It eliminated language differences",
+      "It ended population growth"
     ],
-    "answer": 2,
+    "answer": 1,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
     "where": "Immigration and Nationality Act of 1965",
     "explanation": "New immigration changed the nation’s demographic and cultural makeup.",
@@ -331,12 +331,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which population was identified as rapidly growing in the CS 29 elaboration?",
     "choices": [
-      "Scandinavian Americans",
-      "Native Alaskans",
+      "Hispanic Americans",
       "Pacific Islanders",
-      "Hispanic Americans"
+      "Native Alaskans",
+      "Scandinavian Americans"
     ],
-    "answer": 3,
+    "answer": 0,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
     "where": "Immigration and Nationality Act of 1965",
     "explanation": "The standard identifies Hispanics as a rapidly growing minority population.",
@@ -348,12 +348,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "What change accompanied growth in Spanish-speaking communities?",
     "choices": [
+      "A ban on foreign-language news",
       "More Spanish-language media",
       "Fewer multilingual broadcasts",
-      "A ban on foreign-language news",
       "The closure of language programs"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
     "where": "Immigration and Nationality Act of 1965",
     "explanation": "Population change increased demand for Spanish-language media.",
@@ -365,12 +365,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Why did some communities expand bilingual education programs?",
     "choices": [
-      "To eliminate public education",
       "To serve changing student populations",
       "To replace all English instruction",
+      "To eliminate public education",
       "To restrict school enrollment"
     ],
-    "answer": 1,
+    "answer": 0,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
     "where": "Immigration and Nationality Act of 1965",
     "explanation": "Changing demographics increased demand for bilingual education support.",
@@ -383,9 +383,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "How can immigration affect elections over time?",
     "choices": [
       "It can cancel congressional terms",
-      "It can remove state governments",
+      "It can prohibit party competition",
       "It can change voter coalitions",
-      "It can prohibit party competition"
+      "It can remove state governments"
     ],
     "answer": 2,
     "source": "https://history.state.gov/milestones/1961-1968/immigration-act",
@@ -399,9 +399,9 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 29",
     "prompt": "Which pair best summarizes the political effects of CS 29 population shifts?",
     "choices": [
-      "New monarchies and royal courts",
       "Military drafts and naval treaties",
       "Judicial appointments and term limits",
+      "New monarchies and royal courts",
       "Reapportionment and voting changes"
     ],
     "answer": 3,
@@ -416,12 +416,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "What central question drove many postwar debates over federal economic policy?",
     "choices": [
-      "How much government should intervene",
-      "Whether states should stop voting",
       "Whether Congress should close courts",
-      "How to eliminate private property"
+      "How to eliminate private property",
+      "Whether states should stop voting",
+      "How much government should intervene"
     ],
-    "answer": 0,
+    "answer": 3,
     "source": "https://www.lbjlibrary.org/learn/educators",
     "where": "Great Society and debates over federal programs",
     "explanation": "Americans disagreed about the appropriate federal role in the economy.",
@@ -433,12 +433,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Which conditions often shaped opinions about federal economic action?",
     "choices": [
+      "School mascots and team records",
       "Ocean tides and moon phases",
       "Poverty and unemployment",
-      "School mascots and team records",
       "Seasonal daylight and rainfall"
     ],
-    "answer": 1,
+    "answer": 2,
     "source": "https://www.lbjlibrary.org/learn/educators",
     "where": "Great Society and debates over federal programs",
     "explanation": "Economic hardship often influenced public support for government programs.",
@@ -450,12 +450,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Which president's Great Society expanded federal anti-poverty programs?",
     "choices": [
-      "Ronald Reagan",
-      "Dwight Eisenhower",
       "Lyndon B. Johnson",
-      "George H. W. Bush"
+      "George H. W. Bush",
+      "Dwight Eisenhower",
+      "Ronald Reagan"
     ],
-    "answer": 2,
+    "answer": 0,
     "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
     "where": "Medicare and Medicaid program overview",
     "explanation": "Johnson's Great Society expanded social welfare and anti-poverty efforts.",
@@ -467,12 +467,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "What was a major purpose of Great Society programs?",
     "choices": [
-      "Remove all federal health programs",
       "End public assistance nationwide",
-      "Replace Congress with agencies",
-      "Reduce poverty and expand services"
+      "Reduce poverty and expand services",
+      "Remove all federal health programs",
+      "Replace Congress with agencies"
     ],
-    "answer": 3,
+    "answer": 1,
     "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
     "where": "Medicare and Medicaid program overview",
     "explanation": "Great Society initiatives sought to reduce poverty and improve access to services.",
@@ -485,9 +485,9 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Which program chiefly provides health coverage for older Americans?",
     "choices": [
       "Medicare",
-      "Medicaid",
       "Social Security",
-      "Head Start"
+      "Head Start",
+      "Medicaid"
     ],
     "answer": 0,
     "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
@@ -502,11 +502,11 @@ window.BLOCK_QUESTIONS=[
     "prompt": "Which program helps eligible people with limited income obtain health coverage?",
     "choices": [
       "Medicare",
-      "Medicaid",
       "Peace Corps",
-      "Job Corps"
+      "Job Corps",
+      "Medicaid"
     ],
-    "answer": 1,
+    "answer": 3,
     "source": "https://www.cms.gov/about-cms/what-we-do/medicare",
     "where": "Medicare and Medicaid program overview",
     "explanation": "Medicaid supports health coverage for eligible low-income individuals and families.",
@@ -518,12 +518,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Which policy is most closely associated with Reaganomics?",
     "choices": [
-      "Expanded federal price controls",
-      "Nationalization of all businesses",
+      "A ban on private investment",
       "Supply-side tax reductions",
-      "A ban on private investment"
+      "Nationalization of all businesses",
+      "Expanded federal price controls"
     ],
-    "answer": 2,
+    "answer": 1,
     "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
     "where": "Economic policy and Reagan administration",
     "explanation": "Reaganomics emphasized tax reductions, deregulation, and supply-side ideas.",
@@ -535,12 +535,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "What does supply-side economics emphasize?",
     "choices": [
-      "Government ownership of all factories",
-      "Limits on every private purchase",
       "Ending trade between all states",
-      "Incentives for production and investment"
+      "Government ownership of all factories",
+      "Incentives for production and investment",
+      "Limits on every private purchase"
     ],
-    "answer": 3,
+    "answer": 2,
     "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
     "where": "Economic policy and Reagan administration",
     "explanation": "Supply-side economics emphasizes incentives intended to expand production and investment.",
@@ -552,12 +552,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "What is deregulation?",
     "choices": [
-      "Reducing government rules on business",
-      "Increasing every federal price control",
       "Creating new licensing for all jobs",
+      "Increasing every federal price control",
+      "Reducing government rules on business",
       "Requiring public ownership of firms"
     ],
-    "answer": 0,
+    "answer": 2,
     "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
     "where": "Economic policy and Reagan administration",
     "explanation": "Deregulation reduces certain government restrictions on business activity.",
@@ -571,8 +571,8 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "Both ended all government assistance",
       "They favored different federal economic roles",
-      "Both required identical tax increases",
-      "Neither addressed economic policy"
+      "Neither addressed economic policy",
+      "Both required identical tax increases"
     ],
     "answer": 1,
     "source": "https://www.reaganlibrary.gov/reagans/reagan-administration",
@@ -586,12 +586,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Which concern helped strengthen environmental activism after World War II?",
     "choices": [
-      "A shortage of political parties",
       "The end of suburban housing",
-      "Pollution and pesticide effects",
-      "The disappearance of industry"
+      "A shortage of political parties",
+      "The disappearance of industry",
+      "Pollution and pesticide effects"
     ],
-    "answer": 2,
+    "answer": 3,
     "source": "https://www.epa.gov/history",
     "where": "EPA origins and environmental concerns",
     "explanation": "Research on pollution, pesticides, and waste increased environmental concerns.",
@@ -603,12 +603,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Why was the Environmental Protection Agency established?",
     "choices": [
-      "To supervise congressional elections",
+      "To address environmental hazards",
       "To manage immigration visas",
       "To administer military drafts",
-      "To address environmental hazards"
+      "To supervise congressional elections"
     ],
-    "answer": 3,
+    "answer": 0,
     "source": "https://www.epa.gov/history",
     "where": "EPA origins and environmental concerns",
     "explanation": "The EPA was created to help enforce environmental protections.",
@@ -620,12 +620,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Which issue belongs in debates over federal environmental regulation?",
     "choices": [
-      "Industrial waste disposal",
-      "The number of House seats",
       "Presidential succession rules",
-      "Eligibility for jury service"
+      "Industrial waste disposal",
+      "Eligibility for jury service",
+      "The number of House seats"
     ],
-    "answer": 0,
+    "answer": 1,
     "source": "https://www.epa.gov/history",
     "where": "EPA origins and environmental concerns",
     "explanation": "Waste disposal was among the environmental concerns prompting debate.",
@@ -637,12 +637,12 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 30",
     "prompt": "Why did environmental protection become politically controversial?",
     "choices": [
-      "Everyone favored identical restrictions",
       "People disagreed over federal regulation",
-      "Pollution had been completely eliminated",
-      "States had no environmental interests"
+      "Everyone favored identical restrictions",
+      "States had no environmental interests",
+      "Pollution had been completely eliminated"
     ],
-    "answer": 1,
+    "answer": 0,
     "source": "https://www.epa.gov/history",
     "where": "EPA origins and environmental concerns",
     "explanation": "Debates weighed environmental safeguards against costs and government authority.",
@@ -656,10 +656,10 @@ window.BLOCK_QUESTIONS=[
     "choices": [
       "Suburban home construction",
       "Passenger airline expansion",
-      "Anti-war demonstrations",
-      "Changes in factory automation"
+      "Changes in factory automation",
+      "Anti-war demonstrations"
     ],
-    "answer": 2,
+    "answer": 3,
     "source": "https://www.archives.gov/research/vietnam-war",
     "where": "Vietnam War protests and national-security debates",
     "explanation": "Anti-war protests raised questions about dissent and government security policy.",
@@ -672,11 +672,11 @@ window.BLOCK_QUESTIONS=[
     "prompt": "What tension lay at the center of national-security debates during this era?",
     "choices": [
       "Farm prices versus school calendars",
-      "House seats versus state nicknames",
       "Highway funding versus airline fares",
-      "Civil liberties versus security measures"
+      "Civil liberties versus security measures",
+      "House seats versus state nicknames"
     ],
-    "answer": 3,
+    "answer": 2,
     "source": "https://www.archives.gov/research/vietnam-war",
     "where": "Vietnam War protests and national-security debates",
     "explanation": "Officials and citizens debated protecting national security while respecting individual rights.",
