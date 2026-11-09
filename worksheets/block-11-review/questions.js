@@ -1,11 +1,685 @@
 (function(){
-const mode=location.pathname.includes("vocabulary")?"vocabulary":location.pathname.includes("review")?"review":"intro";
-const meta={intro:["AS-B11-CS1-3-INTRO-2026","Block 11 Intro — Historical Thinking and Skills","CS 1–3 • Twenty-eight linked foundation questions."],vocabulary:["AS-B11-CS1-3-VOCAB-2026","Block 11 Vocabulary — Historical Thinking and Skills","CS 1–3 • Twenty-eight essential terms and concepts."],review:["AS-B11-CS1-3-REVIEW-2026","Block 11 Comprehensive Review — Historical Thinking and Skills","CS 1–3 • Thirty-two application, comparison, causation, and synthesis questions."]}[mode];
-window.BLOCK_CONFIG={assignmentKey:meta[0],title:meta[1],description:meta[2],practice:"Evaluate source credibility, build evidence-based theses, and analyze chronology, causation, and correlation."};
-const C=[["CS 1","Author perspective","point of view shaped by an author’s position, experiences, and purpose","A factory owner and worker describe the same strike differently"],["CS 1","Credible source","source worthy of trust after careful evaluation","Evidence comes from a qualified author and can be checked against reliable information"],["CS 1","Corroboration","checking a claim against other independent sources","Several records agree on the date and major details of an event"],["CS 1","Qualifications","education, training, or experience relevant to a claim","A specialist writes within an area of demonstrated expertise"],["CS 1","Reputation","record of reliability associated with an author or institution","A publisher consistently corrects errors and documents evidence"],["CS 1","Bias","inclination that can shape selection or interpretation of information","A campaign advertisement emphasizes only facts favorable to its candidate"],["CS 1","Stereotype","oversimplified belief applied to an entire group","A source assumes all members of a population think alike"],["CS 1","Historical context","circumstances of time and place surrounding a source","Wartime censorship helps explain what a newspaper could publish"],["CS 1","Internal consistency","degree to which a source avoids contradicting itself","Dates and claims within a document fit together logically"],["CS 1","Accuracy","degree to which claims match verifiable evidence","Names, dates, and quotations can be confirmed"],["CS 2","Thesis","specific, defensible claim that answers a historical question","An essay argues why multiple causes produced a major change"],["CS 2","Primary source","evidence created during the period being studied","A diary written by a soldier during the war"],["CS 2","Secondary source","later interpretation based on analysis of evidence","A historian’s book evaluates records from an earlier era"],["CS 2","Artifact","physical object used as historical evidence","A campaign button reveals a political message"],["CS 2","Eyewitness account","description by someone who directly observed an event","A participant records what happened at a demonstration"],["CS 2","Historical site","place whose features provide evidence about the past","A preserved battlefield helps researchers study terrain and strategy"],["CS 2","Citation","information identifying where evidence came from","A writer names the document, author, date, and location"],["CS 2","Supporting evidence","relevant information that strengthens a thesis","Statistics and testimony directly back the argument"],["CS 2","Refuting evidence","relevant information showing a claim is weak or false","A record contradicts the proposed explanation"],["CS 2","Source comparison","analysis of agreement and disagreement among accounts","A researcher examines how two witnesses describe the same incident"],["CS 3","Chronology","arrangement of events in time order","A timeline establishes what happened before and after a policy"],["CS 3","Cause","factor that helps produce an event or change","Demand for labor encourages migration"],["CS 3","Effect","result or consequence of an event or decision","Population growth changes northern cities"],["CS 3","Correlation","relationship in which two developments vary together without automatically proving causation","Two trends rise at the same time, but evidence is needed to link them"],["CS 3","Multiple causation","idea that historical outcomes usually have several contributing causes","Economic, political, and social forces combine to produce change"],["CS 3","Short-term cause","factor operating close in time to an event","Immediate wartime labor demand accelerates migration"],["CS 3","Long-term cause","condition developing over an extended period","Decades of Jim Crow oppression encourage migration"],["CS 3","Unintended consequence","result that decision-makers did not plan or expect","A policy produces a new problem while addressing another"]]; const SOURCE="https://www.loc.gov/classroom-materials/";
-function sourceFor(c){const topic=c[1].toLowerCase();if(/primary|secondary|artifact|eyewitness|citation|evidence|source|bias|perspective|corroboration/i.test(topic))return "https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/guides/";return SOURCE;}
-function distract(n){return[1,7,13].map(k=>C[(n+k)%C.length][1])}
-function make(kind){return C.map((c,n)=>{const answer=n%4,choices=distract(n);choices.splice(answer,0,c[1]);return{id:kind[0]+String(n+1).padStart(2,"0"),cs:c[0],topic:c[1],prompt:kind==="vocabulary"?"Which term matches this definition: "+c[2]+"?":kind==="intro"?"Use the linked source and identify the concept: "+c[2]+".":c[3]+". Which concept best applies?",choices,answer,source:kind==="review"?"":sourceFor(c),where:kind==="review"?"":"Look for the historical context of this topic. The definition in the question gives a starting clue.",explanation:"This is "+c[1]+": "+c[2]+".",hint:"Focus on the defining clue and its historical role."}})}
-const E=[["CS 1","Credibility","Which evaluation is strongest?","Check author expertise, purpose, context, internal accuracy, and agreement with independent credible sources"],["CS 2","Argumentation","Which method produces the strongest historical argument?","State a defensible thesis, compare varied evidence, cite sources, and address contradictory evidence"],["CS 3","Causation","Why does correlation alone not prove cause?","Events can occur together because of coincidence, a shared cause, or a more complex relationship"],["CS 1–3","Synthesis","Which workflow best represents historical thinking?","Evaluate sources → organize and compare evidence → identify chronology and causes → defend a cited thesis"]];function extras(){return E.map((e,j)=>{const n=28+j,a=n%4,ch=["It had no meaningful historical effect","It proves one cause always explains every event","It ended political disagreement permanently"];ch.splice(a,0,e[3]);return{id:"r"+(n+1),cs:e[0],topic:e[1],prompt:e[2],choices:ch,answer:a,source:"",where:"",explanation:e[3]+".",hint:"Choose the answer that makes an accurate, supportable historical connection."}})}
-window.BLOCK_QUESTIONS=mode==="intro"?make("intro"):mode==="vocabulary"?make("vocabulary"):[...make("review"),...extras()];
+window.BLOCK_CONFIG={"assignmentKey": "AS-B11-CS1-3-REVIEW-2026", "title": "Block 11 Review \u2014 Historical Thinking and Skills", "description": "CS 1\u20133 \u2022 40 rigorous source-analysis, evidence, causation, and synthesis questions.", "practice": "Evaluate source reliability, test competing historical claims, and reason carefully about continuity, change, and causation."};
+window.BLOCK_QUESTIONS=[
+  {
+    "id": "r01",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "Two newspapers disagree about why workers struck in 1919. Which research step best tests their competing accounts?",
+    "choices": [
+      "Choose the paper with the larger circulation",
+      "Compare each account with union records, employer correspondence, and dated reports",
+      "Average their conclusions",
+      "Use whichever account was published first"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Corroborating independent records helps test both accounts.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r02",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A 1963 civil rights organizer's diary describes a march as peaceful. What is the strongest limitation of using it alone?",
+    "choices": [
+      "Diaries are never primary sources",
+      "It proves every participant behaved identically",
+      "Its firsthand perspective may not represent all participants or observers",
+      "It cannot reveal the organizer's motives"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "A firsthand account is valuable but partial.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r03",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A 1930 factory advertisement claims wages are excellent. Which evidence most directly evaluates the claim?",
+    "choices": [
+      "A factory payroll ledger compared with local living costs",
+      "A later biography of the owner",
+      "The advertisement's color scheme",
+      "The number of products pictured"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Payroll and cost-of-living data directly test wage claims.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r04",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A historian finds a photograph of a crowded Depression-era breadline. Which inference is most defensible?",
+    "choices": [
+      "Every American was unemployed",
+      "The photograph proves one policy caused poverty",
+      "Breadlines were equally common in every city",
+      "At least some people faced severe material hardship at that place and time"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "A photo documents a particular scene, not nationwide prevalence or causes.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r05",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "Two oral histories recall the same school desegregation event differently decades later. Which conclusion follows?",
+    "choices": [
+      "Both accounts must be false",
+      "Memory and vantage point can affect recollection; check contemporaneous records",
+      "The longer interview is more reliable",
+      "Only the older speaker is credible"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Memory can be informative but should be cross-checked.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r06",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A wartime government poster urges citizens to buy bonds. Which question best identifies its purpose?",
+    "choices": [
+      "What audience and action did the government seek to influence?",
+      "How many colors were printed?",
+      "Was its paper expensive?",
+      "Did every citizen obey it?"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Audience and intended action explain persuasive purpose.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r07",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A researcher uses a 2020 textbook to describe a 1920 election. How should the textbook be classified for that event?",
+    "choices": [
+      "An eyewitness account",
+      "A contemporary campaign artifact",
+      "A primary source because it has dates",
+      "A secondary interpretation based on earlier evidence"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "A later synthesis is secondary to the election.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r08",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A politician's speech says a law ended discrimination. Which evidence best tests that broad assertion?",
+    "choices": [
+      "The speech's applause",
+      "A second speech by the same politician",
+      "Enforcement records and lived-experience evidence after passage",
+      "The bill's page count"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Implementation and outcomes must be checked beyond claims.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r09",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A museum label says an image was taken in 1942, but its archive record dates it to 1952. What should a historian do?",
+    "choices": [
+      "Ignore the discrepancy",
+      "Verify provenance and date before using the image as evidence",
+      "Assume the museum label is always right",
+      "Delete both records"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Provenance determines whether evidence fits a claim.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r10",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A 1917 letter from a soldier was censored before mailing. What is the best interpretation?",
+    "choices": [
+      "It may reveal experience but censorship could shape what was written",
+      "It is useless as historical evidence",
+      "It objectively represents all soldiers",
+      "It proves the war was popular"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Context affects what a source can reveal.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r11",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A chart shows rising automobile ownership in the 1920s. Which additional source best helps explain the trend?",
+    "choices": [
+      "A modern car commercial",
+      "A map of 1800 railroads",
+      "An unrelated census of 1950",
+      "Period data on prices, installment credit, and household income"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Contemporaneous economic evidence helps explain growth.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r12",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "Two independent archives contain identical versions of a policy memo. What is most reasonable?",
+    "choices": [
+      "The policy definitely succeeded",
+      "Every other source is wrong",
+      "The memo's wording is corroborated, but its claims still need testing",
+      "The memo is a secondary source"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Authenticity and truth of claims are different questions.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r13",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A newspaper editorial praises a New Deal program while its news report describes mixed results. What should students recognize?",
+    "choices": [
+      "Only editorials can contain evidence",
+      "Genre and purpose affect how information is presented",
+      "News reports never have perspective",
+      "The accounts cancel each other out"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Opinion and reporting have different purposes.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r14",
+    "cs": "CS 1",
+    "topic": "CS 1",
+    "prompt": "A researcher argues that one photograph proves all Americans supported a 1960s protest. What is the flaw?",
+    "choices": [
+      "The conclusion generalizes beyond what one image can establish",
+      "Photographs cannot be primary sources",
+      "Protests cannot be photographed",
+      "A photograph always has a neutral perspective"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "One image cannot establish national opinion.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r15",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "Claim: 'The GI Bill expanded opportunity equally for all veterans.' Which evidence most directly challenges it?",
+    "choices": [
+      "The law's signing date",
+      "A list of military branches",
+      "Unequal access to housing loans and colleges by race",
+      "A photograph of a graduation ceremony"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Disparities in access challenge the word equally.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r16",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "A student claims television helped shape public views of Vietnam. Which evidence best supports the mechanism?",
+    "choices": [
+      "The number of radios sold in 1920",
+      "A biography of an early film actor",
+      "The price of paper in 1975",
+      "Contemporary broadcast coverage and polling about public perceptions"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Broadcast content and contemporaneous opinion evidence address influence.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r17",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "Which thesis is most defensible for a study of the Great Migration?",
+    "choices": [
+      "Migration happened for many reasons",
+      "Industrial jobs and racial violence together encouraged many Black southerners to move north",
+      "Everyone moved for exactly the same reason",
+      "Migration was important"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "A specific, qualified causal claim can be tested with evidence.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r18",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "An essay cites only sources that favor its claim about the Cold War. What would most improve the argument?",
+    "choices": [
+      "Address credible counterevidence and explain its significance",
+      "Remove all dates",
+      "Replace sources with personal opinions",
+      "Repeat the thesis more often"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Strong arguments account for contrary evidence.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r19",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "A student says the 19th Amendment immediately ended all barriers to women's voting. Which counterevidence is most relevant?",
+    "choices": [
+      "The amendment's number",
+      "Women's clothing styles",
+      "The size of Congress",
+      "Discriminatory practices that still restricted some women voters"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Legal change did not erase every voting barrier.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r20",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "An argument states that suburban growth was caused only by highways. What is the best revision?",
+    "choices": [
+      "Highways had no role",
+      "All families moved to suburbs",
+      "Highways interacted with housing policy, financing, and postwar demand",
+      "Suburbs appeared overnight"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Multicausal explanations better fit complex change.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r21",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "A student uses a single personal anecdote to prove a nationwide trend. What evidence is most needed?",
+    "choices": [
+      "Another anecdote from the same person",
+      "Representative data across regions and time",
+      "A stronger adjective",
+      "An unrelated political cartoon"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Representative evidence supports claims about broad trends.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r22",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "A claim states 'New Deal programs eliminated unemployment by 1935.' Which source most directly tests it?",
+    "choices": [
+      "Unemployment statistics from 1933\u20131935",
+      "A poster promoting conservation",
+      "A presidential portrait",
+      "A map of western expansion"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Quantitative trends directly test an unemployment claim.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r23",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "An author quotes a senator opposing the Civil Rights Act but omits other senators' reasons for supporting it. What is the concern?",
+    "choices": [
+      "Quotations cannot be evidence",
+      "Senators are always biased",
+      "Only historians may interpret debates",
+      "Selective evidence may distort the legislative debate"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Selection can skew the historical picture.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r24",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "Two explanations for U.S. entry into World War I emphasize unrestricted submarine warfare and the Zimmermann Telegram. What is the strongest synthesis?",
+    "choices": [
+      "Neither factor mattered",
+      "Only one factor can ever explain a decision",
+      "Both contributed, with their relative influence evaluated through contemporary evidence",
+      "The later factor automatically caused entry"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Historical explanations can weigh multiple contributing causes.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r25",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "Which evidence would most weaken the thesis that the Marshall Plan had no economic effects?",
+    "choices": [
+      "A speech announcing the plan",
+      "Economic recovery data linked with aid flows and comparative cases",
+      "A map showing Europe's borders",
+      "A photograph of a diplomat"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Outcome evidence can directly challenge a claim of no effect.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r26",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "A student writes 'The civil rights movement changed America.' What is the most useful improvement?",
+    "choices": [
+      "Specify which changes, when, and through what actions",
+      "Add more exclamation points",
+      "Replace evidence with a quotation",
+      "Remove the historical period"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Specific, arguable theses guide evidence selection.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r27",
+    "cs": "CS 2",
+    "topic": "CS 2",
+    "prompt": "A researcher finds evidence both for and against a claim that automation always reduces jobs. What should the final argument do?",
+    "choices": [
+      "Ignore conflicting industries",
+      "Conclude that data cannot matter",
+      "Say all jobs are identical",
+      "Qualify the claim by industry, time period, and job type"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Qualification reflects mixed evidence rather than absolute claims.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r28",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A graph shows rising factory output and falling factory employment. Which conclusion is best supported?",
+    "choices": [
+      "Output must have fallen",
+      "All lost jobs moved overseas",
+      "Productivity may have increased; the graph alone does not establish why employment fell",
+      "Workers were necessarily paid more"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "The trend is consistent with productivity change but does not prove its cause.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r29",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A city installs streetlights, then crime falls. Why is causation not yet established?",
+    "choices": [
+      "Crime rates cannot be measured",
+      "Other changes might explain the decline; comparison evidence is needed",
+      "Streetlights cannot be studied",
+      "Events occurring in order always prove causation"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Temporal sequence alone is insufficient for causal inference.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r30",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "Which sequence correctly places these developments in chronological order?",
+    "choices": [
+      "New Deal \u2192 World War II \u2192 Civil Rights Act of 1964 \u2192 end of Cold War",
+      "World War II \u2192 New Deal \u2192 end of Cold War \u2192 Civil Rights Act",
+      "Civil Rights Act \u2192 New Deal \u2192 World War II \u2192 end of Cold War",
+      "End of Cold War \u2192 Civil Rights Act \u2192 World War II \u2192 New Deal"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "The New Deal began in the 1930s, World War II followed, the 1964 law came later, and the Cold War ended around 1991.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r31",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A student calls the 1964 Civil Rights Act a turning point. What evidence would best support the claim?",
+    "choices": [
+      "The law's page count",
+      "A portrait of its sponsors",
+      "An unrelated election poster",
+      "Changes in legal protections and enforcement before and after passage"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Turning points are supported by demonstrable change over time.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r32",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "The 1929 crash preceded the Great Depression. Which explanation is most accurate?",
+    "choices": [
+      "The crash alone explains every cause",
+      "The Depression started and ended in 1929",
+      "The crash was a major event amid banking weaknesses, debt, and economic contraction",
+      "The crash had no connection to economic conditions"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Complex historical events involve interacting causes.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r33",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "After World War II, women continued working despite pressure to return to domestic roles. What does this illustrate?",
+    "choices": [
+      "Complete social continuity",
+      "Continuity and change occurring together",
+      "An immediate end to gender expectations",
+      "The absence of economic change"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Patterns can persist while other conditions change.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r34",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A historian compares 1950 and 2000 census data showing more Americans living in suburbs. Which claim is supported?",
+    "choices": [
+      "Suburban population share increased over that period",
+      "Every family moved for identical reasons",
+      "Cities disappeared entirely",
+      "No one lived in suburbs before 1950"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "The data establish a change in share, not individual motivations.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r35",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "An economic downturn occurs after a tax increase. Which evidence best helps test a causal relationship?",
+    "choices": [
+      "A speech blaming taxes",
+      "A single newspaper headline",
+      "The tax bill's length",
+      "Comparative economic indicators and other simultaneous policy changes"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Causal testing requires alternative explanations and comparison.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r36",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A historian labels the end of the Cold War both a change and a continuity. Which pairing is defensible?",
+    "choices": [
+      "Change: global rivalry ended forever; continuity: all borders remained unchanged",
+      "Change: nuclear weapons vanished; continuity: NATO disappeared",
+      "Change: Soviet\u2013U.S. bipolar rivalry ended; continuity: international security tensions persisted",
+      "Change: democracy ended; continuity: the USSR remained intact"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Major geopolitical shifts did not end all international conflict.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r37",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A chart shows voting participation rising after an election law. Which statement is best justified?",
+    "choices": [
+      "The law alone caused every new vote",
+      "Participation increased afterward; further evidence is needed to isolate the law's effect",
+      "Every eligible person voted",
+      "The chart proves voters agreed on policy"
+    ],
+    "answer": 1,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Observed trends alone do not isolate causes.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r38",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "Which is the clearest example of a long-term cause rather than an immediate trigger?",
+    "choices": [
+      "Decades of industrial and urban growth reshaping labor conditions",
+      "A single protest scheduled for one afternoon",
+      "A governor's speech on one day",
+      "The signing ceremony of one law"
+    ],
+    "answer": 0,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Long-term structural developments operate over extended periods.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r39",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A researcher compares the impact of World War I on U.S. government powers and civil liberties. Which analytical approach is strongest?",
+    "choices": [
+      "Describe only one speech",
+      "Ignore changes after the war",
+      "Assume wartime restrictions remained permanent",
+      "Trace expansions, limits, and reversals across multiple periods"
+    ],
+    "answer": 3,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Continuity and change require evidence across time.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  },
+  {
+    "id": "r40",
+    "cs": "CS 3",
+    "topic": "CS 3",
+    "prompt": "A graph shows internet access rose while newspaper circulation fell. Which interpretation avoids a correlation error?",
+    "choices": [
+      "Internet access alone caused every decline",
+      "Newspapers stopped publishing everywhere",
+      "The trends coincide, but other factors and evidence are needed to establish causes",
+      "The two trends are unrelated by definition"
+    ],
+    "answer": 2,
+    "source": "https://www.loc.gov/classroom-materials/primary-source-analysis-tool/",
+    "where": "Use the Library of Congress primary-source analysis framework: observe, reflect, and question; compare evidence and context.",
+    "explanation": "Coinciding trends cannot alone prove a causal relationship.",
+    "hint": "Identify what the evidence actually supports. Watch for absolute claims, unsupported causes, and missing context."
+  }
+];
 })();
