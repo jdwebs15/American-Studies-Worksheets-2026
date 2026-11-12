@@ -7,16 +7,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "A factory uses robots to increase output while employing fewer assembly workers. Which consequence is most likely?",
     "choices": [
-      "An immediate end to international trade",
-      "The disappearance of all service jobs",
-      "Higher productivity alongside fewer routine factory jobs",
-      "A ban on automated manufacturing"
+      "Higher wages alongside more manual assembly jobs",
+      "Lower productivity alongside greater demand for labor",
+      "Higher output alongside fewer routine assembly jobs",
+      "Higher import costs alongside reduced use of machines"
     ],
     "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.census.gov/library/working-papers/2018/adrm/ces-wp-18-39.html",
+    "where": "Read the Abstract; find “production labor share” and compare it with productivity.",
     "explanation": "Automation can increase productivity without preserving every existing job.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Consider the difference between output and the number of routine jobs.",
+    "sourceTitle": "Census Bureau — Automation, Labor Share, and Productivity"
   },
   {
     "id": "i02",
@@ -25,15 +26,16 @@ window.BLOCK_QUESTIONS=[
     "prompt": "A US company designs products domestically, assembles them overseas, and sells them worldwide. This best illustrates",
     "choices": [
       "Globalized production networks",
-      "Economic isolation",
-      "A return to subsistence farming",
-      "The end of foreign investment"
+      "Domestic vertical integration",
+      "Regional economic self-sufficiency",
+      "Local production for local markets"
     ],
     "answer": 0,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Read the opening explanation and find “production”; track how production stages cross borders.",
     "explanation": "Global production links workers and markets across borders.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Follow the product through more than one country.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i03",
@@ -41,16 +43,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "What development most directly enabled information to move around the world nearly instantly?",
     "choices": [
-      "The interstate highway system",
-      "The cotton gin",
-      "The steam locomotive",
-      "Widespread internet access"
+      "Expansion of interstate highways",
+      "Growth of container shipping",
+      "Expansion of passenger air travel",
+      "Widespread access to the Internet"
     ],
     "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://openstax.org/books/us-history/pages/31-4-bill-clinton-and-the-new-economy",
+    "where": "Find “Hope and Anxiety in the Information Age”; read about the Internet and networks.",
     "explanation": "Digital networks dramatically accelerated worldwide communication.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Compare the speed of digital communication with transportation.",
+    "sourceTitle": "OpenStax — Bill Clinton and the New Economy"
   },
   {
     "id": "i04",
@@ -58,16 +61,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "Why did personal computers change the American workplace?",
     "choices": [
-      "They eliminated the need for all employees",
+      "They shifted most office work to assembly lines",
       "They made digital data processing common in offices",
-      "They prevented businesses from communicating abroad",
-      "They replaced all industrial machinery"
+      "They replaced office communication with postal services",
+      "They reduced the importance of information in businesses"
     ],
     "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.bls.gov/emp/skills/computers-and-information-technology.htm",
+    "where": "Read the definition above the occupation table; identify tasks done with computers.",
     "explanation": "Computers changed how workers manage information and perform tasks.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Think about storing, processing, and sharing office information.",
+    "sourceTitle": "BLS — Computers and information technology"
   },
   {
     "id": "i05",
@@ -75,16 +79,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "Which situation best demonstrates outsourcing?",
     "choices": [
-      "A city opens a public library",
+      "A company trains employees for new internal roles",
       "A company contracts customer support to a firm abroad",
-      "A worker receives a promotion",
-      "A store sells only locally produced goods"
+      "A company opens a branch staffed by its own employees",
+      "A company buys equipment for its existing local workers"
     ],
     "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “production”; consider how businesses divide tasks among locations and outside suppliers.",
     "explanation": "Outsourcing assigns work to an outside provider, sometimes overseas.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "An outside contractor is different from the company’s own employees.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i06",
@@ -92,16 +97,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "A community loses factory jobs but gains positions in hospitals and finance. This shows a shift toward",
     "choices": [
-      "An agricultural economy",
-      "A barter economy",
-      "A command economy",
-      "A service-based economy"
+      "A resource-extraction economy",
+      "A manufacturing-centered economy",
+      "An agricultural-export economy",
+      "A service-centered economy"
     ],
     "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.bls.gov/opub/btn/volume-9/forty-years-of-falling-manufacturing-employment.htm",
+    "where": "Find “service-providing industries”; read the comparison with manufacturing employment.",
     "explanation": "Service industries became a larger share of American employment.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Hospitals and finance provide services rather than manufacture goods.",
+    "sourceTitle": "BLS — Forty years of falling manufacturing employment"
   },
   {
     "id": "i07",
@@ -109,16 +115,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "How can global competition affect US manufacturing workers?",
     "choices": [
-      "It can put pressure on wages and employment in competing industries",
-      "It guarantees higher pay for every worker",
-      "It prevents companies from importing goods",
-      "It eliminates the need for job training"
+      "It can pressure wages and jobs in competing industries",
+      "It mainly increases demand for domestic assembly labor",
+      "It primarily reduces incentives to improve productivity",
+      "It tends to shield local firms from changes in prices"
     ],
     "answer": 0,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “wages” or “workers”; read about the uneven effects of competition.",
     "explanation": "Competition can create lower prices but also disrupt specific jobs.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Consumer benefits and worker outcomes can differ.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i08",
@@ -126,16 +133,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "Which is a likely consumer benefit of expanded international trade?",
     "choices": [
-      "An end to product choices",
-      "A guarantee of equal wages worldwide",
-      "Greater variety of goods and competitive prices",
-      "The disappearance of imported products"
+      "Greater protection for firms facing foreign competition",
+      "More uniform wages among workers in different nations",
+      "Greater product variety and more competitive prices",
+      "More local control over goods made in other countries"
     ],
     "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “prices” and “varieties”; read the discussion of consumer benefits.",
     "explanation": "Trade can expand product selection and competition.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Consider what shoppers gain from competing suppliers.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i09",
@@ -143,16 +151,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "If a nation imports more goods than it exports, it has",
     "choices": [
-      "A balanced trade account",
-      "A trade surplus",
-      "A trade deficit",
-      "No international commerce"
+      "A balanced merchandise trade account",
+      "A merchandise trade surplus",
+      "A merchandise trade deficit",
+      "A balanced federal budget account"
     ],
     "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-08.pdf",
+    "where": "PDF page 1, final paragraph: compare the definitions of trade deficit and trade surplus.",
     "explanation": "A merchandise trade deficit occurs when imports exceed exports.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Compare the value purchased abroad with the value sold abroad.",
+    "sourceTitle": "BEA — Net Exports of Goods and Services"
   },
   {
     "id": "i10",
@@ -160,16 +169,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "Why did digital technologies help create new careers?",
     "choices": [
-      "Businesses needed software, cybersecurity, and network specialists",
-      "Every business stopped using computers",
-      "International communication became illegal",
-      "Factories no longer needed technical skills"
+      "Businesses needed workers to build and maintain digital systems",
+      "Businesses concentrated hiring on manual recordkeeping staff",
+      "Businesses moved information management away from networks",
+      "Businesses replaced technical training with routine clerical work"
     ],
     "answer": 0,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.bls.gov/emp/skills/computers-and-information-technology.htm",
+    "where": "Read the definition and the rows for software developers and network architects.",
     "explanation": "Digital expansion created demand for new technical expertise.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "New tools create demand for workers who build and maintain them.",
+    "sourceTitle": "BLS — Computers and information technology"
   },
   {
     "id": "i11",
@@ -177,50 +187,53 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "How did smartphones accelerate globalization?",
     "choices": [
-      "They prevented international business contacts",
-      "They eliminated all communication costs",
-      "They replaced international shipping",
-      "They enabled portable communication and access to global information"
+      "They expanded domestic shipping capacity for manufactured goods",
+      "They shifted business records from networks to paper files",
+      "They reduced dependence on communication across time zones",
+      "They provided portable access to global business information"
     ],
     "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “mobile” and “internet”; read how communication technology lowers cross-border business costs.",
     "explanation": "Mobile devices expanded constant access to digital networks.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Consider what a portable connection lets a business do.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i12",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A political message spreads quickly across national borders through social media. What does this demonstrate?",
+    "prompt": "An American small business uses online messages to coordinate sales with customers overseas. What economic change does this illustrate?",
     "choices": [
-      "Information remains confined within one country",
-      "Digital networks accelerate the spread of ideas",
-      "Social media prevents public discussion",
-      "Only governments can distribute political information"
+      "Online networks primarily increase domestic freight capacity",
+      "Online networks speed cross-border business contacts",
+      "Online networks require companies to own factories abroad",
+      "Online networks shift firms toward selling only local goods"
     ],
     "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
-    "explanation": "Online platforms rapidly circulate ideas across borders.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Read the opening definition, including flows of data and ideas across borders.",
+    "explanation": "Digital communication makes it easier to reach customers and coordinate business across borders.",
+    "hint": "The customers and the seller can be in different countries.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i13",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "Which challenge may accompany the growth of online communication?",
+    "prompt": "Why can global economic growth occur while some American workers face lower wages?",
     "choices": [
-      "All users receive perfectly verified information",
-      "False information can spread quickly",
-      "Privacy concerns disappear",
-      "Digital access becomes identical for everyone"
+      "New technology raises every worker’s bargaining power",
+      "Gains from trade and competition are distributed unevenly",
+      "Consumer savings are paid directly into workers’ wages",
+      "Foreign competition mainly affects government employment"
     ],
     "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
-    "explanation": "Speed and reach can magnify misinformation and privacy risks.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “wages” and “workers”; read about losses concentrated in certain industries.",
+    "explanation": "Trade can benefit consumers and some businesses while workers in exposed industries face wage pressure.",
+    "hint": "A growing economy does not guarantee equal gains for every worker.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "i14",
@@ -228,16 +241,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 31",
     "prompt": "Why might an American worker seek retraining after a plant closes?",
     "choices": [
-      "Retraining guarantees the factory will reopen",
-      "Trade rules forbid changing occupations",
-      "Service jobs require no skills",
-      "New sectors may require different skills"
+      "Retraining restores demand for the closed plant’s products",
+      "Trade agreements require displaced workers to remain nearby",
+      "A shift toward services reduces the need for education",
+      "Growing industries may require a different set of job skills"
     ],
     "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Research technology, globalization, and changes in American employment",
+    "source": "https://www.bls.gov/opub/btn/volume-9/forty-years-of-falling-manufacturing-employment.htm",
+    "where": "Find “service-providing”; compare the industries gaining jobs with those losing them.",
     "explanation": "Economic restructuring often changes the skills employers seek.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "A worker may need skills suited to a different industry.",
+    "sourceTitle": "BLS — Forty years of falling manufacturing employment"
   },
   {
     "id": "i15",
@@ -246,15 +260,16 @@ window.BLOCK_QUESTIONS=[
     "prompt": "What event prompted major changes in US airport security in 2001?",
     "choices": [
       "The September 11 terrorist attacks",
-      "The fall of the Berlin Wall",
-      "The Cuban Missile Crisis",
-      "The signing of NAFTA"
+      "The 2008 mortgage and banking crisis",
+      "The breakup of the Soviet Union",
+      "The negotiation of the NAFTA agreement"
     ],
     "answer": 0,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://www.gao.gov/assets/a109807.html",
+    "where": "Find “September 11” near the Highlights, then read the discussion of new transportation-security responsibilities.",
     "explanation": "September 11 led to extensive changes in transportation security.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Identify the event immediately before the security changes.",
+    "sourceTitle": "GAO — Transportation Security: Post-September 11th Initiatives"
   },
   {
     "id": "i16",
@@ -262,16 +277,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Which agency became responsible for federal passenger screening at airports after 9/11?",
     "choices": [
-      "Environmental Protection Agency",
-      "Federal Reserve",
+      "Federal Bureau of Investigation",
+      "Central Intelligence Agency",
       "Transportation Security Administration",
-      "National Park Service"
+      "Federal Emergency Management Agency"
     ],
     "answer": 2,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://www.gao.gov/assets/a109807.html",
+    "where": "Find “TSA was created”; read the following discussion of passenger screening.",
     "explanation": "The TSA was established to strengthen transportation security.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Separate transportation screening from intelligence and criminal investigation.",
+    "sourceTitle": "GAO — Transportation Security: Post-September 11th Initiatives"
   },
   {
     "id": "i17",
@@ -279,16 +295,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "What was a central purpose of the USA PATRIOT Act?",
     "choices": [
-      "Abolish all federal courts",
-      "Create the Social Security system",
+      "Transfer criminal investigations to state governments",
+      "Replace intelligence agencies with military tribunals",
       "Expand investigative tools intended to prevent terrorism",
-      "End federal intelligence gathering"
+      "Concentrate border enforcement in local police departments"
     ],
     "answer": 2,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Find “DOMESTIC SECURITY”, then the paragraph naming the USA Patriot Act.",
     "explanation": "The law expanded certain federal investigative authorities.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Focus on the law’s investigative purpose, not an unlimited power.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "i18",
@@ -296,16 +313,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Why did expanded government surveillance after 9/11 provoke debate?",
     "choices": [
-      "It raised questions about privacy and civil liberties",
-      "It abolished the Bill of Rights",
-      "It prohibited every criminal investigation",
-      "It transferred all national defense to states"
+      "It raised concerns about privacy and civil liberties",
+      "It transferred airport screening to state governments",
+      "It replaced federal intelligence gathering with local policing",
+      "It ended disputes over the treatment of detained suspects"
     ],
     "answer": 0,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Under “DOMESTIC SECURITY”, find “Fourth Amendment” and the discussion of surveillance.",
     "explanation": "Security policies can create tensions with constitutional protections.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Security and privacy are competing concerns in this debate.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "i19",
@@ -313,16 +331,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Which response best protects both security and constitutional government?",
     "choices": [
-      "Permit unlimited searches without any review",
-      "End all efforts to prevent terrorism",
-      "Treat every religious group as a security threat",
-      "Review investigative powers with legal oversight"
+      "Allow agencies to set search rules without outside review",
+      "Rely on state police instead of federal terrorism investigations",
+      "Base investigations mainly on membership in religious groups",
+      "Subject investigative powers to legal oversight and review"
     ],
     "answer": 3,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Find “Fourth Amendment” and “federal judge”; consider the role of legal review.",
     "explanation": "Oversight helps balance effective security and individual rights.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Ask how investigative power can remain subject to constitutional limits.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "i20",
@@ -330,16 +349,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "After 9/11, discrimination against Muslim Americans increased. Which principle was threatened?",
     "choices": [
-      "The requirement to serve on juries",
-      "Equal treatment regardless of religion",
-      "The federal power to coin money",
-      "The presidential veto"
+      "The authority to regulate interstate commerce",
+      "Equal treatment and religious freedom",
+      "The division of power between federal branches",
+      "The right of states to manage election procedures"
     ],
     "answer": 1,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Read the first paragraph under “DOMESTIC SECURITY” about hate crimes after the attacks.",
     "explanation": "Religious prejudice conflicts with equal protection and religious liberty.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Distinguish a person’s religion from evidence of individual wrongdoing.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "i21",
@@ -347,16 +367,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Which example illustrates a federalism dispute?",
     "choices": [
-      "A mayor schedules a parade",
+      "A mayor and city council disagree over parade permits",
       "State and federal officials disagree over marijuana regulation",
-      "A business opens a second store",
-      "A family moves to another county"
+      "A president and Congress disagree over a military budget",
+      "Two federal agencies disagree over screening procedures"
     ],
     "answer": 1,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 119 (printed page 119), CS 32: read the paragraph beginning “The continuing debate” and its examples.",
     "explanation": "Federalism disputes concern the division of authority between levels of government.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Federalism concerns how state and federal authority are divided.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i22",
@@ -364,16 +385,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "What helped trigger the 2008 financial crisis?",
     "choices": [
-      "A nationwide shortage of personal computers",
-      "The end of all international banking",
-      "The abolition of home ownership",
-      "Risky mortgage lending and failures in financial markets"
+      "A sharp decline in the use of workplace computers",
+      "A sudden collapse of U.S. service-sector employment",
+      "A rapid end to American borrowing for home purchases",
+      "Risky mortgage lending and instability in financial markets"
     ],
     "answer": 3,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+    "where": "Read “Rise and Fall of the Housing Market”, especially the paragraph about subprime mortgages.",
     "explanation": "Mortgage defaults and financial instability helped drive the crisis.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Follow the connection from risky loans to losses in financial markets.",
+    "sourceTitle": "Federal Reserve History — The Great Recession and Its Aftermath"
   },
   {
     "id": "i23",
@@ -381,16 +403,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Why did the federal government support major financial institutions during the 2008 crisis?",
     "choices": [
-      "To prevent a wider economic collapse",
-      "To end all private banking permanently",
-      "To guarantee no future recessions",
-      "To prohibit every mortgage"
+      "To prevent failures from spreading through the economy",
+      "To transfer long-term control of lending to state agencies",
+      "To replace housing loans with higher consumer tariffs",
+      "To finance an expansion of overseas military operations"
     ],
     "answer": 0,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+    "where": "Read the opening paragraphs and “Effects on the Financial Sector”; identify why officials supplied support.",
     "explanation": "Officials argued stabilization would limit broader economic damage.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Consider how one institution’s failure can affect the wider economy.",
+    "sourceTitle": "Federal Reserve History — The Great Recession and Its Aftermath"
   },
   {
     "id": "i24",
@@ -398,16 +421,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Which result of the Great Recession most directly affected households?",
     "choices": [
-      "The disappearance of unemployment",
-      "A nationwide ban on renting homes",
-      "Job losses and home foreclosures",
-      "An immediate rise in every household's income"
+      "Greater job security and easier repayment of mortgages",
+      "Lower housing costs accompanied by rising employment",
+      "Widespread job losses and increased home foreclosures",
+      "Higher household savings and reduced reliance on credit"
     ],
     "answer": 2,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+    "where": "Read “Effects on the Broader Economy”; find the discussion of unemployment and housing.",
     "explanation": "The recession caused widespread unemployment and housing hardship.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Connect the financial crisis to household jobs and homes.",
+    "sourceTitle": "Federal Reserve History — The Great Recession and Its Aftermath"
   },
   {
     "id": "i25",
@@ -415,50 +439,53 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 32",
     "prompt": "Which example best shows a domestic-policy debate in the 21st century?",
     "choices": [
-      "Negotiating an alliance with another country",
-      "Deploying troops overseas",
-      "Disagreement over the federal government's role in health care",
-      "Signing an international ceasefire"
+      "Debating the terms of an alliance with another country",
+      "Disagreeing over deployment of troops to a foreign conflict",
+      "Disagreeing over the federal government’s healthcare role",
+      "Negotiating the inspection of another country’s weapons"
     ],
     "answer": 2,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
+    "source": "https://openstax.org/books/us-history/pages/32-4-hope-and-change",
+    "where": "Find “Affordable Care Act”; read about the reform and opposition to it.",
     "explanation": "Health care policy concerns decisions made within the United States.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Domestic policy addresses issues within the country.",
+    "sourceTitle": "OpenStax — Hope and Change"
   },
   {
     "id": "i26",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "How did post-9/11 national priorities affect federal spending?",
+    "prompt": "How did the end of the Cold War initially affect U.S. defense priorities?",
     "choices": [
-      "Security and military demands became more prominent",
-      "All defense spending ended",
-      "Airport security was eliminated",
-      "The federal budget became unnecessary"
+      "Reduced Soviet threats encouraged a decrease in defense spending",
+      "New Soviet threats encouraged a buildup of containment forces",
+      "The Gulf War shifted defense budgets entirely to domestic police",
+      "NATO required the United States to abandon its military budget"
     ],
     "answer": 0,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
-    "explanation": "Counterterrorism and military operations increased security-related demands.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 119 (printed page 119), CS 32: read “Issues impacting the American economy”, including defense spending.",
+    "explanation": "The reduced Soviet threat encouraged a post-Cold War decrease in defense spending; later terrorism brought renewed military demands.",
+    "hint": "Distinguish the early post-Cold War period from the later war on terrorism.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i27",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "What distinguishes domestic terrorism from foreign-directed attacks?",
+    "prompt": "Which example best fits domestic terrorism rather than international terrorism?",
     "choices": [
-      "It can never threaten civilians",
-      "It is always carried out by another country's army",
-      "It is unrelated to ideology",
-      "The violence arises from extremist actors operating within the country"
+      "A foreign army attacks a U.S. military position overseas",
+      "A group linked to a foreign terrorist organization plans an attack",
+      "An overseas network directs violence across several countries",
+      "Homegrown extremists use violence to intimidate U.S. civilians"
     ],
     "answer": 3,
-    "source": "https://www.history.com/topics/21st-century/9-11-attacks",
-    "where": "Review September 11, security legislation, civil liberties, and the Great Recession",
-    "explanation": "Domestic terrorism involves ideologically motivated violence originating within the country.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://www.fbi.gov/investigate/terrorism",
+    "where": "Read “Terrorism definitions”; compare the domestic and international categories.",
+    "explanation": "Domestic terrorism involves criminal violence tied to domestic extremist goals; an attack inside the United States can still have international connections.",
+    "hint": "Location alone does not determine whether a threat has foreign connections.",
+    "sourceTitle": "FBI — Terrorism"
   },
   {
     "id": "i28",
@@ -466,33 +493,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "What changed in US foreign policy after the Cold War ended?",
     "choices": [
-      "The United States stopped all overseas diplomacy",
-      "The United States faced new conflicts without a Soviet superpower rival",
-      "NATO immediately dissolved",
-      "Every regional conflict ended"
+      "The United States redirected policy toward Soviet containment",
+      "The United States faced conflicts without a Soviet superpower rival",
+      "The United States replaced diplomacy with a policy of isolation",
+      "The United States transferred its defense responsibilities to the UN"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://history.state.gov/milestones/1989-1992/collapse-soviet-union",
+    "where": "Read the final paragraphs on recognition of the former republics; consider the change in superpower rivalry.",
     "explanation": "The Soviet collapse changed the global balance of power.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "The end of one rivalry did not eliminate regional conflicts.",
+    "sourceTitle": "Office of the Historian — Collapse of the Soviet Union"
   },
   {
     "id": "i29",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "Which event marked the end of the Soviet Union in 1991?",
+    "prompt": "Why does international demand for U.S. dollars matter to the American economy?",
     "choices": [
-      "The construction of the Berlin Wall",
-      "The breakup into independent republics",
-      "The start of the Korean War",
-      "The Cuban Revolution"
+      "It requires U.S. states to approve foreign currency exchanges",
+      "It links U.S. finance to global trade and reserve holdings",
+      "It prevents foreign banks from holding American investments",
+      "It makes the dollar the legal currency of every trading partner"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
-    "explanation": "The USSR dissolved into separate independent states.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://www.federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html",
+    "where": "Find “international reserves”; read how foreign central banks use dollar assets.",
+    "explanation": "Dollar use in international transactions and reserve holdings connects the U.S. economy to global financial activity.",
+    "hint": "A reserve currency is held by institutions outside its issuing country.",
+    "sourceTitle": "Federal Reserve — International Role of the U.S. Dollar"
   },
   {
     "id": "i30",
@@ -500,33 +529,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "Why did the United States lead a coalition in the 1991 Persian Gulf War?",
     "choices": [
-      "To overthrow the Soviet government",
-      "To establish the European Union",
-      "To invade Canada",
-      "To reverse Iraq's invasion of Kuwait"
+      "To counter Soviet control over newly independent republics",
+      "To prevent the spread of the Taliban into Central Asia",
+      "To locate weapons after the September 11 terrorist attacks",
+      "To reverse Iraq’s invasion and occupation of Kuwait"
     ],
     "answer": 3,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://history.state.gov/milestones/1989-1992/gulf-war",
+    "where": "Find “August 2, 1990”; read through the account of the coalition and Iraqi withdrawal.",
     "explanation": "The coalition sought to expel Iraqi forces from Kuwait.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Separate the 1991 Gulf War from the 2003 invasion of Iraq.",
+    "sourceTitle": "Office of the Historian — The Gulf War, 1991"
   },
   {
     "id": "i31",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "What was an important characteristic of the 1991 Gulf War?",
+    "prompt": "What is a purpose of U.S. participation in the World Trade Organization?",
     "choices": [
-      "A US-led multinational coalition acted against Iraqi forces",
-      "The United States fought without any allies",
-      "The conflict began with the invasion of Afghanistan",
-      "The war ended the Cold War in Europe"
+      "Negotiate trade rules and address disputes with trading partners",
+      "Direct military operations with other North Atlantic countries",
+      "Provide emergency housing for people displaced by civil wars",
+      "Set the interest rate charged to American commercial banks"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
-    "explanation": "International partners participated in the operation to liberate Kuwait.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://www.wto.org/english/thewto_e/whatis_e/what_we_do_e.htm",
+    "where": "Read the opening paragraph, “Trade negotiations”, and “Dispute settlement”.",
+    "explanation": "The WTO provides a forum for negotiating trade rules and addressing trade disputes.",
+    "hint": "A trade organization addresses rules between member economies.",
+    "sourceTitle": "WTO — What we do"
   },
   {
     "id": "i32",
@@ -534,16 +565,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "What was a primary stated goal of the US invasion of Afghanistan in 2001?",
     "choices": [
-      "Respond to Iraq's invasion of Kuwait",
-      "Defend West Berlin from Soviet troops",
-      "Disrupt al-Qaeda and remove Taliban protection for it",
-      "Create a common European currency"
+      "Expel Iraqi troops from neighboring Kuwait",
+      "Prevent Soviet expansion into Western Europe",
+      "Disrupt al-Qaeda and remove its Taliban sanctuary",
+      "Enforce trade agreements with Middle Eastern states"
     ],
     "answer": 2,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://www.nato.int/en/what-we-do/operations-and-missions/nato-and-afghanistan",
+    "where": "Under “SEPTEMBER 2001 – JULY 2003”, read the entries for September 11 and October 7, 2001.",
     "explanation": "The invasion followed the 9/11 attacks and targeted al-Qaeda's sanctuary.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Connect al-Qaeda’s sanctuary to the stated military objective.",
+    "sourceTitle": "NATO — NATO and Afghanistan"
   },
   {
     "id": "i33",
@@ -551,50 +583,53 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "Why was the 2003 invasion of Iraq controversial?",
     "choices": [
-      "Iraq had just invaded Kuwait in 2003",
-      "NATO had been abolished",
-      "Claims about weapons of mass destruction were disputed and stockpiles were not found",
-      "The Soviet Union was still governing Iraq"
+      "Iraq had renewed its occupation of Kuwait shortly before invasion",
+      "The operation was launched to remove the Taliban government",
+      "WMD claims used to justify invasion were not borne out as predicted",
+      "The war began primarily to contain Soviet influence in the region"
     ],
     "answer": 2,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Read “IRAQ”, especially the paragraphs on WMD claims and UN inspections.",
     "explanation": "The central WMD claims used to justify the invasion did not yield the predicted stockpiles.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Separate the claims used before invasion from the evidence found later.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "i34",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "Which statement best compares Afghanistan in 2001 and Iraq in 2003?",
+    "prompt": "Why did the treatment of detainees at Guantanamo Bay become a foreign-policy controversy?",
     "choices": [
-      "They were distinct wars with different stated justifications",
-      "Both began as responses to Iraq invading Kuwait",
-      "Both were fought against the Soviet Union",
-      "Neither involved American ground forces"
+      "It raised questions about legal protections and interrogation",
+      "It concerned which state should issue local search warrants",
+      "It determined how to divide tariffs among trading partners",
+      "It settled which agency would inspect commercial airports"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
-    "explanation": "Afghanistan focused on al-Qaeda and Taliban sanctuary; Iraq had different stated rationales.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Under “DOMESTIC SECURITY”, find “Guantanamo” and “unlawful combatants”.",
+    "explanation": "The debate concerned the treatment and legal rights of people held as enemy combatants.",
+    "hint": "The issue concerns detainees’ treatment and access to legal protections.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "i35",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "What is a key role of NATO after the Cold War?",
+    "prompt": "Why are pandemics a foreign-policy challenge as well as a domestic health issue?",
     "choices": [
-      "Setting US federal income tax rates",
-      "Supervising all US elections",
-      "Operating the World Trade Organization",
-      "Collective defense and security cooperation among members"
+      "They mainly determine how states draw legislative districts",
+      "They are addressed through national monetary policy alone",
+      "They involve trade rules but no health cooperation abroad",
+      "They cross borders and require cooperation among countries"
     ],
     "answer": 3,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
-    "explanation": "NATO remained a military and political security alliance.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://www.who.int/news-room/questions-and-answers/item/pandemic-prevention--preparedness-and-response-accord",
+    "where": "Read the opening answer explaining why countries need to work together on pandemics.",
+    "explanation": "Pandemic threats require countries to coordinate information, preparedness, and responses.",
+    "hint": "A contagious disease can cross political borders.",
+    "sourceTitle": "WHO — Pandemic prevention, preparedness and response"
   },
   {
     "id": "i36",
@@ -602,16 +637,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "How did international terrorism complicate US foreign policy?",
     "choices": [
-      "All threats came only from recognized national armies",
-      "Threats could come from networks rather than traditional nation-state armies",
-      "It made international intelligence sharing unnecessary",
-      "It ended the need for diplomacy"
+      "Threats increasingly depended on conventional military front lines",
+      "Threats could come from networks operating across national borders",
+      "Threats mainly involved disputes between recognized governments",
+      "Threats reduced the importance of international intelligence ties"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://www.fbi.gov/investigate/terrorism",
+    "where": "Read “International terrorism” and the Overview’s discussion of extremist networks worldwide.",
     "explanation": "Nonstate networks created different security challenges.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "A network can operate across borders without being a national army.",
+    "sourceTitle": "FBI — Terrorism"
   },
   {
     "id": "i37",
@@ -619,33 +655,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "Why might the United States work through an international coalition?",
     "choices": [
-      "To eliminate every disagreement among allies",
-      "To combine resources and gain broader diplomatic support",
-      "To transfer the US Constitution to other nations",
-      "To avoid any shared military planning"
+      "To give every partner the same military and economic role",
+      "To share resources and build broader diplomatic support",
+      "To replace each partner’s government with a common authority",
+      "To avoid negotiating differences among participating states"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://history.state.gov/milestones/1989-1992/gulf-war",
+    "where": "Find “international coalition” and read the paragraph about organizing support through the United Nations.",
     "explanation": "Coalitions can share costs, capabilities, and legitimacy.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Consider why several countries might combine support and resources.",
+    "sourceTitle": "Office of the Historian — The Gulf War, 1991"
   },
   {
     "id": "i38",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "Which example best illustrates a humanitarian foreign-policy challenge?",
+    "prompt": "A civil war forces families to cross a border for safety. Which U.S. foreign-policy challenge can follow?",
     "choices": [
-      "Setting a local school lunch schedule",
-      "Choosing a city zoning rule",
-      "Determining state driver's-license fees",
-      "Deciding whether to respond to mass violence against civilians abroad"
+      "Determining the number of seats in a state legislature",
+      "Managing a dispute over local public-school attendance",
+      "Deciding whether a city should change its zoning rules",
+      "Coordinating humanitarian aid and refugee protection abroad"
     ],
     "answer": 3,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
-    "explanation": "Foreign policy can involve human rights crises beyond national borders.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 120 (printed page 120), CS 33: read the social and political challenges, including refugees and humanitarian aid.",
+    "explanation": "Conflict-driven displacement creates questions about humanitarian aid, protection, and resettlement.",
+    "hint": "People escaping war may need both immediate aid and a safe place to live.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i39",
@@ -653,16 +691,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "What is a likely consequence of prolonged overseas military operations?",
     "choices": [
-      "Costs, casualties, and debate over national priorities",
-      "Guaranteed immediate regional stability",
-      "An end to all federal budget choices",
-      "The disappearance of international alliances"
+      "Human costs, financial costs, and debate about priorities",
+      "Reduced need for military budgets and international planning",
+      "Immediate agreement on reconstruction goals among local groups",
+      "Greater certainty about achieving the original military objectives"
     ],
     "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://www.nato.int/en/what-we-do/operations-and-missions/nato-and-afghanistan",
+    "where": "Read “Afghanistan lessons learned process”; compare the initial purpose with the later mission.",
     "explanation": "Extended deployments create human, fiscal, and political tradeoffs.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Long missions require resources and decisions about achievable goals.",
+    "sourceTitle": "NATO — NATO and Afghanistan"
   },
   {
     "id": "i40",
@@ -670,16 +709,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 33",
     "prompt": "Which conclusion best describes the post-Cold War era?",
     "choices": [
-      "International trade ended when the USSR dissolved",
-      "The United States faced no foreign-policy decisions",
-      "Global economic integration grew while new security threats emerged",
-      "Digital communication made diplomacy obsolete"
+      "Trade integration declined as foreign security threats increased",
+      "Security challenges faded as digital markets expanded worldwide",
+      "Economic integration expanded alongside new security challenges",
+      "Economic independence increased as diplomatic ties grew weaker"
     ],
     "answer": 2,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review post-Cold War foreign policy, coalition warfare, and new security threats",
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Read the definition and the discussion of benefits and costs; connect this economic picture to the security topics in the assignment.",
     "explanation": "Economic integration and complex new security challenges developed together.",
-    "hint": "Look for the choice that best explains the historical cause, effect, or concept in the question."
+    "hint": "Combine the economic changes with the security challenges you studied.",
+    "sourceTitle": "IMF — Globalization Today"
   }
 ];
 })();
