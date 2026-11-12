@@ -1,685 +1,605 @@
 (function(){
-window.BLOCK_CONFIG={"assignmentKey": "AS-B11-CS1-3-VOCAB-2026", "title": "Block 11 Vocabulary — Historical Thinking and Skills", "description": "CS 1–3 • 40 historical-thinking vocabulary questions.", "practice": "Identify and apply the language of source evaluation, historical argument, chronology, and causation."};
+window.BLOCK_CONFIG={"assignmentKey": "AS-B11-CS1-3-VOCAB-2026", "title": "Block 11 Vocabulary — Historical Thinking and Skills", "description": "CS 1–3 • 40 vocabulary and application questions. Hints appear after an incorrect answer.", "practice": "Identify and apply the language of source evaluation, historical argument, chronology, and causation."};
 window.BLOCK_QUESTIONS=[
   {
     "id": "v01",
     "cs": "CS 1",
     "topic": "Author perspective",
-    "prompt": "A textile worker and mill owner describe the same strike in conflicting ways. Which concept helps explain their different accounts? Select the most precise historical-thinking term.",
+    "prompt": "A textile worker and mill owner describe the same strike in conflicting ways. Which concept helps explain their different accounts?",
     "choices": [
+      "Source provenance",
+      "Intended audience",
       "Author perspective",
-      "Corroboration",
-      "Internal consistency",
-      "Audience"
+      "Internal consistency"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 2,
     "explanation": "Author perspective: point of view shaped by an author’s position, experiences, and purpose.",
-    "hint": "Focus on this defining feature: point of view shaped by an author’s position, experiences, and purpose."
+    "hint": "Consider how a person’s position and experiences shape a point of view."
   },
   {
     "id": "v02",
     "cs": "CS 1",
     "topic": "Credible source",
-    "prompt": "A student judges whether a report deserves trust after checking its author and evidence. Which term describes the result? Select the most precise historical-thinking term.",
+    "prompt": "After evaluating a report’s author, evidence, and accuracy, a student finds it trustworthy for a particular historical question. What kind of source has the student identified?",
     "choices": [
-      "Accuracy",
       "Credible source",
-      "Corroboration",
-      "Historical context"
+      "Popular source",
+      "Unexamined source",
+      "Anonymous source"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
-    "explanation": "Credible source: source worthy of trust after careful evaluation.",
-    "hint": "Focus on this defining feature: source worthy of trust after careful evaluation."
+    "answer": 0,
+    "explanation": "Credible source: A source judged trustworthy for a particular question after examining its author, evidence, circumstances, and accuracy.",
+    "hint": "Trust should follow evaluation and should fit the question being asked."
   },
   {
     "id": "v03",
     "cs": "CS 1",
     "topic": "Corroboration",
-    "prompt": "A researcher checks a battle date against three independent records. What process is being used? Select the most precise historical-thinking term.",
+    "prompt": "A researcher checks a battle date against three independent records. What process is being used?",
     "choices": [
-      "Reliability",
-      "Internal consistency",
-      "Corroboration",
-      "Qualifications"
+      "Citation",
+      "Contextualization",
+      "Chronological sequencing",
+      "Corroboration"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 3,
     "explanation": "Corroboration: checking a claim against other independent sources.",
-    "hint": "Focus on this defining feature: checking a claim against other independent sources."
+    "hint": "The action compares a claim with independent records."
   },
   {
     "id": "v04",
     "cs": "CS 1",
     "topic": "Qualifications",
-    "prompt": "Before trusting a medical historian, a student checks the historian’s training and expertise. Which criterion is this? Select the most precise historical-thinking term.",
+    "prompt": "Before trusting a medical historian, a student checks the historian’s training and expertise. Which criterion is this?",
     "choices": [
-      "Stereotype",
       "Reputation",
+      "Qualifications",
       "Purpose",
-      "Qualifications"
+      "Audience"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
+    "answer": 1,
     "explanation": "Qualifications: education, training, or experience relevant to a claim.",
-    "hint": "Focus on this defining feature: education, training, or experience relevant to a claim."
+    "hint": "Training and relevant experience differ from a public track record."
   },
   {
     "id": "v05",
     "cs": "CS 1",
     "topic": "Reputation",
-    "prompt": "A student considers a newspaper’s long record of corrections and accurate reporting. Which credibility factor is this? Select the most precise historical-thinking term.",
+    "prompt": "A student considers a newspaper’s long record of corrections and accurate reporting. Which credibility factor is this?",
     "choices": [
-      "Reputation",
       "Qualifications",
-      "Author perspective",
-      "Historical context"
+      "Reputation",
+      "Provenance",
+      "Perspective"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 1,
     "explanation": "Reputation: record of reliability associated with an author or institution.",
-    "hint": "Focus on this defining feature: record of reliability associated with an author or institution."
+    "hint": "Look at the institution’s established record over time."
   },
   {
     "id": "v06",
     "cs": "CS 1",
     "topic": "Bias",
-    "prompt": "A pamphlet consistently presents one side favorably while ignoring contrary evidence. Which concept is most relevant? Select the most precise historical-thinking term.",
+    "prompt": "A pamphlet consistently presents one side favorably while ignoring contrary evidence. Which concept is most relevant?",
     "choices": [
+      "Chronology",
+      "Provenance",
       "Audience",
-      "Bias",
-      "Purpose",
-      "Provenance"
+      "Bias"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
+    "answer": 3,
     "explanation": "Bias: inclination that can shape selection or interpretation of information.",
-    "hint": "Focus on this defining feature: inclination that can shape selection or interpretation of information."
+    "hint": "Selective emphasis can favor a position without making every fact false."
   },
   {
     "id": "v07",
     "cs": "CS 1",
     "topic": "Stereotype",
-    "prompt": "A cartoon portrays every member of a group as having the same trait. What is this? Select the most precise historical-thinking term.",
+    "prompt": "A cartoon portrays every member of a group as having the same trait. What is this?",
     "choices": [
-      "Historical context",
-      "Reliability",
       "Stereotype",
-      "Reputation"
+      "Counterclaim",
+      "Corroboration",
+      "Contextualization"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Stereotype: oversimplified belief applied to an entire group.",
-    "hint": "Focus on this defining feature: oversimplified belief applied to an entire group."
+    "hint": "The image assigns the same oversimplified trait to a whole group."
   },
   {
     "id": "v08",
     "cs": "CS 1",
     "topic": "Historical context",
-    "prompt": "A researcher studies the economic and political conditions when a speech was delivered. What is being examined? Select the most precise historical-thinking term.",
+    "prompt": "A researcher studies the economic and political conditions when a speech was delivered. What is being examined?",
     "choices": [
-      "Corroboration",
-      "Reliability",
       "Internal consistency",
-      "Historical context"
+      "Source provenance",
+      "Historical context",
+      "Intended audience"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
+    "answer": 2,
     "explanation": "Historical context: circumstances of time and place surrounding a source.",
-    "hint": "Focus on this defining feature: circumstances of time and place surrounding a source."
+    "hint": "The focus is the surrounding conditions, not the source’s storage history."
   },
   {
     "id": "v09",
     "cs": "CS 1",
     "topic": "Internal consistency",
-    "prompt": "Two paragraphs in the same report give contradictory dates for the same event. What quality should be questioned? Select the most precise historical-thinking term.",
+    "prompt": "Two paragraphs of one report give conflicting dates for the same meeting. Which criterion concerns whether the report agrees with itself?",
     "choices": [
+      "Author qualifications",
+      "External corroboration",
       "Internal consistency",
-      "Author perspective",
-      "Credible source",
-      "Accuracy"
+      "Intended audience"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
-    "explanation": "Internal consistency: degree to which a source avoids contradicting itself.",
-    "hint": "Focus on this defining feature: degree to which a source avoids contradicting itself."
+    "answer": 2,
+    "explanation": "Internal consistency: The degree to which a source’s statements agree with one another rather than contradicting themselves.",
+    "hint": "The contradiction is inside one source."
   },
   {
     "id": "v10",
     "cs": "CS 1",
     "topic": "Accuracy",
-    "prompt": "A student verifies that a quoted date and statistic are factually correct. Which standard is being checked? Select the most precise historical-thinking term.",
+    "prompt": "A student verifies that a quoted date and statistic are factually correct. Which standard is being checked?",
     "choices": [
-      "Reliability",
       "Accuracy",
-      "Credible source",
-      "Internal consistency"
+      "Purpose",
+      "Perspective",
+      "Provenance"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Accuracy: degree to which claims match verifiable evidence.",
-    "hint": "Focus on this defining feature: degree to which claims match verifiable evidence."
+    "hint": "The question concerns whether particular details are factually correct."
   },
   {
     "id": "v11",
     "cs": "CS 2",
     "topic": "Thesis",
-    "prompt": "An essay argues that industrialization changed urban family life. What is the essay’s central defensible statement? Select the most precise historical-thinking term.",
+    "prompt": "An essay’s central argument explains how industrialization changed urban family life. What term names this organizing argument?",
     "choices": [
+      "Supporting evidence",
       "Counterclaim",
-      "Claim",
-      "Thesis",
-      "Primary source"
+      "Citation",
+      "Thesis"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
-    "explanation": "Thesis: specific, defensible claim that answers a historical question.",
-    "hint": "Focus on this defining feature: specific, defensible claim that answers a historical question."
+    "answer": 3,
+    "explanation": "Thesis: The central, specific, defensible argument that answers the historical question and organizes an essay or investigation.",
+    "hint": "This is the central argument organizing the whole essay."
   },
   {
     "id": "v12",
     "cs": "CS 2",
     "topic": "Primary source",
-    "prompt": "A letter written by a soldier during a war is what kind of source? Select the most precise historical-thinking term.",
+    "prompt": "A soldier’s wartime letter records the soldier’s own experiences. When studying those experiences, which broad source category includes the letter?",
     "choices": [
-      "Eyewitness account",
-      "Source comparison",
-      "Artifact",
-      "Primary source"
+      "Secondary source",
+      "Primary source",
+      "Research synthesis",
+      "Textbook interpretation"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Primary source: evidence created during the period being studied.",
-    "hint": "Focus on this defining feature: evidence created during the period being studied."
+    "answer": 1,
+    "explanation": "Primary source: Original evidence connected directly to the subject being studied, such as a participant’s letter, artifact, or firsthand recollection. A later memoir can also serve as a primary source; when it was written affects how it should be evaluated.",
+    "hint": "The letter is original evidence of the writer’s experience, not a later historian’s analysis."
   },
   {
     "id": "v13",
     "cs": "CS 2",
     "topic": "Secondary source",
-    "prompt": "A modern textbook analyzes letters from the Civil War. What kind of source is the textbook? Select the most precise historical-thinking term.",
+    "prompt": "A modern historian who did not witness the Civil War analyzes wartime letters in a textbook chapter. Which source category describes that chapter?",
     "choices": [
-      "Secondary source",
       "Primary source",
-      "Claim",
-      "Eyewitness account"
+      "Secondary source",
+      "Eyewitness account",
+      "Original artifact"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
-    "explanation": "Secondary source: later interpretation based on analysis of evidence.",
-    "hint": "Focus on this defining feature: later interpretation based on analysis of evidence."
+    "answer": 1,
+    "explanation": "Secondary source: A work that analyzes, interprets, or synthesizes other evidence about the past rather than directly recording the author’s participation in the events studied.",
+    "hint": "The chapter interprets other people’s records rather than recording its author’s participation."
   },
   {
     "id": "v14",
     "cs": "CS 2",
     "topic": "Artifact",
-    "prompt": "A preserved nineteenth-century tool is an example of which kind of evidence? Select the most precise historical-thinking term.",
+    "prompt": "A preserved nineteenth-century hand tool is studied as a human-made object. Which term most specifically names this physical evidence?",
     "choices": [
+      "Written account",
       "Historical site",
-      "Artifact",
-      "Eyewitness account",
-      "Supporting evidence"
+      "Oral testimony",
+      "Artifact"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
-    "explanation": "Artifact: physical object used as historical evidence.",
-    "hint": "Focus on this defining feature: physical object used as historical evidence."
+    "answer": 3,
+    "explanation": "Artifact: A human-made or human-modified physical object that can provide evidence about the past.",
+    "hint": "Distinguish a human-made object from a place or an account."
   },
   {
     "id": "v15",
     "cs": "CS 2",
     "topic": "Eyewitness account",
-    "prompt": "A person records what they personally saw during a protest. What kind of account is this? Select the most precise historical-thinking term.",
+    "prompt": "A person records what they personally saw during a protest. What kind of account is this?",
     "choices": [
-      "Artifact",
-      "Refuting evidence",
       "Eyewitness account",
-      "Claim"
+      "Secondhand report",
+      "Later research synthesis",
+      "Unattributed rumor"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Eyewitness account: description by someone who directly observed an event.",
-    "hint": "Focus on this defining feature: description by someone who directly observed an event."
+    "hint": "The writer directly observed the event being described."
   },
   {
     "id": "v16",
     "cs": "CS 2",
     "topic": "Historical site",
-    "prompt": "A preserved battlefield is studied to understand where events occurred. What kind of place is this? Select the most precise historical-thinking term.",
+    "prompt": "Researchers examine a preserved battlefield as a location where events occurred. Which term names this kind of evidence-bearing place?",
     "choices": [
-      "Thesis",
-      "Primary source",
-      "Counterclaim",
-      "Historical site"
+      "Source citation",
+      "Historical artifact",
+      "Historical site",
+      "Written testimony"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Historical site: place whose features provide evidence about the past.",
-    "hint": "Focus on this defining feature: place whose features provide evidence about the past."
+    "answer": 2,
+    "explanation": "Historical site: A place associated with past events whose features or remains can provide historical evidence.",
+    "hint": "The evidence is a location, rather than a portable object."
   },
   {
     "id": "v17",
     "cs": "CS 2",
     "topic": "Citation",
-    "prompt": "A student names the archive and document used to support a quotation. What is that reference called? Select the most precise historical-thinking term.",
+    "prompt": "A student names the archive and document used to support a quotation. What is that reference called?",
     "choices": [
+      "Paraphrase",
+      "Thesis",
       "Citation",
-      "Historical interpretation",
-      "Historical site",
-      "Claim"
+      "Counterclaim"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 2,
     "explanation": "Citation: information identifying where evidence came from.",
-    "hint": "Focus on this defining feature: information identifying where evidence came from."
+    "hint": "The reference lets another reader trace where the information came from."
   },
   {
     "id": "v18",
     "cs": "CS 2",
     "topic": "Supporting evidence",
-    "prompt": "A census record directly strengthens a historian’s claim about urban population growth. What type of evidence is it? Select the most precise historical-thinking term.",
+    "prompt": "A census record directly strengthens a historian’s claim about urban population growth. What type of evidence is it?",
     "choices": [
-      "Citation",
       "Supporting evidence",
-      "Source comparison",
-      "Contextualization"
+      "Refuting evidence",
+      "Unsupported assertion",
+      "Opposing claim"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Supporting evidence: relevant information that strengthens a thesis.",
-    "hint": "Focus on this defining feature: relevant information that strengthens a thesis."
+    "hint": "This information strengthens the particular assertion being tested."
   },
   {
     "id": "v19",
     "cs": "CS 2",
     "topic": "Refuting evidence",
-    "prompt": "A voting record directly challenges a claim that a proposed law passed unanimously. What type of evidence is it? Select the most precise historical-thinking term.",
+    "prompt": "A voting record directly challenges a claim that a proposed law passed unanimously. What type of evidence is it?",
     "choices": [
-      "Eyewitness account",
-      "Claim",
-      "Refuting evidence",
-      "Artifact"
+      "Untested assumption",
+      "Supporting evidence",
+      "Source citation",
+      "Refuting evidence"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 3,
     "explanation": "Refuting evidence: relevant information showing a claim is weak or false.",
-    "hint": "Focus on this defining feature: relevant information showing a claim is weak or false."
+    "hint": "This information challenges the assertion rather than merely naming a source."
   },
   {
     "id": "v20",
     "cs": "CS 2",
     "topic": "Source comparison",
-    "prompt": "A researcher places two competing accounts side by side to examine agreements and differences. Which practice is this? Select the most precise historical-thinking term.",
+    "prompt": "A researcher places two competing accounts side by side to examine agreements and differences. Which practice is this?",
     "choices": [
-      "Supporting evidence",
-      "Contextualization",
-      "Claim",
-      "Source comparison"
+      "Chronological sequencing",
+      "Source comparison",
+      "Document preservation",
+      "Periodization"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
+    "answer": 1,
     "explanation": "Source comparison: analysis of agreement and disagreement among accounts.",
-    "hint": "Focus on this defining feature: analysis of agreement and disagreement among accounts."
+    "hint": "The task examines agreements and differences; it need not end in agreement."
   },
   {
     "id": "v21",
     "cs": "CS 3",
     "topic": "Chronology",
-    "prompt": "A student arranges events from earliest to latest. Which historical skill is being used? Select the most precise historical-thinking term.",
+    "prompt": "A student arranges events from earliest to latest. Which historical skill is being used?",
     "choices": [
+      "Correlation",
       "Chronology",
-      "Contributing factor",
-      "Continuity",
-      "Correlation"
+      "Causation",
+      "Continuity"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 1,
     "explanation": "Chronology: arrangement of events in time order.",
-    "hint": "Focus on this defining feature: arrangement of events in time order."
+    "hint": "The focus is ordering events by time."
   },
   {
     "id": "v22",
     "cs": "CS 3",
     "topic": "Cause",
-    "prompt": "A researcher asks what conditions helped bring about an economic panic. Which concept is the focus? Select the most precise historical-thinking term.",
+    "prompt": "Which term names a factor that helps bring about an event, rather than a result that follows it?",
     "choices": [
       "Chronology",
-      "Cause",
-      "Contributing factor",
-      "Unintended consequence"
+      "Effect",
+      "Correlation",
+      "Cause"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
-    "explanation": "Cause: factor that helps produce an event or change.",
-    "hint": "Focus on this defining feature: factor that helps produce an event or change."
+    "answer": 3,
+    "explanation": "Cause: A factor or condition that helps produce an event or change.",
+    "hint": "Ask whether the factor helps produce the event or follows from it."
   },
   {
     "id": "v23",
     "cs": "CS 3",
     "topic": "Effect",
-    "prompt": "A researcher studies the results of a newly enacted law. Which concept is the focus? Select the most precise historical-thinking term.",
+    "prompt": "A researcher studies the results of a newly enacted law. Which concept is the focus?",
     "choices": [
-      "Long-term cause",
-      "Periodization",
       "Effect",
-      "Chronology"
+      "Cause",
+      "Historical context",
+      "Periodization"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Effect: result or consequence of an event or decision.",
-    "hint": "Focus on this defining feature: result or consequence of an event or decision."
+    "hint": "The focus is an outcome of the decision."
   },
   {
     "id": "v24",
     "cs": "CS 3",
     "topic": "Correlation",
-    "prompt": "Two trends rise together, but the researcher cannot show one produced the other. What relationship is this? Select the most precise historical-thinking term.",
+    "prompt": "Two measured trends tend to increase together, but no causal link has been established. Which term names their observed association?",
     "choices": [
-      "Unintended consequence",
-      "Long-term cause",
-      "Multiple causation",
-      "Correlation"
+      "Chronological sequence",
+      "Demonstrated causation",
+      "Correlation",
+      "Historical continuity"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Correlation: relationship in which two developments vary together without automatically proving causation.",
-    "hint": "Focus on this defining feature: relationship in which two developments vary together without automatically proving causation."
+    "answer": 2,
+    "explanation": "Correlation: An association in which variables tend to vary together. Correlation can be positive or negative and does not by itself establish that one variable causes the other.",
+    "hint": "An observed association is different from a proven cause."
   },
   {
     "id": "v25",
     "cs": "CS 3",
     "topic": "Multiple causation",
-    "prompt": "A historian argues that migration resulted from jobs, drought, and new transportation links. What concept is illustrated? Select the most precise historical-thinking term.",
+    "prompt": "A historian argues that migration resulted from jobs, drought, and new transportation links. What concept is illustrated?",
     "choices": [
+      "Chronological sequencing",
+      "Single-cause explanation",
       "Multiple causation",
-      "Turning point",
-      "Long-term cause",
-      "Contributing factor"
+      "Historical continuity"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 2,
     "explanation": "Multiple causation: idea that historical outcomes usually have several contributing causes.",
-    "hint": "Focus on this defining feature: idea that historical outcomes usually have several contributing causes."
+    "hint": "Several influences combine to explain one outcome."
   },
   {
     "id": "v26",
     "cs": "CS 3",
     "topic": "Short-term cause",
-    "prompt": "An immediate bank failure helps trigger a financial panic. What kind of cause is it? Select the most precise historical-thinking term.",
+    "prompt": "An immediate bank failure helps trigger a financial panic. What kind of cause is it?",
     "choices": [
-      "Chronology",
       "Short-term cause",
+      "Long-term cause",
       "Unintended consequence",
-      "Correlation"
+      "Historical continuity"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Short-term cause: factor operating close in time to an event.",
-    "hint": "Focus on this defining feature: factor operating close in time to an event."
+    "hint": "The factor operates close to the event and acts as an immediate trigger."
   },
   {
     "id": "v27",
     "cs": "CS 3",
     "topic": "Long-term cause",
-    "prompt": "Decades of unequal land ownership contribute to a later uprising. What kind of cause is it? Select the most precise historical-thinking term.",
+    "prompt": "Decades of unequal land ownership contribute to a later uprising. What kind of cause is it?",
     "choices": [
+      "Coinciding trend",
       "Short-term cause",
-      "Correlation",
-      "Long-term cause",
-      "Chronology"
+      "Later effect",
+      "Long-term cause"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 3,
     "explanation": "Long-term cause: condition developing over an extended period.",
-    "hint": "Focus on this defining feature: condition developing over an extended period."
+    "hint": "The condition develops over many years before the event."
   },
   {
     "id": "v28",
     "cs": "CS 3",
     "topic": "Unintended consequence",
-    "prompt": "A reform intended to help farmers also raises food prices for consumers. What kind of outcome is this? Select the most precise historical-thinking term.",
+    "prompt": "A reform aims to help farmers but also raises food prices in a way its planners did not anticipate. Which term identifies that unplanned result?",
     "choices": [
-      "Chronology",
-      "Contributing factor",
-      "Multiple causation",
-      "Unintended consequence"
+      "Intended outcome",
+      "Unintended consequence",
+      "Contributing cause",
+      "Background condition"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Unintended consequence: result that decision-makers did not plan or expect.",
-    "hint": "Focus on this defining feature: result that decision-makers did not plan or expect."
+    "answer": 1,
+    "explanation": "Unintended consequence: A result that decision-makers did not intend; it can be beneficial or harmful, and may be unexpected.",
+    "hint": "The prompt explicitly says the planners did not anticipate this result."
   },
   {
     "id": "v29",
     "cs": "CS 1",
     "topic": "Provenance",
-    "prompt": "A researcher checks who created a letter and where it was stored. Select the most precise historical-thinking term.",
+    "prompt": "A researcher checks who created a letter and where it was stored.",
     "choices": [
+      "Audience",
       "Provenance",
       "Corroboration",
-      "Audience",
-      "Reliability"
+      "Internal consistency"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 1,
     "explanation": "Provenance: the origin, creator, and history of a document or artifact.",
-    "hint": "Focus on this defining feature: the origin, creator, and history of a document or artifact."
+    "hint": "Trace the document’s origin and history, including who held it."
   },
   {
     "id": "v30",
     "cs": "CS 1",
     "topic": "Audience",
-    "prompt": "A politician changes the language of a speech for factory workers. Select the most precise historical-thinking term.",
+    "prompt": "A speech is addressed to factory workers. Which term identifies the people the speaker intends to reach?",
     "choices": [
+      "Provenance",
+      "Purpose",
       "Qualifications",
-      "Audience",
-      "Accuracy",
-      "Credible source"
+      "Audience"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
-    "explanation": "Audience: the people a historical message was intended to reach.",
-    "hint": "Focus on this defining feature: the people a historical message was intended to reach."
+    "answer": 3,
+    "explanation": "Audience: The people a message or source was intended to reach.",
+    "hint": "Identify the intended recipients, not the speaker’s goal."
   },
   {
     "id": "v31",
     "cs": "CS 1",
     "topic": "Purpose",
-    "prompt": "A historian asks whether a poster was designed to recruit soldiers. Select the most precise historical-thinking term.",
+    "prompt": "A historian asks whether a poster was created to recruit soldiers or to criticize the war. Which feature of the source is being examined?",
     "choices": [
-      "Stereotype",
-      "Qualifications",
       "Purpose",
-      "Historical context"
+      "Audience",
+      "Reputation",
+      "Accuracy"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
-    "explanation": "Purpose: the reason a source was created.",
-    "hint": "Focus on this defining feature: the reason a source was created."
+    "answer": 0,
+    "explanation": "Purpose: The aim or reason for creating a source, such as informing, persuading, recording, or recruiting.",
+    "hint": "Identify the intended goal, not the people being addressed."
   },
   {
     "id": "v32",
     "cs": "CS 1",
     "topic": "Reliability",
-    "prompt": "A diary is checked against dated records for accuracy. Select the most precise historical-thinking term.",
+    "prompt": "After repeated checks, a researcher considers how dependable a diary’s information is for a specific question. Which term names that quality, rather than the checking process?",
     "choices": [
-      "Corroboration",
+      "Audience",
       "Purpose",
-      "Stereotype",
-      "Reliability"
+      "Reliability",
+      "Provenance"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Reliability: the degree to which information can be depended upon.",
-    "hint": "Focus on this defining feature: the degree to which information can be depended upon."
+    "answer": 2,
+    "explanation": "Reliability: The degree to which information can be depended on for the question being studied. A source may be reliable for one question but limited for another.",
+    "hint": "The question asks about dependability, not the act of comparing records."
   },
   {
     "id": "v33",
     "cs": "CS 2",
     "topic": "Claim",
-    "prompt": "An essay argues that railroads accelerated western settlement. Select the most precise historical-thinking term.",
+    "prompt": "Within a body paragraph, a student states that cheaper railroad shipping helped farmers reach distant markets. Which term identifies this assertion that needs evidence?",
     "choices": [
+      "Quotation",
+      "Citation",
       "Claim",
-      "Source comparison",
-      "Thesis",
-      "Refuting evidence"
+      "Research topic"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
-    "explanation": "Claim: a statement or position that an argument seeks to establish.",
-    "hint": "Focus on this defining feature: a statement or position that an argument seeks to establish."
+    "answer": 2,
+    "explanation": "Claim: An assertion or position that requires support. An essay’s thesis is its central claim; a body paragraph can develop a narrower supporting claim.",
+    "hint": "The statement asserts something to be supported, rather than naming its source."
   },
   {
     "id": "v34",
     "cs": "CS 2",
     "topic": "Counterclaim",
-    "prompt": "A second historian disputes the proposed explanation for a reform. Select the most precise historical-thinking term.",
+    "prompt": "A second historian disputes the proposed explanation for a reform.",
     "choices": [
-      "Artifact",
       "Counterclaim",
-      "Source comparison",
-      "Supporting evidence"
+      "Supporting example",
+      "Source citation",
+      "Agreed conclusion"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Counterclaim: an alternative or opposing interpretation of an argument.",
-    "hint": "Focus on this defining feature: an alternative or opposing interpretation of an argument."
+    "hint": "This position opposes or offers an alternative to the original argument."
   },
   {
     "id": "v35",
     "cs": "CS 2",
     "topic": "Historical interpretation",
-    "prompt": "Two scholars reach different conclusions from the same records. Select the most precise historical-thinking term.",
+    "prompt": "Scholars examine records and explain what a reform meant for different groups. Which term names these evidence-based explanations of the past?",
     "choices": [
-      "Eyewitness account",
-      "Thesis",
-      "Historical interpretation",
-      "Refuting evidence"
+      "Chronological list",
+      "Eyewitness observation",
+      "Source citation",
+      "Historical interpretation"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
-    "explanation": "Historical interpretation: an evidence-based explanation of what the past means.",
-    "hint": "Focus on this defining feature: an evidence-based explanation of what the past means."
+    "answer": 3,
+    "explanation": "Historical interpretation: An evidence-based explanation of the meaning, causes, or significance of past events. Interpretations can be revised when new evidence or reasoning warrants it.",
+    "hint": "An explanation of meaning goes beyond a list of facts or an observation."
   },
   {
     "id": "v36",
     "cs": "CS 2",
     "topic": "Contextualization",
-    "prompt": "A student explains a law by examining the economic crisis surrounding it. Select the most precise historical-thinking term.",
+    "prompt": "A student places a law within the economic crisis and political debates of its time to explain its significance. Which historical-thinking practice is this?",
     "choices": [
-      "Primary source",
-      "Secondary source",
-      "Eyewitness account",
-      "Contextualization"
+      "Corroboration",
+      "Contextualization",
+      "Citation",
+      "Periodization"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Contextualization: placing an event within its broader historical circumstances.",
-    "hint": "Focus on this defining feature: placing an event within its broader historical circumstances."
+    "answer": 1,
+    "explanation": "Contextualization: Placing a source or event within the broader circumstances of its time and place to aid interpretation.",
+    "hint": "The action connects the event to the circumstances around it."
   },
   {
     "id": "v37",
     "cs": "CS 3",
     "topic": "Continuity",
-    "prompt": "A student observes that voting rules remained unchanged for decades. Select the most precise historical-thinking term.",
+    "prompt": "A student observes that voting rules remained unchanged for decades.",
     "choices": [
-      "Continuity",
       "Turning point",
+      "Continuity",
       "Correlation",
-      "Short-term cause"
+      "Causation"
     ],
-    "answer": 0,
-    "source": "",
-    "where": "",
+    "answer": 1,
     "explanation": "Continuity: an element that remains relatively stable across a period.",
-    "hint": "Focus on this defining feature: an element that remains relatively stable across a period."
+    "hint": "Look for what remains stable across the period."
   },
   {
     "id": "v38",
     "cs": "CS 3",
     "topic": "Turning point",
-    "prompt": "An event dramatically changes the direction of a political movement. Select the most precise historical-thinking term.",
+    "prompt": "An event dramatically changes the direction of a political movement.",
     "choices": [
-      "Effect",
-      "Turning point",
-      "Contributing factor",
-      "Long-term cause"
+      "Correlation",
+      "Continuity",
+      "Periodization",
+      "Turning point"
     ],
-    "answer": 1,
-    "source": "",
-    "where": "",
+    "answer": 3,
     "explanation": "Turning point: an event that produces a significant shift in historical developments.",
-    "hint": "Focus on this defining feature: an event that produces a significant shift in historical developments."
+    "hint": "Look for an event marking a significant change in direction."
   },
   {
     "id": "v39",
     "cs": "CS 3",
     "topic": "Periodization",
-    "prompt": "A historian labels distinct eras of industrial development. Select the most precise historical-thinking term.",
+    "prompt": "A historian labels distinct eras of industrial development.",
     "choices": [
-      "Multiple causation",
-      "Chronology",
       "Periodization",
-      "Long-term cause"
+      "Chronology",
+      "Contextualization",
+      "Corroboration"
     ],
-    "answer": 2,
-    "source": "",
-    "where": "",
+    "answer": 0,
     "explanation": "Periodization: dividing history into meaningful eras to understand change.",
-    "hint": "Focus on this defining feature: dividing history into meaningful eras to understand change."
+    "hint": "The historian groups time into meaningful eras rather than merely ordering dates."
   },
   {
     "id": "v40",
     "cs": "CS 3",
     "topic": "Contributing factor",
-    "prompt": "A historian identifies drought as one factor among several behind migration. Select the most precise historical-thinking term.",
+    "prompt": "A historian identifies drought as one influence on migration, alongside jobs and transportation. Which term highlights drought’s partial role?",
     "choices": [
-      "Long-term cause",
-      "Short-term cause",
-      "Continuity",
-      "Contributing factor"
+      "Resulting effect",
+      "Sole cause",
+      "Contributing factor",
+      "Unrelated coincidence"
     ],
-    "answer": 3,
-    "source": "",
-    "where": "",
-    "explanation": "Contributing factor: one of several conditions helping produce an outcome.",
-    "hint": "Focus on this defining feature: one of several conditions helping produce an outcome."
+    "answer": 2,
+    "explanation": "Contributing factor: One of several influences that helps produce an outcome, rather than the only cause.",
+    "hint": "The factor matters, but the prompt identifies other influences too."
   }
 ];
 })();
