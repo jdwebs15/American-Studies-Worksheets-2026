@@ -1,4 +1,4 @@
-window.BLOCK_CONFIG={"assignmentKey": "AS-B9-CS29-30-REVIEW-2026", "title": "Block 9 Comprehensive Review — Migration, Demographics, and Public Policy", "description": "CS 29–30 • 40 application, comparison, cause/effect, and synthesis questions.", "practice": "Analyze the political and social effects of migration and immigration; evaluate competing approaches to economic policy, social welfare, the environment, and national security."};
+window.BLOCK_CONFIG={"assignmentKey":"AS-B9-CS29-30-REVIEW-2026","title":"Block 9 Comprehensive Review — Migration, Demographics, and Public Policy","description":"CS 29–30 • 40 application, comparison, cause/effect, and synthesis questions.","practice":"Analyze the political and social effects of migration and immigration; evaluate competing approaches to economic policy, social welfare, the environment, and national security."};
 window.BLOCK_QUESTIONS=[
   {
     "id": "r01",
@@ -12,8 +12,8 @@ window.BLOCK_QUESTIONS=[
       "A larger share of suburban property taxes"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on urban tax bases and public services. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; use the Detroit example to infer effects on city revenue.",
     "explanation": "Fewer taxable residents can reduce revenue for urban services.",
     "hint": "Consider how residential moves change local revenue."
   },
@@ -29,8 +29,8 @@ window.BLOCK_QUESTIONS=[
       "Reapportionment after the census"
     ],
     "answer": 2,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on mortgage discrimination and housing access. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.federalreservehistory.org/essays/redlining",
+    "where": "Read the opening definition; compare the lending criteria with the scenario.",
     "explanation": "Redlining restricted access to credit based on neighborhood racial composition.",
     "hint": "Focus on discriminatory lending rather than district boundaries."
   },
@@ -46,8 +46,8 @@ window.BLOCK_QUESTIONS=[
       "Federal voting districts disappeared as cities shrank"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on white flight and metropolitan inequality. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate white flight, then apply its consequences to local policy.",
     "explanation": "White flight could intensify disparities in investment and tax bases.",
     "hint": "Follow the movement of people and taxable property."
   },
@@ -63,8 +63,8 @@ window.BLOCK_QUESTIONS=[
       "Urban-suburban political polarization"
     ],
     "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on suburbanization and local policy disagreements. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate white flight, then apply its consequences to local policy.",
     "explanation": "Urban and suburban interests sometimes diverged over public spending.",
     "hint": "Think about different priorities within one metro area."
   },
@@ -80,8 +80,8 @@ window.BLOCK_QUESTIONS=[
       "Unrest ended demands for civil rights"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on urban unrest and its overlapping causes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate Watts and compare the grievances.",
     "explanation": "Urban riots had complex social and economic causes.",
     "hint": "Avoid explanations based on a single cause."
   },
@@ -97,8 +97,8 @@ window.BLOCK_QUESTIONS=[
       "Migration from the Sun Belt to the Rust Belt"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on Rust Belt–Sun Belt migration. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; locate Rust Belt, Sun Belt, and military contracts.",
     "explanation": "Industrial decline and growing southern and western industries shifted population.",
     "hint": "Identify the origin and destination regions."
   },
@@ -114,8 +114,8 @@ window.BLOCK_QUESTIONS=[
       "They created jobs that attracted workers and families"
     ],
     "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on defense industries and regional employment. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; locate Rust Belt, Sun Belt, and military contracts.",
     "explanation": "Defense and technology industries offered new employment opportunities.",
     "hint": "Connect government contracts to job opportunities."
   },
@@ -131,8 +131,8 @@ window.BLOCK_QUESTIONS=[
       "Incorporation of constitutional rights"
     ],
     "answer": 2,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on census and House reapportionment. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.census.gov/topics/public-sector/congressional-apportionment/about.html",
+    "where": "Read the apportionment explanation; connect population counts with House seats.",
     "explanation": "House seats are redistributed among states according to census population.",
     "hint": "Distinguish seat allocation from drawing district lines."
   },
@@ -148,8 +148,8 @@ window.BLOCK_QUESTIONS=[
       "The Senate is reapportioned every twenty years"
     ],
     "answer": 2,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on Senate representation compared with House representation. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.archives.gov/founding-docs/constitution-transcript",
+    "where": "Find Article I, Section 3; compare Senate representation with the House.",
     "explanation": "The House is apportioned by population, but Senate representation is equal.",
     "hint": "Compare how the two chambers represent states."
   },
@@ -165,8 +165,8 @@ window.BLOCK_QUESTIONS=[
       "Population gains that increased their House seats"
     ],
     "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on population shifts and Electoral College votes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; locate the comparison of regional electoral votes.",
     "explanation": "Electoral votes equal House seats plus two Senate seats.",
     "hint": "Link census counts, House seats, and electoral votes."
   },
@@ -182,8 +182,8 @@ window.BLOCK_QUESTIONS=[
       "It required immigrants to settle in the Rust Belt"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on 1965 immigration-law changes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate the 1965 immigration law. Apply the demographic change to the scenario.",
     "explanation": "The act ended the old national-origins quota framework.",
     "hint": "Identify what changed about selection by national origin."
   },
@@ -199,8 +199,8 @@ window.BLOCK_QUESTIONS=[
       "Closure of every U.S. port of entry"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on immigration origins after 1965. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate the 1965 immigration law. Apply the demographic change to the scenario.",
     "explanation": "The 1965 reform helped diversify countries of origin.",
     "hint": "Think about the effect of ending older quotas."
   },
@@ -216,8 +216,8 @@ window.BLOCK_QUESTIONS=[
       "Demographic change prompted an educational response"
     ],
     "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on school services responding to immigration. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate the 1965 immigration law. Apply the demographic change to the scenario.",
     "explanation": "Changing student populations influenced education services.",
     "hint": "Look for a response to changing language needs."
   },
@@ -233,8 +233,8 @@ window.BLOCK_QUESTIONS=[
       "The replacement of voting with appointments"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on voting access in linguistically diverse communities. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.justice.gov/crt/language-minority-citizens",
+    "where": "Read the opening paragraphs and Section 203 explanation; connect language needs with election access.",
     "explanation": "Demographic change can influence election administration and outreach.",
     "hint": "Connect population composition to political participation."
   },
@@ -250,8 +250,8 @@ window.BLOCK_QUESTIONS=[
       "Population decline automatically expands federal services"
     ],
     "answer": 2,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on population growth and public infrastructure. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.census.gov/programs-surveys/decennial-census/about/why.html",
+    "where": "Find the discussion of federal funds distribution; consider population and infrastructure needs.",
     "explanation": "Population shifts can alter needs and representation.",
     "hint": "Connect residents, needs, and political power."
   },
@@ -267,8 +267,8 @@ window.BLOCK_QUESTIONS=[
       "Both regions experienced identical manufacturing growth"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on industrial change across U.S. regions. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; locate Rust Belt, Sun Belt, and military contracts.",
     "explanation": "Regional economic changes helped drive internal migration.",
     "hint": "Compare employment trends in each region."
   },
@@ -284,8 +284,8 @@ window.BLOCK_QUESTIONS=[
       "International immigration"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on postwar suburban growth. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/26-the-affluent-society/",
+    "where": "Find Section II; compare suburban housing growth with this family’s move.",
     "explanation": "Suburbanization is movement to residential areas outside central cities.",
     "hint": "This move stays within the same metropolitan area."
   },
@@ -301,8 +301,8 @@ window.BLOCK_QUESTIONS=[
       "Census-based shifts in House seats between regions"
     ],
     "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on census evidence of shifting political representation. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.census.gov/topics/public-sector/congressional-apportionment/about.html",
+    "where": "Read the apportionment explanation; connect population counts with House seats.",
     "explanation": "Reapportionment directly demonstrates changed representation.",
     "hint": "Seek evidence of measurable political representation."
   },
@@ -318,8 +318,8 @@ window.BLOCK_QUESTIONS=[
       "All parties stopped competing in newly growing states"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on electoral coalition changes. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; connect migration, regional growth, and political influence.",
     "explanation": "Parties adjust coalitions and outreach as populations change.",
     "hint": "Look for how campaigns respond to new voters."
   },
@@ -335,8 +335,8 @@ window.BLOCK_QUESTIONS=[
       "All growing regions experienced equal social outcomes"
     ],
     "answer": 2,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on economic and discriminatory causes of migration. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; connect migration, regional growth, and political influence.",
     "explanation": "Jobs, public policy, and discrimination all influenced migration.",
     "hint": "Choose the explanation that recognizes several causes."
   },
@@ -352,8 +352,8 @@ window.BLOCK_QUESTIONS=[
       "The Great Society"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on Great Society policy goals. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; compare the Great Society’s programs, goals, and controversies.",
     "explanation": "The Great Society expanded federal efforts against poverty and inequality.",
     "hint": "Think about federal social programs in the 1960s."
   },
@@ -369,8 +369,8 @@ window.BLOCK_QUESTIONS=[
       "Medicare is state-only; Medicaid is private insurance"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on Medicare versus Medicaid eligibility. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; compare the Great Society’s programs, goals, and controversies.",
     "explanation": "The programs serve overlapping but different eligibility populations.",
     "hint": "Compare age-based and income-based eligibility."
   },
@@ -386,8 +386,8 @@ window.BLOCK_QUESTIONS=[
       "Whether the United States should hold elections"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on competing evaluations of anti-poverty programs. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; compare the Great Society’s programs, goals, and controversies.",
     "explanation": "Social welfare debates concern benefits, responsibilities, and costs.",
     "hint": "Identify what the two sides actually disagree about."
   },
@@ -403,8 +403,8 @@ window.BLOCK_QUESTIONS=[
       "Expansionary public-works spending alone"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on supply-side economic arguments. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/29-the-triumph-of-the-right/",
+    "where": "Find Section V; locate supply-side economics and tax incentives.",
     "explanation": "Supply-side policies emphasize incentives for work and investment.",
     "hint": "Focus on tax incentives and production."
   },
@@ -420,8 +420,8 @@ window.BLOCK_QUESTIONS=[
       "Nationalization"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on deregulation and market competition. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/29-the-triumph-of-the-right/",
+    "where": "Find Section III; locate Carter’s airline and trucking deregulation.",
     "explanation": "Deregulation reduces certain government rules on business activity.",
     "hint": "Is government adding or reducing business rules?"
   },
@@ -437,8 +437,8 @@ window.BLOCK_QUESTIONS=[
       "Both require nationalizing private businesses"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on Great Society versus supply-side approaches. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/29-the-triumph-of-the-right/",
+    "where": "Read the Introduction; compare competing views of federal economic intervention.",
     "explanation": "The approaches differ in preferred federal economic tools.",
     "hint": "Contrast direct services with incentives."
   },
@@ -454,8 +454,8 @@ window.BLOCK_QUESTIONS=[
       "Environmental protection movement"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on environmental activism. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.epa.gov/history/origins-epa",
+    "where": "Read the paragraphs about 1960s pollution concerns and the consolidation of federal responsibilities.",
     "explanation": "Environmental activists pushed for pollution controls and cleanup.",
     "hint": "Identify the policy issue motivating the protest."
   },
@@ -471,8 +471,8 @@ window.BLOCK_QUESTIONS=[
       "To administer Social Security retirement checks"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on EPA responsibilities. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.epa.gov/history/origins-epa",
+    "where": "Read the paragraphs about 1960s pollution concerns and the consolidation of federal responsibilities.",
     "explanation": "The EPA was created in 1970 to strengthen environmental oversight.",
     "hint": "Think about air, water, and pollution rules."
   },
@@ -488,8 +488,8 @@ window.BLOCK_QUESTIONS=[
       "Urban growth versus congressional term limits"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on trade-offs in pollution regulation. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.epa.gov/clean-air-act-overview/progress-cleaning-air-and-improving-peoples-health",
+    "where": "Find the health benefits and compliance-cost discussion; identify the competing considerations.",
     "explanation": "Environmental policy often balances costs and public health.",
     "hint": "Identify the competing goals of each side."
   },
@@ -505,8 +505,8 @@ window.BLOCK_QUESTIONS=[
       "National-origins immigration quotas"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on climate and energy debates. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://science.nasa.gov/climate-change/evidence/",
+    "where": "Find the evidence for warming and the discussion of heat-trapping gases.",
     "explanation": "Climate policy addresses emissions, energy choices, and environmental effects.",
     "hint": "Focus on emissions and long-term temperature trends."
   },
@@ -522,8 +522,8 @@ window.BLOCK_QUESTIONS=[
       "The age of the agency director"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on evidence for evaluating pollution rules. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.epa.gov/clean-air-act-overview/progress-cleaning-air-and-improving-peoples-health",
+    "where": "Find the pollution trends since 1970; consider how measured outcomes test policy claims.",
     "explanation": "Outcome data provide a stronger test than political claims.",
     "hint": "Look for measurable results."
   },
@@ -539,8 +539,8 @@ window.BLOCK_QUESTIONS=[
       "Protection of civil liberties and privacy"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on surveillance and constitutional rights. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+    "where": "Find Amendment IV in the ratified Bill of Rights; apply its safeguards to surveillance.",
     "explanation": "Security measures can create tension with individual rights.",
     "hint": "Consider government power versus personal freedoms."
   },
@@ -556,8 +556,8 @@ window.BLOCK_QUESTIONS=[
       "Assume every security proposal is automatically unlawful"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on balancing public safety and civil liberties. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+    "where": "Find Amendment IV in the ratified Bill of Rights; apply its safeguards to surveillance.",
     "explanation": "The policy challenge is to balance protection and constitutional safeguards.",
     "hint": "Avoid absolute positions that ignore competing interests."
   },
@@ -573,8 +573,8 @@ window.BLOCK_QUESTIONS=[
       "Eligibility rules for Medicaid"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on Vietnam-era protest and accountability. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section II; connect antiwar demonstrations with public scrutiny of leaders.",
     "explanation": "Protests questioned government decisions and public consent.",
     "hint": "Think about dissent and foreign policy."
   },
@@ -590,8 +590,8 @@ window.BLOCK_QUESTIONS=[
       "Federal enforcement of civil rights protections"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on federal civil-rights enforcement. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; compare the Great Society’s programs, goals, and controversies.",
     "explanation": "Federal authority can be used to enforce equal protection.",
     "hint": "Identify the law being enforced."
   },
@@ -607,8 +607,8 @@ window.BLOCK_QUESTIONS=[
       "How many electoral votes each state receives"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on regulatory versus market-based arguments. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/29-the-triumph-of-the-right/",
+    "where": "Read the Introduction; compare competing views of federal economic intervention.",
     "explanation": "Economic debates often concern regulation versus market freedom.",
     "hint": "Compare the role each assigns to government."
   },
@@ -624,8 +624,8 @@ window.BLOCK_QUESTIONS=[
       "Broader access to health coverage for eligible low-income families"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on social safety-net proposals. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; compare the Great Society’s programs, goals, and controversies.",
     "explanation": "Expanding coverage is an example of social welfare policy.",
     "hint": "Look for direct support to households."
   },
@@ -641,8 +641,8 @@ window.BLOCK_QUESTIONS=[
       "The number of congressional districts per county"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on defense and domestic spending priorities. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/27-the-sixties/",
+    "where": "Find Section IV; locate the discussion linking Vietnam spending with domestic programs.",
     "explanation": "Budgets require choices among competing public priorities.",
     "hint": "Think about limited resources and competing goals."
   },
@@ -658,8 +658,8 @@ window.BLOCK_QUESTIONS=[
       "Environmental issues replaced every economic issue"
     ],
     "answer": 0,
-    "source": "https://www.archives.gov/research/american-history",
-    "where": "Look for the section on continuing debates about the federal role. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/29-the-triumph-of-the-right/",
+    "where": "Read the Introduction; compare competing views of federal economic intervention.",
     "explanation": "Competing priorities remained central to national politics.",
     "hint": "Reject claims that disagreement disappeared."
   },
@@ -675,8 +675,8 @@ window.BLOCK_QUESTIONS=[
       "Demographic change removed regional political differences"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/united-states-history-primary-source-timeline/post-war-united-states-1945-1968/overview/",
-    "where": "Look for the section on connections between demographic change and policy debates. Compare the evidence in the scenario with the competing choices; do not rely on a single keyword.",
+    "source": "https://www.americanyawp.com/text/28-the-unraveling/",
+    "where": "Find Section VI; connect migration, regional growth, and political influence.",
     "explanation": "Demographic change and policy debates influenced one another.",
     "hint": "Connect changes in communities to public-policy choices."
   }
