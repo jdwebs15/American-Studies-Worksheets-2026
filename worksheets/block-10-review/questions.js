@@ -1,685 +1,725 @@
 (function(){
-window.BLOCK_CONFIG={"assignmentKey": "AS-B10-CS31-33-REVIEW-2026", "title": "Block 10 Review \u2014 Globalization and Post\u2013Cold War America", "description": "CS 31\u201333 \u2022 40 higher-rigor OST-style application, comparison, and evidence questions.", "practice": "Analyze historical evidence, compare policy choices, distinguish causes and consequences, and defend conclusions."};
+window.BLOCK_CONFIG={"assignmentKey": "AS-B10-CS31-33-REVIEW-2026", "title": "Block 10 Review — Globalization and Post–Cold War America", "description": "CS 31–33 • 40 review questions using evidence, comparisons, cause and effect, and policy tradeoffs.", "practice": "Analyze historical evidence, compare policy choices, distinguish causes and consequences, and defend conclusions."};
 window.BLOCK_QUESTIONS=[
   {
     "id": "r01",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A manufacturer moves assembly overseas but keeps engineering in Ohio. Which conclusion best explains why local employment can fall even when company sales rise?",
+    "prompt": "An Ohio firm reports higher worldwide sales after moving assembly abroad, while local factory employment falls. Which conclusion is best supported?",
     "choices": [
-      "Trade always increases jobs in every community",
-      "Engineering positions must also move abroad",
-      "Higher sales prove wages increased for all workers",
-      "Global production can separate corporate growth from local manufacturing jobs"
+      "Moving assembly abroad shows that engineering must follow it",
+      "Higher company sales indicate that local assembly wages increased",
+      "Reduced local assembly means the firm’s worldwide output declined",
+      "Company growth and local job growth can diverge in global production"
     ],
     "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Globalized supply chains can increase sales without maintaining local assembly jobs.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “production” and the discussion of uneven effects on workers.",
+    "explanation": "Global production can expand a firm while reducing employment in particular locations.",
+    "hint": "Separate the firm’s worldwide results from the community’s employment.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "r02",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A graph shows rising US output per manufacturing worker but declining factory employment. Which inference is best supported?",
+    "prompt": "Illustrative data for a factory (not a historical dataset): Year A—100 workers produce 10,000 units; Year B—80 workers produce 12,000 units. Which inference follows?",
     "choices": [
-      "Factory production must have stopped",
-      "All job losses were caused by immigration",
-      "Productivity gains can occur while fewer workers are employed",
-      "Consumer demand necessarily fell to zero"
+      "Total output fell because the factory employed fewer workers",
+      "Output per worker rose while total employment fell",
+      "Output per worker stayed constant because employment fell",
+      "Lower employment demonstrates that foreign demand declined"
     ],
-    "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Output per worker and the number of workers measure different things.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 1,
+    "source": "https://www.census.gov/library/working-papers/2018/adrm/ces-wp-18-39.html",
+    "where": "Read the Abstract; compare productivity with production labor share.",
+    "explanation": "Output per worker rises from 100 to 150 units. Total output and worker count move in different directions.",
+    "hint": "Calculate units per worker for each year; do not infer a cause the figures do not show.",
+    "sourceTitle": "Census Bureau — Automation, Labor Share, and Productivity"
   },
   {
     "id": "r03",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A small US retailer begins selling to customers in Asia through an online platform. Which change most directly made this possible?",
+    "prompt": "A small retailer adds online payments and communication with customers abroad, then gains foreign sales without opening foreign stores. Which explanation fits best?",
     "choices": [
-      "The closing of international shipping routes",
-      "Internet-based communication and electronic commerce",
-      "A ban on overseas payments",
-      "A return to strictly local markets"
+      "Digital systems lowered barriers to reaching overseas customers",
+      "Foreign stores became unnecessary because shipping costs disappeared",
+      "Foreign demand increased because the retailer stopped importing goods",
+      "Online payments transformed the retailer into a foreign manufacturer"
     ],
-    "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Digital networks make cross-border transactions more accessible.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.federalreserve.gov/publications/2024-july-consumer-community-context.htm",
+    "where": "Under “Broadband and Digital Skills Are Essential for Financial and Economic Inclusion”, read the small-business discussion.",
+    "explanation": "Digital access can widen markets without requiring overseas physical facilities.",
+    "hint": "Identify which new capability connects the seller with distant customers.",
+    "sourceTitle": "Federal Reserve — Broadband, Devices, and Digital Skills"
   },
   {
     "id": "r04",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "Two communities receive the same broadband infrastructure, but one has fewer affordable devices and digital-skills programs. Which prediction is most defensible?",
+    "prompt": "Two towns gain comparable broadband coverage. One still has few affordable devices and limited digital training. Which finding would most strengthen the claim that infrastructure alone is insufficient?",
     "choices": [
-      "Access gaps may persist despite network availability",
-      "Both communities will have identical opportunities",
-      "Devices no longer matter once cables exist",
-      "Internet access eliminates educational inequality"
+      "Residents in both towns prefer different brands of digital devices",
+      "Businesses in both towns report similar shipping costs for local orders",
+      "Covered residents still cannot complete online job applications",
+      "The town with fewer training programs has a smaller public library"
     ],
-    "answer": 0,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "The digital divide includes affordability and skills, not just infrastructure.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.federalreserve.gov/publications/2024-july-consumer-community-context.htm",
+    "where": "Read the paragraph beginning “Broadband access alone” and the discussion of device ownership.",
+    "explanation": "Actual difficulty using online applications links devices and skills to economic participation.",
+    "hint": "Choose evidence of a remaining access barrier, rather than a fact merely associated with the town.",
+    "sourceTitle": "Federal Reserve — Broadband, Devices, and Digital Skills"
   },
   {
     "id": "r05",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A town loses jobs to automation while new positions require advanced technical training. Which public response most directly addresses the transition?",
+    "prompt": "A town offers displaced assembly workers courses in network maintenance because local employers report unfilled technical positions. Which condition is most important to the policy’s success?",
     "choices": [
-      "Prohibit all international communication",
-      "Replace education with import tariffs alone",
-      "Guarantee every displaced worker the same old job",
-      "Invest in retraining and access to new skills"
+      "Workers receive credentials unrelated to available positions",
+      "Training preserves the exact tasks performed at the closed plant",
+      "Training develops skills that employers actually seek",
+      "Employers reduce use of digital systems while courses expand"
     ],
-    "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Training can help workers adapt to changing labor demand.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.bls.gov/emp/skills/computers-and-information-technology.htm",
+    "where": "Read the skills definition and examples of occupations in the table.",
+    "explanation": "Retraining helps most when it connects worker preparation to actual labor demand.",
+    "hint": "Look for the link between the training content and the jobs available.",
+    "sourceTitle": "BLS — Computers and information technology"
   },
   {
     "id": "r06",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A US firm's product is designed in California, assembled in several countries, and purchased worldwide. Which claim is best supported?",
+    "prompt": "A product is designed in California, assembled in several countries, and sold worldwide. A disruption at one overseas component supplier delays U.S. deliveries. What does the combined evidence show?",
     "choices": [
-      "Every stage of production occurs in one country",
-      "Globalization ends competition between firms",
-      "Production and markets are linked across national borders",
-      "International trade is limited to raw materials"
+      "Global supply chains connect firms to markets and to overseas disruptions",
+      "Overseas production insulates American firms from supplier failures",
+      "Selling in many countries makes domestic distribution independent of production",
+      "Product design in the United States makes the finished product wholly domestic"
     ],
-    "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "The example describes an interconnected global supply chain.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “production” and the discussion of global value chains.",
+    "explanation": "The same international connections that widen production options can transmit disruptions.",
+    "hint": "Account for both the international production pattern and the delivery delay.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "r07",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "An economic downturn in one major country rapidly reduces orders at factories in other countries. What broader development helps explain this?",
+    "prompt": "A recession abroad reduces foreign purchases of U.S. machinery, and American exporters cut shifts. Which relationship most directly explains the American layoffs?",
     "choices": [
-      "All countries have identical economic policies",
-      "Economic interdependence spreads shocks across borders",
-      "International markets have become isolated",
-      "Communication technology prevents recessions"
+      "Foreign unemployment directly changes American labor regulations",
+      "Foreign demand affects employment in U.S. export industries",
+      "Lower foreign demand increases American import tariffs automatically",
+      "Foreign recessions reduce U.S. employment mainly through currency replacement"
     ],
     "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Linked trade and finance can transmit economic disruptions.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-08.pdf",
+    "where": "PDF page 1: read how exports reflect foreign demand for U.S.-produced goods and services.",
+    "explanation": "Trade links foreign purchases to production and employment in exporting industries.",
+    "hint": "Follow the sequence from foreign orders to factory schedules.",
+    "sourceTitle": "BEA — Net Exports of Goods and Services"
   },
   {
     "id": "r08",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A historian compares factory work in 1980 with employment in healthcare, software, and finance in 2010. Which interpretation is strongest?",
+    "prompt": "Over several decades, a region loses factory jobs while gaining healthcare, finance, and software employment. Which additional evidence would best establish a shift toward a service economy?",
     "choices": [
-      "Employment shifted toward services and information-based industries",
-      "Manufacturing disappeared completely",
-      "All jobs became government jobs",
-      "Agriculture replaced technology as the dominant growth sector"
+      "The largest remaining factory invests in more efficient equipment",
+      "The price of the region’s manufactured products rises",
+      "The region imports more consumer goods than the previous year",
+      "The share of workers employed in service industries increases"
     ],
-    "answer": 0,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "The US economy increasingly emphasized services and information work.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 3,
+    "source": "https://www.bls.gov/opub/btn/volume-9/forty-years-of-falling-manufacturing-employment.htm",
+    "where": "Find “service-providing industries”; compare their job growth with manufacturing’s employment share.",
+    "explanation": "Employment shares directly measure the changing composition of the regional economy.",
+    "hint": "Choose a measure of the whole employment mix rather than one firm or price.",
+    "sourceTitle": "BLS — Forty years of falling manufacturing employment"
   },
   {
     "id": "r09",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A social movement coordinates demonstrations across several countries using online networks. Which inference is most justified?",
+    "prompt": "A company contracts payroll to an independent provider in its own state and moves its own assembly department overseas. Which classification is most accurate?",
     "choices": [
-      "Online platforms guarantee political success",
-      "Digital networks eliminate censorship everywhere",
-      "All users receive equally reliable information",
-      "Digital communication can accelerate the spread of ideas and organization"
+      "Neither operation changes the organization of production or employment",
+      "Both operations are outsourced because each changes the company’s location",
+      "Payroll is offshored; assembly is outsourced because its workers remain employees",
+      "Payroll is outsourced; assembly is offshored without necessarily being outsourced"
     ],
     "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Networks facilitate rapid coordination but do not ensure outcomes.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://www.gao.gov/assets/a244183.html",
+    "where": "Find “Figure 14” and the surrounding explanation comparing ownership with domestic or foreign location.",
+    "explanation": "Outsourcing involves an outside provider; offshoring involves moving work abroad. They may overlap but are not identical.",
+    "hint": "Compare who performs the work with where it is performed.",
+    "sourceTitle": "GAO — Offshoring of Services"
   },
   {
     "id": "r10",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "An online post spreads quickly but later proves false. Which challenge of the information age does this illustrate?",
+    "prompt": "Illustrative trade figures: exports rise from $80 billion to $90 billion, while imports rise from $100 billion to $125 billion. Which conclusion is supported?",
     "choices": [
-      "Fast communication guarantees accuracy",
-      "Digital access removes the need to evaluate sources",
-      "Speed of communication can amplify misinformation",
-      "All online material is reviewed by historians"
+      "The trade deficit narrows because export sales increase",
+      "The trade deficit widens even though exports increase",
+      "The country shifts from a trade deficit to a trade surplus",
+      "The federal budget deficit widens by the same amount"
     ],
-    "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Information literacy matters when publication and sharing are easy.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 1,
+    "source": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-08.pdf",
+    "where": "PDF page 1, final paragraph: read the definitions of trade deficit and trade surplus.",
+    "explanation": "Imports minus exports rise from $20 billion to $35 billion; a trade balance is different from the government budget balance.",
+    "hint": "Compute the gap in each period and distinguish trade accounts from budget accounts.",
+    "sourceTitle": "BEA — Net Exports of Goods and Services"
   },
   {
     "id": "r11",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A company reduces costs by importing parts, while a domestic supplier loses contracts. Which evaluation best reflects globalization?",
+    "prompt": "Imported components lower a manufacturer’s costs, but a local supplier loses its contract. Which assessment accounts for both outcomes?",
     "choices": [
-      "Every worker benefits equally",
-      "Benefits and costs may be distributed unevenly among groups",
-      "Imports have no effect on domestic producers",
-      "Trade always eliminates consumer choice"
+      "Global sourcing can benefit one business while harming another",
+      "Lower component costs establish that the local economy gained overall",
+      "The supplier’s losses establish that consumers faced higher prices",
+      "The two outcomes show that the manufacturer reduced its productivity"
     ],
-    "answer": 1,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Trade can lower some costs while harming particular firms and workers.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find the discussion of benefits, worker losses, and wage effects.",
+    "explanation": "A benefit to one group does not establish a net benefit or equal gains for every group.",
+    "hint": "Do not treat one participant’s outcome as a measure of everyone’s outcome.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "r12",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A policymaker claims that lower consumer prices prove a trade agreement had no disadvantages. What evidence would most challenge that claim?",
+    "prompt": "A policymaker cites cheaper imports as proof that a trade agreement had no disadvantages. Which evidence most directly challenges that conclusion?",
     "choices": [
-      "Job losses and wage pressures in industries facing new competition",
-      "A rise in imported product variety",
-      "Faster international communications",
-      "More overseas customers for exporters"
+      "Exporting firms gained more customers in participating countries",
+      "Shoppers bought a wider selection of imported consumer goods",
+      "Layoffs and wage pressure in import-competing industries",
+      "Domestic businesses obtained imported components more cheaply"
     ],
-    "answer": 0,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Consumer gains do not rule out concentrated employment costs.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “workers” and “wages”; compare these effects with consumer benefits.",
+    "explanation": "Consumer gains can coexist with concentrated losses among producers and workers.",
+    "hint": "Choose a cost that the claim fails to consider, rather than another benefit.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "r13",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "Which pair of developments most directly reinforced each other after 1990?",
+    "prompt": "Two changes occur together: companies coordinate production across time zones, and communication between offices becomes faster and cheaper. Which causal claim is best supported?",
     "choices": [
-      "Declining internet use and increased online commerce",
-      "Reduced transportation and disappearing international markets",
-      "Fewer multinational firms and expanding worldwide supply chains",
-      "Faster digital communication and expansion of global business networks"
+      "Lower communication costs prove overseas workers receive higher wages",
+      "Cross-border coordination requires every employee to use the same language",
+      "Digital communication can make cross-border coordination less costly",
+      "Faster communication reduces the need for transport between production sites"
     ],
-    "answer": 3,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Communication advances supported increasingly connected economic activity.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
+    "where": "Find “internet” and “mobile”; examine how communication technology changes business costs.",
+    "explanation": "Cheaper communication facilitates coordination; it does not establish wage effects or eliminate physical transport.",
+    "hint": "Connect the observed change to a mechanism rather than to an unmeasured outcome.",
+    "sourceTitle": "IMF — Globalization Today"
   },
   {
     "id": "r14",
     "cs": "CS 31",
     "topic": "CS 31",
-    "prompt": "A school uses video conferences to collaborate with students abroad, but some classmates cannot connect at home. Which two trends are evident?",
+    "prompt": "A job-training program moves online. Rural residents gain access to distant courses, but some cannot afford devices or reliable subscriptions. Which policy best addresses both findings?",
     "choices": [
-      "Economic isolation and universal access",
-      "An end to globalization and rising literacy",
-      "Global connectivity and unequal digital access",
-      "The disappearance of geographic differences and poverty"
+      "Retain online courses and fund devices, access, and training",
+      "Replace digital-skills instruction with construction of more office space",
+      "Require online attendance without changing the cost of participation",
+      "Limit course enrollment to residents who already own reliable equipment"
     ],
-    "answer": 2,
-    "source": "https://www.bls.gov/spotlight/",
-    "where": "Examine technology, productivity, jobs, and changes in the US economy",
-    "explanation": "Digital technology can connect distant people while leaving access gaps.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.federalreserve.gov/publications/2024-july-consumer-community-context.htm",
+    "where": "Compare the skills discussion with “Who Lacks Access to Broadband?”",
+    "explanation": "A useful response preserves expanded reach while addressing the barriers that prevent participation.",
+    "hint": "Address the barrier without discarding the opportunity identified in the scenario.",
+    "sourceTitle": "Federal Reserve — Broadband, Devices, and Digital Skills"
   },
   {
     "id": "r15",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "After the September 11 attacks, Congress expanded surveillance authority. Which constitutional tension is most relevant?",
+    "prompt": "Congress authorizes additional surveillance after an attack. Investigators say it improves threat detection; critics question access to private communications. Which evidence is most necessary for a balanced evaluation?",
     "choices": [
-      "The right to vote versus congressional apportionment",
-      "National security objectives versus protections for individual privacy",
-      "State taxation versus federal borrowing",
-      "Presidential term limits versus judicial tenure"
+      "Whether the program’s title refers to patriotism or national defense",
+      "Measured security effects, privacy costs, and safeguards",
+      "Whether other countries use the same name for similar legislation",
+      "Whether the law was adopted during a period of strong public concern"
     ],
     "answer": 1,
-    "source": "https://www.congress.gov/bill/107th-congress/house-bill/3162",
-    "where": "Examine PATRIOT Act provisions, national-security powers, and constitutional checks",
-    "explanation": "Security measures may raise Fourth Amendment and civil-liberty concerns.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Under “DOMESTIC SECURITY”, read the surveillance discussion and references to the Fourth Amendment.",
+    "explanation": "Security claims and rights concerns require evidence about actual effects and legal safeguards.",
+    "hint": "Evaluate the policy’s operation rather than its label or the atmosphere when it passed.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "r16",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A student argues that any security law is constitutional because it was passed after a terrorist attack. Which response best evaluates the claim?",
+    "prompt": "A legislator argues that an anti-terrorism law cannot be challenged because Congress approved it. Which response best identifies the flaw?",
     "choices": [
-      "Laws must still comply with constitutional limits and judicial review",
-      "Emergencies permanently suspend all amendments",
-      "Congress can amend the Constitution by ordinary statute",
-      "Courts have no authority over security laws"
+      "Passing a statute changes conflicting constitutional provisions for its duration",
+      "Judicial review transfers responsibility for writing statutes to judges",
+      "National-security concerns make executive agencies the final interpreters of rights",
+      "Legislative approval does not remove constitutional limits or judicial review"
     ],
-    "answer": 0,
-    "source": "https://www.congress.gov/bill/107th-congress/house-bill/3162",
-    "where": "Examine PATRIOT Act provisions, national-security powers, and constitutional checks",
-    "explanation": "A law's purpose does not exempt it from constitutional scrutiny.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 3,
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Under “DOMESTIC SECURITY”, find “federal judge” and read the example of a surveillance challenge.",
+    "explanation": "Ordinary legislation remains subject to constitutional review.",
+    "hint": "Separate the power to enact a law from the question of whether its provisions are constitutional.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "r17",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A timeline shows September 11 followed by military operations in Afghanistan. Which causal explanation is most accurate?",
+    "prompt": "After an attack, a city receives reports of threats against Muslim residents unrelated to the investigation. Which response most directly protects security and equal treatment?",
     "choices": [
-      "Afghanistan had invaded the United States with its army",
-      "The Cold War required an invasion of Afghanistan in 2001",
-      "The UN ordered every country to annex Afghanistan",
-      "The US sought to disrupt al-Qaeda and the Taliban government that sheltered it"
+      "Treat the targeted residents as foreign agents because of their religion",
+      "Use membership in the targeted religion as a substitute for evidence",
+      "Suspend reports of harassment until the terrorism investigation ends",
+      "Investigate the threats and assess suspects through individual evidence"
     ],
     "answer": 3,
-    "source": "https://www.congress.gov/bill/107th-congress/house-bill/3162",
-    "where": "Examine PATRIOT Act provisions, national-security powers, and constitutional checks",
-    "explanation": "The intervention followed attacks by al-Qaeda and the Taliban's sheltering of the group.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Read the first paragraph under “DOMESTIC SECURITY” about post-9/11 hate crimes.",
+    "explanation": "Individualized evidence and protection from threats address safety without equating religion with wrongdoing.",
+    "hint": "Distinguish evidence of an individual’s conduct from group identity.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "r18",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A historian distinguishes the 2001 Afghanistan war from the 2003 Iraq invasion. Which distinction is most accurate?",
+    "prompt": "A state permits a medical treatment that federal rules restrict. Officials disagree over which level of government should control it. Which additional fact would make this a federalism dispute rather than a separation-of-powers dispute?",
     "choices": [
-      "Both began as direct responses to Iraqi participation in September 11",
-      "Iraq invaded Afghanistan and triggered both wars",
-      "Afghanistan followed al-Qaeda's September 11 attacks; Iraq was justified by separate claims about weapons and security",
-      "Neither involved debates about US national security"
+      "The disagreement concerns the timing of a vote in the state legislature",
+      "State and federal governments dispute their respective authority",
+      "The disagreement concerns whether an agency consulted private experts",
+      "The disagreement concerns differences between two committees in Congress"
     ],
-    "answer": 2,
-    "source": "https://www.congress.gov/bill/107th-congress/house-bill/3162",
-    "where": "Examine PATRIOT Act provisions, national-security powers, and constitutional checks",
-    "explanation": "The wars had different immediate rationales, and claims about Iraqi WMD stockpiles were not substantiated.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 1,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 119 (printed page 119), CS 32: read the continuing state-federal policy debate.",
+    "explanation": "Federalism divides authority among levels of government; separation of powers divides branches within a government.",
+    "hint": "Identify the parties and the level of authority each represents.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "r19",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "Officials defend a new airport screening policy as preventing attacks; critics cite intrusive searches. What question best frames a balanced evaluation?",
+    "prompt": "Airport officials report fewer prohibited items reaching planes after a new search procedure. Critics report unnecessary collection of personal information. Which finding would most strengthen the case for revising rather than ending the policy?",
     "choices": [
-      "Does any criticism automatically prove the policy unconstitutional?",
-      "Does the security benefit justify the restriction and comply with legal safeguards?",
-      "Should all screening be abolished regardless of threat?",
-      "Can officials ignore courts whenever they invoke safety?"
+      "A less intrusive procedure achieves comparable security results",
+      "Public approval increases when officials change the procedure’s name",
+      "Other airports use the procedure despite collecting different data",
+      "The agency adds staff without changing how information is collected"
     ],
-    "answer": 1,
-    "source": "https://www.congress.gov/bill/107th-congress/house-bill/3162",
-    "where": "Examine PATRIOT Act provisions, national-security powers, and constitutional checks",
-    "explanation": "Evaluation requires examining effectiveness, rights, and safeguards.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.gao.gov/assets/a109807.html",
+    "where": "Find the discussion of passenger screening and remaining security challenges; evaluate the proposed alternative using the scenario’s evidence.",
+    "explanation": "Comparable security with less intrusion provides a reason to modify the method while retaining its protective purpose.",
+    "hint": "Look for a feasible alternative that changes the rights cost without sacrificing the stated benefit.",
+    "sourceTitle": "GAO — Transportation Security: Post-September 11th Initiatives"
   },
   {
     "id": "r20",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A newspaper reports that federal courts struck down a particular surveillance practice while allowing other measures. What principle does this illustrate?",
+    "prompt": "In a hypothetical case, a federal court bars one surveillance method while allowing investigators to use other lawful tools. Which conclusion follows?",
     "choices": [
-      "Judicial review can limit executive security policies without ending all security efforts",
-      "Courts must approve every policy the president proposes",
-      "Civil liberties never apply during wartime",
-      "The executive branch alone decides constitutional meaning"
+      "Investigators are now prohibited from gathering evidence about terrorism",
+      "The court has transferred responsibility for investigations to Congress",
+      "Judicial review can constrain a method without rejecting the broader security goal",
+      "The court has ruled that privacy must outweigh security in every case"
     ],
-    "answer": 0,
-    "source": "https://www.congress.gov/bill/107th-congress/house-bill/3162",
-    "where": "Examine PATRIOT Act provisions, national-security powers, and constitutional checks",
-    "explanation": "Courts can assess specific government actions under constitutional standards.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Under “DOMESTIC SECURITY”, read the discussion of courts and surveillance.",
+    "explanation": "Review of a specific practice does not necessarily eliminate all lawful action toward the same goal.",
+    "hint": "Match the scope of the conclusion to the scope of the court’s decision.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "r21",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A chart shows unemployment rising sharply in 2008\u20132009 as banks restrict lending. Which explanation is most supported?",
+    "prompt": "A business cannot renew its credit line after its lender suffers major losses. It postpones equipment purchases and cuts employee hours. Which mechanism links financial distress to a recession?",
     "choices": [
-      "Unemployment rose because the internet was shut down",
-      "The US ended all foreign trade",
-      "The recession was caused only by increased immigration",
-      "Financial instability reduced credit and economic activity"
+      "Bank losses increase business demand by making equipment cheaper",
+      "Reduced investment forces households to increase borrowing immediately",
+      "Restricted credit reduces investment and employment outside the banking sector",
+      "Credit restrictions primarily affect stock traders rather than operating businesses"
     ],
-    "answer": 3,
-    "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "The financial crisis disrupted credit, investment, and employment.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+    "where": "Read “Effects on the Financial Sector” and “Effects on the Broader Economy”.",
+    "explanation": "A banking shock can restrict borrowing needed for business investment and operations.",
+    "hint": "Trace the effect from lender losses through the business’s decisions.",
+    "sourceTitle": "Federal Reserve History — The Great Recession and Its Aftermath"
   },
   {
     "id": "r22",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "Home values decline, mortgage defaults increase, and mortgage-backed securities lose value. Which sequence best explains the 2008 financial crisis?",
+    "prompt": "Falling home prices are followed by mortgage defaults, losses on mortgage-backed investments, and tighter lending. Which evidence would best support the proposed causal chain?",
     "choices": [
-      "Falling home prices automatically raised bank capital",
-      "Mortgage defaults increased consumer borrowing capacity",
-      "Housing losses weakened financial institutions and restricted lending",
-      "The crisis resulted solely from government spending cuts in 2010"
+      "Lenders with larger mortgage losses cut more credit afterward",
+      "Consumer confidence improves at the same time that mortgage losses appear",
+      "New construction rises before the mortgage defaults begin to increase",
+      "Firms without borrowing needs report greater demand for their products"
     ],
-    "answer": 2,
-    "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "Mortgage-related losses helped trigger wider financial disruption.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+    "where": "Read “Rise and Fall of the Housing Market” and “Effects on the Financial Sector”.",
+    "explanation": "A link between mortgage exposure and reduced lending supports transmission from housing losses to the wider economy.",
+    "hint": "Choose evidence connecting successive steps rather than a coinciding but unrelated trend.",
+    "sourceTitle": "Federal Reserve History — The Great Recession and Its Aftermath"
   },
   {
     "id": "r23",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A recession causes layoffs; government expands unemployment assistance. Which immediate purpose is most likely?",
+    "prompt": "During a downturn, Congress approves temporary spending and tax relief while the Federal Reserve lowers its policy interest rate. Which explanation best distinguishes the responses?",
     "choices": [
-      "Permanently eliminate all business cycles",
-      "Support household spending and reduce hardship during job loss",
-      "End the need for private-sector employment",
-      "Prevent the Federal Reserve from setting interest rates"
+      "Fiscal measures regulate reserve currencies; monetary measures set federal tax brackets",
+      "Fiscal measures affect spending and taxes; monetary measures influence credit conditions",
+      "Both responses require the president to issue a new constitutional amendment",
+      "Both responses primarily transfer control of private banks to state governments"
     ],
     "answer": 1,
     "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "Safety-net spending can cushion income losses during downturns.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "where": "Read the adjacent paragraphs on fiscal stimulus and the Federal Reserve’s interest-rate reductions.",
+    "explanation": "Fiscal and monetary policy use different institutions and tools, even when both aim to support economic activity.",
+    "hint": "Compare government budget decisions with central-bank interest-rate decisions.",
+    "sourceTitle": "Federal Reserve History — The Great Recession"
   },
   {
     "id": "r24",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A historian compares the Great Recession with the Great Depression. Which statement avoids an oversimplification?",
+    "prompt": "Officials argue that emergency support for major financial institutions can prevent a wider collapse. Critics argue it can reward excessive risk-taking. What does a sound evaluation require?",
     "choices": [
-      "Both involved severe economic distress, but differed in scale, institutions, and policy responses",
-      "Both had identical unemployment rates and durations",
-      "Neither affected banking or consumer confidence",
-      "The Great Recession occurred before the Great Depression"
+      "Treat opposition to a particular rescue as opposition to financial stability",
+      "Judge the assistance entirely by whether a rescued firm earns later profits",
+      "Assume the risk-taking problem disappears once public funds are provided",
+      "Weigh the systemic danger against incentives created by the assistance"
     ],
-    "answer": 0,
-    "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "Sound comparison identifies similarities without erasing differences.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 3,
+    "source": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+    "where": "Read “Effects on the Financial Sector”; distinguish the support’s purpose from the possible incentive problem in the scenario.",
+    "explanation": "Emergency stabilization can address immediate harm while raising questions about future incentives and conditions.",
+    "hint": "Account for both the immediate purpose and the longer-term behavior that the policy may encourage.",
+    "sourceTitle": "Federal Reserve History — The Great Recession and Its Aftermath"
   },
   {
     "id": "r25",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A president proposes economic stimulus while the Federal Reserve lowers interest rates. What distinction is most accurate?",
+    "prompt": "One family loses income after layoffs; another loses savings when housing and investment values fall. Which conclusion best explains their different experiences of the same downturn?",
     "choices": [
-      "The Federal Reserve votes on federal tax legislation",
-      "Congress directly sets the Fed's policy interest rate at every meeting",
-      "Both actions are amendments to the Constitution",
-      "Congress and the president influence fiscal policy; the Fed conducts monetary policy"
+      "Unemployment rates directly measure the change in each household’s wealth",
+      "Only households with mortgages can suffer losses during a recession",
+      "Falling asset values establish that every worker received lower hourly wages",
+      "The crisis affects both income and household wealth"
     ],
     "answer": 3,
     "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "Fiscal and monetary tools operate through different institutions.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "where": "Read the opening account of unemployment, home prices, stock prices, and household net worth.",
+    "explanation": "Economic distress reaches households through several channels that should not be treated as identical measures.",
+    "hint": "Identify which outcome is an income flow and which is a loss of accumulated wealth.",
+    "sourceTitle": "Federal Reserve History — The Great Recession"
   },
   {
     "id": "r26",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "A community debates whether emergency anti-terror powers should have expiration dates and oversight. Which democratic principle is most directly involved?",
+    "prompt": "A proposal promises a “peace dividend” after the Soviet collapse; a later proposal seeks more resources for counterterrorism after 9/11. What best explains the difference?",
     "choices": [
-      "Security concerns permanently end legislative oversight",
-      "Civil liberties can never be restricted under any circumstances",
-      "Government power should remain accountable and limited",
-      "Only state governments may address terrorism"
+      "Both proposals relied on the same assessment of an expanding Soviet threat",
+      "Different security environments changed the perceived demands on defense budgets",
+      "Defense priorities were determined by trade deficits rather than threat assessments",
+      "The later proposal demonstrates that the Cold War continued without interruption"
     ],
-    "answer": 2,
-    "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "Oversight and sunset provisions can help constrain extraordinary powers.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 1,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF pages 119–120, CS 32 and CS 33: compare defense-spending references.",
+    "explanation": "Reduced superpower confrontation and later counterterrorism demands created different military-budget pressures.",
+    "hint": "Keep the two periods and their perceived threats distinct.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "r27",
     "cs": "CS 32",
     "topic": "CS 32",
-    "prompt": "After 2001, Americans disagree over military intervention and expanded surveillance. What conclusion is most defensible?",
+    "prompt": "An investigator labels any politically motivated attack inside the United States “domestic terrorism.” Which evidence most challenges that classification rule?",
     "choices": [
-      "All Americans adopted a single view of foreign policy",
-      "Security policies can involve competing interpretations of risks, rights, and national interests",
-      "Debate proved the United States had no national security threats",
-      "The Constitution stopped applying to federal agencies"
+      "Some attacks inside the country are connected to foreign terrorist networks",
+      "Some domestic extremists select targets far from their home communities",
+      "Some attacks cause property damage as well as civilian injuries",
+      "Some terrorism cases involve more than one local law-enforcement agency"
     ],
-    "answer": 1,
-    "source": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
-    "where": "Compare post-9/11 security debates or the 2007\u201309 financial crisis with the scenario",
-    "explanation": "Democratic societies debate the tradeoffs of security responses.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.fbi.gov/investigate/terrorism",
+    "where": "Compare the “International terrorism” and “Domestic terrorism” definitions.",
+    "explanation": "The place of an attack alone does not determine whether terrorism has domestic or international connections.",
+    "hint": "Examine the attackers’ goals and connections as well as geography.",
+    "sourceTitle": "FBI — Terrorism"
   },
   {
     "id": "r28",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "The Soviet Union dissolves in 1991. Which change most directly reshaped US foreign policy?",
+    "prompt": "After the Soviet Union dissolves, a policymaker predicts that regional conflicts will no longer require U.S. decisions. Which evidence most directly challenges the prediction?",
     "choices": [
-      "The bipolar Cold War rivalry ended, creating new strategic choices",
-      "NATO immediately became the Soviet military alliance",
-      "All armed conflicts worldwide ceased",
-      "The United States withdrew from every international organization"
+      "The Soviet republics debated which national symbols to adopt",
+      "The United States continued using the same constitutional election procedures",
+      "Post-Cold War violence in Kosovo prompted decisions about international intervention",
+      "American offices expanded their use of computers and electronic records"
     ],
-    "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "The collapse of the USSR ended the central superpower confrontation.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.nato.int/en/what-we-do/operations-and-missions/kosovo-air-campaign-march-june-1999",
+    "where": "Read the opening account of the crisis and the decision to intervene.",
+    "explanation": "Ending superpower rivalry did not eliminate regional conflict or the policy choices it created.",
+    "hint": "Choose evidence of a continuing foreign-policy problem rather than another historical change.",
+    "sourceTitle": "NATO — Kosovo Air Campaign, 1999"
   },
   {
     "id": "r29",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "Iraq invades Kuwait in 1990; a US-led coalition later expels Iraqi forces. Which principle best explains the coalition's stated objective?",
+    "prompt": "Iraq invades Kuwait; a U.S.-led coalition later removes Iraqi troops from Kuwait. Which stated objective is consistent with the action?",
     "choices": [
-      "Annex Kuwait as a US territory",
-      "Reestablish the Soviet Union",
-      "End the use of multinational diplomacy",
-      "Reverse aggression against Kuwait and defend regional security"
+      "Ending Afghanistan’s role as a sanctuary for al-Qaeda",
+      "Replacing the Iraqi government through occupation of Baghdad",
+      "Restoring Kuwait’s sovereignty against an invasion",
+      "Creating a common currency for oil-exporting states"
     ],
-    "answer": 3,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "The coalition sought to restore Kuwait's sovereignty.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://history.state.gov/milestones/1989-1992/gulf-war",
+    "where": "Find “August 2, 1990” and the paragraphs on international condemnation and coalition action.",
+    "explanation": "The 1991 coalition’s immediate objective was to reverse Iraq’s occupation of Kuwait.",
+    "hint": "Distinguish this conflict’s immediate objective from the objectives of later wars.",
+    "sourceTitle": "Office of the Historian — The Gulf War, 1991"
   },
   {
     "id": "r30",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "Why did US leaders seek international partners during the 1991 Gulf War?",
+    "prompt": "For the 1991 Gulf War, a president builds a coalition and seeks international support rather than relying only on U.S. forces. What tradeoff is most plausible?",
     "choices": [
-      "US law prohibited any unilateral action abroad",
-      "The conflict involved no American interests",
-      "Coalition support provided legitimacy, resources, and shared responsibility",
-      "All allies were required to join by the US Constitution"
+      "More shared resources and support, with a need to negotiate partner concerns",
+      "Fewer shared resources, with partners gaining authority to amend U.S. law",
+      "Less diplomatic support, with a guarantee of faster reconstruction",
+      "Greater U.S. independence, with no need to coordinate military planning"
     ],
-    "answer": 2,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Multinational action can share costs and bolster international support.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://history.state.gov/milestones/1989-1992/gulf-war",
+    "where": "Find “international coalition” and examine the effort to organize support.",
+    "explanation": "Coalitions can expand support and capacity while adding coordination and bargaining requirements.",
+    "hint": "Consider both what partners contribute and what cooperation requires.",
+    "sourceTitle": "Office of the Historian — The Gulf War, 1991"
   },
   {
     "id": "r31",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A critic argues that the end of the Cold War meant the US no longer needed alliances. Which event most clearly challenges that argument?",
+    "prompt": "Foreign central banks hold U.S. dollar assets, and firms use dollars in international transactions. Which conclusion is most defensible?",
     "choices": [
-      "The disappearance of international trade",
-      "Multinational cooperation in the Gulf War and later security operations",
-      "An end to regional conflicts after 1991",
-      "The abolition of NATO in 1991"
+      "Use of dollars gives the United States authority to set foreign tax rates",
+      "U.S. financial conditions are connected to international demand for dollars",
+      "Holding dollars requires a foreign central bank to join a U.S. military alliance",
+      "Dollar use prevents foreign financial institutions from holding other currencies"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Regional crises persisted and often prompted coalition responses.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://www.federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html",
+    "where": "Find “international reserves”; distinguish reserve holdings from control over foreign governments.",
+    "explanation": "International dollar use links American finance with foreign reserves and transactions without granting control over other governments.",
+    "hint": "Separate a currency’s international use from political sovereignty.",
+    "sourceTitle": "Federal Reserve — International Role of the U.S. Dollar"
   },
   {
     "id": "r32",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A president weighs intervening to stop ethnic cleansing in the Balkans against risks of military escalation. Which competing goals are evident?",
+    "prompt": "A policy memo favors intervention to protect civilians in a regional conflict but warns about military escalation. Which question best addresses the competing concerns?",
     "choices": [
-      "Humanitarian protection and national-security risk management",
-      "Domestic taxation and local zoning",
-      "Agricultural subsidies and patent law",
-      "Election administration and census counting"
+      "Will every participating government support the same long-term budget priorities?",
+      "Will the intervention reproduce the same electoral system used in the United States?",
+      "Can domestic consumer prices alone establish the operation’s military success?",
+      "Can a feasible mission protect civilians at an acceptable risk of escalation?"
     ],
-    "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Intervention decisions can balance humanitarian aims against strategic costs.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 3,
+    "source": "https://www.nato.int/en/what-we-do/operations-and-missions/kosovo-air-campaign-march-june-1999",
+    "where": "Read “The political objectives of the air campaign” and the opening explanation of intervention.",
+    "explanation": "The relevant evaluation links the humanitarian objective to a feasible operation and its strategic risks.",
+    "hint": "Address both goals named in the memo rather than an unrelated outcome.",
+    "sourceTitle": "NATO — Kosovo Air Campaign, 1999"
   },
   {
     "id": "r33",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A map shows NATO admitting former Eastern Bloc countries after 1991. Which interpretation is best supported?",
+    "prompt": "Illustrative trade data show U.S. exports increasing by $10 billion and imports increasing by $25 billion. A commentator says the trade balance must have improved because exports rose. What is the strongest criticism?",
     "choices": [
-      "The Warsaw Pact expanded into Western Europe",
-      "The Soviet Union joined NATO before collapsing",
-      "NATO ended all military cooperation after 1991",
-      "European security institutions changed as Cold War divisions weakened"
+      "An increase in imports shows that the federal budget moved into surplus",
+      "The conclusion is valid if exporting firms report higher profits",
+      "Trade balances are calculated from tax collections rather than trade flows",
+      "The commentator ignores the larger increase in imports"
     ],
     "answer": 3,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "NATO enlargement reflected a changing European security order.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-08.pdf",
+    "where": "PDF page 1, final paragraph: compare trade deficit and trade surplus.",
+    "explanation": "The trade balance depends on exports relative to imports; export growth alone is insufficient.",
+    "hint": "Compare the changes in both flows rather than judging one in isolation.",
+    "sourceTitle": "BEA — Net Exports of Goods and Services"
   },
   {
     "id": "r34",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A US administration pursues trade agreements while also preparing for regional military crises. Which broader post-Cold War pattern does this illustrate?",
+    "prompt": "Two countries disagree over restrictions on imported goods. Which response most directly uses an international economic institution rather than a military alliance?",
     "choices": [
-      "Trade replaced every military commitment",
-      "Security policy became irrelevant to diplomacy",
-      "Economic integration and security challenges developed simultaneously",
-      "The US abandoned international economic relationships"
+      "Seek a NATO collective-defense decision on tariff levels",
+      "Use WTO trade rules and its dispute-settlement procedures",
+      "Ask a central bank to establish a common national legislature",
+      "Use refugee-relief agencies to negotiate import classifications"
     ],
-    "answer": 2,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Post-Cold War foreign policy involved both economic and security issues.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 1,
+    "source": "https://www.wto.org/english/thewto_e/whatis_e/what_we_do_e.htm",
+    "where": "Read “Trade negotiations” and “Dispute settlement”.",
+    "explanation": "Trade-rule disputes fit the WTO’s role, rather than the defense or humanitarian missions of other institutions.",
+    "hint": "Match the institution’s purpose to the type of disagreement.",
+    "sourceTitle": "WTO — What we do"
   },
   {
     "id": "r35",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A historian examines the 1990s conflicts in Bosnia and Kosovo. Which statement is most accurate?",
+    "prompt": "A disease outbreak crosses borders. Governments that act separately receive delayed information about its spread. Which policy most directly addresses that coordination problem?",
     "choices": [
-      "Both conflicts were wars between the US and Soviet Union",
-      "Ethnic conflict and humanitarian crises persisted after the superpower rivalry ended",
-      "The end of the Cold War ended nationalism",
-      "Neither conflict prompted international involvement"
+      "Share surveillance data and coordinate international preparedness",
+      "Replace all national health agencies with domestic border police",
+      "Set one country’s interest rate to regulate disease transmission",
+      "Reduce scientific exchanges while maintaining the same travel volume"
     ],
-    "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "The Balkans demonstrate that the Cold War's end did not end regional violence.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.who.int/news-room/questions-and-answers/item/pandemic-prevention--preparedness-and-response-accord",
+    "where": "Read the opening answer on why countries cooperate to prevent and respond to pandemics.",
+    "explanation": "Cross-border disease threats create a reason to coordinate information and preparation across sovereign countries.",
+    "hint": "Identify the information gap and choose a response operating at the same geographic scale.",
+    "sourceTitle": "WHO — Pandemic prevention, preparedness and response"
   },
   {
     "id": "r36",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A president considers whether to use sanctions, diplomacy, or force against an aggressive regime. What is the best conclusion?",
+    "prompt": "A president considers sanctions, negotiations, and force in response to aggression. Which evidence would best support a decision to try sanctions before force?",
     "choices": [
-      "Foreign policy involves selecting tools with different costs and likely effects",
-      "Sanctions and diplomacy are identical to military invasion",
-      "Presidents cannot use diplomacy during crises",
-      "Military force always produces the intended political result"
+      "The sanctions have no link to the behavior the president seeks to change",
+      "The target has already secured substitute suppliers that reject the proposed sanctions",
+      "The target depends on trade partners willing to enforce pressure, and negotiation remains feasible",
+      "Military planners promise a quick operation without assessing political consequences"
     ],
-    "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Different instruments involve tradeoffs and uncertain outcomes.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://history.state.gov/milestones/1989-1992/gulf-war",
+    "where": "Read the sequence from international sanctions to coalition action; treat the new scenario as an application, not a claim that sanctions always work.",
+    "explanation": "A tool is more credible when its mechanism can affect the target and its costs fit the objective.",
+    "hint": "Assess how the proposed tool is supposed to change behavior.",
+    "sourceTitle": "Office of the Historian — The Gulf War, 1991"
   },
   {
     "id": "r37",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "After September 11, the US works with allies on intelligence sharing but also debates unilateral military action. Which tension is illustrated?",
+    "prompt": "Allies share intelligence after an attack, but disagree over a proposed military operation. Which conclusion avoids overstating the evidence?",
     "choices": [
-      "Federalism versus local school control",
-      "Direct democracy versus judicial elections",
-      "Tariffs versus agricultural subsidies",
-      "Cooperation with partners versus independent national decision-making"
+      "Disagreement over one operation means the intelligence relationship has ended",
+      "Intelligence cooperation obliges every partner to join any military operation",
+      "Partners can cooperate on some security tasks while disagreeing on others",
+      "An alliance transfers each member’s foreign-policy decisions to the largest state"
     ],
-    "answer": 3,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Alliances and unilateral action can compete in foreign-policy choices.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 2,
+    "source": "https://www.nato.int/en/what-we-do/operations-and-missions/nato-and-afghanistan",
+    "where": "Read the early post-9/11 timeline and discussion of Allied participation and decisions.",
+    "explanation": "Cooperation is not identical to agreement on every tool or operation.",
+    "hint": "Keep the conclusion limited to the types of cooperation actually described.",
+    "sourceTitle": "NATO — NATO and Afghanistan"
   },
   {
     "id": "r38",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A researcher claims that the US became completely isolated after the Cold War. Which evidence most directly refutes the claim?",
+    "prompt": "War drives civilians into neighboring countries, straining housing and medical services there. Which response most directly addresses the foreign-policy challenge described?",
     "choices": [
-      "An increase in domestic computer ownership alone",
-      "A decline in some factory jobs",
-      "Participation in multinational coalitions, alliances, and international trade",
-      "Changes in American television programming"
+      "Coordinate emergency civilian aid and support for countries receiving displaced people",
+      "Use import tariffs to determine whether displaced families need medical treatment",
+      "Expand domestic airport screening without assisting the affected region",
+      "Treat displacement as a local zoning issue within the country where war began"
     ],
-    "answer": 2,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Diplomatic, military, and economic partnerships show continued global engagement.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 0,
+    "source": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/1999/04/23/statement-on-kosovo",
+    "where": "Read paragraph 9 and the discussion of refugee and humanitarian relief operations.",
+    "explanation": "Displacement creates humanitarian needs and pressures across borders, requiring more than a purely domestic response.",
+    "hint": "Connect the movement across borders to the needs of civilians and host countries.",
+    "sourceTitle": "NATO — Statement on Kosovo, April 23, 1999"
   },
   {
     "id": "r39",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A comparison of the Gulf War and Afghanistan finds coalition participation in both, but different immediate goals. What historical reasoning does this require?",
+    "prompt": "A government calls captured suspects “enemy combatants” and argues that the label resolves all questions about detention and treatment. Which response best evaluates the claim?",
     "choices": [
-      "Assume both conflicts had identical origins",
-      "Identify similarities in methods while distinguishing causes and objectives",
-      "Ignore chronology when comparing conflicts",
-      "Use only the number of countries involved to explain each war"
+      "The label proves that each detainee has already received a criminal conviction",
+      "A classification does not by itself settle disputes about applicable legal protections",
+      "The label turns the detention decision into a matter of international trade law",
+      "Any wartime detention automatically gives the detainee full diplomatic immunity"
     ],
     "answer": 1,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Sound comparison separates shared features from important differences.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "source": "https://openstax.org/books/us-history/pages/32-1-the-war-on-terror",
+    "where": "Under “DOMESTIC SECURITY”, find “unlawful combatants” and read the discussion of courts and detainees.",
+    "explanation": "The post-9/11 debate concerned which legal protections and procedures applied; labels alone did not resolve it.",
+    "hint": "Distinguish a government’s classification from a completed legal determination.",
+    "sourceTitle": "OpenStax — The War on Terror"
   },
   {
     "id": "r40",
     "cs": "CS 33",
     "topic": "CS 33",
-    "prompt": "A policy memo states that military success always guarantees long-term political stability. Which criticism is strongest?",
+    "prompt": "An operation removes a hostile government, but later violence and weak institutions persist. Which conclusion best evaluates a claim that military victory guarantees stability?",
     "choices": [
-      "Removing an immediate threat does not by itself resolve governance and reconstruction problems",
-      "Military outcomes never affect politics",
-      "Political stability can be measured only by trade volume",
-      "All conflicts have the same postwar institutions"
+      "A successful initial operation removes the need to plan for reconstruction",
+      "Continued instability proves that the initial military objectives were never achieved",
+      "Political stability can be evaluated from the initial military casualty figures alone",
+      "Removing a government and establishing durable institutions are different tasks"
     ],
-    "answer": 0,
-    "source": "https://history.state.gov/departmenthistory/short-history/endofcoldwar",
-    "where": "Review the end of the Cold War, coalition diplomacy, regional conflicts, and terrorism",
-    "explanation": "Military victories and durable political outcomes are distinct.",
-    "hint": "Identify the evidence in the scenario, then eliminate choices that overstate the claim or confuse cause and effect."
+    "answer": 3,
+    "source": "https://www.nato.int/en/what-we-do/operations-and-missions/nato-and-afghanistan",
+    "where": "Read “Afghanistan lessons learned process”, especially achievable goals and mission expansion.",
+    "explanation": "Immediate military outcomes do not by themselves settle governance, security, and reconstruction problems.",
+    "hint": "Separate success at one stage from the requirements of a later stage.",
+    "sourceTitle": "NATO — NATO and Afghanistan"
   }
 ];
 })();
