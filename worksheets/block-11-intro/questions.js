@@ -1,5 +1,5 @@
 (function(){
-window.BLOCK_CONFIG={"assignmentKey": "AS-B11-CS1-3-INTRO-2026", "title": "Block 11 Intro — Historical Thinking and Skills", "description": "CS 1–3 • 40 source-evaluation, thesis, chronology, and causation questions.", "practice": "Evaluate credibility and perspective, support defensible theses, and distinguish chronology, correlation, and causation."};
+window.BLOCK_CONFIG={"assignmentKey": "AS-B11-CS1-3-INTRO-2026", "title": "Block 11 Intro — Historical Thinking and Skills", "description": "CS 1–3 • 40 introductory questions on credibility, evidence-based theses, chronology, and causation.", "practice": "Evaluate credibility and perspective, support defensible theses, and distinguish chronology, correlation, and causation."};
 window.BLOCK_QUESTIONS=[
   {
     "id": "i01",
@@ -7,16 +7,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "Two newspapers report the same labor strike differently. What should a historian examine first?",
     "choices": [
-      "Which headline is shorter",
-      "Which newspaper costs more",
+      "Which article appeared first in the newspaper",
+      "Which account includes more direct quotations",
       "Each publisher’s perspective and supporting evidence",
-      "Whether both use the same font"
+      "How often each article repeats its main claim"
     ],
     "answer": 2,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Read “Observe its parts” and “Try to make sense of it”; consider author, audience, and purpose.",
     "explanation": "Different perspectives can shape selection and interpretation of evidence.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Consider who produced the reports and how they support their accounts.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i02",
@@ -24,16 +25,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A historian studies a wartime speech. Which question best reveals the author’s purpose?",
     "choices": [
-      "What response did the speaker hope to produce in the audience?",
-      "How many pages was the speech?",
-      "Was the speech delivered indoors?",
-      "Which sentence is longest?"
+      "What response did the speaker hope to produce?",
+      "Which events occurred before the speech was given?",
+      "Which phrases did later historians quote most often?",
+      "How was the speech preserved in the archive?"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Under “Try to make sense of it”, read the question about why the author wrote the document.",
     "explanation": "Purpose helps explain why an author emphasizes particular ideas.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Purpose concerns the effect the speaker wanted to have on listeners.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i03",
@@ -41,16 +43,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A website claims a historical event occurred in 1915, but cites no records. What is the best next step?",
     "choices": [
-      "Accept it because it appears online",
-      "Reject every website about history",
-      "Use the first search result as proof",
-      "Verify the claim against dated primary records and reliable scholarship"
+      "Treat the missing citation as proof of a different date",
+      "Accept the date if several websites repeat the wording",
+      "Choose the date from the most recent web publication",
+      "Check dated records and reliable historical research"
     ],
     "answer": 3,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Under “Use it as historical evidence”, consider what additional records could test the claim.",
     "explanation": "Corroboration and traceable evidence strengthen credibility.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Repetition is not the same as independently checking a date.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i04",
@@ -58,16 +61,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A factory owner and a union organizer describe wages differently. What is the soundest interpretation?",
     "choices": [
-      "One account must be entirely fabricated",
-      "Their positions may shape perspectives; compare both with payroll records",
-      "Only the owner can know wage conditions",
-      "Neither account can be used as evidence"
+      "Choose the owner’s account because it concerns a business",
+      "Compare their perspectives with payroll evidence",
+      "Choose the organizer’s account because it concerns workers",
+      "Average the claims before examining how wages were recorded"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "source": "https://www.loc.gov/static/programs/teachers/getting-started-with-primary-sources/documents/Analyzing_Primary_Sources.pdf",
+    "where": "PDF page 1, “Further Investigation”: compare related sources and revise conclusions as evidence develops.",
     "explanation": "Historical inquiry considers perspective without automatically discarding testimony.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Compare interested accounts with records that can test the wage claims.",
+    "sourceTitle": "Library of Congress — Analyzing Primary Sources"
   },
   {
     "id": "i05",
@@ -75,33 +79,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "Which evidence most directly establishes the date a law took effect?",
     "choices": [
-      "A modern cartoon about the law",
-      "The official statute and its effective-date provision",
-      "An unsourced social-media comment",
-      "A student’s guess about the decade"
+      "A newspaper’s report of the legislative debate",
+      "The official law’s effective-date provision",
+      "The date the law was introduced in the legislature",
+      "A campaign statement promising the proposed law"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Read “Observe its parts” for dates and “Use it as historical evidence” for the question the source can answer.",
     "explanation": "Official dated records provide direct evidence of legal chronology.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Introduction, passage, and implementation can have different dates.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i06",
     "cs": "CS 1",
     "topic": "CS 1",
-    "prompt": "A photograph shows a crowded factory floor. Which conclusion is least justified from the image alone?",
+    "prompt": "A photograph is described as showing many workers close together on one factory floor. Which conclusion is least justified by that description alone?",
     "choices": [
-      "This particular workplace employed many people",
-      "The image can provide visual evidence",
-      "The photograph reflects a specific time and place",
-      "Every worker in the country experienced identical conditions"
+      "The photograph may provide evidence about factory space",
+      "The described workplace contained many workers",
+      "The image records the arrangement of one workplace",
+      "Workers across the country had the same conditions"
     ],
     "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
-    "explanation": "One photograph cannot establish universal conditions.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-photograph-intermediate",
+    "where": "Read “Observe its parts” and “Use it as historical evidence”; distinguish visible details from broader claims.",
+    "explanation": "A description of one photographed workplace cannot establish the conditions of workers throughout the country.",
+    "hint": "Match the scope of the conclusion to the one workplace described.",
+    "sourceTitle": "National Archives — Analyze a Photograph"
   },
   {
     "id": "i07",
@@ -109,33 +115,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A historian finds that a memoir was written forty years after an event. What matters most?",
     "choices": [
-      "Compare the recollection with contemporary evidence",
-      "Automatically discard the memoir",
-      "Assume later memories are always accurate",
-      "Treat it as an official government record"
+      "Compare the recollection with records from the time",
+      "Give it more weight solely because the author lived longer",
+      "Treat every remembered detail as an eyewitness certainty",
+      "Classify it as secondary solely because it was written later"
     ],
     "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Read the questions about when the source was written and what other evidence could help.",
     "explanation": "Retrospective memories can be useful but require corroboration.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A later recollection can be useful, but specific details still need checking.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i08",
     "cs": "CS 1",
     "topic": "CS 1",
-    "prompt": "An article cites a historian’s expertise in medieval Europe to support a claim about 1960s America. What is the issue?",
+    "prompt": "An article cites a medieval-history specialist as its main authority on 1960s America but provides no relevant research. Which issue should a reader check?",
     "choices": [
-      "All historians are unqualified",
-      "Expertise never matters",
-      "The author’s qualifications may not match the claim being evaluated",
-      "Only the article’s publication date matters"
+      "Expertise in one period guarantees expertise in another",
+      "A historian’s specialty makes citations unnecessary",
+      "Relevant expertise may not match the claim",
+      "Publication date matters more than supporting evidence"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 101 (printed page 101), CS 1: find the author-qualification credibility criterion.",
     "explanation": "Relevant expertise is part of evaluating credibility.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Credentials matter most when they relate to the particular claim.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i09",
@@ -143,16 +151,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A campaign advertisement describes only its candidate’s accomplishments. Which concern should readers consider?",
     "choices": [
-      "Campaign material is always a primary source of every claimed fact",
-      "The advertisement proves the opponent has no accomplishments",
-      "The advertisement cannot reveal any historical attitudes",
-      "Selective presentation may reveal bias"
+      "A campaign purpose makes every stated fact inaccurate",
+      "Favorable facts establish that opponents had no achievements",
+      "Selective presentation can shape the message",
+      "The advertisement cannot be evidence of campaign strategy"
     ],
-    "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 2,
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Under “Try to make sense of it”, consider purpose and audience.",
     "explanation": "Selection of favorable facts can shape a source’s message.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A persuasive source can be selective and still useful for some questions.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i10",
@@ -160,16 +169,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "Three independent records agree on an event’s location. What does this agreement provide?",
     "choices": [
-      "Absolute proof of every other detail",
-      "Corroboration that strengthens confidence in the location",
-      "Evidence that the records share an author",
-      "A reason to stop examining sources"
+      "Corroboration strengthens the location claim",
+      "Agreement establishes every detail of the event",
+      "Agreement makes the authors’ independence unimportant",
+      "The location claim no longer needs traceable citations"
     ],
-    "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 0,
+    "source": "https://www.loc.gov/static/programs/teachers/getting-started-with-primary-sources/documents/Analyzing_Primary_Sources.pdf",
+    "where": "PDF page 1, “Further Investigation”: compare related items rather than repeatedly copying one account.",
     "explanation": "Independent agreement can strengthen a specific claim.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Agreement strengthens the specific point checked, not every possible detail.",
+    "sourceTitle": "Library of Congress — Analyzing Primary Sources"
   },
   {
     "id": "i11",
@@ -177,16 +187,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A document contains conflicting dates for the same meeting. Which credibility criterion is most directly affected?",
     "choices": [
-      "Paper thickness",
-      "Popularity",
-      "Internal consistency",
-      "Length of the title"
+      "Agreement with another source",
+      "Author’s professional reputation",
+      "Intended audience",
+      "Internal consistency"
     ],
-    "answer": 2,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 3,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 101, CS 1: find the accuracy and consistency criterion.",
     "explanation": "Contradictions within a source require scrutiny.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Look for a contradiction within one document rather than between documents.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i12",
@@ -194,33 +205,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A source claims all immigrants held the same political views. What is the strongest criticism?",
     "choices": [
-      "It relies on a stereotype that ignores variation among individuals",
-      "It provides too many individual examples",
-      "It establishes a universally verified pattern",
-      "It is necessarily a firsthand account"
+      "It provides evidence about the views of each individual",
+      "It stereotypes a group and ignores individual variation",
+      "It distinguishes political beliefs from national origins",
+      "It establishes that the author interviewed the entire group"
     ],
-    "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 1,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 101, CS 1: find bias and stereotypes in the credibility checklist.",
     "explanation": "Generalizing an entire group can distort historical analysis.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Ask whether the claim allows for differences among members of a group.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i13",
     "cs": "CS 1",
     "topic": "CS 1",
-    "prompt": "A researcher compares a political cartoon with a census table. What is a key advantage?",
+    "prompt": "A researcher compares an immigration cartoon with a census table. What can the different source types contribute?",
     "choices": [
-      "Different source types can reveal attitudes and measurable trends",
-      "Both sources measure exactly the same thing",
-      "The cartoon makes the census unnecessary",
-      "The census reveals the cartoonist’s private motives"
+      "The cartoon can verify every number in the census",
+      "The sources can show attitudes and population patterns",
+      "The census can establish the cartoonist’s private intentions",
+      "The cartoon and table necessarily provide independent totals"
     ],
-    "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 1,
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-cartoon-intermediate",
+    "where": "Read “Try to make sense of it” and “Use it as historical evidence”; identify what a cartoon can show.",
     "explanation": "Multiple source types illuminate different dimensions of history.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Different formats are useful for different historical questions.",
+    "sourceTitle": "National Archives — Analyze a Cartoon"
   },
   {
     "id": "i14",
@@ -228,33 +241,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 1",
     "prompt": "A textbook quotes a speech but omits the sentence before it. What should a careful reader do?",
     "choices": [
-      "Assume the quotation is necessarily false",
-      "Ignore the speech’s original date",
-      "Examine the full passage to check whether context changes its meaning",
-      "Trust the excerpt because it is shorter"
+      "Use the excerpt without checking what the speaker addressed",
+      "Judge the excerpt mainly by the textbook’s publication date",
+      "Assume the missing sentence contradicts the quotation",
+      "Read the full passage and its original context"
     ],
-    "answer": 2,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 3,
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Read “Try to make sense of it”, including historical circumstances and the document’s meaning.",
     "explanation": "Context helps prevent misleading interpretations.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "The surrounding passage may change how a quotation should be understood.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i15",
     "cs": "CS 2",
     "topic": "CS 2",
-    "prompt": "Which statement is the strongest historical thesis?",
+    "prompt": "Which statement makes an arguable historical thesis rather than simply reporting a fact about a law?",
     "choices": [
-      "The law was passed in a certain year",
-      "Economic pressures and reform campaigns together contributed to the law’s passage",
-      "Many people have studied the law",
-      "The law was important because it was important"
+      "Economic pressure and reform organizing helped secure passage",
+      "The law was debated before it became an official statute",
+      "Several historians have written accounts of the law’s passage",
+      "The law’s supporters and opponents published many statements"
     ],
-    "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 0,
+    "source": "https://history.ucla.edu/thesis-statements/",
+    "where": "Read the opening definition and the list of features of a successful thesis.",
     "explanation": "A defensible thesis makes a specific arguable claim supported by evidence.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A thesis explains or interprets, rather than merely listing what happened.",
+    "sourceTitle": "UCLA History — Thesis Statements"
   },
   {
     "id": "i16",
@@ -262,33 +277,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "A student argues that an event had several causes. What evidence would best support the argument?",
     "choices": [
-      "One unrelated photograph",
-      "A list of presidents without explanation",
-      "A dictionary definition of event",
-      "Records showing distinct political, economic, and social pressures"
+      "A detailed timeline that lists dates without explaining links",
+      "Several copies of the same account of one pressure",
+      "Records connecting distinct pressures to the event",
+      "A collection of documents about an unrelated policy dispute"
     ],
-    "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 2,
+    "source": "https://chssp.ucdavis.edu/resources/curriculum/writing-in-history/writingguide/interpret-evidence-to-support-your-historical-argument",
+    "where": "Read “4 Steps for Developing a Thesis Statement”, steps 2 and 3: relevant evidence and categories.",
     "explanation": "Evidence should directly support each part of the thesis.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Evidence needs to establish more than one contributing influence.",
+    "sourceTitle": "UC Davis — Developing a Historical Thesis"
   },
   {
     "id": "i17",
     "cs": "CS 2",
     "topic": "CS 2",
-    "prompt": "A thesis states that industrialization changed urban life. Which revision is strongest?",
+    "prompt": "Which revision turns “Industrialization changed urban life” into a more specific historical argument?",
     "choices": [
-      "Industrialization happened long ago",
-      "Cities existed before industrialization",
-      "Industrial jobs drew migrants to cities while overcrowding increased pressure for housing reform",
-      "Industrialization was a big change"
+      "Urban residents experienced changes during industrialization",
+      "Industrialization involved factories, workers, machines, and cities",
+      "Factory jobs drew migrants while crowding encouraged housing reform",
+      "Industrialization was important to many people living in cities"
     ],
     "answer": 2,
-    "source": "https://americanhistory.si.edu/",
-    "where": "Smithsonian American History historical objects and interpretation",
+    "source": "https://history.ucla.edu/thesis-statements/",
+    "where": "Read the list of thesis features, especially historical specificity and a focused argument.",
     "explanation": "Specific mechanisms make a thesis testable and persuasive.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Look for an explanation of how a change occurred and why it mattered.",
+    "sourceTitle": "UCLA History — Thesis Statements"
   },
   {
     "id": "i18",
@@ -296,33 +313,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "A student selects evidence that contradicts the thesis. What is the best response?",
     "choices": [
-      "Delete all contradictory evidence",
-      "Change the source quotation",
-      "Assume every disagreement is bias",
-      "Address the contradictory evidence and refine the claim if needed"
+      "Evaluate the counterevidence and revise the claim if needed",
+      "Exclude the conflicting record because it weakens the thesis",
+      "Change the source’s wording to match the original argument",
+      "Assume disagreement establishes the source’s unreliability"
     ],
-    "answer": 3,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 0,
+    "source": "https://history.ucla.edu/thesis-statements/",
+    "where": "Read the opening guidance on revising a thesis as the paper’s argument develops.",
     "explanation": "Responsible arguments account for counterevidence.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A claim should be tested against conflicting evidence as well as support.",
+    "sourceTitle": "UCLA History — Thesis Statements"
   },
   {
     "id": "i19",
     "cs": "CS 2",
     "topic": "CS 2",
-    "prompt": "Which pairing best connects claim and evidence?",
+    "prompt": "Claim: “Legal access to voting expanded.” Which evidence would most directly support that claim?",
     "choices": [
-      "Claim: voting access expanded; evidence: changes in eligibility laws and turnout records",
-      "Claim: voting access expanded; evidence: weather records",
-      "Claim: voting access expanded; evidence: unrelated trade statistics",
-      "Claim: voting access expanded; evidence: a list of state birds"
+      "Campaign posters document the language used to persuade voters",
+      "Election speeches document what candidates promised",
+      "Party platforms document which issues leaders emphasized",
+      "Eligibility laws and registration records document access"
     ],
-    "answer": 0,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
-    "explanation": "Relevant evidence must substantiate the specific claim.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "answer": 3,
+    "source": "https://chssp.ucdavis.edu/resources/curriculum/writing-in-history/writingguide/interpret-evidence-to-support-your-historical-argument",
+    "where": "Read step 2 under “4 Steps for Developing a Thesis Statement”: evidence that addresses the question.",
+    "explanation": "Eligibility rules and registration records directly address access to voting; turnout can change for additional reasons.",
+    "hint": "Distinguish legal eligibility and registration from campaign persuasion.",
+    "sourceTitle": "UC Davis — Developing a Historical Thesis"
   },
   {
     "id": "i20",
@@ -330,16 +349,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "A student writes, “Reformers succeeded because people wanted change.” What is the main weakness?",
     "choices": [
-      "It is too specific to investigate",
-      "The explanation is vague and lacks a supported causal mechanism",
-      "It uses too many primary sources",
-      "It includes a counterargument"
+      "It identifies too many independent causes of the reform",
+      "It gives no specific, supported explanation of success",
+      "It provides more detail than the evidence can support",
+      "It substitutes a precise chronology for an interpretation"
     ],
     "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "source": "https://history.ucla.edu/thesis-statements/",
+    "where": "Read the features of a successful thesis; compare a specific explanation with a vague assertion.",
     "explanation": "Historical arguments should specify how and why change occurred.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Saying people wanted change does not explain how they achieved it.",
+    "sourceTitle": "UCLA History — Thesis Statements"
   },
   {
     "id": "i21",
@@ -347,16 +367,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "What is the strongest way to organize a historical argument?",
     "choices": [
-      "List facts without linking them",
-      "Present a thesis, analyze relevant evidence, and explain how it supports the claim",
-      "Repeat the introduction in every paragraph",
-      "Choose evidence only after writing the conclusion"
+      "Organize quotations by length and end with a general opinion",
+      "State a thesis, analyze evidence, and explain the connection",
+      "List source summaries without judging their relevance",
+      "Select an interpretation and omit records that challenge it"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://chssp.ucdavis.edu/resources/curriculum/writing-in-history/writingguide/interpret-evidence-to-support-your-historical-argument",
+    "where": "Read the opening discussion of organizing evidence around a historical argument.",
     "explanation": "Reasoning connects evidence to a defensible thesis.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Reasoning must connect the evidence to the central claim.",
+    "sourceTitle": "UC Davis — Developing a Historical Thesis"
   },
   {
     "id": "i22",
@@ -364,16 +385,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "Two sources support different interpretations of the same reform. What should an evidence-based essay do?",
     "choices": [
-      "Compare their evidence and explain which interpretation is better supported",
-      "Treat disagreement as proof no conclusion is possible",
-      "Use only the source with the more dramatic title",
-      "Combine quotations without analysis"
+      "Combine the conclusions without examining their differences",
+      "Select the interpretation supported by the longer source",
+      "Treat disagreement as a reason to avoid making a claim",
+      "Compare the evidence supporting each interpretation"
     ],
-    "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 3,
+    "source": "https://www.loc.gov/static/programs/teachers/getting-started-with-primary-sources/documents/Analyzing_Primary_Sources.pdf",
+    "where": "PDF page 1, the follow-up activities: compare sources and refine explanations.",
     "explanation": "Evaluating competing interpretations is central to historical reasoning.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Evaluate support for competing interpretations instead of judging style.",
+    "sourceTitle": "Library of Congress — Analyzing Primary Sources"
   },
   {
     "id": "i23",
@@ -381,33 +403,35 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "A primary-source letter supports a claim about one family’s migration. What limitation should a writer acknowledge?",
     "choices": [
-      "A letter can never be a primary source",
-      "The family’s experience is automatically typical",
-      "The letter proves nationwide migration totals",
-      "One family’s experience may not represent all migrants"
+      "One family may not represent all migrants",
+      "A personal letter measures the size of the migration",
+      "Firsthand experience establishes nationwide motives",
+      "A family account is independent of its author’s perspective"
     ],
-    "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 0,
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Under “Use it as historical evidence”, identify what the document establishes and what other records are needed.",
     "explanation": "Evidence supports conclusions only within its reasonable scope.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "The experience of one household has a limited scope.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i24",
     "cs": "CS 2",
     "topic": "CS 2",
-    "prompt": "A student cites a graph showing factory growth. Which sentence best explains its relevance to urbanization?",
+    "prompt": "A fictional city’s records show factory employment and population rising over a decade. Which sentence explains a possible connection without overstating the evidence?",
     "choices": [
-      "Graphs are always accurate",
-      "Cities and factories both appear in textbooks",
-      "Growing factories could attract workers and contribute to city population increases",
-      "Factory growth proves all rural residents migrated"
+      "Larger factories show that rural employment disappeared",
+      "Factory growth determines the birthplace of each resident",
+      "New factory jobs could attract migrants to the city",
+      "Rising factory employment proves housing reform succeeded"
     ],
     "answer": 2,
-    "source": "https://americanhistory.si.edu/",
-    "where": "Smithsonian American History historical objects and interpretation",
+    "source": "https://chssp.ucdavis.edu/resources/curriculum/writing-in-history/writingguide/interpret-evidence-to-support-your-historical-argument",
+    "where": "Read the opening explanation connecting a thesis, evidence, and analysis.",
     "explanation": "Explanation must connect evidence to the causal argument.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Explain a possible mechanism without claiming the pattern proves every detail.",
+    "sourceTitle": "UC Davis — Developing a Historical Thesis"
   },
   {
     "id": "i25",
@@ -415,16 +439,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "A source strongly supports a thesis but contains an inaccurate date. What is the responsible choice?",
     "choices": [
-      "Verify the date and use only claims supported by reliable evidence",
-      "Repeat the incorrect date for consistency",
-      "Ignore the source’s credibility issues",
-      "Remove all citations from the essay"
+      "Correct the date silently inside an attributed quotation",
+      "Keep the date because it agrees with the preferred thesis",
+      "Check the date and use verified evidence accurately",
+      "Use the source’s popularity to resolve the date conflict"
     ],
-    "answer": 0,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 2,
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Use “Observe its parts” to check dates, then consider other evidence needed to verify the account.",
     "explanation": "Evidence must be accurate as well as relevant.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Useful evidence still needs to be accurate and properly represented.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i26",
@@ -432,50 +457,53 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 2",
     "prompt": "Which question helps determine whether a thesis is defensible?",
     "choices": [
-      "Is the thesis the longest sentence?",
-      "Does it avoid all historical names?",
-      "Does it repeat the question word for word?",
-      "Can multiple reliable pieces of evidence support this specific claim?"
+      "Can reliable evidence support this specific interpretation?",
+      "Does the statement include as many events as possible?",
+      "Does the claim avoid taking a position on the question?",
+      "Is the thesis broader than the evidence being examined?"
     ],
-    "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 0,
+    "source": "https://history.ucla.edu/thesis-statements/",
+    "where": "Read the list of successful-thesis features: arguable, specific, and focused.",
     "explanation": "A defensible claim can be tested against evidence.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A defensible interpretation can be tested with relevant reliable evidence.",
+    "sourceTitle": "UCLA History — Thesis Statements"
   },
   {
     "id": "i27",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A timeline shows a new technology appearing before a rise in productivity. What can the timeline alone establish?",
+    "prompt": "Illustrative timeline: a machine is introduced in 1900; measured output per worker rises in 1903. What can this sequence alone establish?",
     "choices": [
-      "The technology was the only cause of the increase",
-      "All businesses adopted the technology immediately",
-      "The technology appeared before the measured productivity increase",
-      "Productivity would have risen without the technology"
+      "The increase would have happened without any technology",
+      "The technology was the only cause of the later increase",
+      "The technology was adopted by every business in that year",
+      "The technology appeared before the productivity increase"
     ],
-    "answer": 2,
-    "source": "https://americanhistory.si.edu/",
-    "where": "Smithsonian American History historical objects and interpretation",
+    "answer": 3,
+    "source": "https://phi.history.ucla.edu/nchs/historical-thinking-standards/1-chronological-thinking/",
+    "where": "Read the opening paragraph and “Establish temporal order”; separate sequence from explanation.",
     "explanation": "Sequence alone does not prove causation.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Before-and-after order alone does not establish a causal mechanism.",
+    "sourceTitle": "UCLA — Chronological Thinking"
   },
   {
     "id": "i28",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "Ice cream sales and swimming accidents both rise in summer. What does this example illustrate?",
+    "prompt": "In an illustrative example, ice cream sales and swimming accidents both rise during summer. Which interpretation is most careful?",
     "choices": [
-      "Ice cream necessarily causes accidents",
-      "Correlation can occur because both trends share another influence",
-      "Accidents necessarily cause ice cream sales",
-      "The two trends cannot be compared"
+      "More ice cream purchases demonstrate a direct cause of accidents",
+      "A shared seasonal influence may explain the correlation",
+      "More accidents demonstrate a direct cause of ice cream purchases",
+      "The matching patterns rule out other influences on either trend"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
-    "explanation": "A shared seasonal factor can explain correlated trends.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "source": "https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062021002",
+    "where": "In the text transcript, find “causality” and the warning that correlation does not imply causation.",
+    "explanation": "The trends may share a seasonal influence; their association alone does not establish that either causes the other.",
+    "hint": "Consider another factor associated with the same season.",
+    "sourceTitle": "Statistics Canada — Correlation and Causality"
   },
   {
     "id": "i29",
@@ -483,50 +511,53 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 3",
     "prompt": "A reform law passed in 1965 and its effects appeared over several years. Which approach best analyzes causation?",
     "choices": [
-      "Assume every later event resulted from the law",
-      "Ignore events preceding the law",
-      "Use only the date of passage",
-      "Examine implementation, other influences, and changes over time"
+      "Assign every later change to the law’s passage",
+      "Study implementation, other influences, and later changes",
+      "Examine the passage date without checking enforcement",
+      "Treat the law’s title as evidence of its actual effects"
     ],
-    "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 1,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 102 (printed page 102), CS 3: read about multiple causes and relations among events.",
     "explanation": "Causal claims require mechanisms and alternative explanations.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Passage is only one stage; application and other changes also matter.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i30",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A graph shows unemployment falling after a policy change. What is the best next question?",
+    "prompt": "Illustrative figures show unemployment declining after a policy begins. What should a historian ask before claiming the policy caused the decline?",
     "choices": [
-      "Does the graph use a blue line?",
-      "Can we conclude the policy worked without further evidence?",
-      "What other economic changes could also explain the decline?",
-      "Did all workers have identical experiences?"
+      "How often did newspapers repeat claims of success?",
+      "Which line color makes the decline easiest to notice?",
+      "Which political group most strongly favors the policy?",
+      "What other changes could help explain the decline?"
     ],
-    "answer": 2,
-    "source": "https://americanhistory.si.edu/",
-    "where": "Smithsonian American History historical objects and interpretation",
+    "answer": 3,
+    "source": "https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062021002",
+    "where": "In the transcript, find the discussion distinguishing causality from correlation and considering other factors.",
     "explanation": "Testing alternative causes improves causal analysis.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Test alternative explanations rather than assuming sequence proves success.",
+    "sourceTitle": "Statistics Canada — Correlation and Causality"
   },
   {
     "id": "i31",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A student puts the Civil War before Reconstruction on a timeline. What skill is being demonstrated?",
+    "prompt": "A student uses dates to place the Civil War before Reconstruction on a timeline. What skill is being demonstrated?",
     "choices": [
-      "Corroboration of authorship",
       "Chronological sequencing",
-      "Determining a source’s reputation",
-      "Identifying stereotypes"
+      "Corroboration of testimony",
+      "Evaluation of author expertise",
+      "Identification of a stereotype"
     ],
-    "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "answer": 0,
+    "source": "https://phi.history.ucla.edu/nchs/historical-thinking-standards/1-chronological-thinking/",
+    "where": "Under “The student thinks chronologically”, read “Establish temporal order”.",
     "explanation": "Chronology places events in their historical order.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "The question asks about ordering events, not evaluating testimony.",
+    "sourceTitle": "UCLA — Chronological Thinking"
   },
   {
     "id": "i32",
@@ -534,16 +565,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 3",
     "prompt": "A political movement began before a recession but grew rapidly during it. Which explanation is most careful?",
     "choices": [
-      "The recession may have intensified an existing movement rather than created it",
-      "The movement began only after the recession",
-      "The recession had no possible influence",
-      "The movement and recession were the same event"
+      "The movement’s earlier origin rules out later economic influence",
+      "The recession created the movement before the downturn began",
+      "The recession may have intensified a movement already underway",
+      "The recession and movement must have had the same starting date"
     ],
-    "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 2,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 102, CS 3: compare long-term conditions with shorter-term influences.",
     "explanation": "Historical change can have multiple causes and phases.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A factor can accelerate a development that has already begun.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i33",
@@ -551,67 +583,71 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 3",
     "prompt": "Which evidence would best test whether a new law caused an increase in school enrollment?",
     "choices": [
-      "A single school photograph",
-      "The length of the law’s title",
-      "Enrollment trends before and after the law, alongside other relevant changes",
-      "An unrelated map of state borders"
+      "The date of passage and the number of sections in the law",
+      "Enrollment counts from only one school after the law",
+      "Enrollment trends and competing changes before and after",
+      "Several speeches that predicted greater enrollment"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062021002",
+    "where": "Use the transcript’s discussion of causality; consider timing and alternative explanations.",
     "explanation": "Comparison over time and competing factors helps evaluate cause.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Look for comparisons over time and information on competing causes.",
+    "sourceTitle": "Statistics Canada — Correlation and Causality"
   },
   {
     "id": "i34",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A chart shows two events occurring in the same year. Which conclusion is warranted?",
+    "prompt": "A timeline lists two events in the same year without explaining their relationship. Which conclusion is warranted?",
     "choices": [
-      "The first caused the second automatically",
-      "They occurred in the same year, but a causal link requires more evidence",
-      "Both were caused by the same individual",
-      "They must have happened on the same day"
+      "Timing alone does not establish a causal connection",
+      "The first-listed event must have caused the second",
+      "The two events must have occurred on the same date",
+      "Both events must have resulted from the same decision"
     ],
-    "answer": 1,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 0,
+    "source": "https://phi.history.ucla.edu/nchs/historical-thinking-standards/1-chronological-thinking/",
+    "where": "Read the opening paragraph on temporal order and relationships among events.",
     "explanation": "Coincidence in time is not proof of causation.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Events sharing a year may still be unrelated.",
+    "sourceTitle": "UCLA — Chronological Thinking"
   },
   {
     "id": "i35",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A historian argues that one event was a turning point. What evidence best supports that label?",
+    "prompt": "A historian calls an event a turning point. Which evidence would best support that interpretation?",
     "choices": [
-      "A clear comparison of conditions before and after the event",
-      "A list of unrelated dates",
-      "One person’s favorite quotation",
-      "The event’s short name"
+      "A witness’s belief that the event would be remembered",
+      "A list of later events without comparison with the past",
+      "Frequent use of the event’s name in later textbooks",
+      "Evidence of a substantial change in the pattern afterward"
     ],
-    "answer": 0,
-    "source": "https://americanhistory.si.edu/",
-    "where": "Smithsonian American History historical objects and interpretation",
+    "answer": 3,
+    "source": "https://phi.history.ucla.edu/nchs/historical-thinking-standards/1-chronological-thinking/",
+    "where": "Read the discussion of patterns of historical duration and succession; compare before and after.",
     "explanation": "A turning point involves demonstrable change over time.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A turning-point claim needs a comparison across the event.",
+    "sourceTitle": "UCLA — Chronological Thinking"
   },
   {
     "id": "i36",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "An economic graph uses a vertical axis beginning at 95 instead of zero. What should a reader consider?",
+    "prompt": "Illustrative bar chart: values are 96 and 98, but the vertical axis begins at 95. The second bar appears three times as tall as the first. What should a reader recognize?",
     "choices": [
-      "The data are automatically fabricated",
-      "The graph cannot show any trend",
-      "The horizontal axis is always incorrect",
-      "The scale may exaggerate the visual appearance of small differences"
+      "The scale changes the recorded values from 96 and 98",
+      "The truncated scale makes the difference look much larger",
+      "The shorter axis proves that the values were invented",
+      "The taller bar establishes a much larger sample size"
     ],
-    "answer": 3,
-    "source": "https://americanhistory.si.edu/",
-    "where": "Smithsonian American History historical objects and interpretation",
-    "explanation": "Graph scales can influence how changes appear.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "answer": 1,
+    "source": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines",
+    "where": "Read “Axis start point”, especially why bar-chart axes should begin at zero.",
+    "explanation": "The values differ by 2, but bars drawn from 95 have heights of 1 and 3. A truncated bar-chart axis can exaggerate the visual difference.",
+    "hint": "Compare the real values with the visual impression created by the bars.",
+    "sourceTitle": "Office for National Statistics — Axes and Gridlines"
   },
   {
     "id": "i37",
@@ -619,16 +655,17 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 3",
     "prompt": "A historian compares conditions in two states after different policies. What is the main analytical benefit?",
     "choices": [
-      "It proves the states were identical",
-      "Comparison may help identify policy effects while considering other differences",
-      "It eliminates the need for source evaluation",
-      "It guarantees a single cause"
+      "It makes the states equivalent on all other relevant factors",
+      "It can help test effects while considering state differences",
+      "It replaces the need to examine how the policies were applied",
+      "It isolates one cause regardless of how the states differ"
     ],
     "answer": 1,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062021002",
+    "where": "Use the transcript’s distinction between an observed relationship and a causal explanation.",
     "explanation": "Comparisons can test explanations but still require context.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "A comparison is useful only if other important differences are considered.",
+    "sourceTitle": "Statistics Canada — Correlation and Causality"
   },
   {
     "id": "i38",
@@ -636,50 +673,53 @@ window.BLOCK_QUESTIONS=[
     "topic": "CS 3",
     "prompt": "A protest followed a controversial court ruling. Which evidence most directly tests whether the ruling motivated protesters?",
     "choices": [
-      "Contemporary statements by organizers describing their reasons",
-      "A later unrelated weather forecast",
-      "The court building’s architectural style",
-      "A list of judges from another century"
+      "A government roster listing judges appointed that year",
+      "A later history listing only the dates of the two events",
+      "A photograph showing the size of the courthouse steps",
+      "Contemporary organizer statements naming the ruling"
     ],
-    "answer": 0,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 3,
+    "source": "https://www.archives.gov/education/lessons/worksheets/analyze-a-written-document-intermediate",
+    "where": "Read “Try to make sense of it”, including the author’s purpose and historical circumstances.",
     "explanation": "Contemporary testimony can illuminate stated motives.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Find evidence about the participants’ stated reasons for acting.",
+    "sourceTitle": "National Archives — Analyze a Written Document"
   },
   {
     "id": "i39",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A timeline shows gradual change punctuated by a major crisis. Which interpretation best fits?",
+    "prompt": "A movement grows slowly for years, then a major crisis prompts a rapid increase in participation. Which explanation accounts for both developments?",
     "choices": [
-      "Every change has exactly one cause",
-      "Gradual trends never affect crises",
-      "A crisis erases earlier historical context",
-      "Historical developments may combine long-term trends with short-term triggers"
+      "Long-term pressures can interact with immediate triggers",
+      "The final trigger makes earlier conditions unimportant",
+      "A gradual trend excludes the possibility of a turning point",
+      "A crisis establishes that no earlier developments mattered"
     ],
-    "answer": 3,
-    "source": "https://www.loc.gov/classroom-materials/",
-    "where": "Library of Congress classroom primary-source analysis materials",
+    "answer": 0,
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 102, CS 3: compare multiple long- and short-term causal relationships.",
     "explanation": "Long-term conditions and immediate triggers can interact.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Distinguish the background conditions from the immediate trigger.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   },
   {
     "id": "i40",
     "cs": "CS 3",
     "topic": "CS 3",
-    "prompt": "A historian notices a population increase after a railroad opened. What additional evidence would strengthen a causal claim?",
+    "prompt": "A town’s population rises after a railroad opens. What evidence would help establish a mechanism linking the railroad to that increase?",
     "choices": [
-      "The color of the railroad cars",
-      "A photograph taken a century later",
-      "Migration records and employment changes linked to the railroad",
-      "The names of unrelated governors"
+      "A photograph of the completed station without a date or caption",
+      "A later map showing the railroad’s position but not migration",
+      "Migration and job records showing how rail access attracted residents",
+      "A list of population totals from one year after construction"
     ],
     "answer": 2,
-    "source": "https://www.archives.gov/education/lessons",
-    "where": "National Archives document-analysis and teaching resources",
+    "source": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US",
+    "where": "PDF page 102, CS 3: use the example linking migration with employment demand to think about mechanisms.",
     "explanation": "Causal analysis requires evidence of a mechanism connecting events.",
-    "hint": "Check what the evidence actually establishes; eliminate unsupported or overly absolute conclusions."
+    "hint": "Look for a connection through travel, employment, and decisions to migrate.",
+    "sourceTitle": "Ohio — American History Model Curriculum"
   }
 ];
 })();
