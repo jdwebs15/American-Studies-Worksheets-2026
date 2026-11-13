@@ -31,11 +31,11 @@ window.BLOCK_QUESTIONS=[
       "Local production for local markets"
     ],
     "answer": 0,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Read the opening explanation and find “production”; track how production stages cross borders.",
+    "source": "block10-globalization-reading.html#production",
+    "where": "Follow the stages of making and selling a product across national borders.",
     "explanation": "Global production links workers and markets across borders.",
     "hint": "Follow the product through more than one country.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 1. Production across borders"
   },
   {
     "id": "i03",
@@ -85,11 +85,11 @@ window.BLOCK_QUESTIONS=[
       "A company buys equipment for its existing local workers"
     ],
     "answer": 1,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Find “production”; consider how businesses divide tasks among locations and outside suppliers.",
+    "source": "block10-globalization-reading.html#outsourcing",
+    "where": "Compare hiring an outside provider with operating a company-owned facility abroad.",
     "explanation": "Outsourcing assigns work to an outside provider, sometimes overseas.",
     "hint": "An outside contractor is different from the company’s own employees.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 2. Outsourcing and offshoring"
   },
   {
     "id": "i06",
@@ -121,11 +121,11 @@ window.BLOCK_QUESTIONS=[
       "It tends to shield local firms from changes in prices"
     ],
     "answer": 0,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Find “wages” or “workers”; read about the uneven effects of competition.",
+    "source": "block10-globalization-reading.html#trade-effects",
+    "where": "Read the second paragraph about workers and firms facing new competition.",
     "explanation": "Competition can create lower prices but also disrupt specific jobs.",
     "hint": "Consumer benefits and worker outcomes can differ.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 3. Trade: benefits and adjustments"
   },
   {
     "id": "i08",
@@ -139,11 +139,11 @@ window.BLOCK_QUESTIONS=[
       "More local control over goods made in other countries"
     ],
     "answer": 2,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Find “prices” and “varieties”; read the discussion of consumer benefits.",
+    "source": "block10-globalization-reading.html#trade-effects",
+    "where": "Read the first paragraph about product selection and competition among sellers.",
     "explanation": "Trade can expand product selection and competition.",
     "hint": "Consider what shoppers gain from competing suppliers.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 3. Trade: benefits and adjustments"
   },
   {
     "id": "i09",
@@ -193,11 +193,11 @@ window.BLOCK_QUESTIONS=[
       "They provided portable access to global business information"
     ],
     "answer": 3,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Find “mobile” and “internet”; read how communication technology lowers cross-border business costs.",
+    "source": "block10-globalization-reading.html#digital-connections",
+    "where": "Read how a smartphone connects a business to information while its owner is away from a desk.",
     "explanation": "Mobile devices expanded constant access to digital networks.",
     "hint": "Consider what a portable connection lets a business do.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 4. Digital connections"
   },
   {
     "id": "i12",
@@ -211,11 +211,11 @@ window.BLOCK_QUESTIONS=[
       "Online networks shift firms toward selling only local goods"
     ],
     "answer": 1,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Read the opening definition, including flows of data and ideas across borders.",
+    "source": "block10-globalization-reading.html#digital-connections",
+    "where": "Follow the example of a small business communicating with overseas customers.",
     "explanation": "Digital communication makes it easier to reach customers and coordinate business across borders.",
     "hint": "The customers and the seller can be in different countries.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 4. Digital connections"
   },
   {
     "id": "i13",
@@ -229,11 +229,11 @@ window.BLOCK_QUESTIONS=[
       "Foreign competition mainly affects government employment"
     ],
     "answer": 1,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Find “wages” and “workers”; read about losses concentrated in certain industries.",
+    "source": "block10-globalization-reading.html#trade-effects",
+    "where": "Compare the groups that benefit with those that bear adjustment costs.",
     "explanation": "Trade can benefit consumers and some businesses while workers in exposed industries face wage pressure.",
     "hint": "A growing economy does not guarantee equal gains for every worker.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 3. Trade: benefits and adjustments"
   },
   {
     "id": "i14",
@@ -715,11 +715,11 @@ window.BLOCK_QUESTIONS=[
       "Economic independence increased as diplomatic ties grew weaker"
     ],
     "answer": 2,
-    "source": "https://www.imf.org/en/publications/fandd/issues/2024/06/b2b-globalization-today-adam-jakubik-and-elizabeth-van-heuvelen",
-    "where": "Read the definition and the discussion of benefits and costs; connect this economic picture to the security topics in the assignment.",
+    "source": "block10-globalization-reading.html#post-cold-war",
+    "where": "Connect the economic changes with the continuing security challenges in this section.",
     "explanation": "Economic integration and complex new security challenges developed together.",
     "hint": "Combine the economic changes with the security challenges you studied.",
-    "sourceTitle": "IMF — Globalization Today"
+    "sourceTitle": "Classroom Reading — 5. The post-Cold War setting"
   }
 ];
 })();
